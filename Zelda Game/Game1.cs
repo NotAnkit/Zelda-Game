@@ -8,7 +8,7 @@ namespace Zelda_Game
     {
         public SpriteFont font;
         public Texture2D spriteSheet;
-        private GraphicsDeviceManager _graphics;
+        public GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private List<IController> controllerList;
         public ISprite sprite;
@@ -45,7 +45,6 @@ namespace Zelda_Game
             {
                 controller.Update();
             }
-
             sprite.update();
             base.Update(gameTime);
         }
