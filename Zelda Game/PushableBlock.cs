@@ -3,13 +3,13 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
-    public class BlueGap : IEnviornment
+    public class PushableBlock : IEnviornment
     {
         public Texture2D Texture;
         private int windowHeight;
         private int windowWidth;
 
-        public BlueGap(Game1 game)
+        public PushableBlock(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
             windowHeight = game._graphics.PreferredBackBufferHeight;

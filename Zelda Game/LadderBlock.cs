@@ -3,13 +3,13 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
-    public class WhiteishBlock : IEnviornment
+    public class LadderBlock : IEnviornment
     {
         public Texture2D Texture;
         private int windowHeight;
         private int windowWidth;
 
-        public WhiteishBlock(Game1 game)
+        public LadderBlock(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
             windowHeight = game._graphics.PreferredBackBufferHeight;
