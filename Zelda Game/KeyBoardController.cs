@@ -17,21 +17,21 @@ namespace Zelda_Game
             {
 
             }
-            else if (userInput.IsKeyDown(Keys.D1) || userInput.IsKeyDown(Keys.NumPad1))
+            else if (userInput.IsKeyDown(Keys.W) || userInput.IsKeyDown(Keys.NumPad1))
             {
-                game.sprite = new NonMovingNonAnimated();
+                game.link.direction = "up";
             }
-            else if (userInput.IsKeyDown(Keys.D2) || userInput.IsKeyDown(Keys.NumPad2))
+            else if (userInput.IsKeyDown(Keys.A) || userInput.IsKeyDown(Keys.NumPad2))
             {
-                game.sprite = new NonMovingAnimated();
+                game.link.direction = "left";
             }
-            else if (userInput.IsKeyDown(Keys.D3) || userInput.IsKeyDown(Keys.NumPad3))
+            else if (userInput.IsKeyDown(Keys.S) || userInput.IsKeyDown(Keys.NumPad3))
             {
-                game.sprite = new MovingNonAnimated();
+                game.link.direction = "right";
             }
-            else if (userInput.IsKeyDown(Keys.D4) || userInput.IsKeyDown(Keys.NumPad4))
+            else if (userInput.IsKeyDown(Keys.D) || userInput.IsKeyDown(Keys.NumPad4))
             {
-                game.sprite = new MovingAnimated();
+                game.link.direction = "down";
             }
             else if (userInput.IsKeyDown(Keys.T))
             {
