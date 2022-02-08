@@ -13,6 +13,7 @@ namespace Zelda_Game
         private List<IController> controllerList;
         public ISprite sprite;
         public Link link;
+        public IEnemy enemy;
         public IEnviornment enviornment;
         public Vector2 spritePosition;
         private Game1 game;
