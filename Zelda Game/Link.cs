@@ -28,7 +28,7 @@ namespace Zelda_Game
 
         public void draw()
         {
-            //link.Draw(game._spriteBatch, game.spritePosition);
+            link.Draw(game._spriteBatch, game.spritePosition);
         }
     }
 }
