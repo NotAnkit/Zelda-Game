@@ -15,7 +15,7 @@ namespace Zelda_Game
         }
         public void Update()
         {
-            int i = 0;
+            int i = -1;
             userInput = Keyboard.GetState();
             if (userInput.IsKeyDown(Keys.D0) || userInput.IsKeyDown(Keys.NumPad0))
             {
@@ -39,13 +39,22 @@ namespace Zelda_Game
             }
             else if (userInput.IsKeyDown(Keys.T))
             {
-                game.enviornment = List[i];
                 i++;
+                if(i>9)
+                {
+                    i = 0;
+                }
+                game.enviornment = List[i];
+
             }
             else if (userInput.IsKeyDown(Keys.Y))
             {
-                game.enviornment = List[i];
                 i--;
+                if(i<0)
+                {
+                    i = 9;
+                }
+                game.enviornment = List[i];
             }
         }
     }

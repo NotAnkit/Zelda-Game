@@ -30,8 +30,8 @@ namespace Zelda_Game
         protected override void Initialize()
         {
             controllerList = new List<IController>();
+            controllerList = new List<IController>();
             blockList = new List<IEnviornment>();
-            //controllerList.Add(new KeyBoardController(this, blockList));
 
             blockList.Add(new SquareBlock(this));
             blockList.Add(new BlackBlock(this));
@@ -45,7 +45,6 @@ namespace Zelda_Game
             blockList.Add(new Statue2(this));
 
             controllerList.Add(new KeyBoardController(this, blockList));
-
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 400;
             _graphics.ApplyChanges();
@@ -58,7 +57,7 @@ namespace Zelda_Game
             spriteSheet = Content.Load<Texture2D>("Sprite Sheet");
             sprite = new NonMovingNonAnimated();
             link = new Link(game);
-            enviornment = new BlackBlock(this);
+            enviornment = blockList[0];
             spritePosition = new Vector2(350, 250);
         }
 
@@ -70,6 +69,7 @@ namespace Zelda_Game
             }
             link.Update();
             sprite.Update();
+            enviornment.Update();
             base.Update(gameTime);
         }
 
