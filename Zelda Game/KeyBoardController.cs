@@ -8,6 +8,7 @@ namespace Zelda_Game
         KeyboardState userInput;
         private Game1 game;
         private List<IEnviornment> List;
+        public int i = 0;
         public KeyBoardController(Game1 _game, List<IEnviornment> blockList)
         {
             game = _game;
@@ -15,7 +16,6 @@ namespace Zelda_Game
         }
         public void Update()
         {
-            int i = -1;
             userInput = Keyboard.GetState();
             if (userInput.IsKeyDown(Keys.D0) || userInput.IsKeyDown(Keys.NumPad0))
             {
@@ -37,7 +37,7 @@ namespace Zelda_Game
             {
                 game.link.direction = "down";
             }
-            else if (userInput.IsKeyDown(Keys.T))
+            if (userInput.IsKeyDown(Keys.T))
             {
                 i++;
                 if(i>9)
@@ -47,7 +47,7 @@ namespace Zelda_Game
                 game.enviornment = List[i];
 
             }
-            else if (userInput.IsKeyDown(Keys.Y))
+            if (userInput.IsKeyDown(Keys.Y))
             {
                 i--;
                 if(i<0)
