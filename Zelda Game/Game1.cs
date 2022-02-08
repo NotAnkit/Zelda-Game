@@ -16,9 +16,12 @@ namespace Zelda_Game
         public IEnemy enemy;
         public IEnviornment enviornment;
         public Vector2 spritePosition;
+<<<<<<< Updated upstream
         private Game1 game;
         public List<IEnviornment> blockList;
 
+=======
+>>>>>>> Stashed changes
 
         public Game1()
         {

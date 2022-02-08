@@ -3,13 +3,13 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
-    public class LinkWoodSwordRight2 : ISprite
+    public class LinkLeftIdle : ISprite
     {
         public Texture2D Texture;
         private int windowHeight;
         private int windowWidth;
 
-        public LinkWoodSwordRight2(Game1 game)
+        public LinkLeftIdle(Game1 game)
         {
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
@@ -21,8 +21,9 @@ namespace Zelda_Game
 
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location, Texture2D texture)
         {
-            Rectangle sourceRectangle = new Rectangle(46, 77, 23, 17);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 23, 17);
+            Rectangle sourceRectangle = new Rectangle(35, 11, 16, 16);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            //SpriteEffects s = SpriteEffects.FlipHorizontally;
 
             spriteBatch.Begin();
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
