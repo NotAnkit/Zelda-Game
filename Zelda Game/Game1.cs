@@ -56,12 +56,8 @@ namespace Zelda_Game
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteSheet = Content.Load<Texture2D>("Sprite Sheet");
             sprite = new NonMovingNonAnimated();
-<<<<<<< Updated upstream
             link = new Link(game);
             enviornment = new BlackBlock(this);
-=======
-            enviornment = new SquareBlock(this);
->>>>>>> Stashed changes
             spritePosition = new Vector2(350, 250);
         }
 
