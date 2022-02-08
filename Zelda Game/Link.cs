@@ -17,7 +17,7 @@ namespace Zelda_Game
 
         public void Update()
         {
-            state.ChangeDirection(direction);
+            //state.ChangeDirection(direction);
         }
 
         public void useItem()
