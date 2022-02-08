@@ -6,9 +6,21 @@ namespace Zelda_Game
 {
     class LinkWoodSwordRightAnimated : ISprite
     {
+
+        private int windowHeight;
+        private int windowWidth;
+        public Texture2D Texture;
+
+        public LinkSwordRightAnimation(Game1 game)
+        {
+            Texture = game.Content.Load<Texture2D>("ItemSheet");
+            windowHeight = game._graphics.PreferredBackBufferHeight;
+            windowWidth = game._graphics.PreferredBackBufferWidth;
+        }
+
         int currentFrame = 0;
         int totalFrames = 4;
-        public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location, Texture2D texture)
+        public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -34,7 +46,7 @@ namespace Zelda_Game
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 19, 17);
             }
 
-            spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             return location;
         }
 
