@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 namespace Zelda_Game
 {
     /*animate and move left/right across screen*/
-    public class Skeleton : IEnemy
+    public class Stalfos : IEnemy
     {
         public Texture2D Texture;
         private int currentFrame;
@@ -14,7 +14,7 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
 
-        public Skeleton(Game1 game)
+        public Stalfos(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;

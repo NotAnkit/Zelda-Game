@@ -31,7 +31,7 @@ namespace Zelda_Game
 
         public IEnviornment BlackBlock()
         {
-            return new (blockSpritesheet, 984, 28);
+            return new (blockSpritesheet, 984, 28);*/
         }
 
         public IEnviornment PushableBlock()
