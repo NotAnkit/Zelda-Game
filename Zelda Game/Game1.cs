@@ -29,7 +29,6 @@ namespace Zelda_Game
         protected override void Initialize()
         {
             controllerList = new List<IController>();
-            controllerList = new List<IController>();
             blockList = new List<IEnviornment>();
 
             blockList.Add(new SquareBlock(this));
@@ -44,6 +43,7 @@ namespace Zelda_Game
             blockList.Add(new Statue2(this));
 
             controllerList.Add(new KeyBoardController(this, blockList));
+            controllerList.Add(new EnemyController(this));
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 400;
             _graphics.ApplyChanges();
@@ -53,10 +53,9 @@ namespace Zelda_Game
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            spriteSheet = Content.Load<Texture2D>("Sprite Sheet");
-            sprite = new NonMovingNonAnimated();
             link = new Link(game);
             enviornment = blockList[0];
+            enemy = new Bat(this);
             spritePosition = new Vector2(350, 250);
         }
 
@@ -66,19 +65,18 @@ namespace Zelda_Game
             {
                 controller.Update();
             }
-            link.Update();
-            sprite.Update();
+            link.Update();;
             enviornment.Update();
+            enemy.Update();
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            _spriteBatch.Begin();
-            spritePosition = sprite.Draw(_spriteBatch, spritePosition, spriteSheet);
-            _spriteBatch.End();
+
             enviornment.Draw(_spriteBatch);
+            enemy.Draw(_spriteBatch);
 
             base.Draw(gameTime);
         }

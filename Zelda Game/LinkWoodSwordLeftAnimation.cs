@@ -4,13 +4,13 @@ using System;
 
 namespace Zelda_Game
 {
-    class LinkWoodSwordLeftAnimated : ISprite
+    class LinkWoodSwordLeftAnimation : ISprite
     {
         private int windowHeight;
         private int windowWidth;
         public Texture2D Texture;
 
-        public LinkSwordLeftAnimation(Game1 game)
+        public LinkWoodSwordLeftAnimation(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             windowHeight = game._graphics.PreferredBackBufferHeight;
