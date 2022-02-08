@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework.Input;
 
 namespace Zelda_Game
 {
@@ -6,12 +7,15 @@ namespace Zelda_Game
     {
         KeyboardState userInput;
         private Game1 game;
-        public KeyBoardController(Game1 _game)
+        private List<IEnviornment> List;
+        public KeyBoardController(Game1 _game, List<IEnviornment> blockList)
         {
             game = _game;
+            List = blockList;
         }
         public void Update()
         {
+            int i = 0;
             userInput = Keyboard.GetState();
             if (userInput.IsKeyDown(Keys.D0) || userInput.IsKeyDown(Keys.NumPad0))
             {
@@ -35,7 +39,13 @@ namespace Zelda_Game
             }
             else if (userInput.IsKeyDown(Keys.T))
             {
-                game.enviornment = new SquareBlock(game);
+                game.enviornment = List[i];
+                i++;
+            }
+            else if (userInput.IsKeyDown(Keys.Y))
+            {
+                game.enviornment = List[i];
+                i--;
             }
         }
     }

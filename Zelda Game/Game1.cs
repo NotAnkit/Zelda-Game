@@ -16,6 +16,8 @@ namespace Zelda_Game
         public IEnviornment enviornment;
         public Vector2 spritePosition;
         private Game1 game;
+        public List<IEnviornment> blockList;
+
 
         public Game1()
         {
@@ -27,7 +29,22 @@ namespace Zelda_Game
         protected override void Initialize()
         {
             controllerList = new List<IController>();
-            controllerList.Add(new KeyBoardController(this));
+            blockList = new List<IEnviornment>();
+            //controllerList.Add(new KeyBoardController(this, blockList));
+
+            blockList.Add(new SquareBlock(this));
+            blockList.Add(new BlackBlock(this));
+            blockList.Add(new BlueSand(this));
+            blockList.Add(new BrickBlock(this));
+            blockList.Add(new LadderBlock(this));
+            blockList.Add(new NavyBlueBlock(this));
+            blockList.Add(new PushableBlock(this));
+            blockList.Add(new Stairs(this));
+            blockList.Add(new Statue1(this));
+            blockList.Add(new Statue2(this));
+
+            controllerList.Add(new KeyBoardController(this, blockList));
+
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 400;
             _graphics.ApplyChanges();
@@ -39,8 +56,12 @@ namespace Zelda_Game
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteSheet = Content.Load<Texture2D>("Sprite Sheet");
             sprite = new NonMovingNonAnimated();
+<<<<<<< Updated upstream
             link = new Link(game);
             enviornment = new BlackBlock(this);
+=======
+            enviornment = new SquareBlock(this);
+>>>>>>> Stashed changes
             spritePosition = new Vector2(350, 250);
         }
 
