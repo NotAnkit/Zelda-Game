@@ -45,7 +45,7 @@ namespace Zelda_Game
             {
                 controller.Update();
             }
-            sprite.update();
+            sprite.Update();
             base.Update(gameTime);
         }
 
@@ -53,7 +53,7 @@ namespace Zelda_Game
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin();
-            spritePosition = sprite.draw(_spriteBatch, spritePosition, spriteSheet);
+            spritePosition = sprite.Draw(_spriteBatch, spritePosition, spriteSheet);
             _spriteBatch.End();
 
             base.Draw(gameTime);
