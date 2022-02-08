@@ -16,6 +16,10 @@ namespace Zelda_Game
             windowWidth = game._graphics.PreferredBackBufferWidth;
         }
 
+        public Stairs()
+        {
+        }
+
         public void Update()
         {
         }

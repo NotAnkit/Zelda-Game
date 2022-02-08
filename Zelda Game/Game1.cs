@@ -12,7 +12,9 @@ namespace Zelda_Game
         private SpriteBatch _spriteBatch;
         private List<IController> controllerList;
         public ISprite sprite;
+        public IEnviornment enviornment;
         public Vector2 spritePosition;
+        private Game1 game;
 
         public Game1()
         {
@@ -36,6 +38,7 @@ namespace Zelda_Game
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteSheet = Content.Load<Texture2D>("Sprite Sheet");
             sprite = new NonMovingNonAnimated();
+            enviornment = new BlackBlock(this);
             spritePosition = new Vector2(350, 250);
         }
 
@@ -55,6 +58,7 @@ namespace Zelda_Game
             _spriteBatch.Begin();
             spritePosition = sprite.Draw(_spriteBatch, spritePosition, spriteSheet);
             _spriteBatch.End();
+            enviornment.Draw(_spriteBatch);
 
             base.Draw(gameTime);
         }

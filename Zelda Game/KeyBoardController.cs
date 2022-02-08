@@ -32,8 +32,10 @@ namespace Zelda_Game
             else if (userInput.IsKeyDown(Keys.D4) || userInput.IsKeyDown(Keys.NumPad4))
             {
                 game.sprite = new MovingAnimated();
-
-
+            }
+            else if (userInput.IsKeyDown(Keys.T))
+            {
+                game.enviornment = new SquareBlock(game);
             }
         }
     }
