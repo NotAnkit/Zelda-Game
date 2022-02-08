@@ -19,7 +19,7 @@ namespace Zelda_Game
             throw new NotImplementedException();
         }
 
-        public Vector2 draw(SpriteBatch spriteBatch, Vector2 location, Texture2D texture)
+        public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location, Texture2D texture)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -56,7 +56,7 @@ namespace Zelda_Game
             return _location = location;
         }
 
-        public void update()
+        public void Update()
         {
             currentFrame++;
             if (currentFrame == totalFrames)

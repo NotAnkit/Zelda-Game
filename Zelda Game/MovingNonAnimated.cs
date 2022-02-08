@@ -7,7 +7,7 @@ namespace Zelda_Game
     class MovingNonAnimated : ISprite
     {
         Vector2 _location;
-        public void draw(SpriteBatch spriteBatch, Vector2 location, SpriteFont font)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location, SpriteFont font)
         {
             throw new NotImplementedException();
         }
@@ -26,7 +26,7 @@ namespace Zelda_Game
             return _location = location;
         }
 
-        public void update()
+        public void Update()
         {
 
         }

@@ -8,7 +8,7 @@ namespace Zelda_Game
     {
         int currentFrame = 0;
         int totalFrames = 4;
-        public Vector2 draw(SpriteBatch spriteBatch, Vector2 location, Texture2D texture)
+        public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location, Texture2D texture)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -43,7 +43,7 @@ namespace Zelda_Game
             throw new NotImplementedException();
         }
 
-        public void update()
+        public void Update()
         {
             currentFrame++;
             if (currentFrame == totalFrames)
