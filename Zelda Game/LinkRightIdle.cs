@@ -11,8 +11,8 @@ namespace Zelda_Game
 
         public LinkRightIdle(Game1 game)
         {
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            //windowHeight = game._graphics.PreferredBackBufferHeight;
+            //windowWidth = game._graphics.PreferredBackBufferWidth;
         }
 
         public void Update()

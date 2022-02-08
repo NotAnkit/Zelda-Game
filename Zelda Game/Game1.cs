@@ -9,19 +9,15 @@ namespace Zelda_Game
         public SpriteFont font;
         public Texture2D spriteSheet;
         public GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        public SpriteBatch _spriteBatch;
         private List<IController> controllerList;
         public ISprite sprite;
         public Link link;
         public IEnemy enemy;
         public IEnviornment enviornment;
         public Vector2 spritePosition;
-<<<<<<< Updated upstream
         private Game1 game;
         public List<IEnviornment> blockList;
-
-=======
->>>>>>> Stashed changes
 
         public Game1()
         {

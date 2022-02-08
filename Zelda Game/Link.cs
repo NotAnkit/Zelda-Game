@@ -8,9 +8,8 @@ namespace Zelda_Game
     {
         public string direction = "right";
         public ILinkState state;
-        private Game1 game;
-
-
+        public Game1 game;
+        public ISprite link;
         public Link(Game1 _game)
         {
             game = _game;
@@ -19,12 +18,17 @@ namespace Zelda_Game
 
         public void Update()
         {
-            state.ChangeDirection(direction);
+            //state.ChangeDirection(direction);
         }
 
         public void useItem()
         {
 
+        }
+
+        public void draw()
+        {
+            //link.Draw(game._spriteBatch, game.spritePosition);
         }
     }
 }

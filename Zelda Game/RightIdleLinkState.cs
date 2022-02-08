@@ -9,6 +9,8 @@ namespace Zelda_Game
         public RightIdleLinkState(Link link)
         {
             player = link;
+            player.link = new LinkRightIdle(player.game);
+
         }
 
         public void ChangeDirection(string direction)
