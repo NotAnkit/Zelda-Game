@@ -1,10 +1,12 @@
 ﻿using System;
-namespace Zelda_Game.LinkState
+using Zelda_Game.LinkState;
+
+namespace Zelda_Game
 {
-    public class LeftMovingLinkState : ILinkState
+    public class RightMovingLinkState : ILinkState
     {
         private Link player;
-        public LeftMovingLinkState(Link link)
+        public RightMovingLinkState(Link link)
         {
             player = link;
         }
@@ -15,9 +17,9 @@ namespace Zelda_Game.LinkState
             {
                 player.state = new UpMovingLinkState(player);
             }
-            else if (direction.Equals("right"))
+            else if (direction.Equals("left"))
             {
-                player.state = new RightMovingLinkState(player);
+                player.state = new LeftMovingLinkState(player);
             }
             else if (direction.Equals("down"))
             {

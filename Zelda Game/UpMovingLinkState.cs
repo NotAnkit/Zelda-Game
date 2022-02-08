@@ -1,19 +1,21 @@
 ﻿using System;
-namespace Zelda_Game.LinkState
+using Zelda_Game.LinkState;
+
+namespace Zelda_Game
 {
-    public class LeftMovingLinkState : ILinkState
+    public class UpMovingLinkState : ILinkState
     {
         private Link player;
-        public LeftMovingLinkState(Link link)
+        public UpMovingLinkState(Link link)
         {
             player = link;
         }
 
         public void ChangeDirection(string direction)
         {
-            if (direction.Equals("up"))
+            if (direction.Equals("left"))
             {
-                player.state = new UpMovingLinkState(player);
+                player.state = new LeftMovingLinkState(player);
             }
             else if (direction.Equals("right"))
             {
