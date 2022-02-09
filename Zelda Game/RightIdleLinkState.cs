@@ -30,10 +30,11 @@ namespace Zelda_Game
             {
                 player.currentState = new DownMovingLinkState(player);
             }
-            else
+            else if(direction.Equals("right"))
             {
-                //Nothing
+                player.currentState = new RightMovingLinkState(player);
             }
+
         }
 
         public void ChangeWeapon()
@@ -48,7 +49,7 @@ namespace Zelda_Game
 
         public void Update()
         {
-            throw new NotImplementedException();
+            sprite.Update();
         }
 
         public void UseItem()

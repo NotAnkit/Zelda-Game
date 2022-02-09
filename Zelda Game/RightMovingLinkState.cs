@@ -8,9 +8,11 @@ namespace Zelda_Game
     public class RightMovingLinkState : ILinkState
     {
         private Link player;
+        private ISprite sprite;
         public RightMovingLinkState(Link link)
         {
             player = link;
+            sprite = LinkSpriteFactory.Instance.LinkRightAnimationSprite();
         }
 
         public void ChangeDirection(string direction)
@@ -33,17 +35,18 @@ namespace Zelda_Game
             }
         }
 
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        { 
+            sprite.Draw(spriteBatch, location);
+        }
+
         public Vector2 ChangePosition(Vector2 location)
         {
-            throw new NotImplementedException();
+            location.X++;
+            return location;
         }
 
         public void ChangeWeapon()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             throw new NotImplementedException();
         }
@@ -55,7 +58,7 @@ namespace Zelda_Game
 
         public void Update()
         {
-            throw new NotImplementedException();
+            sprite.Update();
         }
 
         public void UseItem()

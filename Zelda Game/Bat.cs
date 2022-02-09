@@ -70,9 +70,9 @@ namespace Zelda_Game
             else
                 sourceRectangle = new Rectangle(200, 11, 16, 16);
 
-            spriteBatch.Begin();
+            
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            
         }
 
     }

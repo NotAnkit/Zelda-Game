@@ -21,7 +21,8 @@ namespace Zelda_Game
 
         public void Update()
         {
-            currentState.ChangePosition(position);
+            position = currentState.ChangePosition(position);
+            currentState.Update();
             currentState.ChangeDirection(direction);
         }
 
