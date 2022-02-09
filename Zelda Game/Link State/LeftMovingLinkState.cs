@@ -1,4 +1,7 @@
 ﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
 namespace Zelda_Game.LinkState
 {
     public class LeftMovingLinkState : ILinkState
@@ -7,22 +10,22 @@ namespace Zelda_Game.LinkState
         public LeftMovingLinkState(Link link)
         {
             player = link;
-            player.link = new LinkLeftAnimation(player.game);
+            //player.link = new LinkLeftAnimation(player.game);
         }
 
         public void ChangeDirection(string direction)
         {
             if (direction.Equals("up"))
             {
-                player.state = new UpMovingLinkState(player);
+                player.currentState = new UpMovingLinkState(player);
             }
             else if (direction.Equals("right"))
             {
-                player.state = new RightMovingLinkState(player);
+                player.currentState = new RightMovingLinkState(player);
             }
             else if (direction.Equals("down"))
             {
-                player.state = new DownMovingLinkState(player);
+                player.currentState = new DownMovingLinkState(player);
             }
             else
             {
@@ -30,7 +33,17 @@ namespace Zelda_Game.LinkState
             }
         }
 
+        public Vector2 ChangePosition(Vector2 location)
+        {
+            throw new NotImplementedException();
+        }
+
         public void ChangeWeapon()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             throw new NotImplementedException();
         }

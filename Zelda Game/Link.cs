@@ -8,16 +8,20 @@ namespace Zelda_Game
     public class Link
     {
         public string direction = "right";
+        private Vector2 position;
         public ILinkState currentState;
-        public Game1 game;
-        public Link(Game1 _game, Texture2D texture)
+        private Game1 game;
+
+        public Link(Game1 _game, Vector2 location)
         {
             game = _game;
+            position = location;
             currentState = new RightIdleLinkState(this);
         }
 
         public void Update()
         {
+            currentState.ChangePosition(position);
             currentState.ChangeDirection(direction);
         }
 
@@ -26,9 +30,9 @@ namespace Zelda_Game
 
         }
 
-        public void draw(SpriteBatch spriteBatch, Vector2 location)
+        public void draw(SpriteBatch spriteBatch)
         {
-            currentState.Draw(spriteBatch, location);
+            currentState.Draw(spriteBatch, position);
         }
     }
 }

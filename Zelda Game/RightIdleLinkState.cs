@@ -12,7 +12,7 @@ namespace Zelda_Game
         public RightIdleLinkState(Link link)
         {
             player = link;
-            //sprite = new LinkRightIdle(player.game, texture); Add the sprite factory to add
+            sprite = LinkSpriteFactory.Instance.LinkRightIdleSprite();
 
         }
 
@@ -59,6 +59,11 @@ namespace Zelda_Game
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             sprite.Draw(spriteBatch, location);
+        }
+
+        public Vector2 ChangePosition(Vector2 location)
+        {
+            return location;
         }
     }
 }

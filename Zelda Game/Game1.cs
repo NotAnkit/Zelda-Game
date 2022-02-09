@@ -55,9 +55,10 @@ namespace Zelda_Game
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             Texture = Content.Load<Texture2D>("ItemSheet");
-
+            LinkSpriteFactory.Instance.LoadAllTextures(Content);
             enviornment = blockList[0];
-            link = new Link(game, Texture);
+            link = new Link(game, spritePosition);
+
             enemy = new Bat(this);
             spritePosition = new Vector2(350, 250);
         }
@@ -77,7 +78,7 @@ namespace Zelda_Game
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            link.draw(_spriteBatch, spritePosition);
+            link.draw(_spriteBatch);
             enviornment.Draw(_spriteBatch);
             enemy.Draw(_spriteBatch);
 
