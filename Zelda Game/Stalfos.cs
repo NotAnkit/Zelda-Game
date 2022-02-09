@@ -1,9 +1,10 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace Zelda_Game
 {
-    /*animate and move left/right across screen*/
+    /*animate and move arbitrarily across screen*/
     public class Stalfos : IEnemy
     {
         public Texture2D Texture;
@@ -31,9 +32,32 @@ namespace Zelda_Game
             if (currentFrame == totalFrames)
                 currentFrame = 0;
 
-            position.X += spriteSpeed;
-            if (position.X > windowWidth)
-                position.X = 0;
+            Random Rnd = new Random();
+            int num = Rnd.Next();
+            if (num % 4 == 0)
+            {
+                position.X += spriteSpeed;
+                if (position.X > windowWidth)
+                    position.X = 0;
+            }
+            else if (num % 4 == 1)
+            {
+                position.Y += spriteSpeed;
+                if (position.Y > windowHeight)
+                    position.Y = 0;
+            }
+            else if (num % 4 == 2)
+            {
+                position.X -= spriteSpeed;
+                if (position.X < 0)
+                    position.X = windowWidth;
+            }
+            else
+            {
+                position.Y -= spriteSpeed;
+                if (position.Y < 0)
+                    position.Y = windowHeight;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
