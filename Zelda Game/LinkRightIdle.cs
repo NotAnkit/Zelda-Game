@@ -7,9 +7,9 @@ namespace Zelda_Game
     {
         public Texture2D Texture;
 
-        public LinkRightIdle(Game1 game)
+        public LinkRightIdle(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("ItemSheet");
+            Texture = texture;
         }
 
         public void Update()

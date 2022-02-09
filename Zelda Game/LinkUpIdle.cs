@@ -6,14 +6,10 @@ namespace Zelda_Game
     public class LinkUpIdle : ISprite
     {
         public Texture2D Texture;
-        private int windowHeight;
-        private int windowWidth;
 
-        public LinkUpIdle(Game1 game)
+        public LinkUpIdle(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("ItemSheet");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            Texture = texture;
         }
 
         public void Update()

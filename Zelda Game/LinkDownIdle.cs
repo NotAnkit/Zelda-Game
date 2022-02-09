@@ -9,11 +9,9 @@ namespace Zelda_Game
         private int windowHeight;
         private int windowWidth;
 
-        public LinkDownIdle(Game1 game)
+        public LinkDownIdle(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("ItemSheet");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            Texture = texture;
         }
 
         public void Update()

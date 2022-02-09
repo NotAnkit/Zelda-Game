@@ -6,15 +6,12 @@ namespace Zelda_Game
 {
     public class LinkLeftAnimation : ISprite
     {
-        private int windowHeight;
-        private int windowWidth;
+
         public Texture2D Texture;
 
-        public LinkLeftAnimation(Game1 game)
+        public LinkLeftAnimation(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("ItemSheet");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            Texture = texture;
         }
 
         int currentFrame = 0;
