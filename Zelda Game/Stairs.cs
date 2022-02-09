@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
-    public class Stairs : IEnviornment
+    public class Stairs : IEnvironment
     {
         public Texture2D Texture;
         private int windowHeight;
@@ -25,9 +25,9 @@ namespace Zelda_Game
             Rectangle sourceRectangle = new Rectangle(1035, 28, 16, 16);
             Rectangle destinationRectangle = new Rectangle(100, 100, 35, 35);
 
-            spriteBatch.Begin();
+
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+
         }
     }
 }

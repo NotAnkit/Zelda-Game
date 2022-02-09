@@ -2,7 +2,7 @@
 
 namespace Zelda_Game
 {
-    public interface IEnviornment
+    public interface IEnvironment
     {
         void Update();
         void Draw(SpriteBatch spriteBatch);

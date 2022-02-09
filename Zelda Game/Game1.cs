@@ -15,10 +15,10 @@ namespace Zelda_Game
         public ISprite sprite;
         public Link link;
         public IEnemy enemy;
-        public IEnviornment enviornment;
+        public IEnvironment enviornment;
         public Vector2 spritePosition;
         private Game1 game;
-        public List<IEnviornment> blockList;
+        public List<IEnvironment> blockList;
 
         public Game1()
         {
@@ -30,7 +30,7 @@ namespace Zelda_Game
         protected override void Initialize()
         {
             controllerList = new List<IController>();
-            blockList = new List<IEnviornment>();
+            blockList = new List<IEnvironment>();
 
             blockList.Add(new SquareBlock(this));
             blockList.Add(new BlackBlock(this));
@@ -77,12 +77,14 @@ namespace Zelda_Game
 
         protected override void Draw(GameTime gameTime)
         {
+            _spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
             link.draw(_spriteBatch);
             enviornment.Draw(_spriteBatch);
             enemy.Draw(_spriteBatch);
 
             base.Draw(gameTime);
+            _spriteBatch.End();
         }
     }
 }

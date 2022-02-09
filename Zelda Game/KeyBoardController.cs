@@ -7,9 +7,9 @@ namespace Zelda_Game
     {
         KeyboardState userInput;
         private Game1 game;
-        private List<IEnviornment> List;
+        private List<IEnvironment> List;
         public int i = 0;
-        public KeyBoardController(Game1 _game, List<IEnviornment> blockList)
+        public KeyBoardController(Game1 _game, List<IEnvironment> blockList)
         {
             game = _game;
             List = blockList;

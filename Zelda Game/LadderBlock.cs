@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
-    public class LadderBlock : IEnviornment
+    public class LadderBlock : IEnvironment
     {
         public Texture2D Texture;
         private int windowHeight;
@@ -23,11 +23,11 @@ namespace Zelda_Game
         public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle = new Rectangle(1001, 45, 16, 16);
-            Rectangle destinationRectangle = new Rectangle(100, 100, 35, 35);
+            Rectangle destinationRectangle = new Rectangle(100, 100, 32, 32);
 
-            spriteBatch.Begin();
+
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+
         }
     }
 }
