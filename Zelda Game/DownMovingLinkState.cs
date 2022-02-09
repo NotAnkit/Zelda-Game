@@ -8,9 +8,11 @@ namespace Zelda_Game
     public class DownMovingLinkState : ILinkState
     {
         private Link player;
+        private ISprite sprite;
         public DownMovingLinkState(Link link)
         {
             player = link;
+            sprite = LinkSpriteFactory.Instance.LinkDownAnimationSprite();
         }
 
         public void ChangeDirection(string direction)
@@ -35,7 +37,8 @@ namespace Zelda_Game
 
         public Vector2 ChangePosition(Vector2 location)
         {
-            throw new NotImplementedException();
+            location.Y++;
+            return location;
         }
 
         public void ChangeWeapon()
@@ -45,7 +48,7 @@ namespace Zelda_Game
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            throw new NotImplementedException();
+            sprite.Draw(spriteBatch, location);
         }
 
         public void ThrowItem()
@@ -55,7 +58,7 @@ namespace Zelda_Game
 
         public void Update()
         {
-            throw new NotImplementedException();
+            sprite.Update();
         }
 
         public void UseItem()
