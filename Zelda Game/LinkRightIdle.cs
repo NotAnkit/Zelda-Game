@@ -19,11 +19,11 @@ namespace Zelda_Game
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(35, 11, 16, 16);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
 
-            spriteBatch.Begin();
+  
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+       
 
             return location;
         }

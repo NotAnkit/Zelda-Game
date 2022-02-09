@@ -6,14 +6,10 @@ namespace Zelda_Game
     public class LinkUseItemUp : ISprite
     {
         public Texture2D Texture;
-        private int windowHeight;
-        private int windowWidth;
 
-        public LinkUseItemUp(Game1 game)
+        public LinkUseItemUp(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("ItemSheet");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            Texture = texture;
         }
 
         public void Update()
@@ -23,11 +19,9 @@ namespace Zelda_Game
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(141, 11, 16, 16);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
 
-            spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
 
             return location;
         }

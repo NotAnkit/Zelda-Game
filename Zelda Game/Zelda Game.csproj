@@ -31,4 +31,7 @@
   <ItemGroup>
     <Folder Include="Link State\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="LinkSpriteFactory.cs" />
+  </ItemGroup>
 </Project>

@@ -11,39 +11,37 @@ namespace Zelda_Game
         private int windowWidth;
         public Texture2D Texture;
 
-        public LinkWoodSwordRightAnimation(Game1 game)
+        public LinkWoodSwordRightAnimation(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("ItemSheet");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            Texture = texture;
         }
 
         int currentFrame = 0;
-        int totalFrames = 4;
+        int totalFrames = 60;
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            if (currentFrame == 0)
+            if (currentFrame == 15)
             {
                 sourceRectangle = new Rectangle(124, 11, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
             }
-            else if (currentFrame == 1)
+            else if (currentFrame == 30)
             {
-                sourceRectangle = new Rectangle(18, 77, 27, 17);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 27, 17);
+                sourceRectangle = new Rectangle(18, 77, 27, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 54, 32);
             }
-            else if (currentFrame == 2)
+            else if (currentFrame == 45)
             {
-                sourceRectangle = new Rectangle(46, 77, 23, 17);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 23, 17);
+                sourceRectangle = new Rectangle(46, 77, 23, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 46, 32);
             }
             else
             {
-                sourceRectangle = new Rectangle(70, 77, 19, 17);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 19, 17);
+                sourceRectangle = new Rectangle(70, 77, 19, 16);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 38, 32);
             }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
