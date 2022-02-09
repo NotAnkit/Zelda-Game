@@ -75,6 +75,21 @@ namespace Zelda_Game
             return new LinkWoodSwordDownAnimation(LinkSpritesheet);
         }
 
+        public ISprite LinkWoodSwordUpAnimationSprite()
+        {
+            return new LinkWoodSwordUpAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkWoodSwordLeftAnimationSprite()
+        {
+            return new LinkWoodSwordLeftAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkWoodSwordRightAnimationSprite()
+        {
+            return new LinkWoodSwordRightAnimation(LinkSpritesheet);
+        }
+
         // More public ISprite returning methods follow
         // ...
     }

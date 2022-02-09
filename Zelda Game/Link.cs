@@ -10,12 +10,14 @@ namespace Zelda_Game
         public string direction = "right";
         private Vector2 position;
         public ILinkState currentState;
+        private SpriteBatch _spriteBatch;
         private Game1 game;
 
-        public Link(Game1 _game, Vector2 location)
+        public Link(Game1 _game, Vector2 location, SpriteBatch spriteBatch)
         {
             game = _game;
             position = location;
+            _spriteBatch = spriteBatch;
             currentState = new RightIdleLinkState(this);
         }
 
@@ -29,6 +31,11 @@ namespace Zelda_Game
         public void useItem()
         {
 
+        }
+
+        public void useSword()
+        {
+            currentState.UseSword();
         }
 
         public void draw(SpriteBatch spriteBatch)

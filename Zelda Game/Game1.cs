@@ -6,9 +6,6 @@ namespace Zelda_Game
 {
     public class Game1 : Game
     {
-        public SpriteFont font;
-        public Texture2D spriteSheet;
-        public Texture2D Texture;
         public GraphicsDeviceManager _graphics;
         public SpriteBatch _spriteBatch;
         private List<IController> controllerList;
@@ -54,10 +51,9 @@ namespace Zelda_Game
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            Texture = Content.Load<Texture2D>("ItemSheet");
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
             enviornment = blockList[0];
-            link = new Link(game, spritePosition);
+            link = new Link(game, spritePosition, _spriteBatch);
 
             enemy = new Bat(this);
             spritePosition = new Vector2(350, 250);

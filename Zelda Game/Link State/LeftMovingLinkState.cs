@@ -64,5 +64,10 @@ namespace Zelda_Game.LinkState
         {
             throw new NotImplementedException();
         }
+
+        public void UseSword()
+        {
+            sprite = LinkSpriteFactory.Instance.LinkWoodSwordLeftAnimationSprite();
+        }
     }
 }

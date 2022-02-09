@@ -41,6 +41,11 @@ namespace Zelda_Game
                 game.link.direction = "right";
                 game.link.Update();
             }
+            else if (userInput.IsKeyDown(Keys.Z) || userInput.IsKeyDown(Keys.N))
+            {
+                game.link.useSword();
+                
+            }
             if (userInput.IsKeyDown(Keys.T))
             {
                 i++;

@@ -66,5 +66,10 @@ namespace Zelda_Game
         {
             return location;
         }
+
+        public void UseSword()
+        {
+            sprite = LinkSpriteFactory.Instance.LinkWoodSwordRightAnimationSprite();
+        }
     }
 }
