@@ -5,7 +5,10 @@ using System.Collections.Generic;
 namespace Zelda_Game
 {
     public class Game1 : Game
-    { 
+    {
+        public SpriteFont font;
+        public Texture2D spriteSheet;
+        public Texture2D Texture;
         public GraphicsDeviceManager _graphics;
         public SpriteBatch _spriteBatch;
         private List<IController> controllerList;
@@ -28,7 +31,7 @@ namespace Zelda_Game
         {
             controllerList = new List<IController>();
             blockList = new List<IEnvironment>();
-         
+
             blockList.Add(new SquareBlock(this));
             blockList.Add(new BlackBlock(this));
             blockList.Add(new BlueSand(this));
@@ -51,6 +54,7 @@ namespace Zelda_Game
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            Texture = Content.Load<Texture2D>("ItemSheet");
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
             enviornment = blockList[0];
             link = new Link(game, spritePosition);
@@ -65,6 +69,7 @@ namespace Zelda_Game
             {
                 controller.Update();
             }
+            
             enviornment.Update();
             enemy.Update();
             base.Update(gameTime);
@@ -72,16 +77,14 @@ namespace Zelda_Game
 
         protected override void Draw(GameTime gameTime)
         {
-            
-            GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin();
+            GraphicsDevice.Clear(Color.CornflowerBlue);
             link.draw(_spriteBatch);
             enviornment.Draw(_spriteBatch);
             enemy.Draw(_spriteBatch);
-            _spriteBatch.End();
 
             base.Draw(gameTime);
-          
+            _spriteBatch.End();
         }
     }
 }
