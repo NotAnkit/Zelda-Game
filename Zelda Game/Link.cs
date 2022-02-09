@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Zelda_Game.LinkState;
 
 namespace Zelda_Game
@@ -7,18 +8,17 @@ namespace Zelda_Game
     public class Link
     {
         public string direction = "right";
-        public ILinkState state;
+        public ILinkState currentState;
         public Game1 game;
-        public ISprite link;
-        public Link(Game1 _game)
+        public Link(Game1 _game, Texture2D texture)
         {
             game = _game;
-            state = new RightIdleLinkState(this);
+            currentState = new RightIdleLinkState(this);
         }
 
         public void Update()
         {
-            //state.ChangeDirection(direction);
+            currentState.ChangeDirection(direction);
         }
 
         public void useItem()
@@ -26,9 +26,9 @@ namespace Zelda_Game
 
         }
 
-        public void draw()
+        public void draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            link.Draw(game._spriteBatch, game.spritePosition);
+            currentState.Draw(spriteBatch, location);
         }
     }
 }

@@ -27,5 +27,6 @@ namespace Zelda_Game
 
             return location;
         }
+
     }
 }

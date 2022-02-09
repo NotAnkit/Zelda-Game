@@ -7,6 +7,7 @@ namespace Zelda_Game.LinkState
         public LeftMovingLinkState(Link link)
         {
             player = link;
+            player.link = new LinkLeftAnimation(player.game);
         }
 
         public void ChangeDirection(string direction)
