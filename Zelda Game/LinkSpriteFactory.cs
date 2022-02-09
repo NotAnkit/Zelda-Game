@@ -70,6 +70,11 @@ namespace Zelda_Game
 			return new LinkUpIdle(LinkSpritesheet);
 		}
 
+		public ISprite LinkWoodSwordDownAnimationSprite()
+		{
+			return new LinkWoodSwordDownAnimation(LinkSpritesheet);
+		}
+
 		// More public ISprite returning methods follow
 		// ...
 	}
