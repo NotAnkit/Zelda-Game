@@ -29,22 +29,22 @@ namespace Zelda_Game
             else if (currentFrame <= 24)
             {
                 sourceRectangle = new Rectangle(10, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X + 16, (int)location.Y + 16, 32, 32);
+                destinationRectangle = new Rectangle((int)location.X + 32, (int)location.Y, 32, 32);
             }
             else if (currentFrame <= 36)
             {
                 sourceRectangle = new Rectangle(10, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X + 32, (int)location.Y + 32, 32, 32);
+                destinationRectangle = new Rectangle((int)location.X + 64, (int)location.Y, 32, 32);
             }
             else if (currentFrame <= 48)
             {
                 sourceRectangle = new Rectangle(10, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X + 48, (int)location.Y + 48, 32, 32);
+                destinationRectangle = new Rectangle((int)location.X + 96, (int)location.Y, 32, 32);
             }
             else
             {
                 sourceRectangle = new Rectangle(53, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X + 48, (int)location.Y + 48, 32, 32);
+                destinationRectangle = new Rectangle((int)location.X + 128, (int)location.Y + 48, 32, 32);
             }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
