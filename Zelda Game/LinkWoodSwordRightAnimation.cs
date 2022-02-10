@@ -6,9 +6,6 @@ namespace Zelda_Game
 {
     class LinkWoodSwordRightAnimation : ISprite
     {
-
-        private int windowHeight;
-        private int windowWidth;
         public Texture2D Texture;
 
         public LinkWoodSwordRightAnimation(Texture2D texture)
