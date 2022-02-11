@@ -29,11 +29,11 @@ namespace Zelda_Game
             {
                 player.currentState = new DownMovingLinkState(player);
             }
-            else if(direction.Equals("right"))
+            else if (direction.Equals("right"))
             {
                 player.currentState = new RightMovingLinkState(player);
             }
-            
+
         }
 
         public Vector2 ChangePosition(Vector2 location)
