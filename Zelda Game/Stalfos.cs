@@ -21,27 +21,29 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
             totalFrames = 60;
-            spriteSpeed = 5f;
+            spriteSpeed = 2f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             position = new Vector2(windowWidth / 2, windowHeight / 2);
         }
 
         int movementCounter = 0;
+        int num = 0;
+
         public void Update()
         {
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
 
-            Random Rnd = new Random();
-            if(movementCounter == 10)
-            {
-                Rnd = new Random();
-            }
+            Random rnd = new Random();
             movementCounter++;
+            if (movementCounter == 10)
+            {
+                num = rnd.Next(); 
+                movementCounter = 0;
+            }
 
-            int num = Rnd.Next();
             if (num % 4 == 0)
             {
                 position.X += spriteSpeed;
