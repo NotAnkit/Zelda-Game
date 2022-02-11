@@ -55,8 +55,7 @@ namespace Zelda_Game
             itemList.Add(new FairyItem(this));
             itemList.Add(new ClockItem(this));
 
-            controllerList.Add(new KeyBoardController(this, blockList));
-            controllerList.Add(new KeyBoardController(this, itemList)); //not sure if i should add item list to this
+            controllerList.Add(new KeyBoardController(this, blockList, itemList));
             controllerList.Add(new EnemyController(this));
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 400;

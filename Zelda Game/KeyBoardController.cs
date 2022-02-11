@@ -10,15 +10,10 @@ namespace Zelda_Game
         private List<IEnvironment> List;
         private List<IItem> List2; 
         public int i = 60;
-        public KeyBoardController(Game1 _game, List<IEnvironment> blockList)
+        public KeyBoardController(Game1 _game, List<IEnvironment> blockList, List<IItem> itemList)
         {
             game = _game;
             List = blockList;
-
-        }
-        public KeyBoardController(Game1 _game, List<IItem> itemList) //might change -Moh
-        {
-            game = _game;
             List2 = itemList;
 
         }
@@ -89,7 +84,7 @@ namespace Zelda_Game
                 game.item = List2[i];
 
             }
-            else if (userInput.IsKeyDown(Keys.I)
+            else if (userInput.IsKeyDown(Keys.I))
             {
                 i--;
                 if (i < 0)
