@@ -19,7 +19,7 @@ namespace Zelda_Game
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
-            totalFrames = 3;
+            totalFrames = 60;
             spriteSpeed = 4f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
@@ -65,7 +65,7 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
-            if (currentFrame == 0)
+            if (currentFrame <= 30)
                 sourceRectangle = new Rectangle(183, 11, 16, 16);
             else
                 sourceRectangle = new Rectangle(200, 11, 16, 16);

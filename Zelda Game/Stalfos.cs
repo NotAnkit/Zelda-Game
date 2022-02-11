@@ -20,13 +20,14 @@ namespace Zelda_Game
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
-            totalFrames = 2;
+            totalFrames = 60;
             spriteSpeed = 5f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             position = new Vector2(windowWidth / 2, windowHeight / 2);
         }
 
+        int movementCounter = 0;
         public void Update()
         {
             currentFrame++;
@@ -34,6 +35,12 @@ namespace Zelda_Game
                 currentFrame = 0;
 
             Random Rnd = new Random();
+            if(movementCounter == 10)
+            {
+                Rnd = new Random();
+            }
+            movementCounter++;
+
             int num = Rnd.Next();
             if (num % 4 == 0)
             {
@@ -66,7 +73,7 @@ namespace Zelda_Game
             Rectangle sourceRectangle = new Rectangle(1, 59, 16, 16);
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
-            if (currentFrame == 0)
+            if (currentFrame <= 30)
                 sourceRectangle = new Rectangle(1, 59, 16, 16); /*normal*/
             else
                 sourceRectangle = new Rectangle(1, 59, 16, 16); /*flip*/
