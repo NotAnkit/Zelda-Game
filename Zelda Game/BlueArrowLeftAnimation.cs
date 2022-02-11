@@ -1,15 +1,16 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
+
 
 namespace Zelda_Game
 {
-    class LinkWoodSwordLeftAnimation : ISprite
+    class BlueArrowLeftAnimation : ISprite
     {
-  
+
         public Texture2D Texture;
 
-        public LinkWoodSwordLeftAnimation(Texture2D texture)
+        public BlueArrowLeftAnimation(Texture2D texture)
         {
             Texture = texture;
         }
@@ -21,26 +22,33 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            if (currentFrame <= 15)
+            if (currentFrame <= 12)
             {
-                sourceRectangle = new Rectangle(124, 11, 16, 16);
+                sourceRectangle = new Rectangle(36, 185, 16, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
             }
-            else if (currentFrame <= 30)
+            else if (currentFrame <= 24)
             {
-                sourceRectangle = new Rectangle(18, 77, 27, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 54, 32);
+                sourceRectangle = new Rectangle(36, 185, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X - 32, (int)location.Y, 32, 32);
             }
-            else if (currentFrame <= 45)
+            else if (currentFrame <= 36)
             {
-                sourceRectangle = new Rectangle(46, 77, 23, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 46, 32);
+                sourceRectangle = new Rectangle(36, 185, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X - 64, (int)location.Y, 32, 32);
+            }
+            else if (currentFrame <= 48)
+            {
+                sourceRectangle = new Rectangle(36, 185, 16, 16);
+                destinationRectangle = new Rectangle((int)location.X - 96, (int)location.Y, 32, 32);
             }
             else
             {
-                sourceRectangle = new Rectangle(70, 77, 19, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 38, 32);
+
+                sourceRectangle = new Rectangle(53, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X - 128, (int)location.Y, 16, 32);
             }
+
 
             SpriteEffects s = SpriteEffects.FlipHorizontally;
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);

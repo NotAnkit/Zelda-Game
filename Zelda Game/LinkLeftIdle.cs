@@ -20,10 +20,10 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle = new Rectangle(35, 11, 16, 16);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
-            //SpriteEffects s = SpriteEffects.FlipHorizontally;
+            SpriteEffects s = SpriteEffects.FlipHorizontally;
 
             
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);
           
 
             return location;
