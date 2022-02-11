@@ -8,10 +8,12 @@ namespace Zelda_Game.LinkState
     {
         private Link player;
         private ISprite sprite;
+        
         public LeftMovingLinkState(Link link)
         {
             player = link;
             sprite = LinkSpriteFactory.Instance.LinkLeftAnimationSprite();
+            
         }
 
         public void ChangeDirection(string direction)
@@ -28,9 +30,9 @@ namespace Zelda_Game.LinkState
             {
                 player.currentState = new DownMovingLinkState(player);
             }
-            else
+            else if (direction.Equals("idle"))
             {
-                //Nothing
+                player.currentState = new RightIdleLinkState(player);
             }
         }
 
@@ -67,7 +69,7 @@ namespace Zelda_Game.LinkState
 
         public void UseSword()
         {
-            sprite = LinkSpriteFactory.Instance.LinkWoodSwordLeftAnimationSprite();
+            player.currentState = new LeftSwordLinkState(player);
         }
     }
 }

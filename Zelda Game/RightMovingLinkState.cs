@@ -9,6 +9,8 @@ namespace Zelda_Game
     {
         private Link player;
         private ISprite sprite;
+        private SpriteBatch _SpriteBatch;
+        private Vector2 position;
         public RightMovingLinkState(Link link)
         {
             player = link;
@@ -29,14 +31,16 @@ namespace Zelda_Game
             {
                 player.currentState = new DownMovingLinkState(player);
             }
-            else
+            else if(direction.Equals("idle"))
             {
-                //Nothing
+                player.currentState = new RightIdleLinkState(player);
             }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
-        { 
+        {
+            _SpriteBatch = spriteBatch;
+            position = location;
             sprite.Draw(spriteBatch, location);
         }
 
@@ -68,7 +72,8 @@ namespace Zelda_Game
 
         public void UseSword()
         {
-            sprite = LinkSpriteFactory.Instance.LinkWoodSwordRightAnimationSprite();
+            player.currentState = new RightSwordLinkState(player);
+
         }
     }
 }

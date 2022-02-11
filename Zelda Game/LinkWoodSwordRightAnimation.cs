@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 
 namespace Zelda_Game
 {
@@ -43,11 +42,6 @@ namespace Zelda_Game
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             return location;
-        }
-
-        public void draw(SpriteBatch spriteBatch, Vector2 location, SpriteFont font)
-        {
-            throw new NotImplementedException();
         }
 
         public void Update()

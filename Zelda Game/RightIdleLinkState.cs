@@ -69,7 +69,7 @@ namespace Zelda_Game
 
         public void UseSword()
         {
-            sprite = LinkSpriteFactory.Instance.LinkWoodSwordRightAnimationSprite();
+            player.currentState = new RightSwordLinkState(player);
         }
     }
 }

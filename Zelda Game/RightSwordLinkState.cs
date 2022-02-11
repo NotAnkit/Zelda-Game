@@ -5,39 +5,39 @@ using Zelda_Game.LinkState;
 
 namespace Zelda_Game
 {
-    public class UpMovingLinkState : ILinkState
+    public class RightSwordLinkState : ILinkState
     {
         private Link player;
         private ISprite sprite;
-        public UpMovingLinkState(Link link)
+        public RightSwordLinkState(Link link)
         {
             player = link;
-            sprite = LinkSpriteFactory.Instance.LinkUpAnimationSprite();
+            sprite = LinkSpriteFactory.Instance.LinkWoodSwordRightAnimationSprite();
         }
 
         public void ChangeDirection(string direction)
         {
-            if (direction.Equals("left"))
+            if (direction.Equals("up"))
+            {
+                player.currentState = new UpMovingLinkState(player);
+            }
+            else if (direction.Equals("left"))
             {
                 player.currentState = new LeftMovingLinkState(player);
-            }
-            else if (direction.Equals("right"))
-            {
-                player.currentState = new RightMovingLinkState(player);
             }
             else if (direction.Equals("down"))
             {
                 player.currentState = new DownMovingLinkState(player);
             }
-            else if (direction.Equals("idle"))
+            else if(direction.Equals("right"))
             {
-                player.currentState = new RightIdleLinkState(player);
+                player.currentState = new RightMovingLinkState(player);
             }
+            
         }
 
         public Vector2 ChangePosition(Vector2 location)
         {
-            location.Y--;
             return location;
         }
 
@@ -68,7 +68,7 @@ namespace Zelda_Game
 
         public void UseSword()
         {
-            player.currentState = new UpSwordLinkState(player);
+            sprite.Update();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Zelda_Game
         public IEnemy enemy;
         public IEnvironment enviornment;
         public Vector2 spritePosition;
-        private Game1 game;
+        //private Game1 game;
         public List<IEnvironment> blockList;
 
         public Game1()
@@ -53,8 +53,7 @@ namespace Zelda_Game
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
             enviornment = blockList[0];
-            link = new Link(game, spritePosition, _spriteBatch);
-
+            link = new Link(this, spritePosition, _spriteBatch);
             enemy = new Bat(this);
             spritePosition = new Vector2(350, 250);
         }
@@ -65,7 +64,7 @@ namespace Zelda_Game
             {
                 controller.Update();
             }
-            
+            //link.Update();
             enviornment.Update();
             enemy.Update();
             base.Update(gameTime);
@@ -78,7 +77,6 @@ namespace Zelda_Game
             link.draw(_spriteBatch);
             enviornment.Draw(_spriteBatch);
             enemy.Draw(_spriteBatch);
-
             base.Draw(gameTime);
             _spriteBatch.End();
         }

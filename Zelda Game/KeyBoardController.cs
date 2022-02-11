@@ -8,7 +8,7 @@ namespace Zelda_Game
         KeyboardState userInput;
         private Game1 game;
         private List<IEnvironment> List;
-        public int i = 0;
+        public int i = 60;
         public KeyBoardController(Game1 _game, List<IEnvironment> blockList)
         {
             game = _game;
@@ -43,9 +43,12 @@ namespace Zelda_Game
             }
             else if (userInput.IsKeyDown(Keys.Z) || userInput.IsKeyDown(Keys.N))
             {
-                game.link.useSword();
+
+                 game.link.useSword();
+                
                 
             }
+            
             if (userInput.IsKeyDown(Keys.T))
             {
                 i++;
