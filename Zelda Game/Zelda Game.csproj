@@ -31,4 +31,13 @@
   <ItemGroup>
     <Folder Include="Link State\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="BlueArrowAnimation.cs" />
+    <Compile Remove="GreenArrowLeftAnimation.cs" />
+    <Compile Remove="GreenArrowUpAnimation.cs" />
+    <Compile Remove="GreenArrowDownAnimation.cs" />
+    <Compile Remove="BlueArrowLeftAnimation.cs" />
+    <Compile Remove="BlueArrowUpAnimation.cs" />
+    <Compile Remove="BlueArrowDownAnimation.cs" />
+  </ItemGroup>
 </Project>
