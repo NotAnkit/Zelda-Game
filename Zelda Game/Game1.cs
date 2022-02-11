@@ -13,10 +13,11 @@ namespace Zelda_Game
         public Link link;
         public IEnemy enemy;
         public IEnvironment enviornment;
+        public IItem item;
         public Vector2 spritePosition;
         //private Game1 game;
         public List<IEnvironment> blockList;
-
+        public List<IItem> itemList;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -28,6 +29,7 @@ namespace Zelda_Game
         {
             controllerList = new List<IController>();
             blockList = new List<IEnvironment>();
+            itemList = new List<IItem>(); 
 
             blockList.Add(new SquareBlock(this));
             blockList.Add(new BlackBlock(this));
@@ -40,7 +42,21 @@ namespace Zelda_Game
             blockList.Add(new Statue1(this));
             blockList.Add(new Statue2(this));
 
+            itemList.Add(new CompassItem(this));
+            itemList.Add(new MapItem(this));
+            itemList.Add(new KeyItem(this));
+            itemList.Add(new HeartContainerItem(this));
+            itemList.Add(new TriforcePieceItem(this));
+            itemList.Add(new BowItem(this));
+            itemList.Add(new HeartItem(this));
+            itemList.Add(new RupeeItem(this));
+            itemList.Add(new ArrowItem(this));
+            itemList.Add(new BombItem(this));
+            itemList.Add(new FairyItem(this));
+            itemList.Add(new ClockItem(this));
+
             controllerList.Add(new KeyBoardController(this, blockList));
+            controllerList.Add(new KeyBoardController(this, itemList)); //not sure if i should add item list to this
             controllerList.Add(new EnemyController(this));
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 400;
@@ -53,6 +69,7 @@ namespace Zelda_Game
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
             enviornment = blockList[0];
+            item = itemList[0]; //might change -Moh
             link = new Link(this, spritePosition, _spriteBatch);
             enemy = new Bat(this);
             spritePosition = new Vector2(350, 250);
@@ -67,6 +84,7 @@ namespace Zelda_Game
             //link.Update();
             enviornment.Update();
             enemy.Update();
+            item.Update();
             base.Update(gameTime);
         }
 
@@ -77,6 +95,7 @@ namespace Zelda_Game
             link.draw(_spriteBatch);
             enviornment.Draw(_spriteBatch);
             enemy.Draw(_spriteBatch);
+            item.Draw(_spriteBatch);
             base.Draw(gameTime);
             _spriteBatch.End();
         }

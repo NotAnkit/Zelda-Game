@@ -8,11 +8,19 @@ namespace Zelda_Game
         KeyboardState userInput;
         private Game1 game;
         private List<IEnvironment> List;
+        private List<IItem> List2; 
         public int i = 60;
         public KeyBoardController(Game1 _game, List<IEnvironment> blockList)
         {
             game = _game;
             List = blockList;
+
+        }
+        public KeyBoardController(Game1 _game, List<IItem> itemList) //might change -Moh
+        {
+            game = _game;
+            List2 = itemList;
+
         }
         public void Update()
         {
@@ -69,6 +77,27 @@ namespace Zelda_Game
                 game.enviornment = List[i];
             }
 
+            //item list
+
+            if (userInput.IsKeyDown(Keys.U))
+            {
+                i++;
+                if (i > 11)
+                {
+                    i = 0;
+                }
+                game.item = List2[i];
+
+            }
+            else if (userInput.IsKeyDown(Keys.I)
+            {
+                i--;
+                if (i < 0)
+                {
+                    i = 11;
+                }
+                game.item = List2[i];
+            }
 
         }
     }
