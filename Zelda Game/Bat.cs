@@ -4,7 +4,6 @@ using System;
 
 namespace Zelda_Game
 {
-    /*animate and move arbitrarily across screen*/
     public class Bat : IEnemy
     {
         public Texture2D Texture;
@@ -19,12 +18,15 @@ namespace Zelda_Game
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
-            totalFrames = 60;
-            spriteSpeed = 4f;
+            totalFrames = 30;
+            spriteSpeed = 1f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             position = new Vector2(windowWidth / 2, windowHeight / 2);
         }
+
+        int movementCounter;
+        int num;
 
         public void Update()
         {
@@ -32,8 +34,14 @@ namespace Zelda_Game
             if (currentFrame == totalFrames)
                 currentFrame = 0;
 
-            Random Rnd = new Random();
-            int num = Rnd.Next();
+            Random rnd = new Random();
+            movementCounter++;
+            if (movementCounter == 15)
+            {
+                num = rnd.Next();
+                movementCounter = 0;
+            }
+
             if (num % 4 == 0)
             {
                 position.X += spriteSpeed;
@@ -65,7 +73,7 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
-            if (currentFrame <= 30)
+            if (currentFrame <= totalFrames/2)
                 sourceRectangle = new Rectangle(183, 11, 16, 16);
             else
                 sourceRectangle = new Rectangle(200, 11, 16, 16);

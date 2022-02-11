@@ -9,7 +9,7 @@ namespace Zelda_Game
         private int windowHeight;
         private int windowWidth;
 
-        public CLockItem(Game1 game)
+        public ClockItem(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("WeaponSheet");
             windowHeight = game._graphics.PreferredBackBufferHeight;

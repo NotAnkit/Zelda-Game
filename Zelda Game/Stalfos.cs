@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Zelda_Game
 {
-    /*animate and move arbitrarily across screen*/
+    /* NEED TO FLIP */
     public class Stalfos : IEnemy
     {
         public Texture2D Texture;
@@ -20,8 +20,8 @@ namespace Zelda_Game
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
-            totalFrames = 60;
-            spriteSpeed = 2f;
+            totalFrames = 30;
+            spriteSpeed = 1f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             position = new Vector2(windowWidth / 2, windowHeight / 2);
@@ -38,7 +38,7 @@ namespace Zelda_Game
 
             Random rnd = new Random();
             movementCounter++;
-            if (movementCounter == 10)
+            if (movementCounter == 15)
             {
                 num = rnd.Next(); 
                 movementCounter = 0;
@@ -75,10 +75,10 @@ namespace Zelda_Game
             Rectangle sourceRectangle = new Rectangle(1, 59, 16, 16);
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
-            if (currentFrame <= 30)
-                sourceRectangle = new Rectangle(1, 59, 16, 16); /*normal*/
+            if (currentFrame <= totalFrames/2)
+                sourceRectangle = new Rectangle(1, 59, 16, 16);
             else
-                sourceRectangle = new Rectangle(1, 59, 16, 16); /*flip*/
+                sourceRectangle = new Rectangle(1, 59, 16, 16);
 
             
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
