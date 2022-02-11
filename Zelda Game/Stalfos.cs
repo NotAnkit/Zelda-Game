@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System;
+using System.Threading;
 
 namespace Zelda_Game
 {
@@ -20,7 +21,7 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
             totalFrames = 2;
-            spriteSpeed = 3f;
+            spriteSpeed = 5f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             position = new Vector2(windowWidth / 2, windowHeight / 2);
@@ -62,13 +63,13 @@ namespace Zelda_Game
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Rectangle sourceRectangle = new Rectangle(0, 55, 15, 15);
+            Rectangle sourceRectangle = new Rectangle(1, 59, 16, 16);
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
             if (currentFrame == 0)
-                sourceRectangle = new Rectangle(0, 55, 15, 15); /*normal*/
+                sourceRectangle = new Rectangle(1, 59, 16, 16); /*normal*/
             else
-                sourceRectangle = new Rectangle(0, 55, 15, 15); /*flip*/
+                sourceRectangle = new Rectangle(1, 59, 16, 16); /*flip*/
 
             
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
