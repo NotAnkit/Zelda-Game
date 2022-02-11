@@ -63,7 +63,7 @@ namespace Zelda_Game
         public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle = new Rectangle(0, 55, 15, 15);
-            Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 15, 15);
+            Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
             if (currentFrame == 0)
                 sourceRectangle = new Rectangle(0, 55, 15, 15); /*normal*/

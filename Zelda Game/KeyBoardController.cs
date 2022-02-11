@@ -68,6 +68,8 @@ namespace Zelda_Game
                 }
                 game.enviornment = List[i];
             }
+
+
         }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
+    /*currently stationary*/
     public class Dragon : IEnemy
     {
         public Texture2D Texture;
@@ -23,7 +24,7 @@ namespace Zelda_Game
         public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle = new Rectangle(1, 10, 24, 32);
-            Rectangle destinationRectangle = new Rectangle(windowWidth / 2, windowHeight / 2, 24, 32);
+            Rectangle destinationRectangle = new Rectangle(windowWidth / 2, windowHeight / 2, 48, 64);
 
             
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

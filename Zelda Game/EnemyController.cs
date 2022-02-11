@@ -1,56 +1,47 @@
 ﻿using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace Zelda_Game
 {
     public class EnemyController : IController
     {
         /*fix so that pressing the key makes the event happen only once - not continuously*/
+        KeyboardState state;
         public Game1 Game;
         private int numberOfEnemies = 6;
         public int currentEnemyValue = 0;
+        private List<IEnemy> enemyList;
 
         public EnemyController(Game1 game)
         {
             Game = game;
+            enemyList = new List<IEnemy>();
+            enemyList.Add(new Bat(Game));
+            enemyList.Add(new Stalfos(Game));
+            enemyList.Add(new Goriya(Game));
+            enemyList.Add(new Jelly(Game));
+            enemyList.Add(new Hand(Game));
+            enemyList.Add(new Dragon(Game));
         }
 
         public void Update()
         {
-            KeyboardState state = Keyboard.GetState();
+            state = Keyboard.GetState();
             if (state.IsKeyDown(Keys.O))
             {
                 currentEnemyValue--;
-                if (currentEnemyValue == 0)
+                if (currentEnemyValue < 0)
                     currentEnemyValue = numberOfEnemies - 1;
+                Game.enemy = enemyList[currentEnemyValue];
             }
             if (state.IsKeyDown(Keys.P))
             {
                 currentEnemyValue++;
-                if (currentEnemyValue == numberOfEnemies)
+                if (currentEnemyValue >= numberOfEnemies)
                     currentEnemyValue = 0;
+                Game.enemy = enemyList[currentEnemyValue];
             }
 
-            switch (currentEnemyValue)
-            {
-                case 0:
-                    Game.enemy = new Bat(Game);
-                    break;
-                case 1:
-                    Game.enemy = new Stalfos(Game);
-                    break;
-                case 2:
-                    Game.enemy = new Goriya(Game);
-                    break;
-                case 3:
-                    Game.enemy = new Jelly(Game);
-                    break;
-                case 4:
-                    Game.enemy = new Hand(Game);
-                    break;
-                case 5:
-                    Game.enemy = new Dragon(Game);
-                    break;
-            }
         }
     }
 }
