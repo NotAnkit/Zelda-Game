@@ -7,15 +7,18 @@ namespace Zelda_Game
     public class Dragon : IEnemy
     {
         public Texture2D Texture;
+        private Game1 game;
         private int currentFrame;
         private int totalFrames;
         private float spriteSpeed;
         private int windowHeight;
         private int windowWidth;
         private Vector2 position;
+        public Fireballs fireballs;
 
         public Dragon(Game1 game)
         {
+            this.game = game;
             Texture = game.Content.Load<Texture2D>("EnemySheet");
             currentFrame = 0;
             totalFrames = 60;
@@ -23,6 +26,7 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             position = new Vector2(windowWidth / 2, windowHeight / 2);
+            Fireballs fireballs = new Fireballs(game, new Vector2(position.X, position.Y));
         }
 
         int movementCounter = 0;
@@ -53,6 +57,7 @@ namespace Zelda_Game
                 if (position.X < 0)
                     position.X = windowWidth;
             }
+            /*fireballs.Update();*/
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -70,7 +75,7 @@ namespace Zelda_Game
                 sourceRectangle = new Rectangle(76, 11, 24, 32);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            
+            fireballs.Draw(spriteBatch); 
         }
 
     }

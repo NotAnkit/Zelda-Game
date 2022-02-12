@@ -4,7 +4,7 @@ using System;
 
 namespace Zelda_Game
 {
-    public class Fireballs : IEnemy
+    public class Fireballs
     {
         public Texture2D Texture;
         private int currentFrame;
@@ -16,7 +16,7 @@ namespace Zelda_Game
         private Vector2 position2;
         private Vector2 position3;
 
-        public Fireballs(Game1 game)
+        public Fireballs(Game1 game, Vector2 startPosition)
         {
             Texture = game.Content.Load<Texture2D>("EnemySheet");
             currentFrame = 0;
