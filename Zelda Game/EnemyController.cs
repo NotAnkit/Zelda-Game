@@ -5,11 +5,11 @@ namespace Zelda_Game
 {
     public class EnemyController : IController
     {
-        /*fix so that pressing the key makes the event happen only once - not continuously*/
         KeyboardState state;
         public Game1 Game;
-        private int numberOfEnemies = 6;
+        private int numberOfEnemies = 7;
         public int currentEnemyValue = 0;
+
         private List<IEnemy> enemyList;
 
         public EnemyController(Game1 game)
@@ -22,6 +22,7 @@ namespace Zelda_Game
             enemyList.Add(new Jelly(Game));
             enemyList.Add(new Hand(Game));
             enemyList.Add(new Dragon(Game));
+            enemyList.Add(new Trap(Game));
         }
 
         public void Update()
