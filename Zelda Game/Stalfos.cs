@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using System;
-using System.Threading;
 
 namespace Zelda_Game
 {
@@ -28,7 +27,6 @@ namespace Zelda_Game
 
         int movementCounter = 0;
         int num = 0;
-
         public void Update()
         {
             currentFrame++;
@@ -76,15 +74,9 @@ namespace Zelda_Game
 
             SpriteEffects s;
             if (currentFrame <= totalFrames / 2)
-            {
-                sourceRectangle = new Rectangle(1, 59, 16, 16);
                 s = SpriteEffects.None;
-            }
             else
-            {
-                sourceRectangle = new Rectangle(1, 59, 16, 16);
                 s = SpriteEffects.FlipHorizontally;
-            }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);  
         }
