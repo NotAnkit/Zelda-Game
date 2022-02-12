@@ -36,7 +36,7 @@ namespace Zelda_Game
 
             Random rnd = new Random();
             movementCounter++;
-            if (movementCounter == 15)
+            if (movementCounter == totalFrames * 2)
             {
                 num = rnd.Next();
                 movementCounter = 0;

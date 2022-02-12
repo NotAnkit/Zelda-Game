@@ -4,7 +4,6 @@ using System;
 
 namespace Zelda_Game
 {
-    /*animated and moves left/right*/
     public class Jelly : IEnemy
     {
         public Texture2D Texture;
@@ -36,7 +35,7 @@ namespace Zelda_Game
 
             Random rnd = new Random();
             movementCounter++;
-            if (movementCounter == 15)
+            if (movementCounter == 2 * totalFrames)
             {
                 num = rnd.Next();
                 movementCounter = 0;
