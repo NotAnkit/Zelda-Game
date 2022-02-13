@@ -10,10 +10,7 @@ namespace Zelda_Game
         private List<IEnvironment> List;
         private List<IItem> List2; 
         public int i = 0;
-<<<<<<< Updated upstream
         public int j = 0;
-=======
->>>>>>> Stashed changes
         public KeyBoardController(Game1 _game, List<IEnvironment> blockList, List<IItem> itemList)
         {
             game = _game;
