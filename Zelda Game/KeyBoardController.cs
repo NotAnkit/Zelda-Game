@@ -9,7 +9,8 @@ namespace Zelda_Game
         private Game1 game;
         private List<IEnvironment> List;
         private List<IItem> List2; 
-        public int i = 60;
+        public int i = 0;
+        public int j = 0;
         public KeyBoardController(Game1 _game, List<IEnvironment> blockList, List<IItem> itemList)
         {
             game = _game;
@@ -126,22 +127,22 @@ namespace Zelda_Game
 
             if (userInput.IsKeyDown(Keys.U))
             {
-                i++;
-                if (i > 11)
+                j++;
+                if (j > 11)
                 {
-                    i = 0;
+                    j = 0;
                 }
-                game.item = List2[i];
+                game.item = List2[j];
 
             }
             else if (userInput.IsKeyDown(Keys.I))
             {
-                i--;
-                if (i < 0)
+                j--;
+                if (j < 0)
                 {
-                    i = 11;
+                    j = 11;
                 }
-                game.item = List2[i];
+                game.item = List2[j];
             }
 
           
