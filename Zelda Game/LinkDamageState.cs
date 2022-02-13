@@ -5,15 +5,15 @@ using Zelda_Game.LinkState;
 
 namespace Zelda_Game
 {
-    public class RightSwordLinkState : ILinkState
+    public class LinkDamageState : ILinkState
     {
         private Link player;
         private ISprite sprite;
         private int animationCount;
-        public RightSwordLinkState(Link link)
+        public LinkDamageState(Link link)
         {
             player = link;
-            sprite = LinkSpriteFactory.Instance.LinkWoodSwordRightAnimationSprite();
+            sprite = LinkSpriteFactory.Instance.LinkDamageAnimationSprite();
         }
 
         public void ChangeDirection(string direction)
@@ -73,7 +73,7 @@ namespace Zelda_Game
 
         public void UseSword()
         {
-         
+            
         }
 
         public void TakeDamage()

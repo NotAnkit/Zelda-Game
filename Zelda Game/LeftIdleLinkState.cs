@@ -5,54 +5,41 @@ using Zelda_Game.LinkState;
 
 namespace Zelda_Game
 {
-    public class RightSwordLinkState : ILinkState
+    public class LeftIdleLinkState : ILinkState
     {
         private Link player;
         private ISprite sprite;
-        private int animationCount;
-        public RightSwordLinkState(Link link)
+        public LeftIdleLinkState(Link link)
         {
             player = link;
-            sprite = LinkSpriteFactory.Instance.LinkWoodSwordRightAnimationSprite();
+            sprite = LinkSpriteFactory.Instance.LinkLeftIdleSprite();
+
         }
 
         public void ChangeDirection(string direction)
         {
-            if (direction.Equals("up") && animationCount == 60)
+            if (direction.Equals("up"))
             {
                 player.currentState = new UpMovingLinkState(player);
             }
-            else if (direction.Equals("left") && animationCount == 60)
+            else if (direction.Equals("left"))
             {
                 player.currentState = new LeftMovingLinkState(player);
             }
-            else if (direction.Equals("down") && animationCount == 60)
+            else if (direction.Equals("down"))
             {
                 player.currentState = new DownMovingLinkState(player);
             }
-            else if (direction.Equals("right") && animationCount == 60)
+            else if (direction.Equals("right"))
             {
                 player.currentState = new RightMovingLinkState(player);
             }
-            else if (direction.Equals("idle") && animationCount == 60)
-            {
-                player.currentState = new RightIdleLinkState(player);
-            }
-        }
 
-        public Vector2 ChangePosition(Vector2 location)
-        {
-            return location;
         }
 
         public void ChangeWeapon()
         {
             throw new NotImplementedException();
-        }
-
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
-        {
-            sprite.Draw(spriteBatch, location);
         }
 
         public void ThrowItem()
@@ -63,7 +50,6 @@ namespace Zelda_Game
         public void Update()
         {
             sprite.Update();
-            animationCount++;
         }
 
         public void UseItem()
@@ -71,9 +57,19 @@ namespace Zelda_Game
             throw new NotImplementedException();
         }
 
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        {
+            sprite.Draw(spriteBatch, location);
+        }
+
+        public Vector2 ChangePosition(Vector2 location)
+        {
+            return location;
+        }
+
         public void UseSword()
         {
-         
+            player.currentState = new LeftSwordLinkState(player);
         }
 
         public void TakeDamage()

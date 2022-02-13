@@ -15,7 +15,6 @@ namespace Zelda_Game
         public IEnvironment enviornment;
         public IItem item;
         public Vector2 spritePosition;
-        //private Game1 game;
         public List<IEnvironment> blockList;
         public List<IItem> itemList;
         public Game1()
@@ -70,6 +69,7 @@ namespace Zelda_Game
             enviornment = blockList[0];
             item = itemList[0]; //might change -Moh
             link = new Link(this, spritePosition, _spriteBatch);
+
             enemy = new Bat(this);
             spritePosition = new Vector2(350, 250);
         }
@@ -80,7 +80,7 @@ namespace Zelda_Game
             {
                 controller.Update();
             }
-            //link.Update();
+            link.Update();
             enviornment.Update();
             enemy.Update();
             item.Update();

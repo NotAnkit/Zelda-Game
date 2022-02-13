@@ -75,5 +75,9 @@ namespace Zelda_Game
             player.currentState = new RightSwordLinkState(player);
 
         }
+        public void TakeDamage()
+        {
+            player.currentState = new LinkDamageState(player);
+        }
     }
 }

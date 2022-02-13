@@ -7,7 +7,7 @@ namespace Zelda_Game
     class LinkDamagedAnimation : ISprite
     {
         int currentFrame = 0;
-        int totalFrames = 90;
+        int totalFrames = 60;
         public Texture2D Texture;
 
         public LinkDamagedAnimation(Texture2D texture)
@@ -19,12 +19,12 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            if (currentFrame <= 30)
+            if (currentFrame <=20)
             {
                 sourceRectangle = new Rectangle(1, 232, 16, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
             }
-            else if (currentFrame <= 60)
+            else if (currentFrame <= 40)
             {
                 sourceRectangle = new Rectangle(18, 232, 16, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);

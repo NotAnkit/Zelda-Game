@@ -32,7 +32,7 @@ namespace Zelda_Game.LinkState
             }
             else if (direction.Equals("idle"))
             {
-                player.currentState = new RightIdleLinkState(player);
+                player.currentState = new LeftIdleLinkState(player);
             }
         }
 
@@ -70,6 +70,11 @@ namespace Zelda_Game.LinkState
         public void UseSword()
         {
             player.currentState = new LeftSwordLinkState(player);
+        }
+
+        public void TakeDamage()
+        {
+            player.currentState = new LinkDamageState(player);
         }
     }
 }

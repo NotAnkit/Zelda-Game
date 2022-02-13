@@ -11,6 +11,7 @@ namespace Zelda_Game.LinkState
         void ThrowItem();
         void Update();
         void UseSword();
+        void TakeDamage();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
         Vector2 ChangePosition(Vector2 location);
     }

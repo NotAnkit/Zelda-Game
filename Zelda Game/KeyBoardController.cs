@@ -27,22 +27,22 @@ namespace Zelda_Game
             else if (userInput.IsKeyDown(Keys.W) || userInput.IsKeyDown(Keys.NumPad1))
             {
                 game.link.direction = "up";
-                game.link.Update();
+                
             }
             else if (userInput.IsKeyDown(Keys.A) || userInput.IsKeyDown(Keys.NumPad2))
             {
                 game.link.direction = "left";
-                game.link.Update();
+                
             }
             else if (userInput.IsKeyDown(Keys.S) || userInput.IsKeyDown(Keys.NumPad3))
             {
                 game.link.direction = "down";
-                game.link.Update();
+               
             }
             else if (userInput.IsKeyDown(Keys.D) || userInput.IsKeyDown(Keys.NumPad4))
             {
                 game.link.direction = "right";
-                game.link.Update();
+             
             }
             else if (userInput.IsKeyDown(Keys.Z) || userInput.IsKeyDown(Keys.N))
             {
@@ -50,6 +50,17 @@ namespace Zelda_Game
                  game.link.useSword();
                 
                 
+            }
+            else if (userInput.IsKeyDown(Keys.E))
+            {
+
+                game.link.TakeDamage();
+
+
+            }
+            else if(userInput.IsKeyUp(Keys.W) || userInput.IsKeyUp(Keys.A) || userInput.IsKeyUp(Keys.S) || userInput.IsKeyUp(Keys.D))
+            {
+                game.link.direction = "idle";
             }
             
             if (userInput.IsKeyDown(Keys.T))
@@ -94,6 +105,7 @@ namespace Zelda_Game
                 game.item = List2[i];
             }
 
+          
         }
     }
 }

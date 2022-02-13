@@ -38,6 +38,11 @@ namespace Zelda_Game
             currentState.UseSword();
         }
 
+        public void TakeDamage()
+        {
+            currentState.TakeDamage();
+        }
+
         public void draw(SpriteBatch spriteBatch)
         {
             currentState.Draw(spriteBatch, position);

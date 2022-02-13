@@ -31,7 +31,7 @@ namespace Zelda_Game
             }
             else if (direction.Equals("idle"))
             {
-                player.currentState = new RightIdleLinkState(player);
+                player.currentState = new DownIdleLinkState(player);
             }
         }
 
@@ -69,6 +69,11 @@ namespace Zelda_Game
         public void UseSword()
         {
             player.currentState = new DownSwordLinkState(player);
+        }
+
+        public void TakeDamage()
+        {
+            player.currentState = new LinkDamageState(player);
         }
     }
 }
