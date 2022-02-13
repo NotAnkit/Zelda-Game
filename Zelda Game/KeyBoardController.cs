@@ -20,9 +20,13 @@ namespace Zelda_Game
         public void Update()
         {
             userInput = Keyboard.GetState();
-            if (userInput.IsKeyDown(Keys.D0) || userInput.IsKeyDown(Keys.NumPad0))
+            if (userInput.IsKeyDown(Keys.Q))
             {
-
+                game.Exit();
+            }
+            if (userInput.IsKeyDown(Keys.R))
+            {
+                //
             }
             else if (userInput.IsKeyDown(Keys.W) || userInput.IsKeyDown(Keys.NumPad1))
             {
@@ -55,6 +59,41 @@ namespace Zelda_Game
             {
 
                 game.link.TakeDamage();
+
+
+            }
+            else if (userInput.IsKeyDown(Keys.D1))
+            {
+
+                game.link.UseItem("bomb");
+
+
+            }
+            else if (userInput.IsKeyDown(Keys.D2))
+            {
+
+                game.link.UseItem("blue-arrow");
+
+
+            }
+            else if (userInput.IsKeyDown(Keys.D3))
+            {
+
+                game.link.UseItem("green-arrow");
+
+
+            }
+            else if (userInput.IsKeyDown(Keys.D4))
+            {
+
+                game.link.UseItem("fire");
+
+
+            }
+            else if (userInput.IsKeyDown(Keys.D5))
+            {
+
+                game.link.UseItem("boomerang");
 
 
             }

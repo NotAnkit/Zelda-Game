@@ -7,7 +7,7 @@ namespace Zelda_Game.LinkState
     {
         void ChangeDirection(string direction);
         void ChangeWeapon();
-        void UseItem();
+        void UseItem(string itemName);
         void ThrowItem();
         void Update();
         void UseSword();

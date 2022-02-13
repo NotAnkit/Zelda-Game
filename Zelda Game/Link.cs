@@ -28,9 +28,9 @@ namespace Zelda_Game
             currentState.ChangeDirection(direction);
         }
 
-        public void useItem()
+        public void UseItem(string item)
         {
-
+            currentState.UseItem(item);
         }
 
         public void useSword()

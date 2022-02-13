@@ -66,7 +66,7 @@ namespace Zelda_Game
             animationCount++;
         }
 
-        public void UseItem()
+        public void UseItem(string item)
         {
             throw new NotImplementedException();
         }

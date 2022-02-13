@@ -9,6 +9,9 @@ namespace Zelda_Game
     {
         private Link player;
         private ISprite sprite;
+        private ISprite item;
+        private Boolean useItem;
+        private int animationCount;
         public UpMovingLinkState(Link link)
         {
             player = link;
@@ -49,6 +52,7 @@ namespace Zelda_Game
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             sprite.Draw(spriteBatch, location);
+            if (useItem) item.Draw(spriteBatch, location);
         }
 
         public void ThrowItem()
@@ -59,11 +63,46 @@ namespace Zelda_Game
         public void Update()
         {
             sprite.Update();
+            if (useItem)
+            {
+                item.Update();
+                animationCount++;
+                if (animationCount == 60)
+                {
+                    useItem = false;
+                    animationCount = 0;
+                }
+
+            }
         }
 
-        public void UseItem()
+        public void UseItem(string itemName)
         {
-            throw new NotImplementedException();
+            if (itemName.Equals("bomb"))
+            {
+                item = LinkSpriteFactory.Instance.LinkBombUpAnimationSprite();
+                useItem = true;
+            }
+            else if (itemName.Equals("blue-arrow"))
+            {
+                item = LinkSpriteFactory.Instance.LinkBlueArrowUpAnimationSprite();
+                useItem = true;
+            }
+            else if (itemName.Equals("fire"))
+            {
+                item = LinkSpriteFactory.Instance.LinkFireUpAnimationSprite();
+                useItem = true;
+            }
+            else if (itemName.Equals("green-arrow"))
+            {
+                item = LinkSpriteFactory.Instance.LinkGreenArrowUpAnimationSprite();
+                useItem = true;
+            }
+            else if (itemName.Equals("boomerang"))
+            {
+                item = LinkSpriteFactory.Instance.LinkFireUpAnimationSprite();
+                useItem = true;
+            }
         }
 
         public void UseSword()

@@ -9,8 +9,9 @@ namespace Zelda_Game
     {
         private Link player;
         private ISprite sprite;
-        private SpriteBatch _SpriteBatch;
-        private Vector2 position;
+        private ISprite item;
+        private Boolean useItem;
+        private int animationCount;
         public RightMovingLinkState(Link link)
         {
             player = link;
@@ -39,9 +40,8 @@ namespace Zelda_Game
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            _SpriteBatch = spriteBatch;
-            position = location;
             sprite.Draw(spriteBatch, location);
+            if (useItem) item.Draw(spriteBatch, location);
         }
 
         public Vector2 ChangePosition(Vector2 location)
@@ -63,11 +63,46 @@ namespace Zelda_Game
         public void Update()
         {
             sprite.Update();
+            if (useItem)
+            {
+                item.Update();
+                animationCount++;
+                if (animationCount == 60)
+                {
+                    useItem = false;
+                    animationCount = 0;
+                }
+
+            }
         }
 
-        public void UseItem()
+        public void UseItem(string itemName)
         {
-            throw new NotImplementedException();
+            if (itemName.Equals("bomb"))
+            {
+                item = LinkSpriteFactory.Instance.LinkBombRightAnimationSprite();
+                useItem = true;
+            }
+            else if (itemName.Equals("blue-arrow"))
+            {
+                item = LinkSpriteFactory.Instance.LinkBlueArrowRightAnimationSprite();
+                useItem = true;
+            }
+            else if (itemName.Equals("fire"))
+            {
+                item = LinkSpriteFactory.Instance.LinkFireRightAnimationSprite();
+                useItem = true;
+            }
+            else if (itemName.Equals("green-arrow"))
+            {
+                item = LinkSpriteFactory.Instance.LinkGreenArrowRightAnimationSprite();
+                useItem = true;
+            }
+            else if (itemName.Equals("boomerang"))
+            {
+                item = LinkSpriteFactory.Instance.LinkFireRightAnimationSprite();
+                useItem = true;
+            }
         }
 
         public void UseSword()

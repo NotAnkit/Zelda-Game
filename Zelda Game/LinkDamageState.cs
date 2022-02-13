@@ -66,9 +66,9 @@ namespace Zelda_Game
             animationCount++;
         }
 
-        public void UseItem()
+        public void UseItem(string itemName)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void UseSword()

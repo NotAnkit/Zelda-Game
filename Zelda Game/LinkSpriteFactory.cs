@@ -70,6 +70,10 @@ namespace Zelda_Game
             return new LinkUpIdle(LinkSpritesheet);
         }
 
+        /*
+         * Link Sprites for Wooden Sword
+         */
+
         public ISprite LinkWoodSwordDownAnimationSprite()
         {
             return new LinkWoodSwordDownAnimation(LinkSpritesheet);
@@ -90,12 +94,136 @@ namespace Zelda_Game
             return new LinkWoodSwordRightAnimation(LinkSpritesheet);
         }
 
+        /*
+         * Link Sprites for Damage
+         */
+
         public ISprite LinkDamageAnimationSprite()
         {
             return new LinkDamagedAnimation(LinkSpritesheet);
         }
 
-        // More public ISprite returning methods follow
-        // ...
+        /*
+         * Link Sprites for bomb item
+         */
+
+        public ISprite LinkBombDownAnimationSprite()
+        {
+            return new BombDownAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkBombUpAnimationSprite()
+        {
+            return new BombUpAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkBombLeftAnimationSprite()
+        {
+            return new BombLeftAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkBombRightAnimationSprite()
+        {
+            return new BombRightAnimation(LinkSpritesheet);
+        }
+
+        /*
+         * Link Sprites for blue arrow
+         */
+
+        public ISprite LinkBlueArrowDownAnimationSprite()
+        {
+            return new BlueArrowDownAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkBlueArrowUpAnimationSprite()
+        {
+            return new BlueArrowUpAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkBlueArrowLeftAnimationSprite()
+        {
+            return new BlueArrowLeftAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkBlueArrowRightAnimationSprite()
+        {
+            return new BlueArrowRightAnimation(LinkSpritesheet);
+        }
+
+        /*
+         * Link Sprites for green arrow
+         */
+
+        public ISprite LinkGreenArrowDownAnimationSprite()
+        {
+            return new GreenArrowDownAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkGreenArrowUpAnimationSprite()
+        {
+            return new GreenArrowUpAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkGreenArrowLeftAnimationSprite()
+        {
+            return new GreenArrowLeftAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkGreenArrowRightAnimationSprite()
+        {
+            return new GreenArrowRightAnimation(LinkSpritesheet);
+        }
+
+        /*
+         * Link Sprites for fire item
+         */
+
+        public ISprite LinkFireRightAnimationSprite()
+        {
+            return new FireRightAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkFireDownAnimationSprite()
+        {
+            return new FireDownAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkFireUpAnimationSprite()
+        {
+            return new FireUpAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkFireLeftAnimationSprite()
+        {
+            return new FireLeftAnimation(LinkSpritesheet);
+        }
+
+        /*
+         * Link Sprites for fire item
+         *
+
+        public ISprite LinkFireRightAnimationSprite()
+        {
+            return new FireRightAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkFireArrowDownAnimationSprite()
+        {
+            return new FireDownAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkFireArrowUpAnimationSprite()
+        {
+            return new FireUpAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkFireArrowLeftAnimationSprite()
+        {
+            return new FireLeftAnimation(LinkSpritesheet);
+        }
+
+        */
+
     }
 }
