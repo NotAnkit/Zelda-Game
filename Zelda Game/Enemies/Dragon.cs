@@ -26,7 +26,7 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             position = new Vector2(windowWidth / 2, windowHeight / 2);
-            Fireballs fireballs = new Fireballs(game, new Vector2(position.X, position.Y));
+            fireballs = new Fireballs(game, new Vector2(position.X, position.Y));
         }
 
         int movementCounter = 0;
