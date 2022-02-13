@@ -13,6 +13,27 @@
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
     <None Remove="Link State\" />
+    <None Remove="Link State\States\" />
+    <None Remove="Link State\States\DownStates\" />
+    <None Remove="Link State\States\LeftStates\" />
+    <None Remove="Link State\States\RightStates\" />
+    <None Remove="Link State\States\UpStates\" />
+    <None Remove="Link State\Animations\" />
+    <None Remove="Link State\Animations\MovingAnimations\" />
+    <None Remove="Link State\Animations\IdleAnimations\" />
+    <None Remove="Link State\Animations\SwordAnimations\" />
+    <None Remove="Link State\Animations\GreenArrowAnimations\" />
+    <None Remove="Link State\Animations\BlueArrowAnimations\" />
+    <None Remove="Link State\Animations\FireAnimations\" />
+    <None Remove="Link State\Animations\BombAnimations\" />
+    <None Remove="Link State\Animations\BoomerangAnimations\" />
+    <None Remove="Link State\Animations\DamagedAnimations\" />
+    <None Remove="Link State\States\DamagedStates\" />
+    <None Remove="Items\" />
+    <None Remove="Blocks\" />
+    <None Remove="Enemies\" />
+    <None Remove="Link State\Animations\PickUpItems\" />
+    <None Remove="Link State\Animations\UseItemsAnimations\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -30,6 +51,27 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Link State\" />
+    <Folder Include="Link State\States\" />
+    <Folder Include="Link State\States\DownStates\" />
+    <Folder Include="Link State\States\LeftStates\" />
+    <Folder Include="Link State\States\RightStates\" />
+    <Folder Include="Link State\States\UpStates\" />
+    <Folder Include="Link State\Animations\" />
+    <Folder Include="Link State\Animations\MovingAnimations\" />
+    <Folder Include="Link State\Animations\IdleAnimations\" />
+    <Folder Include="Link State\Animations\SwordAnimations\" />
+    <Folder Include="Link State\Animations\GreenArrowAnimations\" />
+    <Folder Include="Link State\Animations\BlueArrowAnimations\" />
+    <Folder Include="Link State\Animations\FireAnimations\" />
+    <Folder Include="Link State\Animations\BombAnimations\" />
+    <Folder Include="Link State\Animations\BoomerangAnimations\" />
+    <Folder Include="Link State\Animations\DamagedAnimations\" />
+    <Folder Include="Link State\States\DamagedStates\" />
+    <Folder Include="Items\" />
+    <Folder Include="Blocks\" />
+    <Folder Include="Enemies\" />
+    <Folder Include="Link State\Animations\PickUpItems\" />
+    <Folder Include="Link State\Animations\UseItemsAnimations\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />
