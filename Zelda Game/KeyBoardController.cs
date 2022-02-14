@@ -27,7 +27,9 @@ namespace Zelda_Game
             }
             if (userInput.IsKeyDown(Keys.R))
             {
-                //
+                var game2 = new Game1();
+                game2.Run();
+                game.Exit();
             }
             else if (userInput.IsKeyDown(Keys.W) || userInput.IsKeyDown(Keys.NumPad1))
             {
