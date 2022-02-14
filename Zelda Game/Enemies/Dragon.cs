@@ -57,7 +57,7 @@ namespace Zelda_Game
                 if (position.X < 0)
                     position.X = windowWidth;
             }
-            /*fireballs.Update();*/
+            fireballs.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
