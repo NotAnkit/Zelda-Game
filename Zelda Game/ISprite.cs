@@ -6,7 +6,6 @@ namespace Zelda_Game
     public interface ISprite
     {
         public void Update();
-
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location);
     }
 }

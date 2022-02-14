@@ -12,12 +12,14 @@ namespace Zelda_Game
         public ILinkState currentState;
         private SpriteBatch _spriteBatch;
         private Game1 game;
+        private Boolean useItem;
 
         public Link(Game1 _game, Vector2 location, SpriteBatch spriteBatch)
         {
             game = _game;
             position = location;
             _spriteBatch = spriteBatch;
+            useItem = false;
             currentState = new RightIdleLinkState(this);
         }
 

@@ -33,22 +33,22 @@ namespace Zelda_Game
                 game2.Run();
                 game.Exit();
             }
-            else if (userInput.IsKeyDown(Keys.W) || userInput.IsKeyDown(Keys.NumPad1))
+            else if (userInput.IsKeyDown(Keys.W) || userInput.IsKeyDown(Keys.Up))
             {
                 game.link.direction = "up";
                 
             }
-            else if (userInput.IsKeyDown(Keys.A) || userInput.IsKeyDown(Keys.NumPad2))
+            else if (userInput.IsKeyDown(Keys.A) || userInput.IsKeyDown(Keys.Left))
             {
                 game.link.direction = "left";
                 
             }
-            else if (userInput.IsKeyDown(Keys.S) || userInput.IsKeyDown(Keys.NumPad3))
+            else if (userInput.IsKeyDown(Keys.S) || userInput.IsKeyDown(Keys.Down))
             {
                 game.link.direction = "down";
                
             }
-            else if (userInput.IsKeyDown(Keys.D) || userInput.IsKeyDown(Keys.NumPad4))
+            else if (userInput.IsKeyDown(Keys.D) || userInput.IsKeyDown(Keys.Right))
             {
                 game.link.direction = "right";
              
