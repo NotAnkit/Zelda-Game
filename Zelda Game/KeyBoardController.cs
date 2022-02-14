@@ -6,6 +6,8 @@ namespace Zelda_Game
     public class KeyBoardController : IController
     {
         KeyboardState userInput;
+        private KeyboardState previousState;
+        private KeyboardState currentState;
         private Game1 game;
         private List<IEnvironment> List;
         private List<IItem> List2; 
@@ -104,8 +106,9 @@ namespace Zelda_Game
             {
                 game.link.direction = "idle";
             }
-            
-            if (userInput.IsKeyDown(Keys.T))
+            previousState = currentState;
+            currentState = Keyboard.GetState();
+            if (userInput.IsKeyDown(Keys.T) && !previousState.IsKeyDown(Keys.T))
             {
                 i++;
                 if(i>9)
@@ -115,7 +118,7 @@ namespace Zelda_Game
                 game.enviornment = List[i];
 
             }
-            if (userInput.IsKeyDown(Keys.Y))
+            if (userInput.IsKeyDown(Keys.Y) && !previousState.IsKeyDown(Keys.Y))
             {
                 i--;
                 if(i<0)
@@ -127,7 +130,7 @@ namespace Zelda_Game
 
             //item list
 
-            if (userInput.IsKeyDown(Keys.U))
+            if (userInput.IsKeyDown(Keys.U) && !previousState.IsKeyDown(Keys.U))
             {
                 j++;
                 if (j > 11)
@@ -137,7 +140,7 @@ namespace Zelda_Game
                 game.item = List2[j];
 
             }
-            else if (userInput.IsKeyDown(Keys.I))
+            else if (userInput.IsKeyDown(Keys.I) && !previousState.IsKeyDown(Keys.I))
             {
                 j--;
                 if (j < 0)
