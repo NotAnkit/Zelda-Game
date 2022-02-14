@@ -5,7 +5,8 @@ namespace Zelda_Game
 {
     public class EnemyController : IController
     {
-        KeyboardState state;
+        private KeyboardState currentState;
+        private KeyboardState previousState;
         public Game1 Game;
         private int numberOfEnemies = 6;
         public int currentEnemyValue = 0;
@@ -26,15 +27,16 @@ namespace Zelda_Game
 
         public void Update()
         {
-            state = Keyboard.GetState();
-            if (state.IsKeyDown(Keys.O))
+            previousState = currentState;
+            currentState = Keyboard.GetState();
+            if (currentState.IsKeyDown(Keys.O) && !previousState.IsKeyDown(Keys.O))
             {
                 currentEnemyValue--;
                 if (currentEnemyValue < 0)
                     currentEnemyValue = numberOfEnemies - 1;
                 Game.enemy = enemyList[currentEnemyValue];
             }
-            if (state.IsKeyDown(Keys.P))
+            if (currentState.IsKeyDown(Keys.P)&& !previousState.IsKeyDown(Keys.P))
             {
                 currentEnemyValue++;
                 if (currentEnemyValue >= numberOfEnemies)

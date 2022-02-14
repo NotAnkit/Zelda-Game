@@ -78,7 +78,6 @@ namespace Zelda_Game
                 sourceRectangle = new Rectangle(410, 11, 16, 16);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            
         }
 
     }
