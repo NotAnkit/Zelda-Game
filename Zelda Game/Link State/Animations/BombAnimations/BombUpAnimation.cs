@@ -24,22 +24,22 @@ namespace Zelda_Game
             if (currentFrame <= 15)
             {
                 sourceRectangle = new Rectangle(129, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y - 16, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 32, 16, 32);
             }
             else if (currentFrame <= 30)
             {
                 sourceRectangle = new Rectangle(138, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y - 16, 32, 32);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y - 32, 32, 32);
             }
             else if (currentFrame <= 45)
             {
                 sourceRectangle = new Rectangle(155, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y - 16, 32, 32);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y - 32, 32, 32);
             }
             else
             {
                 sourceRectangle = new Rectangle(172, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y - 16, 32, 32);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y - 32, 32, 32);
             }
 
 
