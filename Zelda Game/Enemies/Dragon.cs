@@ -72,7 +72,7 @@ namespace Zelda_Game
                 sourceRectangle = new Rectangle(76, 11, 24, 32);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            fireballs.Draw(spriteBatch); 
+            fireballs.Draw(spriteBatch);
         }
 
     }

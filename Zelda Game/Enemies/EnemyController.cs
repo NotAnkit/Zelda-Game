@@ -10,6 +10,7 @@ namespace Zelda_Game
         public Game1 Game;
         private int numberOfEnemies = 6;
         public int currentEnemyValue = 0;
+        public Fireballs fireballs;
 
         private List<IEnemy> enemyList;
 
