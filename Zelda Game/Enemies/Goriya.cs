@@ -13,6 +13,7 @@ namespace Zelda_Game
         private int windowHeight;
         private int windowWidth;
         private Vector2 position;
+        public Trap trap;
 
         public Goriya(Game1 game)
         {
@@ -23,6 +24,7 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             position = new Vector2(windowWidth / 2, windowHeight / 2);
+            trap = new Trap(game, position);
         }
 
         int movementCounter = 0;
@@ -70,6 +72,7 @@ namespace Zelda_Game
                     position.Y = windowHeight;
                 goriyaState = "down";
             }
+            trap.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -109,6 +112,7 @@ namespace Zelda_Game
             }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);
+            trap.Draw(spriteBatch);
         }
 
     }

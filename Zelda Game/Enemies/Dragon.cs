@@ -7,7 +7,6 @@ namespace Zelda_Game
     public class Dragon : IEnemy
     {
         public Texture2D Texture;
-        private Game1 game;
         private int currentFrame;
         private int totalFrames;
         private float spriteSpeed;
@@ -18,7 +17,6 @@ namespace Zelda_Game
 
         public Dragon(Game1 game)
         {
-            this.game = game;
             Texture = game.Content.Load<Texture2D>("EnemySheet");
             currentFrame = 0;
             totalFrames = 60;

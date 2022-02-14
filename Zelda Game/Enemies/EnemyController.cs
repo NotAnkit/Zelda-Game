@@ -7,7 +7,7 @@ namespace Zelda_Game
     {
         KeyboardState state;
         public Game1 Game;
-        private int numberOfEnemies = 7;
+        private int numberOfEnemies = 6;
         public int currentEnemyValue = 0;
 
         private List<IEnemy> enemyList;
@@ -22,7 +22,6 @@ namespace Zelda_Game
             enemyList.Add(new Jelly(Game));
             enemyList.Add(new Hand(Game));
             enemyList.Add(new Dragon(Game));
-            enemyList.Add(new Trap(Game));
         }
 
         public void Update()

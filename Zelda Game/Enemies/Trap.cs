@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
-    public class Trap : IEnemy
+    public class Trap
     {
         public Texture2D Texture;
         private int currentFrame;
@@ -13,7 +13,7 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
 
-        public Trap(Game1 game)
+        public Trap(Game1 game, Vector2 startPosition)
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
@@ -21,7 +21,7 @@ namespace Zelda_Game
             spriteSpeed = 3f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
-            position = new Vector2(windowWidth / 2, windowHeight / 2);
+            position = startPosition;
         }
 
         public void Update()
