@@ -34,7 +34,6 @@ namespace Zelda_Game
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
-
             Random rnd = new Random();
             movementCounter++;
             if (movementCounter == 2 * totalFrames)

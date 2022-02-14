@@ -22,7 +22,7 @@ namespace Zelda_Game
         public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle = new Rectangle(40, 0, 8, 16);
-            Rectangle destinationRectangle = new Rectangle(0, 0, 32, 32);
+            Rectangle destinationRectangle = new Rectangle(625, 100, 16, 32);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
