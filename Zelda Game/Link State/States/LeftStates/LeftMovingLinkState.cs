@@ -98,9 +98,14 @@ namespace Zelda_Game.LinkState
                 item = LinkSpriteFactory.Instance.LinkGreenArrowLeftAnimationSprite();
                 useItem = true;
             }
-            else if (itemName.Equals("boomerang"))
+            else if (itemName.Equals("green-boomerang"))
             {
-                item = LinkSpriteFactory.Instance.LinkFireLeftAnimationSprite();
+                item = LinkSpriteFactory.Instance.LinkGreenBoomerangLeftAnimationSprite();
+                useItem = true;
+            }
+            else if (itemName.Equals("blue-boomerang"))
+            {
+                item = LinkSpriteFactory.Instance.LinkBlueBoomerangLeftAnimationSprite();
                 useItem = true;
             }
         }

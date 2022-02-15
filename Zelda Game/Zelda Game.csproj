@@ -34,6 +34,7 @@
     <None Remove="Enemies\" />
     <None Remove="Link State\Animations\PickUpItems\" />
     <None Remove="Link State\Animations\UseItemsAnimations\" />
+    <None Remove="Link State\Animations\BlueBoomerangAnimations\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -64,7 +65,7 @@
     <Folder Include="Link State\Animations\BlueArrowAnimations\" />
     <Folder Include="Link State\Animations\FireAnimations\" />
     <Folder Include="Link State\Animations\BombAnimations\" />
-    <Folder Include="Link State\Animations\BoomerangAnimations\" />
+    <Folder Include="Link State\Animations\GreenBoomerangAnimations\" />
     <Folder Include="Link State\Animations\DamagedAnimations\" />
     <Folder Include="Link State\States\DamagedStates\" />
     <Folder Include="Items\" />
@@ -72,6 +73,7 @@
     <Folder Include="Enemies\" />
     <Folder Include="Link State\Animations\PickUpItems\" />
     <Folder Include="Link State\Animations\UseItemsAnimations\" />
+    <Folder Include="Link State\Animations\BlueBoomerangAnimations\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />

@@ -98,7 +98,14 @@ namespace Zelda_Game
             else if (userInput.IsKeyDown(Keys.D5))
             {
 
-                game.link.UseItem("boomerang");
+                game.link.UseItem("green-boomerang");
+
+
+            }
+            else if (userInput.IsKeyDown(Keys.D6))
+            {
+
+                game.link.UseItem("blue-boomerang");
 
 
             }

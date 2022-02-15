@@ -200,30 +200,54 @@ namespace Zelda_Game
         }
 
         /*
-         * Link Sprites for fire item
-         *
+         * Link Sprites for blue boomerang item
+         */
 
-        public ISprite LinkFireRightAnimationSprite()
+        public ISprite LinkBlueBoomerangRightAnimationSprite()
         {
-            return new FireRightAnimation(LinkSpritesheet);
+            return new BlueBoomerangRightAnimation(LinkSpritesheet);
         }
 
-        public ISprite LinkFireArrowDownAnimationSprite()
+        public ISprite LinkBlueBoomerangDownAnimationSprite()
         {
-            return new FireDownAnimation(LinkSpritesheet);
+            return new BlueBoomerangDownAnimation(LinkSpritesheet);
         }
 
-        public ISprite LinkFireArrowUpAnimationSprite()
+        public ISprite LinkBlueBoomerangUpAnimationSprite()
         {
-            return new FireUpAnimation(LinkSpritesheet);
+            return new BlueBoomerangUpAnimation(LinkSpritesheet);
         }
 
-        public ISprite LinkFireArrowLeftAnimationSprite()
+        public ISprite LinkBlueBoomerangLeftAnimationSprite()
         {
-            return new FireLeftAnimation(LinkSpritesheet);
+            return new BlueBoomerangLeftAnimation(LinkSpritesheet);
         }
 
-        */
+        /*
+         * Link Sprites for green boomerang item
+         */
+
+        public ISprite LinkGreenBoomerangRightAnimationSprite()
+        {
+            return new GreenBoomerangRightAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkGreenBoomerangDownAnimationSprite()
+        {
+            return new GreenBoomerangDownAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkGreenBoomerangUpAnimationSprite()
+        {
+            return new GreenBoomerangUpAnimation(LinkSpritesheet);
+        }
+
+        public ISprite LinkGreenBoomerangLeftAnimationSprite()
+        {
+            return new GreenBoomerangLeftAnimation(LinkSpritesheet);
+        }
+
+
 
     }
 }

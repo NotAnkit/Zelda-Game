@@ -4,12 +4,12 @@ using System;
 
 namespace Zelda_Game
 {
-    class BlueBoomerangUpAnimation : ISprite
+    class BlueBoomerangLeftAnimation : ISprite
     {
 
         public Texture2D Texture;
 
-        public BlueBoomerangUpAnimation(Texture2D texture)
+        public BlueBoomerangLeftAnimation(Texture2D texture)
         {
             Texture = texture;
         }
@@ -21,65 +21,65 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            if (currentFrame <= 10)
+            if (currentFrame <= 5)
             {
                 sourceRectangle = new Rectangle(91, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 32, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X - 32, (int)location.Y, 16, 32);
+            }
+            else if (currentFrame <= 10)
+            {
+                sourceRectangle = new Rectangle(100, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X - 96, (int)location.Y, 16, 32);
+            }
+            else if (currentFrame <= 15)
+            {
+                sourceRectangle = new Rectangle(109, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X - 160, (int)location.Y, 16, 32);
             }
             else if (currentFrame <= 20)
             {
+                sourceRectangle = new Rectangle(91, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X - 224, (int)location.Y, 16, 32);
+            }
+            else if (currentFrame <= 25)
+            {
                 sourceRectangle = new Rectangle(100, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 96, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X - 288, (int)location.Y, 16, 32);
             }
             else if (currentFrame <= 30)
             {
                 sourceRectangle = new Rectangle(109, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 160, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X - 352, (int)location.Y, 16, 32);
+            }
+            else if (currentFrame <= 35)
+            {
+                sourceRectangle = new Rectangle(91, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X - 352, (int)location.Y, 16, 32);
             }
             else if (currentFrame <= 40)
             {
-                sourceRectangle = new Rectangle(91, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 224, 16, 32);
+                sourceRectangle = new Rectangle(100, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X - 288, (int)location.Y, 16, 32);
+            }
+            else if (currentFrame <= 45)
+            {
+                sourceRectangle = new Rectangle(109, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X - 224, (int)location.Y, 16, 32);
             }
             else if (currentFrame <= 50)
             {
-                sourceRectangle = new Rectangle(100, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 288, 16, 32);
-            }
-            else if (currentFrame <= 60)
-            {
-                sourceRectangle = new Rectangle(109, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 352, 16, 32);
-            }
-            else if (currentFrame <= 70)
-            {
                 sourceRectangle = new Rectangle(91, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 352, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X - 160, (int)location.Y, 16, 32);
             }
-            else if (currentFrame <= 80)
+            else if (currentFrame <= 55)
             {
                 sourceRectangle = new Rectangle(100, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 288, 16, 32);
-            }
-            else if (currentFrame <= 90)
-            {
-                sourceRectangle = new Rectangle(109, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 224, 16, 32);
-            }
-            else if (currentFrame <= 100)
-            {
-                sourceRectangle = new Rectangle(91, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 160, 16, 32);
-            }
-            else if (currentFrame <= 110)
-            {
-                sourceRectangle = new Rectangle(100, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 96, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X - 96, (int)location.Y, 16, 32);
             }
             else
             {
                 sourceRectangle = new Rectangle(109, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 32, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X - 32, (int)location.Y, 16, 32);
             }
 
 
