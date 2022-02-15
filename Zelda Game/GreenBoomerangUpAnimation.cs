@@ -1,16 +1,15 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
+using System;
 
 namespace Zelda_Game
 {
-    class BlueArrowUpAnimation : ISprite
+    class GreenBoomerangUpAnimation : ISprite
     {
 
         public Texture2D Texture;
 
-        public BlueArrowUpAnimation(Texture2D texture)
+        public GreenBoomerangUpAnimation(Texture2D texture)
         {
             Texture = texture;
         }
@@ -22,33 +21,36 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            if (currentFrame <= 12)
+            if (currentFrame <= 10)
             {
-                sourceRectangle = new Rectangle(27, 185, 8, 16);
+                sourceRectangle = new Rectangle(64, 185, 8, 16);
                 destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 32, 16, 32);
             }
-            else if (currentFrame <= 24)
+            else if (currentFrame <= 20)
             {
-                sourceRectangle = new Rectangle(27, 185, 8, 16);
+                sourceRectangle = new Rectangle(73, 185, 8, 16);
                 destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 96, 16, 32);
             }
-            else if (currentFrame <= 36)
+            else if (currentFrame <= 30)
             {
-                sourceRectangle = new Rectangle(27, 185, 8, 16);
+                sourceRectangle = new Rectangle(82, 185, 8, 16);
                 destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 160, 16, 32);
             }
-            else if (currentFrame <= 48)
+            else if (currentFrame <= 40)
             {
-                sourceRectangle = new Rectangle(27, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 224, 16, 32);
+                sourceRectangle = new Rectangle(73, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 160, 16, 32);
+            }
+            else if (currentFrame <= 50)
+            {
+                sourceRectangle = new Rectangle(64, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 96, 16, 32);
             }
             else
             {
-
-                sourceRectangle = new Rectangle(53, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 288, 16, 32);
+                sourceRectangle = new Rectangle(82, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y - 32, 16, 32);
             }
-
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             return location;
