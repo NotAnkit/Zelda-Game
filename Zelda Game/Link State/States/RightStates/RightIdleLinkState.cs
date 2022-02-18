@@ -14,38 +14,21 @@ namespace Zelda_Game
         {
             player = link;
             sprite = LinkSpriteFactory.Instance.LinkRightIdleSprite();
-            
-
         }
 
         public void ChangeDirection(string direction)
         {
-            if (direction.Equals("up"))
-            {
-                player.currentState = new UpMovingLinkState(player);
-            }
-            else if (direction.Equals("left"))
-            {
-                player.currentState = new LeftMovingLinkState(player);
-            }
-            else if (direction.Equals("down"))
-            {
-                player.currentState = new DownMovingLinkState(player);
-            }
-            else if (direction.Equals("right"))
-            {
-                player.currentState = new RightMovingLinkState(player);
-            }
-          
+            if (direction.Equals("up")) player.currentState = new UpMovingLinkState(player);
 
+            else if (direction.Equals("left")) player.currentState = new LeftMovingLinkState(player);
+            
+            else if (direction.Equals("down")) player.currentState = new DownMovingLinkState(player);
+            
+            else if (direction.Equals("right")) player.currentState = new RightMovingLinkState(player);
+            
         }
 
         public void ChangeWeapon()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ThrowItem()
         {
             throw new NotImplementedException();
         }
@@ -58,36 +41,17 @@ namespace Zelda_Game
 
         public ISprite UseItem(string itemName)
         {
-            if(itemName.Equals("bomb"))
-            {
-                item = LinkSpriteFactory.Instance.LinkBombRightAnimationSprite();
+            if(itemName.Equals("bomb")) item = LinkSpriteFactory.Instance.LinkBombRightAnimationSprite();
+
+            else if (itemName.Equals("blue-arrow")) item = LinkSpriteFactory.Instance.LinkBlueArrowRightAnimationSprite();
+
+            else if (itemName.Equals("fire")) item = LinkSpriteFactory.Instance.LinkFireRightAnimationSprite();
+
+            else if (itemName.Equals("green-arrow")) item = LinkSpriteFactory.Instance.LinkGreenArrowRightAnimationSprite();
                 
-            }
-            else if (itemName.Equals("blue-arrow"))
-            {
-                item = LinkSpriteFactory.Instance.LinkBlueArrowRightAnimationSprite();
+            else if (itemName.Equals("green-boomerang")) item = LinkSpriteFactory.Instance.LinkGreenBoomerangRightAnimationSprite();
                 
-            }
-            else if (itemName.Equals("fire"))
-            {
-                item = LinkSpriteFactory.Instance.LinkFireRightAnimationSprite();
-                
-            }
-            else if (itemName.Equals("green-arrow"))
-            {
-                item = LinkSpriteFactory.Instance.LinkGreenArrowRightAnimationSprite();
-                
-            }
-            else if (itemName.Equals("green-boomerang"))
-            {
-                item = LinkSpriteFactory.Instance.LinkGreenBoomerangRightAnimationSprite();
-                
-            }
-            else if (itemName.Equals("blue-boomerang"))
-            {
-                item = LinkSpriteFactory.Instance.LinkBlueBoomerangRightAnimationSprite();
-                
-            }
+            else if (itemName.Equals("blue-boomerang")) item = LinkSpriteFactory.Instance.LinkBlueBoomerangRightAnimationSprite();
 
             return item;
         }

@@ -18,26 +18,15 @@ namespace Zelda_Game
 
         public void ChangeDirection(string direction)
         {
-            if (direction.Equals("up") && animationCount == 60)
-            {
-                player.currentState = new UpMovingLinkState(player);
-            }
-            else if (direction.Equals("left") && animationCount == 60)
-            {
-                player.currentState = new LeftMovingLinkState(player);
-            }
-            else if (direction.Equals("down") && animationCount == 60)
-            {
-                player.currentState = new DownMovingLinkState(player);
-            }
-            else if (direction.Equals("right") && animationCount == 60)
-            {
-                player.currentState = new RightMovingLinkState(player);
-            }
-            else if (direction.Equals("idle") && animationCount == 60)
-            {
-                player.currentState = new LeftIdleLinkState(player);
-            }
+            if (direction.Equals("up") && animationCount == 60) player.currentState = new UpMovingLinkState(player);
+
+            else if (direction.Equals("left") && animationCount == 60) player.currentState = new LeftMovingLinkState(player);
+            
+            else if (direction.Equals("down") && animationCount == 60) player.currentState = new DownMovingLinkState(player);
+            
+            else if (direction.Equals("right") && animationCount == 60) player.currentState = new RightMovingLinkState(player);
+            
+            else if (direction.Equals("idle") && animationCount == 60) player.currentState = new LeftIdleLinkState(player);
 
         }
 
@@ -56,11 +45,6 @@ namespace Zelda_Game
             sprite.Draw(spriteBatch, location);
         }
 
-        public void ThrowItem()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Update()
         {
             sprite.Update();
@@ -74,7 +58,7 @@ namespace Zelda_Game
 
         public void UseSword()
         {
-            
+            throw new NotImplementedException();
         }
 
         public void TakeDamage()
