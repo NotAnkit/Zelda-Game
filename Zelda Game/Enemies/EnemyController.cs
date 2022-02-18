@@ -8,7 +8,6 @@ namespace Zelda_Game
         private KeyboardState currentState;
         private KeyboardState previousState;
         public Game1 Game;
-        private int numberOfEnemies = 6;
         public int currentEnemyValue = 0;
         public Fireballs fireballs;
 
@@ -34,13 +33,13 @@ namespace Zelda_Game
             {
                 currentEnemyValue--;
                 if (currentEnemyValue < 0)
-                    currentEnemyValue = numberOfEnemies - 1;
+                    currentEnemyValue = enemyList.Count - 1;
                 Game.enemy = enemyList[currentEnemyValue];
             }
             if (currentState.IsKeyDown(Keys.P)&& !previousState.IsKeyDown(Keys.P))
             {
                 currentEnemyValue++;
-                if (currentEnemyValue >= numberOfEnemies)
+                if (currentEnemyValue >= enemyList.Count)
                     currentEnemyValue = 0;
                 Game.enemy = enemyList[currentEnemyValue];
             }

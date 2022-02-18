@@ -69,7 +69,6 @@ namespace Zelda_Game
             enviornment = blockList[0];
             item = itemList[0]; //might change -Moh
             link = new Link(spritePosition);
-
             enemy = new Bat(this);
             spritePosition = new Vector2(350, 250);
         }
@@ -84,6 +83,7 @@ namespace Zelda_Game
             enviornment.Update();
             enemy.Update();
             item.Update();
+
             base.Update(gameTime);
         }
 
@@ -91,10 +91,12 @@ namespace Zelda_Game
         {
             _spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
             link.draw(_spriteBatch);
             enviornment.Draw(_spriteBatch);
             enemy.Draw(_spriteBatch);
             item.Draw(_spriteBatch);
+
             base.Draw(gameTime);
             _spriteBatch.End();
         }
