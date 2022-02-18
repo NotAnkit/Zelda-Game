@@ -10,8 +10,7 @@ namespace Zelda_Game
         private Link player;
         private ISprite sprite;
         private ISprite item;
-        private Boolean useItem;
-        private int animationCount;
+       
         public LeftIdleLinkState(Link link)
         {
             player = link;
@@ -53,57 +52,49 @@ namespace Zelda_Game
         public void Update()
         {
             sprite.Update();
-            if (useItem)
-            {
-                item.Update();
-                animationCount++;
-                if (animationCount == 60)
-                {
-                    useItem = false;
-                    animationCount = 0;
-                }
-
-            }
+            
         }
 
-        public void UseItem(string itemName)
+        public ISprite UseItem(string itemName)
         {
             if (itemName.Equals("bomb"))
             {
                 item = LinkSpriteFactory.Instance.LinkBombLeftAnimationSprite();
-                useItem = true;
+                
             }
             else if (itemName.Equals("blue-arrow"))
             {
                 item = LinkSpriteFactory.Instance.LinkBlueArrowLeftAnimationSprite();
-                useItem = true;
+                
             }
             else if (itemName.Equals("fire"))
             {
                 item = LinkSpriteFactory.Instance.LinkFireLeftAnimationSprite();
-                useItem = true;
+                
             }
             else if (itemName.Equals("green-arrow"))
             {
                 item = LinkSpriteFactory.Instance.LinkGreenArrowLeftAnimationSprite();
-                useItem = true;
+                
             }
             else if (itemName.Equals("green-boomerang"))
             {
                 item = LinkSpriteFactory.Instance.LinkGreenBoomerangLeftAnimationSprite();
-                useItem = true;
+               
             }
             else if (itemName.Equals("blue-boomerang"))
             {
                 item = LinkSpriteFactory.Instance.LinkBlueBoomerangLeftAnimationSprite();
-                useItem = true;
+                
             }
+
+            return item;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             sprite.Draw(spriteBatch, location);
-            if (useItem) item.Draw(spriteBatch, location);
+            
         }
 
         public Vector2 ChangePosition(Vector2 location)

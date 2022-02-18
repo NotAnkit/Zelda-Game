@@ -9,16 +9,16 @@ namespace Zelda_Game
     {
         public string direction = "right";
         private Vector2 position;
-        public ILinkState currentState;
-        private SpriteBatch _spriteBatch;
-        private Game1 game;
+        private Vector2 itemPosition;
+        public ILinkState currentState;     
         private Boolean useItem;
+        private int animationCount;
+        private ISprite item;
 
-        public Link(Game1 _game, Vector2 location, SpriteBatch spriteBatch)
+        public Link(Vector2 location)
         {
-            game = _game;
             position = location;
-            _spriteBatch = spriteBatch;
+            itemPosition = location;
             useItem = false;
             currentState = new RightIdleLinkState(this);
         }
@@ -28,11 +28,25 @@ namespace Zelda_Game
             position = currentState.ChangePosition(position);
             currentState.Update();
             currentState.ChangeDirection(direction);
+            if (useItem)
+            {
+                item.Update();
+                animationCount++;
+                if (animationCount == 60)
+                {
+                    useItem = false;
+                    animationCount = 0;
+                    itemPosition = position;
+                }
+
+            }
         }
 
-        public void UseItem(string item)
+        public void UseItem(string itemName)
         {
-            currentState.UseItem(item);
+            itemPosition = position;
+            item = currentState.UseItem(itemName);
+            useItem = true;
         }
 
         public void useSword()
@@ -48,6 +62,7 @@ namespace Zelda_Game
         public void draw(SpriteBatch spriteBatch)
         {
             currentState.Draw(spriteBatch, position);
+            if (useItem) item.Draw(spriteBatch, itemPosition);
         }
     }
 }

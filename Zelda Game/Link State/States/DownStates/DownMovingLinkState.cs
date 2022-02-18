@@ -10,8 +10,7 @@ namespace Zelda_Game
         private Link player;
         private ISprite sprite;
         private ISprite item;
-        private Boolean useItem;
-        private int animationCount;
+        
         public DownMovingLinkState(Link link)
         {
             player = link;
@@ -52,7 +51,7 @@ namespace Zelda_Game
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             sprite.Draw(spriteBatch, location);
-            if (useItem) item.Draw(spriteBatch, location);
+            
         }
 
         public void ThrowItem()
@@ -63,51 +62,43 @@ namespace Zelda_Game
         public void Update()
         {
             sprite.Update();
-            if (useItem)
-            {
-                item.Update();
-                animationCount++;
-                if (animationCount == 60)
-                {
-                    useItem = false;
-                    animationCount = 0;
-                }
-
-            }
+            
         }
 
-        public void UseItem(string itemName)
+        public ISprite UseItem(string itemName)
         {
             if (itemName.Equals("bomb"))
             {
                 item = LinkSpriteFactory.Instance.LinkBombDownAnimationSprite();
-                useItem = true;
+                
             }
             else if (itemName.Equals("blue-arrow"))
             {
                 item = LinkSpriteFactory.Instance.LinkBlueArrowDownAnimationSprite();
-                useItem = true;
+                
             }
             else if (itemName.Equals("fire"))
             {
                 item = LinkSpriteFactory.Instance.LinkFireDownAnimationSprite();
-                useItem = true;
+                
             }
             else if (itemName.Equals("green-arrow"))
             {
                 item = LinkSpriteFactory.Instance.LinkGreenArrowDownAnimationSprite();
-                useItem = true;
+                
             }
             else if (itemName.Equals("green-boomerang"))
             {
                 item = LinkSpriteFactory.Instance.LinkGreenBoomerangDownAnimationSprite();
-                useItem = true;
+                
             }
             else if (itemName.Equals("blue-boomerang"))
             {
                 item = LinkSpriteFactory.Instance.LinkBlueBoomerangDownAnimationSprite();
-                useItem = true;
+                
             }
+
+            return item;
         }
 
         public void UseSword()

@@ -68,7 +68,7 @@ namespace Zelda_Game
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
             enviornment = blockList[0];
             item = itemList[0]; //might change -Moh
-            link = new Link(this, spritePosition, _spriteBatch);
+            link = new Link(spritePosition);
 
             enemy = new Bat(this);
             spritePosition = new Vector2(350, 250);
