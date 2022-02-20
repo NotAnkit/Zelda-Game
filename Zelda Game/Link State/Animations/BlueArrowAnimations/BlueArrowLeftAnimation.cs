@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
-    class BlueArrowLeftAnimation : ISprite
+    public class BlueArrowLeftAnimation : ISprite
     {
 
         public Texture2D Texture;
@@ -15,8 +15,8 @@ namespace Zelda_Game
             Texture = texture;
         }
 
-        int currentFrame = 0;
-        int totalFrames = 60;
+        private int currentFrame = 0;
+        private int totalFrames = 60;
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
@@ -53,11 +53,6 @@ namespace Zelda_Game
             SpriteEffects s = SpriteEffects.FlipHorizontally;
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);
             return location;
-        }
-
-        public void draw(SpriteBatch spriteBatch, Vector2 location, SpriteFont font)
-        {
-            throw new NotImplementedException();
         }
 
         public void Update()

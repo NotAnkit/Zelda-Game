@@ -29,9 +29,9 @@ namespace Zelda_Game
             trap = new Trap(game, position);
         }
 
-        int movementCounter = 0;
-        int num = 0;
-        String goriyaState;
+        private int movementCounter = 0;
+        private int num = 0;
+        private String goriyaState;
         public void Update()
         {
             currentFrame++;

@@ -6,16 +6,12 @@ namespace Zelda_Game
     public class HeartItem : IItem
     {
         public Texture2D Texture;
-        private int windowHeight;
-        private int windowWidth;
         private int currentFrame;
         private int totalFrames;
 
         public HeartItem(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("WeaponSheet");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
             currentFrame = 0;
             totalFrames = 30;
         }

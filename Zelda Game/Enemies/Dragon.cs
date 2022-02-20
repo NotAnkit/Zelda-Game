@@ -29,8 +29,8 @@ namespace Zelda_Game
             fireballs = new Fireballs(game, new Vector2(position.X, position.Y));
         }
 
-        int movementCounter = 0;
-        int num = 0;
+        private int movementCounter = 0;
+        private int num = 0;
         public void Update()
         {
             currentFrame++;

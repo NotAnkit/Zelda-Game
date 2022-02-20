@@ -6,14 +6,10 @@ namespace Zelda_Game
     public class PushableBlock : IEnvironment
     {
         public Texture2D Texture;
-        private int windowHeight;
-        private int windowWidth;
 
         public PushableBlock(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
         }
 
         public void Update()

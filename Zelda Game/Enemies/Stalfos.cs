@@ -25,8 +25,8 @@ namespace Zelda_Game
             position = new Vector2(windowWidth / 2, windowHeight / 2);
         }
 
-        int movementCounter = 0;
-        int num = 0;
+        private int movementCounter = 0;
+        private int num = 0;
         public void Update()
         {
             currentFrame++;

@@ -4,10 +4,10 @@ using System;
 
 namespace Zelda_Game
 {
-    class LinkDamagedAnimation : ISprite
+    public class LinkDamagedAnimation : ISprite
     {
-        int currentFrame = 0;
-        int totalFrames = 60;
+        private int currentFrame = 0;
+        private int totalFrames = 60;
         public Texture2D Texture;
 
         public LinkDamagedAnimation(Texture2D texture)
@@ -37,11 +37,6 @@ namespace Zelda_Game
      
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             return location;
-        }
-
-        public void draw(SpriteBatch spriteBatch, Vector2 location, SpriteFont font)
-        {
-            throw new NotImplementedException();
         }
 
         public void Update()

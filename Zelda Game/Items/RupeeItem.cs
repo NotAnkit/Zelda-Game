@@ -8,14 +8,10 @@ namespace Zelda_Game
         public Texture2D Texture;
         private int currentFrame;
         private int totalFrames;
-        private int windowHeight;
-        private int windowWidth;
 
         public RupeeItem(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("WeaponSheet");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
             currentFrame = 0;
             totalFrames = 30;
         }
