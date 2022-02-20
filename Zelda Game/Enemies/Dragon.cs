@@ -6,17 +6,19 @@ namespace Zelda_Game
 {
     public class Dragon : IEnemy
     {
-        public Texture2D Texture;
+        private Game1 Game;
+        private Texture2D Texture;
         private int currentFrame;
         private int totalFrames;
         private float spriteSpeed;
         private int windowHeight;
         private int windowWidth;
         private Vector2 position;
-        public Fireballs fireballs;
+        private Fireballs fireballs;
 
         public Dragon(Game1 game)
         {
+            Game = game;
             Texture = game.Content.Load<Texture2D>("EnemySheet");
             currentFrame = 0;
             totalFrames = 60;
@@ -53,6 +55,8 @@ namespace Zelda_Game
                 position.X -= spriteSpeed;
                 if (position.X < 0)
                     position.X = windowWidth;
+                if (movementCounter == 0)
+                    fireballs = new Fireballs(Game, position);
             }
             fireballs.Update();
         }

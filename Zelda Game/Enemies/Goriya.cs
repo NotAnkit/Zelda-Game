@@ -32,10 +32,8 @@ namespace Zelda_Game
         int movementCounter = 0;
         int num = 0;
         String goriyaState;
-        Boolean throwTrap;
         public void Update()
         {
-            throwTrap = false;
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
@@ -55,7 +53,7 @@ namespace Zelda_Game
                     position.X = 0;
                 goriyaState = "right";
                 if(movementCounter == 0)
-                    throwTrap = true;
+                    trap = new Trap(Game, position);
             }
             else if (num % 4 == 1)
             {
@@ -79,9 +77,6 @@ namespace Zelda_Game
                 goriyaState = "down";
             }
 
-            if (throwTrap == true){
-                trap = new Trap(Game, position);
-            }
             trap.Update();
         }
 

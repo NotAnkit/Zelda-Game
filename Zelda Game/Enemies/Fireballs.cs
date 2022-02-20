@@ -23,9 +23,9 @@ namespace Zelda_Game
             spriteSpeed = 3f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
-            position1 = new Vector2(windowWidth / 2, windowHeight / 2);
-            position2 = new Vector2(windowWidth / 2, windowHeight / 2);
-            position3 = new Vector2(windowWidth / 2, windowHeight / 2);
+            position1 = startPosition;
+            position2 = startPosition;
+            position3 = startPosition;
         }
 
         public void Update()
