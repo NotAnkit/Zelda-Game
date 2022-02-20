@@ -6,6 +6,7 @@ namespace Zelda_Game
 {
     public class Goriya : IEnemy
     {
+        public Game1 Game;
         public Texture2D Texture;
         private int currentFrame;
         private int totalFrames;
@@ -17,6 +18,7 @@ namespace Zelda_Game
 
         public Goriya(Game1 game)
         {
+            Game = game;
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
             totalFrames = 30;
@@ -30,8 +32,10 @@ namespace Zelda_Game
         int movementCounter = 0;
         int num = 0;
         String goriyaState;
+        Boolean throwTrap;
         public void Update()
         {
+            throwTrap = false;
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
@@ -50,6 +54,8 @@ namespace Zelda_Game
                 if (position.X > windowWidth)
                     position.X = 0;
                 goriyaState = "right";
+                if(movementCounter == 0)
+                    throwTrap = true;
             }
             else if (num % 4 == 1)
             {
@@ -71,6 +77,10 @@ namespace Zelda_Game
                 if (position.Y < 0)
                     position.Y = windowHeight;
                 goriyaState = "down";
+            }
+
+            if (throwTrap == true){
+                trap = new Trap(Game, position);
             }
             trap.Update();
         }
