@@ -9,14 +9,14 @@ namespace Zelda_Game
         private KeyboardState previousState;
         private KeyboardState currentState;
         private Game1 game;
-        private List<IEnvironment> List;
+        //private List<IEnvironment> List;
         private List<IItem> List2; 
-        public int i = 0;
+        //public int i = 0;
         public int j = 0;
-        public KeyBoardController(Game1 _game, List<IEnvironment> blockList, List<IItem> itemList)
+        public KeyBoardController(Game1 _game, List<IItem> itemList)
         {
             game = _game;
-            List = blockList;
+            //List = blockList;
             List2 = itemList;
 
         }
@@ -115,25 +115,25 @@ namespace Zelda_Game
             }
             previousState = currentState;
             currentState = Keyboard.GetState();
-            if (userInput.IsKeyDown(Keys.T) && !previousState.IsKeyDown(Keys.T))
-            {
-                i++;
-                if(i>9)
-                {
-                    i = 0;
-                }
-                game.enviornment = List[i];
+            //if (userInput.IsKeyDown(Keys.T) && !previousState.IsKeyDown(Keys.T))
+            //{
+            //    i++;
+            //    if(i>9)
+            //    {
+            //        i = 0;
+            //    }
+            //    game.enviornment = List[i];
 
-            }
-            if (userInput.IsKeyDown(Keys.Y) && !previousState.IsKeyDown(Keys.Y))
-            {
-                i--;
-                if(i<0)
-                {
-                    i = 9;
-                }
-                game.enviornment = List[i];
-            }
+            //}
+            //if (userInput.IsKeyDown(Keys.Y) && !previousState.IsKeyDown(Keys.Y))
+            //{
+            //    i--;
+            //    if(i<0)
+            //    {
+            //        i = 9;
+            //    }
+            //    game.enviornment = List[i];
+            //}
 
             //item list
 
