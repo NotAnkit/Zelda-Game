@@ -9,6 +9,7 @@ namespace Zelda_Game
     {
         private Link player;
         private ISprite sprite;
+        private ISprite item;
         private int animationCount;
         public DownSwordLinkState(Link link)
         {
@@ -53,12 +54,24 @@ namespace Zelda_Game
 
         public ISprite UseItem(string itemName)
         {
-            throw new NotImplementedException();
+            if (itemName.Equals("bomb")) item = LinkSpriteFactory.Instance.LinkBombDownAnimationSprite();
+
+            else if (itemName.Equals("blue-arrow")) item = LinkSpriteFactory.Instance.LinkBlueArrowDownAnimationSprite();
+
+            else if (itemName.Equals("fire")) item = LinkSpriteFactory.Instance.LinkFireDownAnimationSprite();
+
+            else if (itemName.Equals("green-arrow")) item = LinkSpriteFactory.Instance.LinkGreenArrowDownAnimationSprite();
+
+            else if (itemName.Equals("green-boomerang")) item = LinkSpriteFactory.Instance.LinkGreenBoomerangDownAnimationSprite();
+
+            else if (itemName.Equals("blue-boomerang")) item = LinkSpriteFactory.Instance.LinkBlueBoomerangDownAnimationSprite();
+
+            return item;
         }
 
         public void UseSword()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void TakeDamage()
