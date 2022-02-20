@@ -56,7 +56,7 @@ namespace Zelda_Game
             else if (userInput.IsKeyDown(Keys.Z) || userInput.IsKeyDown(Keys.N))
             {
 
-                 game.link.useSword();
+                 game.link.UseSword();
                 
                 
             }

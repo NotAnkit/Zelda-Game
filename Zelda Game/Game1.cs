@@ -28,7 +28,7 @@ namespace Zelda_Game
         {
             controllerList = new List<IController>();
             //blockList = new List<IEnvironment>();
-            itemList = new List<IItem>(); 
+            itemList = new List<IItem>();
 
             //blockList.Add(new SquareBlock(this));
             //blockList.Add(new BlackBlock(this));
@@ -93,7 +93,7 @@ namespace Zelda_Game
             _spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            link.draw(_spriteBatch);
+            link.Draw(_spriteBatch);
             enviornment.Draw(_spriteBatch);
             enemy.Draw(_spriteBatch);
             item.Draw(_spriteBatch);

@@ -11,7 +11,7 @@ namespace Zelda_Game
         private Vector2 position;
         private Vector2 itemPosition;
         public ILinkState currentState;     
-        private Boolean useItem;
+        private bool useItem;
         private int animationCount;
         private ISprite item;
 
@@ -49,7 +49,7 @@ namespace Zelda_Game
             useItem = true;
         }
 
-        public void useSword()
+        public void UseSword()
         {
             currentState.UseSword();
         }
@@ -59,7 +59,7 @@ namespace Zelda_Game
             currentState.TakeDamage();
         }
 
-        public void draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             currentState.Draw(spriteBatch, position);
             if (useItem) item.Draw(spriteBatch, itemPosition);
