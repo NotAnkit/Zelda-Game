@@ -80,4 +80,7 @@
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.editorconfig" />
+  </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
-    class LinkWoodSwordRightAnimation : ISprite
+    public class LinkWoodSwordRightAnimation : ISprite
     {
         public Texture2D Texture;
 
@@ -12,8 +12,8 @@ namespace Zelda_Game
             Texture = texture;
         }
 
-        int currentFrame = 0;
-        int totalFrames = 60;
+        private int currentFrame = 0;
+        private int totalFrames = 60;
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;

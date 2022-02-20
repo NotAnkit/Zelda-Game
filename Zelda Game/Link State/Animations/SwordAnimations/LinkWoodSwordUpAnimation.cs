@@ -4,7 +4,7 @@ using System;
 
 namespace Zelda_Game
 {
-    class LinkWoodSwordUpAnimation : ISprite
+    public class LinkWoodSwordUpAnimation : ISprite
     {
 
     
@@ -16,8 +16,8 @@ namespace Zelda_Game
            
         }
 
-        int currentFrame = 0;
-        int totalFrames = 60;
+        private int currentFrame = 0;
+        private int totalFrames = 60;
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
@@ -47,11 +47,6 @@ namespace Zelda_Game
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             return location;
-        }
-
-        public void draw(SpriteBatch spriteBatch, Vector2 location, SpriteFont font)
-        {
-            throw new NotImplementedException();
         }
 
         public void Update()
