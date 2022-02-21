@@ -6,19 +6,10 @@ namespace Zelda_Game
     public class KeyBoardController : IController
     {
         private KeyboardState userInput;
-        private KeyboardState previousState;
-        private KeyboardState currentState;
         private Game1 game;
-        //private List<IEnvironment> List;
-        private List<IItem> List2; 
-        //public int i = 0;
-        public int j = 0;
-        public KeyBoardController(Game1 _game, List<IItem> itemList)
+        public KeyBoardController(Game1 _game)
         {
             game = _game;
-            //List = blockList;
-            List2 = itemList;
-
         }
         public void Update()
         {
@@ -36,29 +27,29 @@ namespace Zelda_Game
             else if (userInput.IsKeyDown(Keys.W) || userInput.IsKeyDown(Keys.Up))
             {
                 game.link.direction = "up";
-                
+
             }
             else if (userInput.IsKeyDown(Keys.A) || userInput.IsKeyDown(Keys.Left))
             {
                 game.link.direction = "left";
-                
+
             }
             else if (userInput.IsKeyDown(Keys.S) || userInput.IsKeyDown(Keys.Down))
             {
                 game.link.direction = "down";
-               
+
             }
             else if (userInput.IsKeyDown(Keys.D) || userInput.IsKeyDown(Keys.Right))
             {
                 game.link.direction = "right";
-             
+
             }
             else if (userInput.IsKeyDown(Keys.Z) || userInput.IsKeyDown(Keys.N))
             {
 
-                 game.link.UseSword();
-                
-                
+                game.link.UseSword();
+
+
             }
             else if (userInput.IsKeyDown(Keys.E))
             {
@@ -109,55 +100,10 @@ namespace Zelda_Game
 
 
             }
-            else if(userInput.IsKeyUp(Keys.W) || userInput.IsKeyUp(Keys.A) || userInput.IsKeyUp(Keys.S) || userInput.IsKeyUp(Keys.D))
+            else if (userInput.IsKeyUp(Keys.W) || userInput.IsKeyUp(Keys.A) || userInput.IsKeyUp(Keys.S) || userInput.IsKeyUp(Keys.D))
             {
                 game.link.direction = "idle";
             }
-            previousState = currentState;
-            currentState = Keyboard.GetState();
-            //if (userInput.IsKeyDown(Keys.T) && !previousState.IsKeyDown(Keys.T))
-            //{
-            //    i++;
-            //    if(i>9)
-            //    {
-            //        i = 0;
-            //    }
-            //    game.enviornment = List[i];
-
-            //}
-            //if (userInput.IsKeyDown(Keys.Y) && !previousState.IsKeyDown(Keys.Y))
-            //{
-            //    i--;
-            //    if(i<0)
-            //    {
-            //        i = 9;
-            //    }
-            //    game.enviornment = List[i];
-            //}
-
-            //item list
-
-            if (userInput.IsKeyDown(Keys.U) && !previousState.IsKeyDown(Keys.U))
-            {
-                j++;
-                if (j > 11)
-                {
-                    j = 0;
-                }
-                game.item = List2[j];
-
-            }
-            else if (userInput.IsKeyDown(Keys.I) && !previousState.IsKeyDown(Keys.I))
-            {
-                j--;
-                if (j < 0)
-                {
-                    j = 11;
-                }
-                game.item = List2[j];
-            }
-
-          
         }
     }
 }

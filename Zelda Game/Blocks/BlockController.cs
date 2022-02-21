@@ -29,7 +29,6 @@ namespace Zelda_Game
 
         public void Update()
         {
-            //userInput = Keyboard.GetState();
             previousState = currentState;
             currentState = Keyboard.GetState();
             if (currentState.IsKeyDown(Keys.T) && !previousState.IsKeyDown(Keys.T))

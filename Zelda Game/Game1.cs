@@ -15,8 +15,6 @@ namespace Zelda_Game
         public IEnvironment enviornment;
         public IItem item;
         public Vector2 spritePosition;
-        //public List<IEnvironment> blockList;
-        public List<IItem> itemList;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -27,36 +25,11 @@ namespace Zelda_Game
         protected override void Initialize()
         {
             controllerList = new List<IController>();
-            //blockList = new List<IEnvironment>();
-            itemList = new List<IItem>();
 
-            //blockList.Add(new SquareBlock(this));
-            //blockList.Add(new BlackBlock(this));
-            //blockList.Add(new BlueSand(this));
-            //blockList.Add(new BrickBlock(this));
-            //blockList.Add(new LadderBlock(this));
-            //blockList.Add(new NavyBlueBlock(this));
-            //blockList.Add(new PushableBlock(this));
-            //blockList.Add(new Stairs(this));
-            //blockList.Add(new Statue1(this));
-            //blockList.Add(new Statue2(this));
-
-            itemList.Add(new CompassItem(this));
-            itemList.Add(new MapItem(this));
-            itemList.Add(new KeyItem(this));
-            itemList.Add(new HeartContainerItem(this));
-            itemList.Add(new TriforcePieceItem(this));
-            itemList.Add(new BowItem(this));
-            itemList.Add(new HeartItem(this));
-            itemList.Add(new RupeeItem(this));
-            itemList.Add(new ArrowItem(this));
-            itemList.Add(new BombItem(this));
-            itemList.Add(new FairyItem(this));
-            itemList.Add(new ClockItem(this));
-
-            controllerList.Add(new KeyBoardController(this, itemList));
+            controllerList.Add(new KeyBoardController(this));
             controllerList.Add(new EnemyController(this));
-            controllerList.Add(new BlockController(this)); //need this for items too
+            controllerList.Add(new BlockController(this)); 
+            controllerList.Add(new ItemController(this)); 
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 400;
             _graphics.ApplyChanges();
@@ -68,7 +41,7 @@ namespace Zelda_Game
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
             enviornment = new SquareBlock(this);
-            item = itemList[0]; //might change -Moh
+            item = new CompassItem(this);
             link = new Link(spritePosition);
             enemy = new Bat(this);
             spritePosition = new Vector2(350, 250);
