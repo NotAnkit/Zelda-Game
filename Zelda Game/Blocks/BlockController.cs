@@ -38,7 +38,7 @@ namespace Zelda_Game
                 {
                     currentBlockValue = 0;
                 }
-                Game.enviornment = blockList[currentBlockValue];
+                Game.environment = blockList[currentBlockValue];
 
             }
             if (currentState.IsKeyDown(Keys.Y) && !previousState.IsKeyDown(Keys.Y))
@@ -48,7 +48,7 @@ namespace Zelda_Game
                 {
                     currentBlockValue = blockList.Count - 1;
                 }
-                Game.enviornment = blockList[currentBlockValue];
+                Game.environment = blockList[currentBlockValue];
             }
         }
     }

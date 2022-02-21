@@ -12,7 +12,7 @@ namespace Zelda_Game
         public ISprite sprite;
         public Link link;
         public IEnemy enemy;
-        public IEnvironment enviornment;
+        public IEnvironment environment;
         public IItem item;
         public Vector2 spritePosition;
         public Game1()
@@ -40,7 +40,7 @@ namespace Zelda_Game
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
-            enviornment = new SquareBlock(this);
+            environment = new SquareBlock(this);
             item = new CompassItem(this);
             link = new Link(spritePosition);
             enemy = new Bat(this);
@@ -54,7 +54,7 @@ namespace Zelda_Game
                 controller.Update();
             }
             link.Update();
-            enviornment.Update();
+            environment.Update();
             enemy.Update();
             item.Update();
 
@@ -67,7 +67,7 @@ namespace Zelda_Game
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             link.Draw(_spriteBatch);
-            enviornment.Draw(_spriteBatch);
+            environment.Draw(_spriteBatch);
             enemy.Draw(_spriteBatch);
             item.Draw(_spriteBatch);
 
