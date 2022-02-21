@@ -35,6 +35,8 @@
     <None Remove="Link State\Animations\PickUpItems\" />
     <None Remove="Link State\Animations\UseItemsAnimations\" />
     <None Remove="Link State\Animations\BlueBoomerangAnimations\" />
+    <None Remove="Sprint2Docs\" />
+    <None Remove="Sprint2Docs\CodeReviewsSprint2\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -74,6 +76,8 @@
     <Folder Include="Link State\Animations\PickUpItems\" />
     <Folder Include="Link State\Animations\UseItemsAnimations\" />
     <Folder Include="Link State\Animations\BlueBoomerangAnimations\" />
+    <Folder Include="Sprint2Docs\" />
+    <Folder Include="Sprint2Docs\CodeReviewsSprint2\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />
