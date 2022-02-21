@@ -8,7 +8,7 @@ namespace Zelda_Game
         private KeyboardState currentState;
         private KeyboardState previousState;
         public Game1 Game;
-        private List<IEnvironment> blockList;
+        private readonly List<IEnvironment> blockList;
         public int currentBlockValue = 0;
 
         public BlockController(Game1 game)
