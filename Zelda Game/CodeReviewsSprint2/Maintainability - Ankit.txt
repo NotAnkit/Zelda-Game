@@ -1,0 +1,13 @@
+﻿Author: Rama Naboulsi
+Date: 02/20/2022
+Name of file: RightMovingLinkState.cs
+Author of file: Ankit Kumar
+Comments: Overall, the file is very maintainable.
+The sprite is taken from a sprite factory which means that the implelementation is hidden.
+The implementations for both changing direction and using an item are also hidden in seperate classes.
+The behvior could be easily changed within the other classes without having to change much in the current class.
+The code is also very succinct.
+Hypothetical Change: Adding another item to use.
+This would be easy to support using the current implentation.
+An object with the animation moving right and a corresponding method would be added to the sprite factory.
+Another if-else statement under UseItem would then be used to call the method in the sprite factory.
