@@ -1,0 +1,20 @@
+﻿Author of Review: Anish Chitti
+
+Date: 2/18/2022
+
+Sprint 2
+
+File being reviewed: PushableBlock.cs
+
+Author of file being reviewed:Kiren Manoharan
+
+Time: 15 minutes
+
+Comments about code: The code is very simple and can easily be read as it just
+draws the sprite from the sprite sheet.
+
+Hypothetical change: Currently the block are in a stationary position,
+but eventually this block will need to be able to move and be pushed by link.
+New parameters may have to bepassed in about locations so that the block can be
+moved and have its location adjusted. The current class should be able to handle
+this change well as new parameters could be easily added. 
