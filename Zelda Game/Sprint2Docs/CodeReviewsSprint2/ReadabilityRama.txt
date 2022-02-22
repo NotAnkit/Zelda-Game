@@ -1,0 +1,18 @@
+﻿Author of Review: Anish Chitti
+
+Date: 2/18/2022
+
+Sprint 2
+
+File being reviewed: Jelly.cs
+
+Author of file being reviewed: Rama Naboulsi
+
+Time: 15 minutes
+
+Comments about code: The Update method is really well done and has a very
+readable implementation of the enemy’s movement. By using a the random number
+and then doing modulus by 4 so that each answer adds or subtracts one form x or
+y is easy to understand and read. The animations implementation is easy to read
+as it is just counting frames. I used a very similar implementation to animate
+all of the aspects of Link. 

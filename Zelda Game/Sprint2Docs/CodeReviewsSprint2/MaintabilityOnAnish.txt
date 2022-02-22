@@ -1,0 +1,26 @@
+﻿1. Author of the code review:
+Mohamed Elzubeir
+
+2. Date of the code review:
+02/20/20203
+
+3. Sprint number:
+Sprint 2
+
+4. Name of the .cs file being reviewed:
+LinkPickUpItem1.cs
+
+5. Author of the .cs file being reviewed:
+Anish Chitti
+
+6. Specific comments on code quality:
+The code was very neat and concise.
+The code is simple for the purpose of Link picking up items.
+The code is also very easy to reuse for other items in the game.
+
+7. A hypothetical change to make to the game related to file being reviewed
+and how the current implementation could or could not easily support that
+change:
+A hypothetical change would be picking up damage items such as an
+ignited bomb, based on the code implementations that change can be easily
+updated.

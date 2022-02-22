@@ -1,0 +1,31 @@
+﻿1. Author of the code review:
+Ankit Kumar
+
+2. Date of the code review:
+02/21/2022
+
+3. Sprint number:
+Sprint 2
+
+4. Name of the .cs file being reviewed:
+ItemController.cs
+
+5. Author of the .cs file being reviewed:
+Mohamed Elzubeir
+
+6. Specific comments on code quality:
+The Coupling of the program is low, which is good as it only relys on the game
+object to add the items, and nothing else to actually make them. The cohesin is
+is good as the only task for the file is to rotate between the items, and it has
+all the nessessary code and implements the right interface to make it.
+
+7. A hypothetical change to make to the game related to file being reviewed
+and how the current implementation could or could not easily support that
+change:
+A Hypothetical change that would make the code easier to read and have even
+higher coupling is move the list creation to the game1. This game1 doesnt need
+to be passed in and the couplding is very low. The problem is it ruins the
+cohesion on the game1 class. It also makes it so if there is a change and more
+items are added, then there needs to be chnages in two files instead of one.
+This could be easily supported as instead of passing in a game object the list
+is passed in.

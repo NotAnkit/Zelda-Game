@@ -1,0 +1,23 @@
+﻿1. Author of the code review:
+Ankit Kumar
+
+2. Date of the code review:
+02/21/2022
+
+3. Sprint number:
+Sprint 2
+
+4. Name of the .cs file being reviewed
+BlockController.cs
+
+5. Author of the .cs file being reviewed:
+Kiren Manoharan
+
+6. Number of minutes taken to complete the review:
+1 minutes
+
+7. Specific comments on what is readable and what is not:
+The code is very short and consise, which makes it easy to read. The adding of
+blocks one by one is not ideal and takes up a lot of space and is very
+repetitive. The if statement is very short, it is two deep so a little complex,
+though I do not see a ideal way to fix it.

@@ -1,0 +1,9 @@
+﻿Author: Rama Naboulsi
+Date: 02/20/2022
+Name of the .cs File: TriforcePieceItem.cs
+Author of the .cs File: Moh Elzubeir
+Minutes: 5
+Comments: The code is very succint with as few lines as possible.
+The variables are named descriptively and properly formatted.
+Overall, the entirety of the file is very readable.
+
