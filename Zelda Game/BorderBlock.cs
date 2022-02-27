@@ -1,14 +1,15 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
-    public class BrickBlock : IEnvironment
+    public class BorderBlock : IEnvironment
     {
         public Texture2D Texture;
 
-        public BrickBlock(Game1 game)
+        public BorderBlock(Game1 game)
         {
+           
             Texture = game.Content.Load<Texture2D>("RoomSheet");
         }
 
@@ -18,11 +19,10 @@ namespace Zelda_Game
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(984, 45, 16, 16);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
+            Rectangle sourceRectangle = new Rectangle(523, 11, 254, 176);
+            Rectangle destinationRectangle = new Rectangle(0, 0, 792, 495);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-
         }
     }
 }

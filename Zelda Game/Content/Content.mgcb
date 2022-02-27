@@ -10,6 +10,7 @@
 
 #-------------------------------- References --------------------------------#
 
+/reference:..\bin\Debug\netcoreapp3.1\Zelda Game.dll
 
 #---------------------------------- Content ---------------------------------#
 
@@ -48,6 +49,11 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:LinkSheet.png
+
+#begin Room1.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room1.xml
 
 #begin RoomSheet.png
 /importer:TextureImporter

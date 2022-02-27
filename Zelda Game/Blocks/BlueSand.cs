@@ -16,10 +16,10 @@ namespace Zelda_Game
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(1001, 28, 16, 16);
-            Rectangle destinationRectangle = new Rectangle(100, 100, 32, 32);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 
