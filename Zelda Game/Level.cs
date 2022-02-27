@@ -5,6 +5,6 @@ namespace Zelda_Game
 {
     public class Level
     {
-        public Dictionary<Vector2, string> Blocks;
+        public Dictionary<string, Vector2> Blocks;
     }
 }

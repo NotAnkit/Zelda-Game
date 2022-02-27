@@ -3,52 +3,8 @@
   <Asset Type="Zelda_Game.Level">
     <Blocks>
       <Item>
-        <Key>93 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>125 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>157 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>189 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>221 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>253 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>285 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>317 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>349 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>381 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>413 90</Key>
-        <Value>SB</Value>
-      </Item>
-      <Item>
-        <Key>445 90</Key>
-        <Value>SB</Value>
+        <Key>SB</Key>
+        <Value>0 0</Value>
       </Item>
     </Blocks>
   </Asset>
