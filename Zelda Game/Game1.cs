@@ -79,7 +79,6 @@ namespace Zelda_Game
             environment.Draw(_spriteBatch, new Vector2(100,100));
             enemy.Draw(_spriteBatch);
             item.Draw(_spriteBatch);
-            
             room1Blocks.Draw(_spriteBatch);
             _spriteBatch.End();
             base.Draw(gameTime);

@@ -8,60 +8,60 @@ namespace Zelda_Game
 {
     public class Room
     {
-        private readonly Dictionary<IEnvironment, Vector2> blockList;
+        private readonly Dictionary<Vector2, IEnvironment> blockList;
         public Room(Level room, Game1 game1)
         {
-            blockList = new Dictionary<IEnvironment, Vector2>();
-            foreach (KeyValuePair<string, Vector2> block in room.Blocks)
+            blockList = new Dictionary<Vector2, IEnvironment>();
+            foreach (KeyValuePair<Vector2, string> block in room.Blocks)
             {
                 if(block.Key.Equals("SB"))
                 {
-                    blockList.Add(new SquareBlock(game1), block.Value);
+                    blockList.Add(block.Key, new SquareBlock(game1));
                 }
                 else if (block.Key.Equals("BLB"))
                 {
-                    blockList.Add(new BlackBlock(game1), block.Value);
+                    blockList.Add(block.Key, new BlackBlock(game1));
                 }
                 else if (block.Key.Equals("BS"))
                 {
-                    blockList.Add(new BlueSand(game1), block.Value);
+                    blockList.Add(block.Key, new BlueSand(game1));
                 }
                 else if (block.Key.Equals("BB"))
                 {
-                    blockList.Add(new BrickBlock(game1), block.Value);
+                    blockList.Add(block.Key, new BrickBlock(game1));
                 }
                 else if (block.Key.Equals("LB"))
                 {
-                    blockList.Add(new LadderBlock(game1), block.Value);
+                    blockList.Add(block.Key, new LadderBlock(game1));
                 }
                 else if (block.Key.Equals("NBB"))
                 {
-                    blockList.Add(new NavyBlueBlock(game1), block.Value);
+                    blockList.Add(block.Key, new NavyBlueBlock(game1));
                 }
                 else if (block.Key.Equals("PB"))
                 {
-                    blockList.Add(new PushableBlock(game1), block.Value);
+                    blockList.Add(block.Key, new PushableBlock(game1));
                 }
                 else if (block.Key.Equals("S"))
                 {
-                    blockList.Add(new Stairs(game1), block.Value);
+                    blockList.Add(block.Key, new Stairs(game1));
                 }
                 else if (block.Key.Equals("S1"))
                 {
-                    blockList.Add(new Statue1(game1), block.Value);
+                    blockList.Add(block.Key, new Statue1(game1));
                 }
                 else if (block.Key.Equals("S2"))
                 {
-                    blockList.Add(new Statue2(game1), block.Value);
+                    blockList.Add(block.Key, new Statue2(game1));
                 }
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (KeyValuePair<IEnvironment, Vector2> block in blockList)
+            foreach (KeyValuePair<Vector2, IEnvironment> block in blockList)
             {
-                block.Key.Draw(spriteBatch, block.Value);
+                block.Value.Draw(spriteBatch, block.Key);
             }
         }
     }
