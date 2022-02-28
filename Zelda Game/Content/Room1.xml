@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:ns="Microsoft.Xna.Framework">
+  <Asset Type="Zelda_Game.Level">
+     <Blocks>
+      <Item>
+        <Key>59 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>90 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>122 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>154 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>186 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>218 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>250 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>282 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>314 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>346 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>378 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>410 61</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>59 91</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>59 124</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>59 156</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>59 188</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>59 220</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>59 251</Key>
+        <Value>SB</Value>
+      </Item>
+    </Blocks>
+  </Asset>
+</XnaContent>

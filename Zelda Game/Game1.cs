@@ -50,8 +50,8 @@ namespace Zelda_Game
             item = new CompassItem(this);
             link = new Link(spritePosition);
             enemy = new Bat(this);
-            //room1 = Content.Load<Level>("Room1");
-            //room1Blocks = new Room(room1, this);
+            room1 = Content.Load<Level>("Room1");
+            room1Blocks = new Room(room1, this);
             spritePosition = new Vector2(350, 250);
         }
 
@@ -74,7 +74,7 @@ namespace Zelda_Game
             _spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
             border.Draw(_spriteBatch, new Vector2(0, 0));
-            //room1Blocks.Draw(_spriteBatch);
+            room1Blocks.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
             environment.Draw(_spriteBatch, new Vector2(100,100));
             enemy.Draw(_spriteBatch);
