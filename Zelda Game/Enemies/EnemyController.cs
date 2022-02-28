@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 namespace Zelda_Game
@@ -17,12 +18,12 @@ namespace Zelda_Game
         {
             Game = game;
             enemyList = new List<IEnemy>();
-            enemyList.Add(new Bat(Game));
-            enemyList.Add(new Stalfos(Game));
-            enemyList.Add(new Goriya(Game));
-            enemyList.Add(new Jelly(Game));
-            enemyList.Add(new Hand(Game));
-            enemyList.Add(new Dragon(Game));
+            enemyList.Add(new Bat(Game, new Vector2(250,250)));
+            enemyList.Add(new Stalfos(Game, new Vector2(250, 250)));
+            enemyList.Add(new Goriya(Game, new Vector2(250, 250)));
+            enemyList.Add(new Jelly(Game, new Vector2(250, 250)));
+            enemyList.Add(new Hand(Game, new Vector2(250, 250)));
+            enemyList.Add(new Dragon(Game, new Vector2(250, 250)));
         }
 
         public void Update()

@@ -13,7 +13,7 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
 
-        public Trap(Game1 game, Vector2 startPosition)
+        public Trap(Game1 game, Vector2 location, Vector2 startPosition)
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
@@ -21,7 +21,7 @@ namespace Zelda_Game
             spriteSpeed = 3f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
-            position = startPosition;
+            position = location;
         }
 
         public void Update()
@@ -34,7 +34,7 @@ namespace Zelda_Game
                 position.X += spriteSpeed;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 16, 32);

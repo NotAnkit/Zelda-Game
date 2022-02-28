@@ -16,7 +16,7 @@ namespace Zelda_Game
         private Vector2 position;
         private Fireballs fireballs;
 
-        public Dragon(Game1 game)
+        public Dragon(Game1 game, Vector2 location)
         {
             Game = game;
             Texture = game.Content.Load<Texture2D>("EnemySheet");
@@ -25,7 +25,7 @@ namespace Zelda_Game
             spriteSpeed = 1f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
-            position = new Vector2(windowWidth / 2, windowHeight / 2);
+            position = location;
             fireballs = new Fireballs(game, new Vector2(position.X, position.Y));
         }
 
@@ -61,7 +61,7 @@ namespace Zelda_Game
             fireballs.Update();
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 48, 64);

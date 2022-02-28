@@ -16,7 +16,7 @@ namespace Zelda_Game
         private Vector2 position;
         public Trap trap;
 
-        public Goriya(Game1 game)
+        public Goriya(Game1 game, Vector2 location)
         {
             Game = game;
             Texture = game.Content.Load<Texture2D>("ItemSheet");
@@ -25,8 +25,8 @@ namespace Zelda_Game
             spriteSpeed = 1f;
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
-            position = new Vector2(windowWidth / 2, windowHeight / 2);
-            trap = new Trap(game, position);
+            position = location;
+            trap = new Trap(game, location, position);
         }
 
         private int movementCounter = 0;
@@ -53,7 +53,7 @@ namespace Zelda_Game
                     position.X = 0;
                 goriyaState = "right";
                 if(movementCounter == 0)
-                    trap = new Trap(Game, position);
+                    trap = new Trap(Game, position, position);
             }
             else if (num % 4 == 1)
             {
@@ -80,7 +80,7 @@ namespace Zelda_Game
             trap.Update();
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
@@ -117,7 +117,7 @@ namespace Zelda_Game
             }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);
-            trap.Draw(spriteBatch);
+            trap.Draw(spriteBatch, position);
         }
 
     }
