@@ -4,23 +4,19 @@
     <source1> 1 191 </source1>
     <source2> 192 303 </source2>
      <Blocks>
-      <Item>
-        <Key>219 157</Key>
-        <Value>PB</Value>
-      </Item>
     </Blocks>
     <Enemies>
       <Item>
-        <Key>219 93</Key>
-        <Value>J</Value>
+        <Key>91 93</Key>
+        <Value>B</Value>
       </Item>
       <Item>
-        <Key>219 221</Key>
-        <Value>J</Value>
+        <Key>155 125</Key>
+        <Value>B</Value>
       </Item>
       <Item>
-        <Key>155 157</Key>
-        <Value>J</Value>
+        <Key>91 221</Key>
+        <Value>B</Value>
       </Item>
     </Enemies>
     <Items>

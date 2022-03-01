@@ -53,11 +53,6 @@ namespace Zelda_Game
 
                 else if (enemy.Value.Equals("S")) enemyList.Add(enemy.Key, new Stalfos(game1, enemy.Key));
             }
-
-            for(int i = 0; i < room.Doors.Length; i+=3)
-            {
-                
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

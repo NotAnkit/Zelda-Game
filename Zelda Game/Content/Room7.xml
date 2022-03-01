@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:ns="Microsoft.Xna.Framework">
+  <Asset Type="Zelda_Game.Level">
+    <source1> 1 191 </source1>
+    <source2> 192 303 </source2>
+     <Blocks>
+      <Item>
+        <Key>123 193</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>123 221</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>347 93</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>347 221</Key>
+        <Value>PB</Value>
+      </Item>
+    </Blocks>
+    <Enemies>
+      <Item>
+        <Key>379 93</Key>
+        <Value>B</Value>
+      </Item>
+      <Item>
+        <Key>379 221</Key>
+        <Value>B</Value>
+      </Item>
+      <Item>
+        <Key>315 125</Key>
+        <Value>B</Value>
+      </Item>
+      <Item>
+        <Key>315 289</Key>
+        <Value>B</Value>
+      </Item>
+      <Item>
+        <Key>251 125</Key>
+        <Value>B</Value>
+      </Item>
+      <Item>
+        <Key>251 289</Key>
+        <Value>B</Value>
+      </Item>
+      <Item>
+        <Key>411 157</Key>
+        <Value>B</Value>
+      </Item>
+      <Item>
+        <Key>155 61</Key>
+        <Value>B</Value>
+      </Item>
+    </Enemies>
+    <Items>
+    </Items>
+  </Asset>
+</XnaContent>

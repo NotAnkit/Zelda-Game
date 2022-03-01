@@ -55,6 +55,81 @@
 /processor:PassThroughProcessor
 /build:Room1.xml
 
+#begin Room10.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room10.xml
+
+#begin Room11.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room11.xml
+
+#begin Room12.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room12.xml
+
+#begin Room13.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room13.xml
+
+#begin Room14.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room14.xml
+
+#begin Room15.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room15.xml
+
+#begin Room16.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room16.xml
+
+#begin Room2.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room2.xml
+
+#begin Room3.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room3.xml
+
+#begin Room4.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room4.xml
+
+#begin Room5.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room5.xml
+
+#begin Room6.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room6.xml
+
+#begin Room7.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room7.xml
+
+#begin Room8.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room8.xml
+
+#begin Room9.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room9.xml
+
 #begin RoomSheet.png
 /importer:TextureImporter
 /processor:TextureProcessor

@@ -50,7 +50,7 @@ namespace Zelda_Game
             item = new CompassItem(this);
             link = new Link(spritePosition);
             enemy = new Bat(this, new Vector2(250, 250));
-            room1 = Content.Load<Level>("Room1");
+            room1 = Content.Load<Level>("Room16");
             room1Blocks = new Room(room1, this);
             spritePosition = new Vector2(350, 250);
         }

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:ns="Microsoft.Xna.Framework">
+  <Asset Type="Zelda_Game.Level">
+    <source1> 1 191 </source1>
+    <source2> 192 303 </source2>
+     <Blocks>
+      <Item>
+        <Key>123 125</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>155 125</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>123 157</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>155 157</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>123 189</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>155 189</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>315 125</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>347 125</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>315 157</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>347 157</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>315 189</Key>
+        <Value>PB</Value>
+      </Item>
+      <Item>
+        <Key>347 189</Key>
+        <Value>PB</Value>
+      </Item>
+    </Blocks>
+    <Enemies>
+      <Item>
+        <Key>283 189</Key>
+        <Value>S</Value>
+      </Item>
+      <Item>
+        <Key>251 93</Key>
+        <Value>S</Value>
+      </Item>
+      <Item>
+        <Key>347 93</Key>
+        <Value>S</Value>
+      </Item>
+      <Item>
+        <Key>155 221</Key>
+        <Value>S</Value>
+      </Item>
+      <Item>
+        <Key>411 221</Key>
+        <Value>S</Value>
+      </Item>
+    </Enemies>
+    <Items>
+    </Items>
+  </Asset>
+</XnaContent>

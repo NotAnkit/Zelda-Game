@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:ns="Microsoft.Xna.Framework">
+  <Asset Type="Zelda_Game.Level">
+    <source1> 1 191 </source1>
+    <source2> 192 303 </source2>
+     <Blocks>
+      <Item>
+        <Key>59 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>59 93</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>59 125</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>59 189</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>59 221</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>59 253</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>91 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>91 253</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>123 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>123 125</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>123 157</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>123 189</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>123 221</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>123 253</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>155 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>155 253</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>187 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>187 93</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>187 125</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>187 157</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>187 189</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>187 253</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>219 189</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>251 125</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>283 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>283 125</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>283 157</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>283 189</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>283 221</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>283 253</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>315 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>315 253</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>347 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>347 93</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>347 125</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>347 157</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>347 189</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>347 253</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>379 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>379 253</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>411 61</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>411 93</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>411 125</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>411 189</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>411 221</Key>
+        <Value>NBB</Value>
+      </Item>
+      <Item>
+        <Key>411 253</Key>
+        <Value>NBB</Value>
+      </Item>
+    </Blocks>
+    <Enemies>
+      <Item>
+        <Key>123 93</Key>
+        <Value>S</Value>
+      </Item>
+      <Item>
+        <Key>255 157</Key>
+        <Value>S</Value>
+      </Item>
+      <Item>
+        <Key>379 193</Key>
+        <Value>S</Value>
+      </Item>
+    </Enemies>
+    <Items>
+    </Items>
+  </Asset>
+</XnaContent>
+
