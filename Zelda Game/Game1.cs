@@ -34,7 +34,8 @@ namespace Zelda_Game
             controllerList.Add(new KeyBoardController(this));
             controllerList.Add(new EnemyController(this));
             controllerList.Add(new BlockController(this)); 
-            controllerList.Add(new ItemController(this)); 
+            controllerList.Add(new ItemController(this));
+            controllerList.Add(new RoomController(this));
             _graphics.PreferredBackBufferWidth = 503;
             _graphics.PreferredBackBufferHeight = 345;
             _graphics.ApplyChanges();
@@ -45,12 +46,12 @@ namespace Zelda_Game
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
-            environment = new SquareBlock(this);
+            //environment = new SquareBlock(this);
             border = new BorderBlock(this);
-            item = new CompassItem(this);
+            //item = new CompassItem(this);
             link = new Link(spritePosition);
-            enemy = new Bat(this, new Vector2(250, 250));
-            room1 = Content.Load<Level>("Room16");
+            //enemy = new Bat(this, new Vector2(250, 250));
+            room1 = Content.Load<Level>("Room1");
             room1Blocks = new Room(room1, this);
             spritePosition = new Vector2(350, 250);
         }
@@ -62,9 +63,9 @@ namespace Zelda_Game
                 controller.Update();
             }
             link.Update();
-            environment.Update();
-            enemy.Update();
-            item.Update();
+            //environment.Update();
+            //enemy.Update();
+            //item.Update();
             room1Blocks.Update();
             base.Update(gameTime);
         }
@@ -76,9 +77,9 @@ namespace Zelda_Game
             border.Draw(_spriteBatch, new Vector2(0, 0));
             room1Blocks.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
-            environment.Draw(_spriteBatch, new Vector2(100,100));
-            enemy.Draw(_spriteBatch, new Vector2(250, 250));
-            item.Draw(_spriteBatch);
+            //environment.Draw(_spriteBatch, new Vector2(100,100));
+            //enemy.Draw(_spriteBatch, new Vector2(250, 250));
+            //item.Draw(_spriteBatch);
 
             base.Draw(gameTime);
             _spriteBatch.End();
