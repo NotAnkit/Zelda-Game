@@ -43,24 +43,20 @@ namespace Zelda_Game
             {
                 if (enemy.Value.Equals("J")) enemyList.Add(enemy.Key, new Jelly(game1, enemy.Key));
 
-                /*else if (block.Value.Equals("BLB")) blockList.Add(block.Key, new BlackBlock(game1));
+                else if (enemy.Value.Equals("B")) enemyList.Add(enemy.Key, new Bat(game1, enemy.Key));
 
-                else if (block.Value.Equals("BS")) blockList.Add(block.Key, new BlueSand(game1));
+                else if (enemy.Value.Equals("D")) enemyList.Add(enemy.Key, new Dragon(game1, enemy.Key));
 
-                else if (block.Value.Equals("BB")) blockList.Add(block.Key, new BrickBlock(game1));
+                else if (enemy.Value.Equals("G")) enemyList.Add(enemy.Key, new Goriya(game1, enemy.Key));
 
-                else if (block.Value.Equals("LB")) blockList.Add(block.Key, new LadderBlock(game1));
+                else if (enemy.Value.Equals("H")) enemyList.Add(enemy.Key, new Hand(game1, enemy.Key));
 
-                else if (block.Value.Equals("NBB")) blockList.Add(block.Key, new NavyBlueBlock(game1));
+                else if (enemy.Value.Equals("S")) enemyList.Add(enemy.Key, new Stalfos(game1, enemy.Key));
+            }
 
-                else if (block.Value.Equals("PB")) blockList.Add(block.Key, new PushableBlock(game1));
-
-                else if (block.Value.Equals("S")) blockList.Add(block.Key, new Stairs(game1));
-
-                else if (block.Value.Equals("S1")) blockList.Add(block.Key, new Statue1(game1));
-
-                else if (block.Value.Equals("S2")) blockList.Add(block.Key, new Statue2(game1));*/
-
+            for(int i = 0; i < room.Doors.Length; i+=3)
+            {
+                
             }
         }
 
