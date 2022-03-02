@@ -15,7 +15,7 @@ namespace Zelda_Game
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(817, 110, 32, 32);
+            Rectangle sourceRectangle = new Rectangle(815, 110, 32, 32);
             Rectangle destinationRectangle = new Rectangle(217, 282, 65, 63);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
