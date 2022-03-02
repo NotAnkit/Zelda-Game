@@ -2,6 +2,10 @@
 <XnaContent xmlns:ns="Microsoft.Xna.Framework">
   <Asset Type="Zelda_Game.Level">
     <Doors>
+        <Item>TopCave</Item>
+        <Item>LeftDoor</Item>
+        <Item>RightWall</Item>
+        <Item>BottomWall</Item>
     </Doors>
      <Blocks>
       <Item>

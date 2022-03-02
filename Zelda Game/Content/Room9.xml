@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:ns="Microsoft.Xna.Framework">
   <Asset Type="Zelda_Game.Level">
-   <Doors>
+    <Doors>
+        <Item>TopWall</Item>
+        <Item>LeftWall</Item>
+        <Item>RightDoor</Item>
+        <Item>BottomWall</Item>
     </Doors>
-     <Blocks>
+    <Blocks>
     </Blocks>
     <Enemies>
       <Item>
