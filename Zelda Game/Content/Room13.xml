@@ -92,6 +92,10 @@
       </Item>
     </Enemies>
     <Items>
+      <Item>
+        <Key>379 157</Key>
+        <Value>HC</Value>
+      </Item>
     </Items>
   </Asset>
 </XnaContent>

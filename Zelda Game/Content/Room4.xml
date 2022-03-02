@@ -72,7 +72,7 @@
         <Key>315 221</Key>
         <Value>PB</Value>
       </Item>
-       <Item>
+      <Item>
         <Key>379 221</Key>
         <Value>PB</Value>
       </Item>
@@ -112,6 +112,10 @@
       </Item>
     </Enemies>
     <Items>
+       <Item>
+        <Key>323 253</Key>
+        <Value>K</Value>
+      </Item>
     </Items>
   </Asset>
 </XnaContent>

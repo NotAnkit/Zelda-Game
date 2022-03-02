@@ -20,6 +20,10 @@
       </Item>
     </Enemies>
     <Items>
+      <Item>
+        <Key>323 253</Key>
+        <Value>K</Value>
+      </Item>
     </Items>
   </Asset>
 </XnaContent>

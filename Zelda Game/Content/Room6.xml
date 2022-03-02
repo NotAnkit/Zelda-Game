@@ -44,6 +44,10 @@
       </Item>
     </Enemies>
     <Items>
+      <Item>
+        <Key>259 93</Key>
+        <Value>K</Value>
+      </Item>
     </Items>
   </Asset>
 </XnaContent>
