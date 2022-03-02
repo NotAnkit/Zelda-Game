@@ -68,6 +68,10 @@
       </Item>
     </Enemies>
     <Items>
+       <Item>
+        <Key>379 157</Key>
+        <Value>M</Value>
+      </Item>
     </Items>
   </Asset>
 </XnaContent>
