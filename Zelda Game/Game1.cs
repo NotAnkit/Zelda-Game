@@ -15,7 +15,6 @@ namespace Zelda_Game
         public IEnvironment environment;
         public IItem item;
         public Vector2 spritePosition;
-
         private IEnvironment border;
         public Level room1;
         public Room room1Blocks;

@@ -9,6 +9,7 @@ namespace Zelda_Game
         private readonly Dictionary<Vector2, IEnvironment> blockList;
         private readonly Dictionary<Vector2, IEnemy> enemyList;
         private readonly Dictionary<Vector2, IItem> itemList;
+        private readonly List<IDoor> doorList;
         private readonly Floor floor;
 
         public Room(Level room, Game1 game1)
@@ -16,6 +17,7 @@ namespace Zelda_Game
             blockList = new Dictionary<Vector2, IEnvironment>();
             enemyList = new Dictionary<Vector2, IEnemy>();
             itemList = new Dictionary<Vector2, IItem>();
+            doorList = new List<IDoor>();
             floor = new Floor(game1);
             foreach(KeyValuePair<Vector2, string> block in room.Blocks)
             {
@@ -81,6 +83,93 @@ namespace Zelda_Game
 
                 else if (item.Value.Equals("T")) itemList.Add(item.Key, new TriforcePieceItem(game1));
             }
+
+            for(int i = 0; i<room.Doors.Length; i++)
+            {
+                if(room.Doors[i].Equals("TopWall"))
+                {
+                    doorList.Add(new TopWall(game1));
+                }
+                else if (room.Doors[i].Equals("TopDoor"))
+                {
+                    doorList.Add(new TopDoor(game1));
+                }
+                else if (room.Doors[i].Equals("TopKey"))
+                {
+                    doorList.Add(new TopKey(game1));
+                }
+                else if (room.Doors[i].Equals("TopSealed"))
+                {
+                    doorList.Add(new TopSealed(game1));
+                }
+                else if (room.Doors[i].Equals("TopCave"))
+                {
+                    doorList.Add(new TopCave(game1));
+                }
+
+                if (room.Doors[i].Equals("LeftWall"))
+                {
+                    doorList.Add(new LeftWall(game1));
+                }
+                else if (room.Doors[i].Equals("LeftDoor"))
+                {
+                    doorList.Add(new LeftDoor(game1));
+                }
+                else if (room.Doors[i].Equals("LeftKey"))
+                {
+                    doorList.Add(new LeftKey(game1));
+                }
+                else if (room.Doors[i].Equals("LeftSealed"))
+                {
+                    doorList.Add(new LeftSealed(game1));
+                }
+                else if (room.Doors[i].Equals("LeftCave"))
+                {
+                    doorList.Add(new LeftCave(game1));
+                }
+
+                if (room.Doors[i].Equals("RightWall"))
+                {
+                    doorList.Add(new LeftWall(game1));
+                }
+                else if (room.Doors[i].Equals("RightDoor"))
+                {
+                    doorList.Add(new LeftDoor(game1));
+                }
+                else if (room.Doors[i].Equals("RightKey"))
+                {
+                    doorList.Add(new LeftKey(game1));
+                }
+                else if (room.Doors[i].Equals("RightSealed"))
+                {
+                    doorList.Add(new LeftSealed(game1));
+                }
+                else if (room.Doors[i].Equals("RightCave"))
+                {
+                    doorList.Add(new LeftCave(game1));
+                }
+
+                if (room.Doors[i].Equals("BottomWall"))
+                {
+                    doorList.Add(new LeftWall(game1));
+                }
+                else if (room.Doors[i].Equals("BottomDoor"))
+                {
+                    doorList.Add(new LeftDoor(game1));
+                }
+                else if (room.Doors[i].Equals("BottomKey"))
+                {
+                    doorList.Add(new LeftKey(game1));
+                }
+                else if (room.Doors[i].Equals("BottomSealed"))
+                {
+                    doorList.Add(new LeftSealed(game1));
+                }
+                else if (room.Doors[i].Equals("BottomCave"))
+                {
+                    doorList.Add(new LeftCave(game1));
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -97,6 +186,10 @@ namespace Zelda_Game
             foreach (KeyValuePair<Vector2, IItem> item in itemList)
             {
                 item.Value.Draw(spriteBatch, item.Key);
+            }
+            foreach(IDoor door in doorList)
+            {
+                door.Draw(spriteBatch, new Vector2(100, 100));
             }
         }
 
