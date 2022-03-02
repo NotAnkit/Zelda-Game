@@ -130,44 +130,44 @@ namespace Zelda_Game
 
                 if (room.Doors[i].Equals("RightWall"))
                 {
-                    doorList.Add(new LeftWall(game1));
+                    doorList.Add(new RightWall(game1));
                 }
                 else if (room.Doors[i].Equals("RightDoor"))
                 {
-                    doorList.Add(new LeftDoor(game1));
+                    doorList.Add(new RightDoor(game1));
                 }
                 else if (room.Doors[i].Equals("RightKey"))
                 {
-                    doorList.Add(new LeftKey(game1));
+                    doorList.Add(new RightKey(game1));
                 }
                 else if (room.Doors[i].Equals("RightSealed"))
                 {
-                    doorList.Add(new LeftSealed(game1));
+                    doorList.Add(new RightSealed(game1));
                 }
                 else if (room.Doors[i].Equals("RightCave"))
                 {
-                    doorList.Add(new LeftCave(game1));
+                    doorList.Add(new RightCave(game1));
                 }
 
                 if (room.Doors[i].Equals("BottomWall"))
                 {
-                    doorList.Add(new LeftWall(game1));
+                    doorList.Add(new BottomWall(game1));
                 }
                 else if (room.Doors[i].Equals("BottomDoor"))
                 {
-                    doorList.Add(new LeftDoor(game1));
+                    doorList.Add(new BottomDoor(game1));
                 }
                 else if (room.Doors[i].Equals("BottomKey"))
                 {
-                    doorList.Add(new LeftKey(game1));
+                    doorList.Add(new BottomKey(game1));
                 }
                 else if (room.Doors[i].Equals("BottomSealed"))
                 {
-                    doorList.Add(new LeftSealed(game1));
+                    doorList.Add(new BottomSealed(game1));
                 }
                 else if (room.Doors[i].Equals("BottomCave"))
                 {
-                    doorList.Add(new LeftCave(game1));
+                    doorList.Add(new BottomCave(game1));
                 }
             }
         }

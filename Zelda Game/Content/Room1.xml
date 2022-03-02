@@ -4,6 +4,8 @@
     <Doors>
         <Item>TopWall</Item>
         <Item>LeftSealed</Item>
+        <Item>RightDoor</Item>
+        <Item>BottomKey</Item>
     </Doors>
      <Blocks>
       <Item>
