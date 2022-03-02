@@ -32,9 +32,9 @@ namespace Zelda_Game
             controllerList = new List<IController>();
 
             controllerList.Add(new KeyBoardController(this));
-            controllerList.Add(new EnemyController(this));
-            controllerList.Add(new BlockController(this)); 
-            controllerList.Add(new ItemController(this));
+            //controllerList.Add(new EnemyController(this));
+            //controllerList.Add(new BlockController(this)); 
+            //controllerList.Add(new ItemController(this));
             controllerList.Add(new RoomController(this));
             _graphics.PreferredBackBufferWidth = 503;
             _graphics.PreferredBackBufferHeight = 345;

@@ -22,10 +22,10 @@ namespace Zelda_Game
                 currentFrame = 0;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle = new Rectangle(625, 100, 16, 32);
+            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 32);
 
             if (currentFrame <= totalFrames / 2)
                 sourceRectangle = new Rectangle(72, 16, 8, 16);

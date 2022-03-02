@@ -6,8 +6,7 @@ namespace Zelda_Game
 {
     public class Level
     {
-        public Vector2 source1;
-        public Vector2 source2;
+        public string[] Doors;
         public Dictionary<Vector2, string> Blocks;
         public Dictionary<Vector2, string> Enemies;
         public Dictionary<Vector2, string> Items;

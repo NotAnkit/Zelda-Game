@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:ns="Microsoft.Xna.Framework">
   <Asset Type="Zelda_Game.Level">
-    <source1> 1 191 </source1>
-    <source2> 192 303 </source2>
+   <Doors>
+    </Doors>
      <Blocks>
       <Item>
         <Key>219 125</Key>
