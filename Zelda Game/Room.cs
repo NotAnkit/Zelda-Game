@@ -10,7 +10,7 @@ namespace Zelda_Game
         private readonly Dictionary<Vector2, IEnemy> enemyList;
         private readonly Dictionary<Vector2, IItem> itemList;
         private readonly List<IDoor> doorList;
-        private readonly Floor floor;
+        
 
         public Room(Level room, Game1 game1)
         {
@@ -18,7 +18,7 @@ namespace Zelda_Game
             enemyList = new Dictionary<Vector2, IEnemy>();
             itemList = new Dictionary<Vector2, IItem>();
             doorList = new List<IDoor>();
-            floor = new Floor(game1);
+            
             foreach(KeyValuePair<Vector2, string> block in room.Blocks)
             {
                 if(block.Value.Equals("SB"))  blockList.Add(block.Key, new SquareBlock(game1));
@@ -174,7 +174,7 @@ namespace Zelda_Game
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            floor.Draw(spriteBatch, new Vector2(100, 100));
+            
             foreach (KeyValuePair<Vector2, IEnvironment> block in blockList)
             {
                 block.Value.Draw(spriteBatch, block.Key);

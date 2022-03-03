@@ -7,10 +7,12 @@ namespace Zelda_Game
     public class BorderBlock : IEnvironment
     {
         private Texture2D Texture;
+        private readonly Floor floor;
 
         public BorderBlock(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
+            floor = new Floor(game);
         }
 
         public void Update()
@@ -22,8 +24,9 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle = new Rectangle(523, 11, 254, 176);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 503, 345);
-
+            
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            floor.Draw(spriteBatch, new Vector2(100, 100));
         }
     }
 }
