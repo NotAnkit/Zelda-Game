@@ -28,17 +28,17 @@ namespace Zelda_Game
             else if (currentFrame <= 30)
             {
                 sourceRectangle = new Rectangle(18, 77, 27, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 54, 32);
+                destinationRectangle = new Rectangle((int)location.X-24, (int)location.Y, 54, 32);
             }
             else if (currentFrame <= 45)
             {
                 sourceRectangle = new Rectangle(46, 77, 23, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 46, 32);
+                destinationRectangle = new Rectangle((int)location.X-16, (int)location.Y, 46, 32);
             }
             else
             {
-                sourceRectangle = new Rectangle(70, 77, 19, 16);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 38, 32);
+                sourceRectangle = new Rectangle(70, 77, 23, 16);
+                destinationRectangle = new Rectangle((int)location.X-16, (int)location.Y, 46, 32);
             }
 
             SpriteEffects s = SpriteEffects.FlipHorizontally;
