@@ -23,8 +23,8 @@ namespace Zelda_Game
             currentFrame = 0;
             totalFrames = 60;
             spriteSpeed = 1f;
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            windowHeight = game._graphics.PreferredBackBufferHeight - 230;
+            windowWidth = game._graphics.PreferredBackBufferWidth - 380;
             position = location;
             fireballs = new Fireballs(game, new Vector2(position.X, position.Y));
         }
@@ -47,14 +47,14 @@ namespace Zelda_Game
             if (num % 2 == 0)
             {
                 position.X += spriteSpeed;
-                if (position.X > windowWidth)
-                    position.X = 0;
+                if (position.X > windowWidth - 24)
+                    position.X -= spriteSpeed;
             }
             else
             {
                 position.X -= spriteSpeed;
-                if (position.X < 0)
-                    position.X = windowWidth;
+                if (position.X < 59)
+                    position.X += spriteSpeed;
                 if (movementCounter == 0)
                     fireballs = new Fireballs(Game, position);
             }

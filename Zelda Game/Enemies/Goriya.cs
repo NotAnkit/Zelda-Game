@@ -23,8 +23,8 @@ namespace Zelda_Game
             currentFrame = 0;
             totalFrames = 30;
             spriteSpeed = 1f;
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            windowHeight = game._graphics.PreferredBackBufferHeight - 230;
+            windowWidth = game._graphics.PreferredBackBufferWidth - 380;
             position = location;
             trap = new Trap(game, location, position);
         }
@@ -49,8 +49,8 @@ namespace Zelda_Game
             if (num % 4 == 0)
             {
                 position.X += spriteSpeed;
-                if (position.X > windowWidth)
-                    position.X = 0;
+                if (position.X > windowWidth - 16)
+                    position.X -= spriteSpeed;
                 goriyaState = "right";
                 if(movementCounter == 0)
                     trap = new Trap(Game, position, position);
@@ -59,21 +59,21 @@ namespace Zelda_Game
             {
                 position.Y += spriteSpeed;
                 if (position.Y > windowHeight)
-                    position.Y = 0;
+                    position.Y -= spriteSpeed;
                 goriyaState = "up";
             }
             else if (num % 4 == 2)
             {
                 position.X -= spriteSpeed;
-                if (position.X < 0)
-                    position.X = windowWidth;
+                if (position.X < 59)
+                    position.X += spriteSpeed;
                 goriyaState = "left";
             }
             else
             {
                 position.Y -= spriteSpeed;
-                if (position.Y < 0)
-                    position.Y = windowHeight;
+                if (position.Y < 61)
+                    position.Y += spriteSpeed;
                 goriyaState = "down";
             }
 
