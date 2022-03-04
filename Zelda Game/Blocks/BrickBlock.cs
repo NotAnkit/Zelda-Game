@@ -1,5 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
@@ -16,11 +17,12 @@ namespace Zelda_Game
 
         public Rectangle blockRectangle()
         {
-            return new Rectangle((int)position.X, (int)position.Y, 32, 32);
+            throw new NotImplementedException();
         }
 
         public void Update()
         {
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

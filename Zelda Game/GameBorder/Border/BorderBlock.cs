@@ -15,6 +15,11 @@ namespace Zelda_Game
             floor = new Floor(game);
         }
 
+        public Rectangle blockRectangle()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update()
         {
 
