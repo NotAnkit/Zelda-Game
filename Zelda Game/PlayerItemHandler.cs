@@ -1,9 +1,9 @@
 ﻿using System;
 namespace Zelda_Game
 {
-    public class PlayerEnemyHandler
+    public class PlayerItemHandler
     {
-        public PlayerEnemyHandler()
+        public PlayerItemHandler()
         {
         }
     }
