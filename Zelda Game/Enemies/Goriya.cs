@@ -16,7 +16,7 @@ namespace Zelda_Game
         private Vector2 position;
         public Trap trap;
 
-        public Rectangle GoriyaRectangle
+        public Rectangle enemyRectangle
         {
             get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
         }

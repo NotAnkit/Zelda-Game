@@ -13,7 +13,7 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
 
-        public Rectangle TrapRectangle
+        public Rectangle enemyRectangle
         {
             get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
         }
