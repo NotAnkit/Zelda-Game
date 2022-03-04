@@ -28,8 +28,9 @@ namespace Zelda_Game
                 {
                     //right-left
                 }
-            } else(overlap.Height<=overlap.Width)
-            {
+            }
+            else {
+
                 if (linkRectangle.Y > blockRectangle.Y)
                 {
                     //top-bottom
