@@ -13,23 +13,23 @@ namespace Zelda_Game
         }
 
         private int currentFrame = 0;
-        private int totalFrames = 60;
+        private int totalFrames = 30;
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            if (currentFrame <= 15)
+            if (currentFrame <= 7)
             {
                 sourceRectangle = new Rectangle(124, 11, 16, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
             }
-            else if (currentFrame <= 30)
+            else if (currentFrame <= 15)
             {
                 sourceRectangle = new Rectangle(18, 77, 27, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 54, 32);
             }
-            else if (currentFrame <= 45)
+            else if (currentFrame <= 22)
             {
                 sourceRectangle = new Rectangle(46, 77, 23, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 46, 32);

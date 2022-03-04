@@ -19,15 +19,15 @@ namespace Zelda_Game
 
         public void ChangeDirection(string direction)
         {
-            if (direction.Equals("up") && animationCount == 60) player.currentState = new UpMovingLinkState(player);
+            if (direction.Equals("up") && animationCount == 30) player.currentState = new UpMovingLinkState(player);
             
-            else if (direction.Equals("left") && animationCount == 60) player.currentState = new LeftMovingLinkState(player);
+            else if (direction.Equals("left") && animationCount == 30) player.currentState = new LeftMovingLinkState(player);
             
-            else if (direction.Equals("down") && animationCount == 60) player.currentState = new DownMovingLinkState(player);
+            else if (direction.Equals("down") && animationCount == 30) player.currentState = new DownMovingLinkState(player);
             
-            else if (direction.Equals("right") && animationCount == 60) player.currentState = new RightMovingLinkState(player);
+            else if (direction.Equals("right") && animationCount == 30) player.currentState = new RightMovingLinkState(player);
             
-            else if (direction.Equals("idle") && animationCount == 60) player.currentState = new RightIdleLinkState(player);
+            else if (direction.Equals("idle") && animationCount == 30) player.currentState = new RightIdleLinkState(player);
             
         }
 
