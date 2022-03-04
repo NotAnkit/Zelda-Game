@@ -14,10 +14,10 @@ namespace Zelda_Game
             position = location;
         }
 
-        //public Rectangle PushableRectangle
-        //{
-        //    get { return new Rectangle((int)location.X, (int)location.Y, 32, 32); }
-        //}
+        public Rectangle PushableBlockRectangle
+        {
+            get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
+        }
 
         public void Update()
         {      

@@ -14,6 +14,11 @@ namespace Zelda_Game
             position = location;
         }
 
+        public Rectangle BlueSandRectangle
+        {
+            get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
+        }
+
         public void Update()
         {
         }
