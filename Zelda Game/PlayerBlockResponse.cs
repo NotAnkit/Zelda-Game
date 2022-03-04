@@ -1,10 +1,13 @@
 ﻿using System;
+using Microsoft.Xna.Framework;
 namespace Zelda_Game
 {
-    public class PlayerEnemyHandler
+    public static class PlayerBlockResponse
     {
-        public PlayerEnemyHandler()
+
+        public static String PlayerBlock(String direction)
         {
+            return "idle";
         }
     }
 }

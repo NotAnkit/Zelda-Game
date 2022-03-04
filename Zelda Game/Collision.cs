@@ -56,6 +56,7 @@ namespace Zelda_Game
         public void Collide()
         {
             String direction;
+            String linkstate;
             //player loop through enemies
             foreach (IEnemy enemy in enemyList)
             {
@@ -71,7 +72,7 @@ namespace Zelda_Game
                 Rectangle linkRectangle = Game.link.LinkRectangle;
                 Rectangle blockRectangle = block.blockRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, blockRectangle);
-                //call response method here
+                linkstate = PlayerBlockResponse.PlayerBlock(direction);
             }
 
 
