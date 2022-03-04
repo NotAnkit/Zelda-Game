@@ -15,6 +15,11 @@ namespace Zelda_Game
         private Vector2 position2;
         private Vector2 position3;
 
+        public Rectangle FireballRectangle
+        {
+            get { return new Rectangle((int)position1.X, (int)position1.Y, 32, 32); }
+        }
+
         public Fireballs(Game1 game, Vector2 startPosition)
         {
             Texture = game.Content.Load<Texture2D>("EnemySheet");

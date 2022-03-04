@@ -16,6 +16,11 @@ namespace Zelda_Game
         private Vector2 position;
         public Trap trap;
 
+        public Rectangle GoriyaRectangle
+        {
+            get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
+        }
+
         public Goriya(Game1 game, Vector2 location)
         {
             Game = game;

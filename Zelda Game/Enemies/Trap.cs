@@ -13,6 +13,11 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
 
+        public Rectangle TrapRectangle
+        {
+            get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
+        }
+
         public Trap(Game1 game, Vector2 location, Vector2 startPosition)
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
