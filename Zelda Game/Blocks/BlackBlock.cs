@@ -6,10 +6,12 @@ namespace Zelda_Game
     public class BlackBlock : IEnvironment
     {
         public Texture2D Texture;
+        private Vector2 position;
 
-        public BlackBlock(Game1 game)
+        public BlackBlock(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
+            position = location;
         }
 
         public void Update()
