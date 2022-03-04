@@ -6,10 +6,12 @@ namespace Zelda_Game
     public class Stairs : IEnvironment
     {
         public Texture2D Texture;
+        private Vector2 position;
 
-        public Stairs(Game1 game)
+        public Stairs(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
+            position = location;
         }
 
         public void Update()

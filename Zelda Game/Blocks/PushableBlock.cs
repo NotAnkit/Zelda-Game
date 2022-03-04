@@ -6,11 +6,12 @@ namespace Zelda_Game
     public class PushableBlock : IEnvironment
     {
         public Texture2D Texture;
-        public Vector2 location;
+        public Vector2 position;
 
-        public PushableBlock(Game1 game)
+        public PushableBlock(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
+            position = location;
         }
 
         //public Rectangle PushableRectangle

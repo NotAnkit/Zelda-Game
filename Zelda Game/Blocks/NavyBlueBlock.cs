@@ -6,10 +6,12 @@ namespace Zelda_Game
     public class NavyBlueBlock : IEnvironment
     {
         public Texture2D Texture;
+        private Vector2 position;
 
-        public NavyBlueBlock(Game1 game)
+        public NavyBlueBlock(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
+            position = location;
         }
 
         public void Update()

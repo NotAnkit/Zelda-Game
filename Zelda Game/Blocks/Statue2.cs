@@ -6,10 +6,12 @@ namespace Zelda_Game
     public class Statue2 : IEnvironment
     {
         public Texture2D Texture;
+        private Vector2 position;
 
-        public Statue2(Game1 game)
+        public Statue2(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
+            position = location;
         }
 
         public void Update()

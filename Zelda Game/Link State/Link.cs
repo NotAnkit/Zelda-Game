@@ -31,6 +31,7 @@ namespace Zelda_Game
             position = location;
             itemPosition = location;
             useItem = false;
+            items = new Dictionary<ISprite, Vector2>();
             currentState = new RightIdleLinkState(this);
         }
 
