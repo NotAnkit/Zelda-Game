@@ -18,6 +18,7 @@ namespace Zelda_Game
         private IEnvironment border;
         public Level room1;
         public Room room1Blocks;
+        private Collision collision;
 
         public Game1()
         {
@@ -47,6 +48,7 @@ namespace Zelda_Game
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
             //environment = new SquareBlock(this);
             border = new BorderBlock(this);
+            collision = new Collision(this);
             //item = new CompassItem(this);
             link = new Link(new Vector2(59, 150));
             //enemy = new Bat(this, new Vector2(250, 250));
@@ -66,6 +68,7 @@ namespace Zelda_Game
             //enemy.Update();
             //item.Update();
             room1Blocks.Update();
+            collision.Collide(room1Blocks);
             base.Update(gameTime);
         }
 

@@ -6,9 +6,9 @@ namespace Zelda_Game
 {
     public class Room
     {
-        private readonly Dictionary<Vector2, IEnvironment> blockList;
-        private readonly Dictionary<Vector2, IEnemy> enemyList;
-        private readonly Dictionary<Vector2, IItem> itemList;
+        public readonly Dictionary<Vector2, IEnvironment> blockList;
+        public Dictionary<Vector2, IEnemy> enemyList;
+        public Dictionary<Vector2, IItem> itemList;
         private readonly List<IDoor> doorList;
         
 

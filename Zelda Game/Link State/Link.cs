@@ -12,8 +12,8 @@ namespace Zelda_Game
         //public Rectangle PushableRectangle;
         private Vector2 position;
         private Vector2 itemPosition;
-        private int speed = 2;
-        private Dictionary<ISprite, Vector2> items;
+        public int speed = 2;
+        private Dictionary<ISprite, int> items;
         public ILinkState currentState;     
         private bool useItem;
         private int animationCount;
@@ -32,6 +32,7 @@ namespace Zelda_Game
             itemPosition = location;
             useItem = false;
             currentState = new RightIdleLinkState(this);
+            items = new Dictionary<ISprite, int>();
         }
 
         public void Update()
@@ -81,7 +82,7 @@ namespace Zelda_Game
         {
             itemPosition = position;
             item = currentState.UseItem(itemName);
-            items.Add(item, itemPosition);
+            items.Add(item, 0);
             useItem = true;
         }
 

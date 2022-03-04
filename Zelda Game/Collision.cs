@@ -24,7 +24,7 @@ namespace Zelda_Game
             enemyList.Add(new Hand(Game, new Vector2(250, 250)));
             enemyList.Add(new Dragon(Game, new Vector2(250, 250)));
 
-            //player loop through blocks
+            /*//player loop through blocks
             blockList = new List<IEnvironment>();
             blockList.Add(new SquareBlock(Game, new Vector2(250, 250)));
             blockList.Add(new BlackBlock(Game, new Vector2(250, 250)));
@@ -35,7 +35,7 @@ namespace Zelda_Game
             blockList.Add(new PushableBlock(Game, new Vector2(250, 250)));
             blockList.Add(new Stairs(Game, new Vector2(250, 250)));
             blockList.Add(new Statue1(Game, new Vector2(250, 250)));
-            blockList.Add(new Statue2(Game, new Vector2(250, 250)));
+            blockList.Add(new Statue2(Game, new Vector2(250, 250)));*/
 
             //player loop through items
             itemList = new List<IItem>();
@@ -53,28 +53,45 @@ namespace Zelda_Game
             itemList.Add(new ClockItem(Game));
         }
 
-        public void Collide()
+        public void Collide(Room room)
         {
             String direction;
             String linkstate;
             //player loop through enemies
-            foreach (IEnemy enemy in enemyList)
+            foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
-                Rectangle enemyRectangle = enemy.enemyRectangle();
+                Rectangle enemyRectangle = enemy.Value.enemyRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, enemyRectangle);
                 //call response method here
             }
 
             //player loop through blocks
-            foreach (IEnvironment block in blockList)
+            foreach (KeyValuePair<Vector2, IEnvironment> block in room.blockList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
-                Rectangle blockRectangle = block.blockRectangle();
+                Rectangle blockRectangle = block.Value.blockRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, blockRectangle);
                 linkstate = PlayerBlockResponse.PlayerBlock(direction);
+                if(direction != "none")
+                {
+                    Game.link.speed = 0;
+                }
+                else
+                {
+                    Game.link.speed = 2;
+
+                }
+                
             }
 
+            foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
+            {
+                Rectangle linkRectangle = Game.link.LinkRectangle;
+                //Rectangle blockRectangle = item.Value.itemRectangle();
+                //direction = CollisionDetection.getDirection(linkRectangle, blockRectangle);
+                //call response method here
+            }
 
             //player loop through items
             //call response method here
