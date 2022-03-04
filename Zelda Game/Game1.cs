@@ -50,7 +50,7 @@ namespace Zelda_Game
             border = new BorderBlock(this);
             collision = new Collision(this);
             //item = new CompassItem(this);
-            link = new Link(new Vector2(59, 150));
+            link = new Link(new Vector2(59, 155));
             //enemy = new Bat(this, new Vector2(250, 250));
             room1 = Content.Load<Level>("Room1");
             room1Blocks = new Room(room1, this);

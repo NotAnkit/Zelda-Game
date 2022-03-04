@@ -77,13 +77,13 @@ namespace Zelda_Game
                 linkstate = PlayerBlockResponse.PlayerBlock(direction);
 
                 //try this in playerbockresponse
-                if(direction == "left-right")
+                if (direction == "left-right")
                 {
                     Game.link.speed = 0;
-                    if (direction != "left-right")
-                    {
-                        Game.link.speed = 2;
-                    }
+                }
+                else if (Game.link.direction == "left" || Game.link.direction == "up" || Game.link.direction == "down")
+                {
+                    Game.link.speed = 2;
                 }
      
             }
