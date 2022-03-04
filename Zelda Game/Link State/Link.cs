@@ -39,6 +39,24 @@ namespace Zelda_Game
             position = currentState.ChangePosition(position, speed);
             currentState.Update();
             currentState.ChangeDirection(direction);
+
+            if (direction == "right" && position.X > 411)
+            {
+                currentState.ChangeDirection("idle");
+            }
+            else if (direction == "left" && position.X < 59)
+            {
+                currentState.ChangeDirection("idle");
+            }
+            else if (direction == "down" && position.Y > 253)
+            {
+                currentState.ChangeDirection("idle");
+            }
+            else if(direction == "up" && position.Y < 61)
+            {
+                currentState.ChangeDirection("idle");
+            }
+
             if (useItem)
             {
                 item.Update();
