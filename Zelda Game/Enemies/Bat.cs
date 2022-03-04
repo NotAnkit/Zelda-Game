@@ -14,7 +14,7 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
 
-        public Rectangle BatRectangle
+        public Rectangle Rectangle
         {
             get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
@@ -10,34 +9,34 @@ namespace Zelda_Game
         {
         }
 
-        public String Collision(Rectangle linkRectangle, Rectangle blockRectangle)
+        public String CollisionDirection(Rectangle linkRectangle, Rectangle blockRectangle)
         {
-            String collisionType = "none";
+            String collisionType;
             Rectangle overlap = Rectangle.Intersect(linkRectangle, blockRectangle);
             if (overlap.IsEmpty)
             {
-                //no collision
+                collisionType = "none";
             }
             else if(overlap.Height > overlap.Width)
             {
                 if(linkRectangle.X < blockRectangle.X)
                 {
-                    //left-right
+                    collisionType = "left-right";
                 }
                 else
                 {
-                    //right-left
+                    collisionType = "right-left";
                 }
             }
             else {
 
                 if (linkRectangle.Y > blockRectangle.Y)
                 {
-                    //top-bottom
+                    collisionType = "top-bottom";
                 }
                 else
                 {
-                    //bottom-top
+                    collisionType = "bottom-top";
                 }
             }
             return collisionType;

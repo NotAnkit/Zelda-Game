@@ -19,7 +19,7 @@ namespace Zelda_Game
         private int animationCount;
         private ISprite item;
 
-        public object Rectangle { get; internal set; }
+        //public object Rectangle { get; internal set; }
 
         public Rectangle LinkRectangle
         {

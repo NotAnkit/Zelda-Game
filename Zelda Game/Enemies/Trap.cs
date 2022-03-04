@@ -35,8 +35,10 @@ namespace Zelda_Game
             if (currentFrame == totalFrames)
                 currentFrame = 0;
 
-             if (position.X <= windowWidth)
+            if (currentFrame <= totalFrames / 2)
                 position.X += spriteSpeed;
+            else
+                position.X -= spriteSpeed;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
