@@ -37,6 +37,10 @@
     <None Remove="Link State\Animations\BlueBoomerangAnimations\" />
     <None Remove="Sprint2Docs\" />
     <None Remove="Sprint2Docs\CodeReviewsSprint2\" />
+    <None Remove="GameBorder\" />
+    <None Remove="GameBorder\Doors\" />
+    <None Remove="GameBorder\Border\" />
+    <None Remove="LevelLoading\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -78,6 +82,10 @@
     <Folder Include="Link State\Animations\BlueBoomerangAnimations\" />
     <Folder Include="Sprint2Docs\" />
     <Folder Include="Sprint2Docs\CodeReviewsSprint2\" />
+    <Folder Include="GameBorder\" />
+    <Folder Include="GameBorder\Doors\" />
+    <Folder Include="GameBorder\Border\" />
+    <Folder Include="LevelLoading\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />

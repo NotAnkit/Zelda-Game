@@ -62,7 +62,7 @@ namespace Zelda_Game
             
         }
 
-        public Vector2 ChangePosition(Vector2 location)
+        public Vector2 ChangePosition(Vector2 location, int speed)
         {
             return location;
         }

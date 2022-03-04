@@ -30,7 +30,7 @@ namespace Zelda_Game
             else if (direction.Equals("idle") && animationCount == 60) player.currentState = new UpIdleLinkState(player);
         }
 
-        public Vector2 ChangePosition(Vector2 location)
+        public Vector2 ChangePosition(Vector2 location, int speed)
         {
             return location;
         }

@@ -59,7 +59,7 @@ namespace Zelda_Game
             sprite.Draw(spriteBatch, location);
         }
 
-        public Vector2 ChangePosition(Vector2 location)
+        public Vector2 ChangePosition(Vector2 location, int speed)
         {
             return location;
         }

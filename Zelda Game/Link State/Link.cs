@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Zelda_Game.LinkState;
@@ -11,6 +12,8 @@ namespace Zelda_Game
         //public Rectangle PushableRectangle;
         private Vector2 position;
         private Vector2 itemPosition;
+        private int speed = 2;
+        private Dictionary<ISprite, Vector2> items;
         public ILinkState currentState;     
         private bool useItem;
         private int animationCount;
@@ -33,7 +36,7 @@ namespace Zelda_Game
 
         public void Update()
         {
-            position = currentState.ChangePosition(position);
+            position = currentState.ChangePosition(position, speed);
             currentState.Update();
             currentState.ChangeDirection(direction);
             if (useItem)
@@ -60,6 +63,7 @@ namespace Zelda_Game
         {
             itemPosition = position;
             item = currentState.UseItem(itemName);
+            items.Add(item, itemPosition);
             useItem = true;
         }
 

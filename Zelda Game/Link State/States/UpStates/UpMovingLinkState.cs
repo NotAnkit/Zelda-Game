@@ -27,9 +27,9 @@ namespace Zelda_Game
             else if (direction.Equals("idle")) player.currentState = new UpIdleLinkState(player);
         }
 
-        public Vector2 ChangePosition(Vector2 location)
+        public Vector2 ChangePosition(Vector2 location, int speed)
         {
-            location.Y--;
+            location.Y -= speed;
             return location;
         }
 
