@@ -11,6 +11,7 @@ namespace Zelda_Game
         private readonly List<IEnemy> enemyList;
         private readonly List<IEnvironment> blockList;
         private readonly List<IItem> itemList;
+        public KeyboardState userInput;
 
         public Collision(Game1 game)
         {
@@ -57,6 +58,7 @@ namespace Zelda_Game
         {
             String direction;
             String linkstate;
+            
             //player loop through enemies
             foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
             {
@@ -73,16 +75,17 @@ namespace Zelda_Game
                 Rectangle blockRectangle = block.Value.blockRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, blockRectangle);
                 linkstate = PlayerBlockResponse.PlayerBlock(direction);
-                if(direction != "none")
+
+                //try this in playerbockresponse
+                if(direction == "left-right")
                 {
                     Game.link.speed = 0;
+                    if (direction != "left-right")
+                    {
+                        Game.link.speed = 2;
+                    }
                 }
-                else
-                {
-                    Game.link.speed = 2;
-
-                }
-                
+     
             }
 
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
