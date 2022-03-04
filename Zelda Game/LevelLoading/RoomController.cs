@@ -17,6 +17,7 @@ namespace Zelda_Game
         {
             Game = game;
             roomList = new List<Room>();
+            roomList.Add(new Room(Game.Content.Load<Level>("Room1"), Game));
             roomList.Add(new Room(Game.Content.Load<Level>("Room16"), Game));
             roomList.Add(new Room(Game.Content.Load<Level>("Room15"), Game));
             roomList.Add(new Room(Game.Content.Load<Level>("Room14"), Game));
@@ -32,7 +33,6 @@ namespace Zelda_Game
             roomList.Add(new Room(Game.Content.Load<Level>("Room4"), Game));
             roomList.Add(new Room(Game.Content.Load<Level>("Room3"), Game));
             roomList.Add(new Room(Game.Content.Load<Level>("Room2"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room1"), Game));
 
         }
 

@@ -49,13 +49,13 @@ namespace Zelda_Game
             if (num % 4 == 0)
             {
                 position.X += spriteSpeed;
-                if (position.X > windowWidth)
+                if (position.X > 411)
                     position.X -= spriteSpeed;
             }
             else if (num % 4 == 1)
             {
                 position.Y += spriteSpeed;
-                if (position.Y > windowHeight)
+                if (position.Y > 253)
                     position.Y -= spriteSpeed;
             }
             else if (num % 4 == 2)
