@@ -14,7 +14,13 @@ namespace Zelda_Game
         {
             String collisionType = "none";
             Rectangle overlap = Rectangle.Intersect(linkRectangle, blockRectangle);
+            if(overlap.Height > overlap.Width)
+            {
 
+            } else
+            {
+
+            }
             return collisionType;
         }
     }
