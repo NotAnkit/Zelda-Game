@@ -3,23 +3,20 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
-    public class PlayerBlockCollision
+    public static class CollisionDetection
     {
-        public PlayerBlockCollision()
-        {
-        }
 
-        public String CollisionDirection(Rectangle linkRectangle, Rectangle blockRectangle)
+        public static String getDirection(Rectangle rec1, Rectangle rec2)
         {
             String collisionType;
-            Rectangle overlap = Rectangle.Intersect(linkRectangle, blockRectangle);
+            Rectangle overlap = Rectangle.Intersect(rec1, rec2);
             if (overlap.IsEmpty)
             {
                 collisionType = "none";
             }
             else if(overlap.Height > overlap.Width)
             {
-                if(linkRectangle.X < blockRectangle.X)
+                if(rec1.X < rec2.X)
                 {
                     collisionType = "left-right";
                 }
@@ -30,7 +27,7 @@ namespace Zelda_Game
             }
             else {
 
-                if (linkRectangle.Y > blockRectangle.Y)
+                if (rec1.Y > rec2.Y)
                 {
                     collisionType = "top-bottom";
                 }

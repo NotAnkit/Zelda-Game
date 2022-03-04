@@ -16,9 +16,9 @@ namespace Zelda_Game
         private Vector2 position;
         private Fireballs fireballs;
 
-        public Rectangle enemyRectangle
+        public Rectangle enemyRectangle()
         {
-            get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
+            return new Rectangle((int)position.X, (int)position.Y, 48, 64);
         }
 
         public Dragon(Game1 game, Vector2 location)

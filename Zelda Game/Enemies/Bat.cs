@@ -14,11 +14,6 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
 
-        public Rectangle enemyRectangle
-        {
-            get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
-        }
-
         public Bat(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
@@ -28,6 +23,11 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight - 230;
             windowWidth = game._graphics.PreferredBackBufferWidth  - 380;
             position = location;
+        }
+
+        public Rectangle enemyRectangle()
+        {
+            return new Rectangle((int)position.X, (int)position.Y, 32, 32);
         }
 
         private int movementCounter;

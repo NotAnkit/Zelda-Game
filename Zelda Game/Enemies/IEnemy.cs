@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public interface IEnemy
     {
-        void enemyRectangle();
+        Rectangle enemyRectangle();
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
     }

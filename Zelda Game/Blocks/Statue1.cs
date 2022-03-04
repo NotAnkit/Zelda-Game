@@ -14,9 +14,9 @@ namespace Zelda_Game
             position = location;
         }
 
-        public Rectangle Statue1Rectangle
+        public Rectangle blockRectangle()
         {
-            get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
+            return new Rectangle((int)position.X, (int)position.Y, 32, 32);
         }
 
         public void Update()
