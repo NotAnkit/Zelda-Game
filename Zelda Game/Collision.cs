@@ -74,62 +74,7 @@ namespace Zelda_Game
                 Rectangle linkRectangle = Game.link.LinkRectangle;
                 Rectangle blockRectangle = block.Value.blockRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, blockRectangle);
-                linkstate = PlayerBlockResponse.PlayerBlock(direction);
-
-                //try this in playerbockresponse
-                if (direction == "left-right")
-                {
-                    if (Game.link.direction == "left" || Game.link.direction == "up" || Game.link.direction == "down")
-                    {
-                        Game.link.speed = 2;
-                    }
-                    else
-                    {
-                        Game.link.speed = 0;
-                    }
-                    
-                }
-
-                if (direction == "right-left")
-                {
-                    if (Game.link.direction == "right" || Game.link.direction == "up" || Game.link.direction == "down")
-                    {
-                        Game.link.speed = 2;
-                    }
-                    else
-                    {
-                        Game.link.speed = 0;
-                    }
-
-                }
-
-                if (direction == "top-bottom")
-                {
-                    if (Game.link.direction == "down" || Game.link.direction == "right" || Game.link.direction == "left")
-                    {
-                        Game.link.speed = 2;
-                    }
-                    else
-                    {
-                        Game.link.speed = 0;
-                    }
-
-                }
-
-                if (direction == "bottom-top")
-                {
-                    if (Game.link.direction == "up" || Game.link.direction == "right" || Game.link.direction == "left")
-                    {
-                        Game.link.speed = 2;
-                    }
-                    else
-                    {
-                        Game.link.speed = 0;
-                    }
-
-                }
-
-
+                PlayerBlockResponse.PlayerBlock(Game, direction);
             }
 
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
