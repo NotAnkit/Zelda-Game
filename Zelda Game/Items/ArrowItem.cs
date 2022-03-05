@@ -6,10 +6,12 @@ namespace Zelda_Game
     public class ArrowItem : IItem
     {
         public Texture2D Texture;
+        private Vector2 position;
 
-        public ArrowItem(Game1 game)
+        public ArrowItem(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("WeaponSheet");
+            position = location;
         }
         public void Update()
         {

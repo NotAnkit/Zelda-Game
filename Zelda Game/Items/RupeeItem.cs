@@ -8,10 +8,12 @@ namespace Zelda_Game
         public Texture2D Texture;
         private int currentFrame;
         private int totalFrames;
+        private Vector2 position;
 
-        public RupeeItem(Game1 game)
+        public RupeeItem(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("WeaponSheet");
+            position = location;
             currentFrame = 0;
             totalFrames = 30;
         }

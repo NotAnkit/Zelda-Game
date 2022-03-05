@@ -6,10 +6,12 @@ namespace Zelda_Game
     public class KeyItem : IItem
     {
         public Texture2D Texture;
+        private Vector2 position;
 
-        public KeyItem(Game1 game)
+        public KeyItem(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("WeaponSheet");
+            position = location;
         }
         public void Update()
         {

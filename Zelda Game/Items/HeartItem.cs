@@ -7,11 +7,13 @@ namespace Zelda_Game
     {
         public Texture2D Texture;
         private int currentFrame;
+        private Vector2 position;
         private int totalFrames;
 
-        public HeartItem(Game1 game)
+        public HeartItem(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("WeaponSheet");
+            position = location;
             currentFrame = 0;
             totalFrames = 30;
         }
