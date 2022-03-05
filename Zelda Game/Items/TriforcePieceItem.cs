@@ -17,6 +17,12 @@ namespace Zelda_Game
             currentFrame = 0;
             totalFrames = 30;
         }
+
+        public Rectangle itemRectangle()
+        {
+            return new Rectangle((int)position.X, (int)position.Y, 20, 20);
+        }
+
         public void Update()
         {
             currentFrame++;

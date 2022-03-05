@@ -13,6 +13,12 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("WeaponSheet");
             position = location;
         }
+
+        public Rectangle itemRectangle()
+        {
+            return new Rectangle((int)position.X, (int)position.Y, 22, 32);
+        }
+
         public void Update()
         {
         }

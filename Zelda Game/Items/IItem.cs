@@ -7,5 +7,6 @@ namespace Zelda_Game
     {
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
+        Rectangle itemRectangle();
     }
 }

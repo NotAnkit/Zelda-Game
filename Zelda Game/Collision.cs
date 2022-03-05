@@ -40,18 +40,18 @@ namespace Zelda_Game
 
             //player loop through items
             itemList = new List<IItem>();
-            itemList.Add(new CompassItem(Game));
-            itemList.Add(new MapItem(Game));
-            itemList.Add(new KeyItem(game));
-            itemList.Add(new HeartContainerItem(Game));
-            itemList.Add(new TriforcePieceItem(Game));
-            itemList.Add(new BowItem(Game));
-            itemList.Add(new HeartItem(Game));
-            itemList.Add(new RupeeItem(Game));
-            itemList.Add(new ArrowItem(Game));
-            itemList.Add(new BombItem(Game));
-            itemList.Add(new FairyItem(Game));
-            itemList.Add(new ClockItem(Game));
+            itemList.Add(new CompassItem(Game, new Vector2(250, 250)));
+            itemList.Add(new MapItem(Game, new Vector2(250, 250)));
+            itemList.Add(new KeyItem(game, new Vector2(250, 250)));
+            itemList.Add(new HeartContainerItem(Game, new Vector2(250, 250)));
+            itemList.Add(new TriforcePieceItem(Game, new Vector2(250, 250)));
+            itemList.Add(new BowItem(Game, new Vector2(250, 250)));
+            itemList.Add(new HeartItem(Game, new Vector2(250, 250)));
+            itemList.Add(new RupeeItem(Game, new Vector2(250, 250)));
+            itemList.Add(new ArrowItem(Game, new Vector2(250, 250)));
+            itemList.Add(new BombItem(Game, new Vector2(250, 250)));
+            itemList.Add(new FairyItem(Game, new Vector2(250, 250)));
+            itemList.Add(new ClockItem(Game, new Vector2(250, 250)));
         }
 
         public void Collide(Room room)
@@ -80,8 +80,8 @@ namespace Zelda_Game
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
-                //Rectangle blockRectangle = item.Value.itemRectangle();
-                //direction = CollisionDetection.getDirection(linkRectangle, blockRectangle);
+                Rectangle blockRectangle = item.Value.itemRectangle();
+                //direction = CollisionDetection.getDirection(linkRectangle, itemRectangle);
                 //call response method here
             }
 
