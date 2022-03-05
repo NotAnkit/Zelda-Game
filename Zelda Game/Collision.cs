@@ -79,13 +79,57 @@ namespace Zelda_Game
                 //try this in playerbockresponse
                 if (direction == "left-right")
                 {
-                    Game.link.speed = 0;
+                    if (Game.link.direction == "left" || Game.link.direction == "up" || Game.link.direction == "down")
+                    {
+                        Game.link.speed = 2;
+                    }
+                    else
+                    {
+                        Game.link.speed = 0;
+                    }
+                    
                 }
-                else if (Game.link.direction == "left" || Game.link.direction == "up" || Game.link.direction == "down")
+
+                if (direction == "right-left")
                 {
-                    Game.link.speed = 2;
+                    if (Game.link.direction == "right" || Game.link.direction == "up" || Game.link.direction == "down")
+                    {
+                        Game.link.speed = 2;
+                    }
+                    else
+                    {
+                        Game.link.speed = 0;
+                    }
+
                 }
-     
+
+                if (direction == "top-bottom")
+                {
+                    if (Game.link.direction == "down" || Game.link.direction == "right" || Game.link.direction == "left")
+                    {
+                        Game.link.speed = 2;
+                    }
+                    else
+                    {
+                        Game.link.speed = 0;
+                    }
+
+                }
+
+                if (direction == "bottom-top")
+                {
+                    if (Game.link.direction == "up" || Game.link.direction == "right" || Game.link.direction == "left")
+                    {
+                        Game.link.speed = 2;
+                    }
+                    else
+                    {
+                        Game.link.speed = 0;
+                    }
+
+                }
+
+
             }
 
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
