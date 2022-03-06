@@ -125,6 +125,26 @@ namespace Zelda_Game
             trap.Draw(spriteBatch, position);
         }
 
+        public float GetSpeed()
+        {
+            return spriteSpeed;
+        }
+
+        public void SetSpeed(float speed)
+        {
+            spriteSpeed = speed;
+        }
+
+        public Vector2 GetPosition()
+        {
+            return position;
+        }
+
+        public void SetPosition(Vector2 newPosition)
+        {
+            position = newPosition;
+        }
+
     }
 }
 

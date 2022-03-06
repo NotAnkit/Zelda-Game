@@ -85,6 +85,25 @@ namespace Zelda_Game
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
 
+        public float GetSpeed()
+        {
+            return spriteSpeed;
+        }
+
+        public void SetSpeed(float speed)
+        {
+            spriteSpeed = speed;
+        }
+
+        public Vector2 GetPosition()
+        {
+            return position;
+        }
+
+        public void SetPosition(Vector2 newPosition)
+        {
+            position = newPosition;
+        }
     }
 }
 
