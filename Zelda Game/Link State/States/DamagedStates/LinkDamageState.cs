@@ -56,7 +56,7 @@ namespace Zelda_Game
             animationCount++;
         }
 
-        public ISprite UseItem(string itemName)
+        public IProjectile UseItem(string itemName)
         {
             throw new NotImplementedException();
         }

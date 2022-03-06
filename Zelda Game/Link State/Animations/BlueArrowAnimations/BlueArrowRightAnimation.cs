@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
-    public class BlueArrowRightAnimation : ISprite
+    public class BlueArrowRightAnimation : IProjectile
     {
 
         public Texture2D Texture;
@@ -13,49 +13,32 @@ namespace Zelda_Game
             Texture = texture;
         }
 
-        private int currentFrame = 0;
-        private int totalFrames = 60;
-        public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
+        public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
+            bool finished = false;
 
-            if (currentFrame <= 12)
+            if (location.X - startLocation.X <= 150)
             {
                 sourceRectangle = new Rectangle(36, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X + 32, (int)location.Y, 32, 32);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
             }
-            else if (currentFrame <= 24)
+            else
             {
-                sourceRectangle = new Rectangle(36, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X + 96, (int)location.Y, 32, 32);
-            }
-            else if (currentFrame <= 36)
-            {
-                sourceRectangle = new Rectangle(36, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X + 160, (int)location.Y, 32, 32);
-            }
-            else if (currentFrame <= 48)
-            {
-                sourceRectangle = new Rectangle(36, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X + 224, (int)location.Y, 32, 32);
-            }
-            else {
-
                 sourceRectangle = new Rectangle(53, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 288, (int)location.Y, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X+16, (int)location.Y, 16, 32);
+                finished = true;
             }
-
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            return location;
+            return finished;
         }
 
-        public void Update()
+        public Vector2 Update(Vector2 position)
         {
-            currentFrame++;
-            if (currentFrame == totalFrames)
-                currentFrame = 0;
+            position.X++;
+            return position;
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Zelda_Game.LinkState
     {
         void ChangeDirection(string direction);
         void ChangeWeapon();
-        ISprite UseItem(string itemName);
+        IProjectile UseItem(string itemName);
         void Update();
         void UseSword();
         void TakeDamage();

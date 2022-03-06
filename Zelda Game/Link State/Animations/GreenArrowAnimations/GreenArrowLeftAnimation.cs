@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
-    public class GreenArrowLeftAnimation : ISprite
+    public class GreenArrowLeftAnimation : IProjectile
     {
 
         public Texture2D Texture;
@@ -12,50 +12,34 @@ namespace Zelda_Game
         {
             Texture = texture;
         }
-
-        private int currentFrame = 0;
-        private int totalFrames = 60;
-        public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
+        
+        public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
+            bool finished = false;
 
-            if (currentFrame <= 12)
+            if (startLocation.X - location.X <= 128)
             {
                 sourceRectangle = new Rectangle(10, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X - 32, (int)location.Y, 32, 32);
-            }
-            else if (currentFrame <= 24)
-            {
-                sourceRectangle = new Rectangle(10, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X - 64, (int)location.Y, 32, 32);
-            }
-            else if (currentFrame <= 36)
-            {
-                sourceRectangle = new Rectangle(10, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X - 96, (int)location.Y, 32, 32);
-            }
-            else if (currentFrame <= 48)
-            {
-                sourceRectangle = new Rectangle(10, 185, 16, 16);
-                destinationRectangle = new Rectangle((int)location.X - 128, (int)location.Y, 32, 32);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
             }
             else
             {
                 sourceRectangle = new Rectangle(53, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X - 160, (int)location.Y, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 32);
+                finished = true;
             }
 
             SpriteEffects s = SpriteEffects.FlipHorizontally;
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);
-            return location;
+            return finished;
         }
 
-        public void Update()
+        public Vector2 Update(Vector2 position)
         {
-            currentFrame++;
-            if (currentFrame == totalFrames)
-                currentFrame = 0;
+            position.X--;
+            return position;
         }
     }
 }

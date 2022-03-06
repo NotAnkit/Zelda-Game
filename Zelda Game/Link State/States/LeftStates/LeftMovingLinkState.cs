@@ -8,7 +8,7 @@ namespace Zelda_Game.LinkState
     {
         private Link player;
         private ISprite sprite;
-        private ISprite item;
+        private IProjectile item;
         public LeftMovingLinkState(Link link)
         {
             player = link;
@@ -50,7 +50,7 @@ namespace Zelda_Game.LinkState
             
         }
 
-        public ISprite UseItem(string itemName)
+        public IProjectile UseItem(string itemName)
         {
             if (itemName.Equals("bomb")) item = LinkSpriteFactory.Instance.LinkBombLeftAnimationSprite();
 
@@ -60,9 +60,9 @@ namespace Zelda_Game.LinkState
 
             else if (itemName.Equals("green-arrow")) item = LinkSpriteFactory.Instance.LinkGreenArrowLeftAnimationSprite();
 
-            else if (itemName.Equals("green-boomerang")) item = LinkSpriteFactory.Instance.LinkGreenBoomerangLeftAnimationSprite();
+            /*else if (itemName.Equals("green-boomerang")) item = LinkSpriteFactory.Instance.LinkGreenBoomerangLeftAnimationSprite();
 
-            else if (itemName.Equals("blue-boomerang")) item = LinkSpriteFactory.Instance.LinkBlueBoomerangLeftAnimationSprite();
+            else if (itemName.Equals("blue-boomerang")) item = LinkSpriteFactory.Instance.LinkBlueBoomerangLeftAnimationSprite();*/
 
             return item;
         }

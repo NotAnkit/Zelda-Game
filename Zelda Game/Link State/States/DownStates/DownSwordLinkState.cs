@@ -9,7 +9,7 @@ namespace Zelda_Game
     {
         private Link player;
         private ISprite sprite;
-        private ISprite item;
+        private IProjectile item;
         private int animationCount;
         public DownSwordLinkState(Link link)
         {
@@ -52,7 +52,7 @@ namespace Zelda_Game
             animationCount++;
         }
 
-        public ISprite UseItem(string itemName)
+        public IProjectile UseItem(string itemName)
         {
             if (itemName.Equals("bomb")) item = LinkSpriteFactory.Instance.LinkBombDownAnimationSprite();
 
@@ -62,9 +62,9 @@ namespace Zelda_Game
 
             else if (itemName.Equals("green-arrow")) item = LinkSpriteFactory.Instance.LinkGreenArrowDownAnimationSprite();
 
-            else if (itemName.Equals("green-boomerang")) item = LinkSpriteFactory.Instance.LinkGreenBoomerangDownAnimationSprite();
+            /*else if (itemName.Equals("green-boomerang")) item = LinkSpriteFactory.Instance.LinkGreenBoomerangDownAnimationSprite();
 
-            else if (itemName.Equals("blue-boomerang")) item = LinkSpriteFactory.Instance.LinkBlueBoomerangDownAnimationSprite();
+            else if (itemName.Equals("blue-boomerang")) item = LinkSpriteFactory.Instance.LinkBlueBoomerangDownAnimationSprite();*/
 
             return item;
         }

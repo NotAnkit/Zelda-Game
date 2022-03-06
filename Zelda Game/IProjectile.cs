@@ -1,0 +1,12 @@
+﻿using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace Zelda_Game
+{
+    public interface IProjectile
+    {
+        public Vector2 Update(Vector2 location);
+        public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startPosition);
+    }
+}

@@ -11,13 +11,16 @@ namespace Zelda_Game
         public string direction = "right";
         //public Rectangle PushableRectangle;
         private Vector2 position;
+        private Vector2 itemPositionStart;
         private Vector2 itemPosition;
         public int speed = 2;
-        private Dictionary<ISprite, int> items;
+        private Dictionary<IProjectile, Vector2> items;
+        private Dictionary<IProjectile, Vector2> items2;
+        private List<IProjectile> removeItems;
         public ILinkState currentState;     
         private bool useItem;
         private int animationCount;
-        private ISprite item;
+        private IProjectile item;
 
         //public object Rectangle { get; internal set; }
 
@@ -32,7 +35,9 @@ namespace Zelda_Game
             itemPosition = location;
             useItem = false;
             currentState = new RightIdleLinkState(this);
-            items = new Dictionary<ISprite, int>();
+            items = new Dictionary<IProjectile, Vector2>();
+            items2 = new Dictionary<IProjectile, Vector2>();
+            removeItems = new List<IProjectile>();
         }
 
         public void Update()
@@ -58,32 +63,26 @@ namespace Zelda_Game
                 currentState.ChangeDirection("idle");
             }
 
-            if (useItem)
+            foreach (KeyValuePair<IProjectile, Vector2> item in items2)
             {
-                item.Update();
-                animationCount++;
-                if (animationCount == 60)
-                {
-                    useItem = false;
-                    animationCount = 0;
-                    itemPosition = position;
-                }
-
+                items[item.Key] = item.Key.Update(items[item.Key]);
             }
 
-            //if (LinkRectangle.Intersects(PushableRectangle)) {
-            //    position.X = 0;
-            //    position.Y = 0;
-            
-            //}
+            foreach(IProjectile item in removeItems)
+            {
+                items.Remove(item);
+                items2.Remove(item);
+            }
+         
         }
 
         public void UseItem(string itemName)
         {
             itemPosition = position;
+            itemPositionStart = position;
             item = currentState.UseItem(itemName);
-            items.Add(item, 0);
-            useItem = true;
+            items.Add(item, itemPosition);
+            items2.Add(item, itemPositionStart);
         }
 
         public void UseSword()
@@ -99,7 +98,14 @@ namespace Zelda_Game
         public void Draw(SpriteBatch spriteBatch)
         {
             currentState.Draw(spriteBatch, position);
-            if (useItem) item.Draw(spriteBatch, itemPosition);
+
+            foreach (KeyValuePair<IProjectile, Vector2> item in items)
+            {
+                useItem = item.Key.Draw(spriteBatch, item.Value, items2[item.Key]);
+                if (useItem) removeItems.Add(item.Key);
+            }
+
+
         }
     }
 }
