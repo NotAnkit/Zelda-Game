@@ -3,63 +3,64 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
-    public class GreenBoomerangDownAnimation : ISprite
+    public class GreenBoomerangDownAnimation : IProjectile
     {
 
         public Texture2D Texture;
+        private bool flip;
 
         public GreenBoomerangDownAnimation(Texture2D texture)
         {
             Texture = texture;
+            flip = false;
         }
 
-        private int currentFrame = 0;
-        private int totalFrames = 60;
-        public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
+        public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
+            bool finished = false;
 
-            if (currentFrame <= 10)
-            {
-                sourceRectangle = new Rectangle(64, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y + 32, 16, 32);
-            }
-            else if (currentFrame <= 20)
-            {
-                sourceRectangle = new Rectangle(73, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y + 96, 16, 32);
-            }
-            else if (currentFrame <= 30)
+            if (startLocation.Y == location.Y && flip)
             {
                 sourceRectangle = new Rectangle(82, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y + 160, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y, 16, 32);
+                finished = true;
             }
-            else if (currentFrame <= 40)
-            {
-                sourceRectangle = new Rectangle(73, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y + 160, 16, 32);
-            }
-            else if (currentFrame <= 50)
+            else if ((location.Y - startLocation.Y) % 18 <= 6)
             {
                 sourceRectangle = new Rectangle(64, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y + 96, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y, 16, 32);
+            }
+            else if ((location.Y - startLocation.Y) % 18 <= 9)
+            {
+                sourceRectangle = new Rectangle(73, 185, 8, 16);
+                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y, 16, 32);
             }
             else
             {
                 sourceRectangle = new Rectangle(82, 185, 8, 16);
-                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y + 32, 16, 32);
+                destinationRectangle = new Rectangle((int)location.X + 8, (int)location.Y, 16, 32);
             }
 
+
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            return location;
+            return finished;
+
         }
 
-        public void Update()
+        public Vector2 Update(Vector2 location, Vector2 startLocation)
         {
-            currentFrame++;
-            if (currentFrame == totalFrames)
-                currentFrame = 0;
+            if (location.Y - startLocation.Y <= 96 && !flip)
+            {
+                location.Y++;
+            }
+            else
+            {
+                flip = true;
+                location.Y--;
+            }
+            return location;
         }
     }
 }

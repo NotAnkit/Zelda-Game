@@ -19,7 +19,7 @@ namespace Zelda_Game
             Rectangle destinationRectangle;
             bool finished = false;
 
-            if (startLocation.X - location.X <= 128)
+            if (startLocation.X - location.X <= 96)
             {
                 sourceRectangle = new Rectangle(10, 185, 16, 16);
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
@@ -36,7 +36,7 @@ namespace Zelda_Game
             return finished;
         }
 
-        public Vector2 Update(Vector2 position)
+        public Vector2 Update(Vector2 position, Vector2 startPosition)
         {
             position.X--;
             return position;

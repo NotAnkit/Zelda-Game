@@ -35,7 +35,7 @@ namespace Zelda_Game
             return finished;
         }
 
-        public Vector2 Update(Vector2 position)
+        public Vector2 Update(Vector2 position, Vector2 startPosition)
         {
             position.X++;
             return position;

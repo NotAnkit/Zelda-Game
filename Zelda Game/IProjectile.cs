@@ -6,7 +6,7 @@ namespace Zelda_Game
 {
     public interface IProjectile
     {
-        public Vector2 Update(Vector2 location);
+        public Vector2 Update(Vector2 location, Vector2 startPosition);
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startPosition);
     }
 }

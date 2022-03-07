@@ -9,7 +9,6 @@ namespace Zelda_Game
     public class Link
     {
         public string direction = "right";
-        //public Rectangle PushableRectangle;
         private Vector2 position;
         private Vector2 itemPositionStart;
         private Vector2 itemPosition;
@@ -19,10 +18,7 @@ namespace Zelda_Game
         private List<IProjectile> removeItems;
         public ILinkState currentState;     
         private bool useItem;
-        private int animationCount;
         private IProjectile item;
-
-        //public object Rectangle { get; internal set; }
 
         public Rectangle LinkRectangle
         {
@@ -65,7 +61,7 @@ namespace Zelda_Game
 
             foreach (KeyValuePair<IProjectile, Vector2> item in items2)
             {
-                items[item.Key] = item.Key.Update(items[item.Key]);
+                items[item.Key] = item.Key.Update(items[item.Key], item.Value);
             }
 
             foreach(IProjectile item in removeItems)
@@ -83,6 +79,7 @@ namespace Zelda_Game
             item = currentState.UseItem(itemName);
             items.Add(item, itemPosition);
             items2.Add(item, itemPositionStart);
+
         }
 
         public void UseSword()
@@ -104,8 +101,6 @@ namespace Zelda_Game
                 useItem = item.Key.Draw(spriteBatch, item.Value, items2[item.Key]);
                 if (useItem) removeItems.Add(item.Key);
             }
-
-
         }
     }
 }
