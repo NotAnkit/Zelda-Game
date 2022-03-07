@@ -9,7 +9,7 @@ namespace Zelda_Game
     public class Link
     {
         public string direction = "right";
-        private Vector2 position;
+        public Vector2 position;
         private Vector2 itemPositionStart;
         private Vector2 itemPosition;
         public int speed = 2;

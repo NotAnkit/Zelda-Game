@@ -24,7 +24,7 @@ namespace Zelda_Game
                 Rectangle linkRectangle = Game.link.LinkRectangle;
                 Rectangle enemyRectangle = enemy.Value.enemyRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, enemyRectangle);
-                //call response method here
+                PlayerEnemyResponse.PlayerEnemy(Game, direction);
             }
 
             //enemies loop through blocks
@@ -47,9 +47,9 @@ namespace Zelda_Game
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
-                Rectangle blockRectangle = item.Value.itemRectangle();
-                //direction = CollisionDetection.getDirection(linkRectangle, itemRectangle);
-                //call response method here
+                Rectangle itemRectangle = item.Value.itemRectangle();
+                direction = CollisionDetection.getDirection(linkRectangle, itemRectangle);
+                // call method here
             }
 
             //player loop through items
