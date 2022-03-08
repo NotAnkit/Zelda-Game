@@ -1,10 +1,11 @@
 ﻿using System;
-using Microsoft.Xna.Framework;
+using System.Drawing;
+
 namespace Zelda_Game
 {
-    public static class PlayerBlockResponse
+    public static class EnemyBlockResponse
     {
-        public static void PlayerBlock(Game1 Game, String direction)
+        public static void EnemyBlock(Game1 Game, String direction)
         {
             if (direction == "left-right")
             {

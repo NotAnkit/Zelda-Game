@@ -18,7 +18,7 @@ namespace Zelda_Game
         {
             String direction;
             
-            //player loop through enemies
+            //when player runs into enemy, player should get pushed back
             foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
@@ -30,12 +30,19 @@ namespace Zelda_Game
             //enemies loop through blocks
             foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
             {
-                Rectangle enemyRectangle = enemy.Value.enemyRectangle();
+                //Rectangle enemyRectangle = enemy.Value.enemyRectangle();
+                //foreach (KeyValuePair<Vector2, IEnvironment> block in room.enemyList)
+                //{
+                    
+                //    Rectangle blockRectangle = block.Value.blockRectangle();
+
+                //}
+                
                     
                 
             }
 
-            //player loop through blocks
+            //player can't run through blocks
             foreach (KeyValuePair<Vector2, IEnvironment> block in room.blockList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
@@ -44,6 +51,7 @@ namespace Zelda_Game
                 PlayerBlockResponse.PlayerBlock(Game, direction);
             }
 
+            //player collects items, items disappear when player touches item
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
@@ -51,6 +59,7 @@ namespace Zelda_Game
                 direction = CollisionDetection.getDirection(linkRectangle, itemRectangle);
                 PlayerItemResponse.PlayerItem(Game, direction);
             }
+
 
             //player loop through items
             //call response method here
