@@ -33,6 +33,7 @@ namespace Zelda_Game
             windowWidth = game._graphics.PreferredBackBufferWidth - 380;
             position = location;
             trap = new Trap(game, location);
+            direction = "right";
         }
 
         private int movementCounter = 0;
@@ -140,9 +141,9 @@ namespace Zelda_Game
             spriteSpeed = speed;
         }
 
-        public Vector2 GetPosition()
+        public string GetDirection()
         {
-            return position;
+            return direction;
         }
 
         public void SetPosition(Vector2 newPosition)

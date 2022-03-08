@@ -10,7 +10,7 @@ namespace Zelda_Game
         void Draw(SpriteBatch spriteBatch, Vector2 location);
         float GetSpeed();
         void SetSpeed(float speed);
-        Vector2 GetPosition();
+        string GetDirection();
         void SetPosition(Vector2 newPosition);
     }
 }

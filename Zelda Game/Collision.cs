@@ -37,6 +37,7 @@ namespace Zelda_Game
             }
 
             //Enemy Block Collision
+            //enemies can't run through blocks
             foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
             {
                 Rectangle enemyRectangle = enemy.Value.enemyRectangle();
@@ -44,7 +45,11 @@ namespace Zelda_Game
                 {
                     Rectangle blockRectangle = block.Value.blockRectangle();
                     direction = CollisionDetection.getDirection(enemyRectangle, blockRectangle);
-                    //EnemyBlockResponse.EnemyBlock(Game, direction);
+                    if (direction != "none")
+                    {
+                        collisonDirection.Add(direction);
+                    }
+                    //EnemyBlockResponse.EnemyBlock(Game, directionLocked, collisonDirection);
                 }
                 
             }

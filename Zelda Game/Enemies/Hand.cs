@@ -13,7 +13,7 @@ namespace Zelda_Game
         private int windowHeight;
         private int windowWidth;
         private Vector2 position;
-        private string direction;
+        public string direction;
 
         public Rectangle enemyRectangle()
         {
@@ -29,6 +29,7 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight - 230;
             windowWidth = game._graphics.PreferredBackBufferWidth - 380;
             position = location;
+            direction = "right";
         }
 
         private int movementCounter = 0;
@@ -100,9 +101,9 @@ namespace Zelda_Game
             spriteSpeed = speed;
         }
 
-        public Vector2 GetPosition()
+        public string GetDirection()
         {
-            return position;
+            return direction;
         }
 
         public void SetPosition(Vector2 newPosition)

@@ -1,59 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace Zelda_Game
 {
     public static class EnemyBlockResponse
     {
-        public static void EnemyBlock(Game1 Game, String direction)
+        public static void EnemyBlock(Game1 Game, string[] directionLocked, List<string> collisonDirection)
         {
-            if (direction == "left-right")
+            for (int i = 0; i < collisonDirection.Count; i++)
             {
-                Game.enemy.SetSpeed(0);
-                //Game.enemy.position.X = ;
-                for (int i = 0; i <= 50; i++)
+                if (collisonDirection[i].Equals("top-bottom"))
                 {
-                    //Game.enemy.position.X--;
+                    directionLocked[i] = "up";
                 }
-            }
-
-            if (direction == "right-left")
-            {
-                if (Game.link.direction == "right" || Game.link.direction == "up" || Game.link.direction == "down")
+                else if (collisonDirection[i].Equals("bottom-top"))
                 {
-                    Game.enemy.SetSpeed(1);
+                    directionLocked[i] = "down";
+                }
+                else if (collisonDirection[i].Equals("right-left"))
+                {
+                    directionLocked[i] = "left";
+                }
+                else if (collisonDirection[i].Equals("left-right"))
+                {
+                    directionLocked[i] = "right";
+                }
+
+                if (Game.enemy.GetDirection() == (directionLocked[0]) || Game.enemy.GetDirection() == directionLocked[1] || Game.enemy.GetDirection() == directionLocked[2])
+                {
+                    Game.enemy.SetSpeed(0f);
                 }
                 else
                 {
-                    Game.enemy.SetSpeed(0);
+                    Game.enemy.SetSpeed(1f);
                 }
-
-            }
-
-            if (direction == "top-bottom")
-            {
-                if (Game.link.direction == "down" || Game.link.direction == "right" || Game.link.direction == "left")
-                {
-                    Game.enemy.SetSpeed(1);
-                }
-                else
-                {
-                    Game.enemy.SetSpeed(0);
-                }
-
-            }
-
-            if (direction == "bottom-top")
-            {
-                if (Game.link.direction == "up" || Game.link.direction == "right" || Game.link.direction == "left")
-                {
-                    Game.enemy.SetSpeed(1);
-                }
-                else
-                {
-                    Game.enemy.SetSpeed(0);
-                }
-
             }
         }
     }

@@ -15,7 +15,7 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
         private Fireballs fireballs;
-        private string direction;
+        public string direction;
 
         public Rectangle enemyRectangle()
         {
@@ -33,6 +33,7 @@ namespace Zelda_Game
             windowWidth = game._graphics.PreferredBackBufferWidth - 380;
             position = location;
             fireballs = new Fireballs(game, new Vector2(position.X, position.Y));
+            direction = "right";
         }
 
         private int movementCounter = 0;
@@ -97,9 +98,9 @@ namespace Zelda_Game
             spriteSpeed = speed;
         }
 
-        public Vector2 GetPosition()
+        public string GetDirection()
         {
-            return position;
+            return direction;
         }
 
         public void SetPosition(Vector2 newPosition)
