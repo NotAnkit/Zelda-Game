@@ -1,62 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 namespace Zelda_Game
 {
     public static class PlayerBlockResponse
     {
-        public static void PlayerBlock(Game1 Game, String direction, IEnvironment blockType)
+        public static void PlayerBlock(Game1 Game, string[] directionLocked, List<string> collisonDirection, IEnvironment blockType)
         {
             if (!(blockType is BlueSand))
             {
-                if (direction == "left-right")
+                for (int i = 0; i < collisonDirection.Count; i++)
                 {
-                    if (Game.link.direction == "left" || Game.link.direction == "up" || Game.link.direction == "down")
+                    if (collisonDirection[i].Equals("top-bottom"))
                     {
-                        Game.link.speed = 2;
+                        directionLocked[i] = "up";
                     }
-                    else
+                    else if (collisonDirection[i].Equals("bottom-top"))
                     {
-                        Game.link.speed = 0;
+                        directionLocked[i] = "down";
+                    }
+                    else if (collisonDirection[i].Equals("right-left"))
+                    {
+                        directionLocked[i] = "left";
+                    }
+                    else if (collisonDirection[i].Equals("left-right"))
+                    {
+                        directionLocked[i] = "right";
                     }
                 }
-
-                if (direction == "right-left")
+                if (Game.link.direction == directionLocked[0] || Game.link.direction == directionLocked[1] || Game.link.direction == directionLocked[2])
                 {
-                    if (Game.link.direction == "right" || Game.link.direction == "up" || Game.link.direction == "down")
-                    {
-                        Game.link.speed = 2;
-                    }
-                    else
-                    {
-                        Game.link.speed = 0;
-                    }
-
+                    Game.link.speed = 0;
                 }
-
-                if (direction == "top-bottom")
+                else
                 {
-                    if (Game.link.direction == "down" || Game.link.direction == "right" || Game.link.direction == "left")
-                    {
-                        Game.link.speed = 2;
-                    }
-                    else
-                    {
-                        Game.link.speed = 0;
-                    }
-
-                }
-
-                if (direction == "bottom-top")
-                {
-                    if (Game.link.direction == "up" || Game.link.direction == "right" || Game.link.direction == "left")
-                    {
-                        Game.link.speed = 2;
-                    }
-                    else
-                    {
-                        Game.link.speed = 0;
-                    }
-
+                    Game.link.speed = 2;
                 }
             }
         }
