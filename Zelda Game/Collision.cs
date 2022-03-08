@@ -26,16 +26,17 @@ namespace Zelda_Game
             directionLocked[1] = "none";
             directionLocked[2] = "none";
             collisonDirection = new List<string>();
-            //when player runs into enemy, player should get pushed back
+
+            //Enemy Player Collision
             foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
                 Rectangle enemyRectangle = enemy.Value.enemyRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, enemyRectangle);
-                //PlayerEnemyResponse.PlayerEnemy(Game, direction);
+                PlayerEnemyResponse.PlayerEnemy(Game, direction);
             }
 
-            //enemies loop through blocks, enemy can't run through blocks
+            //Enemy Block Collision
             foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
             {
                 Rectangle enemyRectangle = enemy.Value.enemyRectangle();
@@ -48,7 +49,7 @@ namespace Zelda_Game
                 
             }
 
-            //player can't run through blocks
+            //Player Block Collision
             foreach (KeyValuePair<Vector2, IEnvironment> block in room.blockList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
@@ -63,6 +64,9 @@ namespace Zelda_Game
             
 
             //player collects items, items disappear when player touches item
+            //To do
+            //Do the pick up animation and then remove from list
+            //Player Item Collision
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
             {
                 Rectangle linkRectangle = Game.link.LinkRectangle;
@@ -71,15 +75,12 @@ namespace Zelda_Game
                 PlayerItemResponse.PlayerItem(Game, direction);
             }
 
-            //player can go through doors to other rooms
+            //Player Door Collision
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
             {
                 //to do
             }
 
-
-            //player loop through items
-            //call response method here
         }
     }
 }

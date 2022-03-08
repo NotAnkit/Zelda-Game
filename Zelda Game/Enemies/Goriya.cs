@@ -37,7 +37,7 @@ namespace Zelda_Game
 
         private int movementCounter = 0;
         private int num = 0;
-        private String goriyaState;
+        private string direction;
         public void Update()
         {
             currentFrame++;
@@ -57,7 +57,7 @@ namespace Zelda_Game
                 position.X += spriteSpeed;
                 if (position.X > windowWidth - 16)
                     position.X -= spriteSpeed;
-                goriyaState = "right";
+                direction = "right";
                 if (movementCounter == 0)
                 {
                     trap = new Trap(Game, position);
@@ -69,21 +69,21 @@ namespace Zelda_Game
                 position.Y += spriteSpeed;
                 if (position.Y > windowHeight)
                     position.Y -= spriteSpeed;
-                goriyaState = "up";
+                direction = "up";
             }
             else if (num % 4 == 2)
             {
                 position.X -= spriteSpeed;
                 if (position.X < 59)
                     position.X += spriteSpeed;
-                goriyaState = "left";
+                direction = "left";
             }
             else
             {
                 position.Y -= spriteSpeed;
                 if (position.Y < 61)
                     position.Y += spriteSpeed;
-                goriyaState = "down";
+                direction = "down";
             }
 
             trap.Update();
@@ -95,21 +95,21 @@ namespace Zelda_Game
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
             SpriteEffects s;
-            if (goriyaState == "right")
+            if (direction == "right")
             {
                 s = SpriteEffects.None;
                 if (currentFrame <= totalFrames / 2)
                     sourceRectangle = new Rectangle(256, 11, 16, 16);
                 else
                     sourceRectangle = new Rectangle(273, 11, 16, 16);
-            } else if(goriyaState == "up")
+            } else if(direction == "up")
             {
                 sourceRectangle = new Rectangle(222, 11, 16, 16);
                 if (currentFrame <= totalFrames / 2)
                     s = SpriteEffects.None;
                 else
                     s = SpriteEffects.FlipHorizontally;
-            } else if(goriyaState == "left")
+            } else if(direction == "left")
             {
                 s = SpriteEffects.FlipHorizontally;
                 if (currentFrame <= totalFrames / 2)

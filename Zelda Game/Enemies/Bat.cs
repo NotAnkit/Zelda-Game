@@ -13,6 +13,7 @@ namespace Zelda_Game
         private int windowHeight;
         private int windowWidth;
         private Vector2 position;
+        private string direction;
 
         public Bat(Game1 game, Vector2 location)
         {
@@ -52,24 +53,28 @@ namespace Zelda_Game
                 position.X += spriteSpeed;
                 if (position.X > windowWidth - 16)
                     position.X -= spriteSpeed;
+                direction = "right";
             }
             else if (num % 4 == 1)
             {
                 position.Y += spriteSpeed;
                 if (position.Y > windowHeight)
                     position.Y -= spriteSpeed;
+                direction = "up";
             }
             else if (num % 4 == 2)
             {
                 position.X -= spriteSpeed;
                 if (position.X < 59)
                     position.X += spriteSpeed;
+                direction = "left";
             }
             else
             {
                 position.Y -= spriteSpeed;
                 if (position.Y < 61)
                     position.Y += spriteSpeed;
+                direction = "down";
             }
         }
 
