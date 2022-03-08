@@ -48,7 +48,7 @@ namespace Zelda_Game
                 Rectangle linkRectangle = Game.link.LinkRectangle;
                 Rectangle blockRectangle = block.Value.blockRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, blockRectangle);
-                PlayerBlockResponse.PlayerBlock(Game, direction);
+                PlayerBlockResponse.PlayerBlock(Game, direction, block.Value);
             }
 
             //player collects items, items disappear when player touches item

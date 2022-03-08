@@ -8,7 +8,7 @@ namespace Zelda_Game
     {
         public static void PlayerItem(Game1 Game, String direction)
         {
-            List<IItem> itemList;
+            //List<IItem> itemList;
 
             if (direction == "left-right")
             {

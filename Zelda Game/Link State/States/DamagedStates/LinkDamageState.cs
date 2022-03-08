@@ -18,16 +18,16 @@ namespace Zelda_Game
 
         public void ChangeDirection(string direction)
         {
-            if (direction.Equals("up") && animationCount == 60) player.currentState = new UpMovingLinkState(player);
-            
-            else if (direction.Equals("left") && animationCount == 60) player.currentState = new LeftMovingLinkState(player);
-            
-            else if (direction.Equals("down") && animationCount == 60) player.currentState = new DownMovingLinkState(player);
-            
-            else if (direction.Equals("right") && animationCount == 60) player.currentState = new RightMovingLinkState(player);
-            
-            else if (direction.Equals("idle") && animationCount == 60) player.currentState = new RightIdleLinkState(player);
-            
+            if (direction.Equals("up") && animationCount == 10) player.currentState = new UpMovingLinkState(player);
+
+            else if (direction.Equals("left") && animationCount == 10) player.currentState = new LeftMovingLinkState(player);
+
+            else if (direction.Equals("down") && animationCount == 10) player.currentState = new DownMovingLinkState(player);
+
+            else if (direction.Equals("right") && animationCount == 10) player.currentState = new RightMovingLinkState(player);
+
+            else if (direction.Equals("idle") && animationCount == 10) player.currentState = new RightIdleLinkState(player);
+
         }
 
         public Vector2 ChangePosition(Vector2 location, int speed)
@@ -63,7 +63,7 @@ namespace Zelda_Game
 
         public void UseSword()
         {
-            
+
         }
 
         public void TakeDamage()
