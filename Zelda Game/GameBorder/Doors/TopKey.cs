@@ -13,6 +13,11 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("RoomSheet");
         }
 
+        public Rectangle doorRectangle()
+        {
+            return new Rectangle(217, 0, 65, 63);
+        }
+
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(881, 11, 32, 32);

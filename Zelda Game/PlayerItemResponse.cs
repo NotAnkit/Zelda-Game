@@ -4,9 +4,9 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 namespace Zelda_Game
 {
-    public class PlayerItemHandler
+    public static class PlayerItemResponse
     {
-        public void PlayerItem(Game1 Game, String direction)
+        public static void PlayerItem(Game1 Game, String direction)
         {
             List<IItem> itemList;
 

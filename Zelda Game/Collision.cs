@@ -49,7 +49,7 @@ namespace Zelda_Game
                 Rectangle linkRectangle = Game.link.LinkRectangle;
                 Rectangle itemRectangle = item.Value.itemRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, itemRectangle);
-                // call method here
+                PlayerItemResponse.PlayerItem(Game, direction);
             }
 
             //player loop through items
