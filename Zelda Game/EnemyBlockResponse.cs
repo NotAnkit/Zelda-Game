@@ -9,13 +9,11 @@ namespace Zelda_Game
         {
             if (direction == "left-right")
             {
-                if (Game.link.direction == "left" || Game.link.direction == "up" || Game.link.direction == "down")
+                Game.enemy.SetSpeed(0);
+                //Game.enemy.position.X = ;
+                for (int i = 0; i <= 50; i++)
                 {
-                    Game.link.speed = 2;
-                }
-                else
-                {
-                    Game.link.speed = 0;
+                    //Game.enemy.position.X--;
                 }
             }
 
@@ -23,11 +21,11 @@ namespace Zelda_Game
             {
                 if (Game.link.direction == "right" || Game.link.direction == "up" || Game.link.direction == "down")
                 {
-                    Game.link.speed = 2;
+                    Game.enemy.SetSpeed(1);
                 }
                 else
                 {
-                    Game.link.speed = 0;
+                    Game.enemy.SetSpeed(0);
                 }
 
             }
@@ -36,11 +34,11 @@ namespace Zelda_Game
             {
                 if (Game.link.direction == "down" || Game.link.direction == "right" || Game.link.direction == "left")
                 {
-                    Game.link.speed = 2;
+                    Game.enemy.SetSpeed(1);
                 }
                 else
                 {
-                    Game.link.speed = 0;
+                    Game.enemy.SetSpeed(0);
                 }
 
             }
@@ -49,11 +47,11 @@ namespace Zelda_Game
             {
                 if (Game.link.direction == "up" || Game.link.direction == "right" || Game.link.direction == "left")
                 {
-                    Game.link.speed = 2;
+                    Game.enemy.SetSpeed(1);
                 }
                 else
                 {
-                    Game.link.speed = 0;
+                    Game.enemy.SetSpeed(0);
                 }
 
             }

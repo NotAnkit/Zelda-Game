@@ -5,6 +5,7 @@ namespace Zelda_Game
     {
         public static void PlayerDoor(Game1 Game, String direction)
         {
+            
         }
     }
 }

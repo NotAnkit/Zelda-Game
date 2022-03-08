@@ -27,18 +27,16 @@ namespace Zelda_Game
                 PlayerEnemyResponse.PlayerEnemy(Game, direction);
             }
 
-            //enemies loop through blocks
+            //enemies loop through blocks, enemy can't run through blocks
             foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
             {
-                //Rectangle enemyRectangle = enemy.Value.enemyRectangle();
-                //foreach (KeyValuePair<Vector2, IEnvironment> block in room.enemyList)
-                //{
-                    
-                //    Rectangle blockRectangle = block.Value.blockRectangle();
-
-                //}
-                
-                    
+                Rectangle enemyRectangle = enemy.Value.enemyRectangle();
+                foreach (KeyValuePair<Vector2, IEnvironment> block in room.blockList)
+                {
+                    Rectangle blockRectangle = block.Value.blockRectangle();
+                    direction = CollisionDetection.getDirection(enemyRectangle, blockRectangle);
+                    //EnemyBlockResponse.EnemyBlock(Game, direction);
+                }
                 
             }
 
@@ -58,6 +56,12 @@ namespace Zelda_Game
                 Rectangle itemRectangle = item.Value.itemRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, itemRectangle);
                 PlayerItemResponse.PlayerItem(Game, direction);
+            }
+
+            //player can go through doors to other rooms
+            foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
+            {
+                //to do
             }
 
 
