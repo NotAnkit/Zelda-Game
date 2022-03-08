@@ -11,7 +11,7 @@ namespace Zelda_Game
         public Game1 Game;
         public int currentRoomValue = 0;
 
-        private List<Room> roomList;
+        public List<Room> roomList;
 
         public RoomController(Game1 game)
         {

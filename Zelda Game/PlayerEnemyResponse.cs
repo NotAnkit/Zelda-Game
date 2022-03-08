@@ -8,8 +8,7 @@ namespace Zelda_Game
             if (direction == "left-right")
             {
                 Game.link.TakeDamage();
-                Game.link.speed = 1;
-                for (int i=0; i<= 50; i++)
+                for (int i=0; i<= 70; i++)
                 {
                     if(Game.link.position.X <= 59)
                     {
@@ -23,8 +22,7 @@ namespace Zelda_Game
             if (direction == "right-left")
             {
                 Game.link.TakeDamage();
-                Game.link.speed = 4;
-                for (int i = 0; i <= 50; i++)
+                for (int i = 0; i <= 70; i++)
                 {
                     if (Game.link.position.X >= 411)
                     {
@@ -37,8 +35,7 @@ namespace Zelda_Game
             if (direction == "top-bottom")
             {
                 Game.link.TakeDamage();
-                Game.link.speed = 4;
-                for (int i = 0; i <= 50; i++)
+                for (int i = 0; i <= 70; i++)
                 {
                     if (Game.link.position.Y >= 253)
                     {
@@ -51,8 +48,7 @@ namespace Zelda_Game
             if (direction == "bottom-top")
             {
                 Game.link.TakeDamage();
-                Game.link.speed = 4;
-                for (int i = 0; i <= 50; i++)
+                for (int i = 0; i <= 70; i++)
                 {
                     if (Game.link.position.Y <= 61)
                     {
