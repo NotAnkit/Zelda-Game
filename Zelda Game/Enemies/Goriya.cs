@@ -15,6 +15,7 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
         public Trap trap;
+        bool trapFinished = false;
 
         public Rectangle enemyRectangle()
         {
@@ -31,7 +32,7 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight - 230;
             windowWidth = game._graphics.PreferredBackBufferWidth - 380;
             position = location;
-            trap = new Trap(game, location, position);
+            trap = new Trap(game, location);
         }
 
         private int movementCounter = 0;
@@ -57,8 +58,11 @@ namespace Zelda_Game
                 if (position.X > windowWidth - 16)
                     position.X -= spriteSpeed;
                 goriyaState = "right";
-                if(movementCounter == 0)
-                    trap = new Trap(Game, position, position);
+                if (movementCounter == 0)
+                {
+                    trap = new Trap(Game, position);
+                    trapFinished = false;
+                }
             }
             else if (num % 4 == 1)
             {
@@ -122,7 +126,8 @@ namespace Zelda_Game
             }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);
-            trap.Draw(spriteBatch, position);
+            if(!trapFinished)
+                trapFinished = trap.Draw(spriteBatch);
         }
 
         public float GetSpeed()
