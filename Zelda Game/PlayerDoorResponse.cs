@@ -9,7 +9,7 @@ namespace Zelda_Game
         {
             if(direction == "left-right")
             {
-
+                
             }
             
         }

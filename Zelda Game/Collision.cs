@@ -97,10 +97,10 @@ namespace Zelda_Game
                 //PlayerItemResponse.PlayerItem(Game, item.Key, item.Value);
             }
 
-            /*foreach(Vector2 item in deleteItem)
+            foreach(Vector2 item in deleteItem)
             {
                 room.itemList.Remove(item);
-            }*/
+            }
 
             //Player Door Collision
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
