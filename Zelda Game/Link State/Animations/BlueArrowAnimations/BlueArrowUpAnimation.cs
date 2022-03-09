@@ -7,7 +7,13 @@ namespace Zelda_Game
     public class BlueArrowUpAnimation : IProjectile
     {
 
+        public Rectangle ProjectileRectangle()
+        {
+            return new Rectangle((int)location.X, (int)location.Y, 16, 32);
+        }
+
         public Texture2D Texture;
+        public Vector2 location;
 
         public BlueArrowUpAnimation(Texture2D texture)
         {
@@ -39,6 +45,7 @@ namespace Zelda_Game
         public Vector2 Update(Vector2 position, Vector2 startPosition)
         {
             position.Y--;
+            location = position;
             return position;
         }
     }

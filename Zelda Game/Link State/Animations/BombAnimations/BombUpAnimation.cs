@@ -5,19 +5,26 @@ namespace Zelda_Game
 {
     public class BombUpAnimation : IProjectile
     {
+        public Rectangle ProjectileRectangle()
+        {
+            return new Rectangle((int)location.X, (int)location.Y, 16, 32);
+        }
 
         public Texture2D Texture;
+        private Vector2 location;
+        private bool finished;
 
         public BombUpAnimation(Texture2D texture)
         {
             Texture = texture;
+            finished = false;
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
-            bool finished = false;
+            finished = false;
 
             if (startLocation.Y - location.Y <= 30)
             {
@@ -48,6 +55,7 @@ namespace Zelda_Game
         public Vector2 Update(Vector2 position, Vector2 startPosition)
         {
             position.Y--;
+            location = position;
             return position;
         }
     }

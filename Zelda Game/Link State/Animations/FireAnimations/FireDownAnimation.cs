@@ -5,9 +5,13 @@ namespace Zelda_Game
 {
     public class FireDownAnimation : IProjectile
     {
+        public Rectangle ProjectileRectangle()
+        {
+            return new Rectangle((int)location.X, (int)location.Y, 32, 32);
+        }
 
         public Texture2D Texture;
-
+        private Vector2 location;
         public FireDownAnimation(Texture2D texture)
         {
             Texture = texture;
@@ -38,6 +42,7 @@ namespace Zelda_Game
         public Vector2 Update(Vector2 position, Vector2 startPosition)
         {
             position.Y++;
+            location = position;
             return position;
         }
     }

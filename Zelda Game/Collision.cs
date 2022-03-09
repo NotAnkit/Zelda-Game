@@ -14,6 +14,7 @@ namespace Zelda_Game
         private List<string> collisonDirectionEnemy;
         private string[] directionLockedEnemy;
         private List<Vector2> deleteItem;
+        private List<Vector2> deleteEnemy;
 
         public Collision(Game1 game)
         {
@@ -21,6 +22,7 @@ namespace Zelda_Game
             collisonDirection = new List<string>();
             directionLocked = new string[8];
             deleteItem = new List<Vector2>();
+            deleteEnemy = new List<Vector2>();
 
             collisonDirectionEnemy = new List<string>();
             directionLockedEnemy = new string[8];
@@ -46,7 +48,7 @@ namespace Zelda_Game
                 Rectangle linkRectangle = Game.link.LinkRectangle;
                 Rectangle enemyRectangle = enemy.Value.enemyRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, enemyRectangle);
-                PlayerEnemyResponse.PlayerEnemy(Game, direction);
+                //PlayerEnemyResponse.PlayerEnemy(Game, direction);
             }
 
             //Enemy Block Collision
@@ -64,7 +66,22 @@ namespace Zelda_Game
                     }
                     //EnemyBlockResponse.EnemyBlock(Game, directionLocked, collisonDirection);
                 }
-                
+
+                foreach (KeyValuePair<IProjectile, Vector2> projectile in Game.link.items)
+                {
+                    Rectangle blockRectangle = projectile.Key.ProjectileRectangle();
+                    direction = CollisionDetection.getDirection(enemyRectangle, blockRectangle);
+                    if (direction != "none")
+                    {
+                        deleteEnemy.Add(enemy.Key);
+                    }
+                }
+
+            }
+
+            foreach (Vector2 enemy in deleteEnemy)
+            {
+                room.enemyList.Remove(enemy);
             }
 
             //Player Block Collision
@@ -79,6 +96,7 @@ namespace Zelda_Game
                 }
                 PlayerBlockResponse.PlayerBlock(Game, directionLocked, collisonDirection, block.Value);
             }
+
             
 
             //player collects items, items disappear when player touches item

@@ -5,8 +5,14 @@ namespace Zelda_Game
 {
     public class BombLeftAnimation : IProjectile
     {
+        public Rectangle ProjectileRectangle()
+        {
+            return new Rectangle((int)location.X, (int)location.Y, 16, 32);
+        }
 
         public Texture2D Texture;
+        private Vector2 location;
+        private bool finished;
 
         public BombLeftAnimation(Texture2D texture)
         {
@@ -17,7 +23,7 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
-            bool finished = false;
+            finished = false;
 
             if (startLocation.X - location.X <= 30)
             {
@@ -48,6 +54,7 @@ namespace Zelda_Game
         public Vector2 Update(Vector2 position, Vector2 startPosition)
         {
             position.X--;
+            location = position;
             return position;
         }
     }

@@ -13,7 +13,7 @@ namespace Zelda_Game
         private Vector2 itemPositionStart;
         private Vector2 itemPosition;
         public int speed = 2;
-        private Dictionary<IProjectile, Vector2> items;
+        public Dictionary<IProjectile, Vector2> items;
         private Dictionary<IProjectile, Vector2> items2;
         private List<IProjectile> removeItems;
         public ILinkState currentState;     

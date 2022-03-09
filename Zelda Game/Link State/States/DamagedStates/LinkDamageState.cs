@@ -58,7 +58,7 @@ namespace Zelda_Game
 
         public IProjectile UseItem(string itemName)
         {
-            throw new NotImplementedException();
+            return new BlankProjectile();
         }
 
         public void UseSword()

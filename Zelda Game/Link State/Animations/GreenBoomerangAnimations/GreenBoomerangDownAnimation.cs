@@ -5,7 +5,11 @@ namespace Zelda_Game
 {
     public class GreenBoomerangDownAnimation : IProjectile
     {
-
+        public Rectangle ProjectileRectangle()
+        {
+            return new Rectangle((int)location.X, (int)location.Y, 16, 32);
+        }
+        private Vector2 location;
         public Texture2D Texture;
         private bool flip;
 
@@ -49,18 +53,19 @@ namespace Zelda_Game
 
         }
 
-        public Vector2 Update(Vector2 location, Vector2 startLocation)
+        public Vector2 Update(Vector2 position, Vector2 startLocation)
         {
-            if (location.Y - startLocation.Y <= 96 && !flip)
+            if (position.Y - startLocation.Y <= 96 && !flip)
             {
-                location.Y++;
+                position.Y++;
             }
             else
             {
                 flip = true;
-                location.Y--;
+                position.Y--;
             }
-            return location;
+            location = position;
+            return position;
         }
     }
 }

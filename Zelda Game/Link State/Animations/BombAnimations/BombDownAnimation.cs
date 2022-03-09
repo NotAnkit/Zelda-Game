@@ -6,11 +6,29 @@ namespace Zelda_Game
     public class BombDownAnimation : IProjectile
     {
 
+        public Rectangle ProjectileRectangle()
+        {
+            Rectangle hitbox;
+            if (kill)
+            {
+                hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 32);
+            }
+            else
+            {
+                hitbox = new Rectangle(0, 0, 16, 32);
+            }
+
+            return hitbox;
+        }
+
         public Texture2D Texture;
+        private Vector2 location;
+        private bool kill;
 
         public BombDownAnimation(Texture2D texture)
         {
             Texture = texture;
+            kill = false;
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
@@ -33,12 +51,14 @@ namespace Zelda_Game
             {
                 sourceRectangle = new Rectangle(155, 185, 16, 16);
                 destinationRectangle = new Rectangle((int)startLocation.X, (int)startLocation.Y + 32, 32, 32);
+                
             }
             else
             {
                 sourceRectangle = new Rectangle(172, 185, 16, 16);
                 destinationRectangle = new Rectangle((int)startLocation.X, (int)startLocation.Y + 32, 32, 32);
                 finished = true;
+                kill = true;
             }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
@@ -48,6 +68,7 @@ namespace Zelda_Game
         public Vector2 Update(Vector2 position, Vector2 startPosition)
         {
             position.Y++;
+            location = position;
             return position;
         }
     }
