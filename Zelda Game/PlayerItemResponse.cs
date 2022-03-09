@@ -6,60 +6,16 @@ namespace Zelda_Game
 {
     public static class PlayerItemResponse
     {
-        public static void PlayerItem(Game1 Game, String direction)
+        public static void PlayerItem(Game1 Game, Vector2 itemLocation, IItem item)
         {
             //List<IItem> itemList;
 
-            if (direction == "left-right")
-            {
-                if (Game.link.direction == "left" || Game.link.direction == "up" || Game.link.direction == "down")
-                {
-                    Game.link.speed = 2;
-                }
-                else
-                {
-                    Game.link.speed = 0;
-                }
-            }
+            Game.link.currentState = new HoldingItemState(Game.link);
+           
+            itemLocation.X = Game.link.position.X + 8;
+            itemLocation.Y = Game.link.position.X + 32;
 
-            if (direction == "right-left")
-            {
-                if (Game.link.direction == "right" || Game.link.direction == "up" || Game.link.direction == "down")
-                {
-                    Game.link.speed = 2;
-                }
-                else
-                {
-                    Game.link.speed = 0;
-                }
 
-            }
-
-            if (direction == "top-bottom")
-            {
-                if (Game.link.direction == "down" || Game.link.direction == "right" || Game.link.direction == "left")
-                {
-                    Game.link.speed = 2;
-                }
-                else
-                {
-                    Game.link.speed = 0;
-                }
-
-            }
-
-            if (direction == "bottom-top")
-            {
-                if (Game.link.direction == "up" || Game.link.direction == "right" || Game.link.direction == "left")
-                {
-                    Game.link.speed = 2;
-                }
-                else
-                {
-                    Game.link.speed = 0;
-                }
-
-            }
         }    
 
     }   

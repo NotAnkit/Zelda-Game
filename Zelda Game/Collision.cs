@@ -11,11 +11,19 @@ namespace Zelda_Game
         private List<string> collisonDirection;
         private string[] directionLocked;
 
+        private List<string> collisonDirectionEnemy;
+        private string[] directionLockedEnemy;
+        private List<Vector2> deleteItem;
+
         public Collision(Game1 game)
         {
             Game = game;
             collisonDirection = new List<string>();
             directionLocked = new string[8];
+            deleteItem = new List<Vector2>();
+
+            collisonDirectionEnemy = new List<string>();
+            directionLockedEnemy = new string[8];
 
         }
 
@@ -26,6 +34,11 @@ namespace Zelda_Game
             directionLocked[1] = "none";
             directionLocked[2] = "none";
             collisonDirection = new List<string>();
+
+            directionLockedEnemy[0] = "none";
+            directionLockedEnemy[1] = "none";
+            directionLockedEnemy[2] = "none";
+            collisonDirectionEnemy = new List<string>();
 
             //Enemy Player Collision
             foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
@@ -47,7 +60,7 @@ namespace Zelda_Game
                     direction = CollisionDetection.getDirection(enemyRectangle, blockRectangle);
                     if (direction != "none")
                     {
-                        collisonDirection.Add(direction);
+                        collisonDirectionEnemy.Add(direction);
                     }
                     //EnemyBlockResponse.EnemyBlock(Game, directionLocked, collisonDirection);
                 }
@@ -77,8 +90,17 @@ namespace Zelda_Game
                 Rectangle linkRectangle = Game.link.LinkRectangle;
                 Rectangle itemRectangle = item.Value.itemRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, itemRectangle);
-                PlayerItemResponse.PlayerItem(Game, direction);
+                if(direction != "none")
+                {
+                    deleteItem.Add(item.Key);
+                }
+                //PlayerItemResponse.PlayerItem(Game, item.Key, item.Value);
             }
+
+            /*foreach(Vector2 item in deleteItem)
+            {
+                room.itemList.Remove(item);
+            }*/
 
             //Player Door Collision
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)

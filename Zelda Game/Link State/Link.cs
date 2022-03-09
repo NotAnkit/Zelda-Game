@@ -8,7 +8,7 @@ namespace Zelda_Game
 {
     public class Link
     {
-        public string direction = "right";
+        public string direction;
         public Vector2 position;
         private Vector2 itemPositionStart;
         private Vector2 itemPosition;
@@ -22,7 +22,7 @@ namespace Zelda_Game
 
         public Rectangle LinkRectangle
         {
-            get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
+            get { return new Rectangle((int)position.X, (int)position.Y, 31, 31); }
         }
 
         public Link(Vector2 location)

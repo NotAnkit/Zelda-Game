@@ -65,6 +65,12 @@ namespace Zelda_Game
         public ISprite LinkDamageAnimationSprite() => new LinkDamagedAnimation(LinkSpritesheet);
 
         /*
+         * Link Sprites for Item
+         */
+
+        public ISprite LinkItemAnimationSprite() => new LinkPickUpItem2(LinkSpritesheet);
+
+        /*
          * Link Sprites for bomb item
          */
 
