@@ -11,7 +11,7 @@ namespace Zelda_Game
         private List<string> collisonDirection;
         private string[] directionLocked;
 
-        private List<string> collisonDirectionEnemy;
+        private List<string> collisionDirectionEnemy;
         private string[] directionLockedEnemy;
         private List<Vector2> deleteItem;
         private List<Vector2> deleteEnemy;
@@ -24,7 +24,7 @@ namespace Zelda_Game
             deleteItem = new List<Vector2>();
             deleteEnemy = new List<Vector2>();
 
-            collisonDirectionEnemy = new List<string>();
+            collisionDirectionEnemy = new List<string>();
             directionLockedEnemy = new string[8];
 
         }
@@ -40,7 +40,7 @@ namespace Zelda_Game
             directionLockedEnemy[0] = "none";
             directionLockedEnemy[1] = "none";
             directionLockedEnemy[2] = "none";
-            collisonDirectionEnemy = new List<string>();
+            collisionDirectionEnemy = new List<string>();
 
             //Enemy Player Collision
             foreach (KeyValuePair<Vector2, IEnemy> enemy in room.enemyList)
@@ -48,7 +48,8 @@ namespace Zelda_Game
                 Rectangle linkRectangle = Game.link.LinkRectangle;
                 Rectangle enemyRectangle = enemy.Value.enemyRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, enemyRectangle);
-                //PlayerEnemyResponse.PlayerEnemy(Game, direction);
+                PlayerEnemyResponse.PlayerEnemy(Game, direction);
+
             }
 
             //Enemy Block Collision
@@ -62,7 +63,7 @@ namespace Zelda_Game
                     direction = CollisionDetection.getDirection(enemyRectangle, blockRectangle);
                     if (direction != "none")
                     {
-                        collisonDirectionEnemy.Add(direction);
+                        collisionDirectionEnemy.Add(direction);
                     }
                     //EnemyBlockResponse.EnemyBlock(Game, directionLocked, collisonDirection);
                 }
@@ -95,9 +96,11 @@ namespace Zelda_Game
                     collisonDirection.Add(direction);
                 }
                 PlayerBlockResponse.PlayerBlock(Game, directionLocked, collisonDirection, block.Value);
+                //if (Game.link.LinkRectangle.Intersects(block.Value.blockRectangle()))
+                //{
+                //    PlayerBlockResponse.PlayerBlock(Game, directionLocked, collisonDirection, block.Value);
+                //}
             }
-
-            
 
             //player collects items, items disappear when player touches item
             //To do
