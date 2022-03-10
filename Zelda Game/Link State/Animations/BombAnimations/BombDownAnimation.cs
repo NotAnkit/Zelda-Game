@@ -8,23 +8,13 @@ namespace Zelda_Game
 
         public Rectangle ProjectileRectangle()
         {
-            Rectangle hitbox;
-            if (kill)
-            {
-                hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 32);
-            }
-            else
-            {
-                hitbox = new Rectangle(0, 0, 16, 32);
-            }
-
             return hitbox;
         }
 
         public Texture2D Texture;
         private Vector2 location;
         private bool kill;
-
+        Rectangle hitbox;
         public BombDownAnimation(Texture2D texture)
         {
             Texture = texture;
@@ -41,22 +31,25 @@ namespace Zelda_Game
             {
                 sourceRectangle = new Rectangle(129, 185, 8, 16);
                 destinationRectangle = new Rectangle((int)startLocation.X + 8, (int)startLocation.Y + 32, 16, 32);
+                hitbox = new Rectangle(0, 0, 16, 32);
             }
             else if (location.Y - startLocation.Y <= 40)
             {
                 sourceRectangle = new Rectangle(138, 185, 16, 16);
                 destinationRectangle = new Rectangle((int)startLocation.X, (int)startLocation.Y + 32, 32, 32);
+                hitbox = new Rectangle(0, 0, 16, 32);
             }
             else if (location.Y - startLocation.Y <= 50)
             {
                 sourceRectangle = new Rectangle(155, 185, 16, 16);
                 destinationRectangle = new Rectangle((int)startLocation.X, (int)startLocation.Y + 32, 32, 32);
-                
+                hitbox = new Rectangle(0, 0, 16, 32);
             }
             else
             {
                 sourceRectangle = new Rectangle(172, 185, 16, 16);
                 destinationRectangle = new Rectangle((int)startLocation.X, (int)startLocation.Y + 32, 32, 32);
+                hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 32);
                 finished = true;
                 kill = true;
             }

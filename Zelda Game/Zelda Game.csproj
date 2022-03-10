@@ -41,6 +41,13 @@
     <None Remove="GameBorder\Doors\" />
     <None Remove="GameBorder\Border\" />
     <None Remove="LevelLoading\" />
+    <None Remove="Sprint3Docs\" />
+    <None Remove="Collision\" />
+    <None Remove="Collision\Detection\" />
+    <None Remove="Collision\Response\" />
+    <None Remove="Collision\Response\PlayerResponse\" />
+    <None Remove="Collision\Response\EnemtResponse\" />
+    <None Remove="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -86,6 +93,13 @@
     <Folder Include="GameBorder\Doors\" />
     <Folder Include="GameBorder\Border\" />
     <Folder Include="LevelLoading\" />
+    <Folder Include="Sprint3Docs\" />
+    <Folder Include="Collision\" />
+    <Folder Include="Collision\Detection\" />
+    <Folder Include="Collision\Response\" />
+    <Folder Include="Collision\Response\PlayerResponse\" />
+    <Folder Include="Collision\Response\EnemtResponse\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />
