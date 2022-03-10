@@ -3,60 +3,60 @@ namespace Zelda_Game
 {
     public class PlayerEnemyResponse
     {
-        public static void PlayerEnemy(Game1 Game, String direction)
+        public static void PlayerEnemy(Link player, String direction)
         {
             if (direction == "left-right")
             {
-                Game.link.TakeDamage();
+                player.TakeDamage();
                 for (int i=0; i<= 70; i++)
                 {
-                    if(Game.link.position.X <= 59)
+                    if(player.position.X <= 59)
                     {
-                        Game.link.position.X = 59;
+                        player.position.X = 59;
                     }
-                    Game.link.position.X--;
+                    player.position.X--;
                 }
-                Game.link.speed = 2;
+                player.speed = 2;
                 
             }
             if (direction == "right-left")
             {
-                Game.link.TakeDamage();
+                player.TakeDamage();
                 for (int i = 0; i <= 70; i++)
                 {
-                    if (Game.link.position.X >= 411)
+                    if (player.position.X >= 411)
                     {
-                        Game.link.position.X = 411;
+                        player.position.X = 411;
                     }
-                    Game.link.position.X++;
+                    player.position.X++;
                 }
-                Game.link.speed = 2;
+                player.speed = 2;
             }
             if (direction == "top-bottom")
             {
-                Game.link.TakeDamage();
+                player.TakeDamage();
                 for (int i = 0; i <= 70; i++)
                 {
-                    if (Game.link.position.Y >= 253)
+                    if (player.position.Y >= 253)
                     {
-                        Game.link.position.Y = 253;
+                        player.position.Y = 253;
                     }
-                    Game.link.position.Y++;
+                    player.position.Y++;
                 }
-                Game.link.speed = 2;
+                player.speed = 2;
             }
             if (direction == "bottom-top")
             {
-                Game.link.TakeDamage();
+                player.TakeDamage();
                 for (int i = 0; i <= 70; i++)
                 {
-                    if (Game.link.position.Y <= 61)
+                    if (player.position.Y <= 61)
                     {
-                        Game.link.position.Y = 61;
+                        player.position.Y = 61;
                     }
-                    Game.link.position.Y--;
+                    player.position.Y--;
                 }
-                Game.link.speed = 2;
+                player.speed = 2;
             }
         }
     }
