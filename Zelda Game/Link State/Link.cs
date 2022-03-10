@@ -22,7 +22,7 @@ namespace Zelda_Game
 
         public Rectangle LinkRectangle
         {
-            get { return new Rectangle((int)position.X, (int)position.Y, 31, 31); }
+            get { return new Rectangle((int)position.X, (int)position.Y, 29, 29); }
         }
 
         public Link(Vector2 location)
