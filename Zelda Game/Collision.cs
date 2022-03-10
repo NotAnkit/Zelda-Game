@@ -98,7 +98,7 @@ namespace Zelda_Game
                 PlayerBlockResponse.PlayerBlock(Game, directionLocked, collisonDirection, block.Value);
                 //if (Game.link.LinkRectangle.Intersects(block.Value.blockRectangle()))
                 //{
-                //    PlayerBlockResponse.PlayerBlock(Game, directionLocked, collisonDirection, block.Value);
+                    
                 //}
             }
 
