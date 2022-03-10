@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public static class PlayerBlockResponse
     {
-        public static void PlayerBlock(Game1 Game, string[] directionLocked, List<string> collisonDirection, IEnvironment blockType)
+        public static void PlayerBlock(Link player, string[] directionLocked, List<string> collisonDirection, IEnvironment blockType)
         {
             if (!(blockType is BlueSand))
             {
@@ -28,13 +28,13 @@ namespace Zelda_Game
                         directionLocked[i] = "right";
                     }
                 }
-                if (Game.link.direction == directionLocked[0] || Game.link.direction == directionLocked[1] || Game.link.direction == directionLocked[2])
+                if (player.direction == directionLocked[0] || player.direction == directionLocked[1] || player.direction == directionLocked[2])
                 {
-                    Game.link.speed = 0;
+                    player.speed = 0;
                 }
                 else
                 {
-                    Game.link.speed = 2;
+                    player.speed = 2;
                 }
             }
         }

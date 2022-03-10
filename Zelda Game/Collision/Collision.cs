@@ -85,23 +85,7 @@ namespace Zelda_Game
                 room.enemyList.Remove(enemy);
             }
 
-            //Player Block Collision
-            foreach (KeyValuePair<Vector2, IEnvironment> block in room.blockList)
-            {
-                Rectangle linkRectangle = Game.link.LinkRectangle;
-                Rectangle blockRectangle = block.Value.blockRectangle();
-                direction = CollisionDetection.getDirection(linkRectangle, blockRectangle);
-                if (direction != "none")
-                {
-                    collisonDirection.Add(direction);
-                }
-                PlayerBlockResponse.PlayerBlock(Game, directionLocked, collisonDirection, block.Value);
-            }
-
-            //player collects items, items disappear when player touches item
-            //To do
-            //Do the pick up animation and then remove from list
-            //Player Item Collision
+            PlayerBlockLoop.BlockLoop(room.blockList, Game.link);
 
             room.itemList = ItemResponseLoop.ItemLoop(room.itemList, Game.link);
 
