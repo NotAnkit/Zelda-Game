@@ -96,32 +96,14 @@ namespace Zelda_Game
                     collisonDirection.Add(direction);
                 }
                 PlayerBlockResponse.PlayerBlock(Game, directionLocked, collisonDirection, block.Value);
-                //if (Game.link.LinkRectangle.Intersects(block.Value.blockRectangle()))
-                //{
-                    
-                //}
             }
 
             //player collects items, items disappear when player touches item
             //To do
             //Do the pick up animation and then remove from list
             //Player Item Collision
-            foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
-            {
-                Rectangle linkRectangle = Game.link.LinkRectangle;
-                Rectangle itemRectangle = item.Value.itemRectangle();
-                direction = CollisionDetection.getDirection(linkRectangle, itemRectangle);
-                if(direction != "none")
-                {
-                    deleteItem.Add(item.Key);
-                }
-                //PlayerItemResponse.PlayerItem(Game, item.Key, item.Value);
-            }
 
-            foreach(Vector2 item in deleteItem)
-            {
-                room.itemList.Remove(item);
-            }
+            room.itemList = ItemResponseLoop.ItemLoop(room.itemList, Game.link);
 
             //Player Door Collision
             foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
