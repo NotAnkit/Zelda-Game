@@ -10,10 +10,9 @@ namespace Zelda_Game
         private Vector2 position;
         private int totalFrames;
 
-        public HeartItem(Game1 game, Vector2 location)
+        public HeartItem(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("WeaponSheet");
-            position = location;
+            Texture = texture;
             currentFrame = 0;
             totalFrames = 30;
         }
@@ -34,6 +33,7 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle; 
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 14, 16);
+            position = location;
 
             if (currentFrame <= totalFrames / 2)
                 sourceRectangle = new Rectangle(0, 8, 7, 8);

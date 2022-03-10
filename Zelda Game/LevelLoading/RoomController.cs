@@ -45,14 +45,14 @@ namespace Zelda_Game
                 currentRoomValue--;
                 if (currentRoomValue < 0)
                     currentRoomValue = roomList.Count - 1;
-                Game.room1Blocks = roomList[currentRoomValue];
+                Game.roomData = roomList[currentRoomValue];
             }
             if (currentState.RightButton == ButtonState.Pressed && previousState.RightButton != ButtonState.Pressed)
             {
                 currentRoomValue++;
                 if (currentRoomValue >= roomList.Count)
                     currentRoomValue = 0;
-                Game.room1Blocks = roomList[currentRoomValue];
+                Game.roomData = roomList[currentRoomValue];
             }
 
         }

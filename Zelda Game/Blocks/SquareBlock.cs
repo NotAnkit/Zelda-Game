@@ -5,13 +5,13 @@ namespace Zelda_Game
 {
     public class SquareBlock : IEnvironment
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private Vector2 position;
 
-        public SquareBlock(Game1 game, Vector2 location)
+        public SquareBlock(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("RoomSheet");
-            position = location;
+            Texture = texture;
+            
         }
 
         public Rectangle blockRectangle()
@@ -27,7 +27,7 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle = new Rectangle(984, 11, 16, 16);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
-
+            position = location;
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 

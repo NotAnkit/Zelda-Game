@@ -8,10 +8,10 @@ namespace Zelda_Game
         public Texture2D Texture;
         private Vector2 position;
 
-        public BombItem(Game1 game, Vector2 location)
+        public BombItem(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("WeaponSheet");
-            position = location;
+            Texture = texture;
+            
         }
         public Rectangle itemRectangle()
         {
@@ -26,6 +26,7 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle = new Rectangle(136, 0, 8, 14);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 28);
+            position = location;
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }

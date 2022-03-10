@@ -10,10 +10,10 @@ namespace Zelda_Game
         private int totalFrames;
         private Vector2 position;
 
-        public RupeeItem(Game1 game, Vector2 location)
+        public RupeeItem(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("WeaponSheet");
-            position = location;
+            Texture = texture;
+            
             currentFrame = 0;
             totalFrames = 30;
         }
@@ -34,6 +34,7 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 32);
+            position = location;
 
             if (currentFrame <= totalFrames / 2)
                 sourceRectangle = new Rectangle(72, 16, 8, 16);

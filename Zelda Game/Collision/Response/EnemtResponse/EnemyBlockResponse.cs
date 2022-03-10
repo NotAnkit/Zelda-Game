@@ -27,14 +27,14 @@ namespace Zelda_Game
                     directionLocked[i] = "right";
                 }
 
-                if (Game.enemy.GetDirection() == (directionLocked[0]) || Game.enemy.GetDirection() == directionLocked[1] || Game.enemy.GetDirection() == directionLocked[2])
+                /*if (Game.enemy.GetDirection() == (directionLocked[0]) || Game.enemy.GetDirection() == directionLocked[1] || Game.enemy.GetDirection() == directionLocked[2])
                 {
                     Game.enemy.SetSpeed(0f);
                 }
                 else
                 {
                     Game.enemy.SetSpeed(1f);
-                }
+                }*/
             }
         }
     }

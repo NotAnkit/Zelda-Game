@@ -26,25 +26,25 @@ namespace Zelda_Game
 
             foreach (KeyValuePair<Vector2, string> block in roomBlocks)
             {
-                if (block.Value.Equals("SB")) blockList.Add(block.Key, new SquareBlock(game1, block.Key));
+                if (block.Value.Equals("SB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.SquareBlock());
 
-                else if (block.Value.Equals("BLB")) blockList.Add(block.Key, new BlackBlock(game1, block.Key));
+                else if (block.Value.Equals("BLB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.BlackBlock());
 
-                else if (block.Value.Equals("BS")) blockList.Add(block.Key, new BlueSand(game1, block.Key));
+                else if (block.Value.Equals("BS")) blockList.Add(block.Key, BlockSpriteFactory.Instance.BlueSand());
 
-                else if (block.Value.Equals("BB")) blockList.Add(block.Key, new BrickBlock(game1, block.Key));
+                else if (block.Value.Equals("BB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.BrickBlock());
 
-                else if (block.Value.Equals("LB")) blockList.Add(block.Key, new LadderBlock(game1, block.Key));
+                else if (block.Value.Equals("LB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.LadderBlock());
 
-                else if (block.Value.Equals("NBB")) blockList.Add(block.Key, new NavyBlueBlock(game1, block.Key));
+                else if (block.Value.Equals("NBB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.NavyBlueBlock());
 
-                else if (block.Value.Equals("PB")) blockList.Add(block.Key, new PushableBlock(game1, block.Key));
+                else if (block.Value.Equals("PB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.PushableBlock());
 
-                else if (block.Value.Equals("S")) blockList.Add(block.Key, new Stairs(game1, block.Key));
+                else if (block.Value.Equals("S")) blockList.Add(block.Key, BlockSpriteFactory.Instance.Stairs());
 
-                else if (block.Value.Equals("S1")) blockList.Add(block.Key, new Statue1(game1, block.Key));
+                else if (block.Value.Equals("S1")) blockList.Add(block.Key, BlockSpriteFactory.Instance.Statue1());
 
-                else if (block.Value.Equals("S2")) blockList.Add(block.Key, new Statue2(game1, block.Key));
+                else if (block.Value.Equals("S2")) blockList.Add(block.Key, BlockSpriteFactory.Instance.Statue2());
 
             }
 

@@ -1,82 +1,50 @@
-﻿//using System;
-//using Microsoft.Xna.Framework.Graphics;
-//using Microsoft.Xna.Framework;
-//using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 
-//namespace Zelda_Game
-//{
-//    public class BlockSpriteFactory
-//    {
-//        private Texture2D blockSpritesheet;
+namespace Zelda_Game
+{
+    public class BlockSpriteFactory
+    {
+        private Texture2D blockSpritesheet;
 
-//        private static BlockSpriteFactory instance = new BlockSpriteFactory();
+        private static BlockSpriteFactory instance = new BlockSpriteFactory();
 
-//        public static BlockSpriteFactory Instance
-//        {
-//            get
-//            {
-//                return instance;
-//            }
-//        }
+        public static BlockSpriteFactory Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
 
-//        //changed to private, originally public
-//        private BlockSpriteFactory()
-//        {
-//        }
+        private BlockSpriteFactory()
+        {
+        }
 
-//        public void LoadAllTextures(ContentManager content)
-//        {
-//            blockSpritesheet = content.Load<Texture2D>("RoomSheet");
-//        }
+        public void LoadAllTextures(ContentManager content)
+        {
+            blockSpritesheet = content.Load<Texture2D>("RoomSheet");
+        }
 
-//        public IEnviornment BlackBlock()
-//        {
-//            return new (blockSpritesheet, 984, 28);
-//        }
+        public IEnvironment BlackBlock() => new BlackBlock(blockSpritesheet);
 
-//        public IEnviornment PushableBlock()
-//        {
-//            return new(blockSpritesheet, 1001, 11);
-//        }
+        public IEnvironment PushableBlock() => new PushableBlock(blockSpritesheet);
 
-//        public IEnviornment BlueSand()
-//        {
-//            return new(blockSpritesheet, 1001, 28);
-//        }
+        public IEnvironment BlueSand() => new BlueSand(blockSpritesheet);
 
-//        public IEnviornment BrickBlock()
-//        {
-//            return new(blockSpritesheet, 984, 45);
-//        }
+        public IEnvironment BrickBlock() => new BrickBlock(blockSpritesheet);
 
-//        public IEnviornment NavyBlueBlock()
-//        {
-//            return new(blockSpritesheet, 1018, 28);
-//        }
+        public IEnvironment NavyBlueBlock() => new NavyBlueBlock(blockSpritesheet);
 
-//        public IEnviornment SquareBlock()
-//        {
-//            return new(blockSpritesheet, 984, 11);
-//        }
+        public IEnvironment SquareBlock() => new SquareBlock(blockSpritesheet);
 
-//        public IEnviornment Stairs()
-//        {
-//            return new(blockSpritesheet, 1035, 28);
-//        }
+        public IEnvironment Stairs() => new Stairs(blockSpritesheet);
 
-//        public IEnviornment Statue1()
-//        {
-//            return new(blockSpritesheet, 1018, 11);
-//        }
+        public IEnvironment Statue1() => new Statue1(blockSpritesheet);
 
-//        public IEnviornment Statue2()
-//        {
-//            return new(blockSpritesheet, 1035, 11);
-//        }
+        public IEnvironment Statue2() => new Statue2(blockSpritesheet);
 
-//        public IEnviornment LadderBlock()
-//        {
-//            return new(blockSpritesheet, 1001, 45);
-//        }
-//    }
-//}
+        public IEnvironment LadderBlock() => new LadderBlock(blockSpritesheet);
+    }
+}
+

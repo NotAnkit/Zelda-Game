@@ -6,8 +6,6 @@ namespace Zelda_Game
     public class LinkSpriteFactory
     {
         private Texture2D LinkSpritesheet;
-        // More private Texture2Ds follow
-        // ...
 
         private static LinkSpriteFactory instance = new LinkSpriteFactory();
 
@@ -26,8 +24,6 @@ namespace Zelda_Game
         public void LoadAllTextures(ContentManager content)
         {
             LinkSpritesheet = content.Load<Texture2D>("LinkSheet");
-            // More Content.Load calls follow
-            //...
         }
 
         public ISprite LinkDownAnimationSprite() => new LinkDownAnimation(LinkSpritesheet);

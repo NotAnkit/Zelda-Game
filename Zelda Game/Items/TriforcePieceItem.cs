@@ -10,10 +10,9 @@ namespace Zelda_Game
         private int totalFrames;
         private Vector2 position;
 
-        public TriforcePieceItem(Game1 game, Vector2 location)
+        public TriforcePieceItem(Texture2D texture)
         {
-            Texture = game.Content.Load<Texture2D>("WeaponSheet");
-            position = location;
+            Texture = texture;
             currentFrame = 0;
             totalFrames = 30;
         }
@@ -34,6 +33,7 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle; //= new Rectangle(275, 3, 10, 10);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 20, 20);
+            position = location;
 
             if (currentFrame <= totalFrames / 2)
                 sourceRectangle = new Rectangle(275, 19, 10, 10);
