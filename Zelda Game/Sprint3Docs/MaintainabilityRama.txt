@@ -1,0 +1,24 @@
+﻿Author of code review: Kiren Manoharan
+
+Date of the code review: 03/10/2022
+
+Sprint number: 3
+
+Name of the .cs file being reviewed: CollisionDetection.cs
+
+Author of the .cs file being reviewed: Rama Naboulsi
+
+Number of minutes: 15 minutes
+
+Comments on Code Quality:
+The quality of this code was very neat and organized.
+The code is simple for the purpose of detecting collision.
+Passing strings as detection to indicate the direction of the collision
+was very helpful for implementing collision response.
+Overall, the file has very high standards in code quality and simplicity.
+
+Hypothetical change:
+A hypothetical change that could be made is by using the rectangle sides as to
+which direction the collision is coming from. This would not be optimal, as this
+would result in more complicated code. Comparing the overlap height and overlap
+width makes it easy to know which direction the collision is coming from.

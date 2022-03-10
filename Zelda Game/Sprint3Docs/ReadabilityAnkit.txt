@@ -1,0 +1,18 @@
+﻿Author of code review: Kiren Manoharan
+
+Date of the code review: 03/10/2022
+
+Sprint number: 3
+
+Name of the .cs file being reviewed: AddRoomEnemies.cs
+
+Author of the .cs file being reviewed: Ankit Kumar
+
+Number of minutes: 12 minutes
+
+Comments on Readability:
+This file was very easy to read and understand.
+For the purposes of this file, the code had a reasonable amount of lines and was not too long.
+The variable names represent the purpose of the variable which made the code easy to follow.
+The for each loop was well constructed and very efficient and performing the task
+Overall, the file was very readable and easy to understand and follow.
