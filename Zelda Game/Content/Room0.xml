@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:ns="Microsoft.Xna.Framework">
+  <Asset Type="Zelda_Game.Level">
+    <Doors>
+        <Item>TopWall</Item>
+        <Item>LeftWall</Item>
+        <Item>RightDoor</Item>
+        <Item>BottomWall</Item>
+    </Doors>
+    <Blocks>
+    </Blocks>
+    <Enemies>
+    </Enemies>
+    <Items>
+        <Item>
+        <Key>59 61</Key>
+        <Value>A</Value>
+      </Item>
+      <Item>
+        <Key>91 61</Key>
+        <Value>BB</Value>
+      </Item>
+      <Item>
+        <Key>123 61</Key>
+        <Value>B</Value>
+      </Item>
+      <Item>
+        <Key>155 61</Key>
+        <Value>C</Value>
+      </Item>
+      <Item>
+        <Key>187 61</Key>
+        <Value>CM</Value>
+      </Item>
+      <Item>
+        <Key>219 61</Key>
+        <Value>F</Value>
+      </Item>
+      <Item>
+        <Key>251 61</Key>
+        <Value>HC</Value>
+      </Item>
+      <Item>
+        <Key>283 61</Key>
+        <Value>H</Value>
+      </Item>
+      <Item>
+        <Key>315 61</Key>
+        <Value>K</Value>
+      </Item>
+      <Item>
+        <Key>347 61</Key>
+        <Value>M</Value>
+      </Item>
+      <Item>
+        <Key>379 61</Key>
+        <Value>R</Value>
+      </Item>
+      <Item>
+        <Key>421 61</Key>
+        <Value>T</Value>
+      </Item>
+    </Items>
+  </Asset>
+</XnaContent>
+

@@ -50,6 +50,11 @@
 /processorParam:TextureFormat=Color
 /build:LinkSheet.png
 
+#begin Room0.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Room0.xml
+
 #begin Room1.xml
 /importer:XmlImporter
 /processor:PassThroughProcessor

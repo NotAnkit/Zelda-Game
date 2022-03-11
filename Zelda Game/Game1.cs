@@ -44,7 +44,7 @@ namespace Zelda_Game
             border = new BorderBlock(this);
             collision = new Collision(this);
             link = new Link(new Vector2(70, 155));
-            room = Content.Load<Level>("Room1");
+            room = Content.Load<Level>("Room0");
             roomData = new Room(room, this);
         }
 
