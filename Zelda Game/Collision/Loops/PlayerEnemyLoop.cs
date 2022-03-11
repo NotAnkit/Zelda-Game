@@ -8,13 +8,8 @@ namespace Zelda_Game
     {
         public static void EnemyLoop(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnvironment> blocks)
         {
-            //List<string> collisonDirection = new List<string>();
-            //string[] directionLocked = new string[4];
             List<Vector2> deleteEnemy = new List<Vector2>();
             String direction;
-            //directionLocked[0] = "none";
-            //directionLocked[1] = "none";
-            //directionLocked[2] = "none";
 
             foreach (KeyValuePair<Vector2, IEnemy> enemy in enemies)
             {

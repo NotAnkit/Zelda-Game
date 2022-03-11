@@ -49,6 +49,7 @@
     <None Remove="Collision\Response\EnemtResponse\" />
     <None Remove="Interfaces\" />
     <None Remove="OldFiles\" />
+    <None Remove="Collision\Loops\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -102,6 +103,7 @@
     <Folder Include="Collision\Response\EnemtResponse\" />
     <Folder Include="Interfaces\" />
     <Folder Include="OldFiles\" />
+    <Folder Include="Collision\Loops\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />
