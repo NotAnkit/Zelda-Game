@@ -8,14 +8,14 @@ namespace Zelda_Game
             if (direction == "left-right")
             {
                 player.TakeDamage();
-                for (int i=0; i<= 70; i++)
+                for (int i = 0; i <= 70; i++)
                 {
-                    if(player.position.X <= 59)
+                    if (player.position.X <= 59)
                     {
                         player.position.X = 59;
                     }
                     player.position.X--;
-                    
+
                 }
                 player.speed = 2;
                 while (player.LinkRectangle.Intersects(block.blockRectangle()))
