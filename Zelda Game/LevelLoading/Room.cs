@@ -9,7 +9,7 @@ namespace Zelda_Game
         public readonly Dictionary<Vector2, IEnvironment> blockList;
         public Dictionary<Vector2, IEnemy> enemyList;
         public Dictionary<Vector2, IItem> itemList;
-        private readonly List<IDoor> doorList;
+        public List<IDoor> doorList;
 
 
         public Room(Level room, Game1 game1)

@@ -15,6 +15,7 @@ namespace Zelda_Game
         public int currentRoom;
         public Room roomData;
         public GraphicsDeviceManager _graphics;
+        public List<Room> roomList;
 
         public Game1()
         {

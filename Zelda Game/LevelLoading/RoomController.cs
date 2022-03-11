@@ -9,28 +9,26 @@ namespace Zelda_Game
         private MouseState previousState;
         public Game1 Game;
 
-        public List<Room> roomList;
-
         public RoomController(Game1 game)
         {
             Game = game;
-            roomList = new List<Room>();
-            roomList.Add(new Room(Game.Content.Load<Level>("Room1"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room16"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room15"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room14"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room13"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room12"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room11"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room10"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room9"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room8"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room7"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room6"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room5"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room4"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room3"), Game));
-            roomList.Add(new Room(Game.Content.Load<Level>("Room2"), Game));
+            Game.roomList = new List<Room>();
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room1"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room16"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room15"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room14"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room13"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room12"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room11"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room10"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room9"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room8"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room7"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room6"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room5"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room4"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room3"), Game));
+            Game.roomList.Add(new Room(Game.Content.Load<Level>("Room2"), Game));
 
         }
 
@@ -42,15 +40,15 @@ namespace Zelda_Game
             {
                 Game.currentRoom--;
                 if (Game.currentRoom < 0)
-                    Game.currentRoom = roomList.Count - 1;
-                Game.roomData = roomList[Game.currentRoom];
+                    Game.currentRoom = Game.roomList.Count - 1;
+                Game.roomData = Game.roomList[Game.currentRoom];
             }
             if (currentState.RightButton == ButtonState.Pressed && previousState.RightButton != ButtonState.Pressed)
             {
                 Game.currentRoom++;
-                if (Game.currentRoom >= roomList.Count)
+                if (Game.currentRoom >= Game.roomList.Count)
                     Game.currentRoom = 0;
-                Game.roomData = roomList[Game.currentRoom];
+                Game.roomData = Game.roomList[Game.currentRoom];
             }
 
         }

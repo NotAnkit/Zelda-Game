@@ -24,7 +24,7 @@ namespace Zelda_Game
             room.itemList = ItemResponseLoop.ItemLoop(room.itemList, Game.link);
 
             //Player Door Collision
-            foreach (KeyValuePair<Vector2, IItem> item in room.itemList)
+            foreach (IDoor door in room.doorList)
             {
                 //to do
             }
