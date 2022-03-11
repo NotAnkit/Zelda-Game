@@ -6,7 +6,7 @@ namespace Zelda_Game
 {
     public static class EnemyBlockResponse
     {
-        public static void EnemyBlock(Game1 Game, string collisonDirection, IEnemy enemy)
+        public static void EnemyBlock(string collisonDirection, IEnemy enemy)
         {
 
             string directionLocked;

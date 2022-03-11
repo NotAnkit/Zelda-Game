@@ -13,12 +13,10 @@ namespace Zelda_Game
 
         public Texture2D Texture;
         private Vector2 location;
-        private bool kill;
         Rectangle hitbox;
         public BombDownAnimation(Texture2D texture)
         {
             Texture = texture;
-            kill = false;
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
@@ -51,7 +49,6 @@ namespace Zelda_Game
                 destinationRectangle = new Rectangle((int)startLocation.X, (int)startLocation.Y + 32, 32, 32);
                 hitbox = new Rectangle((int)location.X, (int)location.Y, 16, 32);
                 finished = true;
-                kill = true;
             }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
