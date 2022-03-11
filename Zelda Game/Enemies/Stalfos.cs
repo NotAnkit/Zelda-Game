@@ -26,8 +26,8 @@ namespace Zelda_Game
             currentFrame = 0;
             totalFrames = 30;
             spriteSpeed = 1f;
-            windowHeight = game._graphics.PreferredBackBufferHeight - 230;
-            windowWidth = game._graphics.PreferredBackBufferWidth - 380;
+            windowHeight = game._graphics.PreferredBackBufferHeight - 95;
+            windowWidth = game._graphics.PreferredBackBufferWidth - 97;
             position = location;
             direction = "right";
         }
@@ -51,7 +51,7 @@ namespace Zelda_Game
             if (num % 4 == 0)
             {
                 position.X += spriteSpeed;
-                if (position.X > windowWidth - 16)
+                if (position.X > windowWidth)
                     position.X -= spriteSpeed;
                 direction = "right";
             }
