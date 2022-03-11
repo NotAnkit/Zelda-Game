@@ -20,4 +20,4 @@ Hypothetical Change:
 One change that could possibly be made is adding another door.
 This could be easily done by following the same process with one more IDoor Object.
 Another change could be changing the player.
-This could also be done easily by having a different character besides link Game1 class. 
+This could also be done easily by having a different character besides link in the Game1 class. 
