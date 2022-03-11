@@ -43,7 +43,7 @@ namespace Zelda_Game
             controllerList.Add(new KeyBoardController(this));
             border = new BorderBlock(this);
             collision = new Collision(this);
-            link = new Link(new Vector2(59, 155));
+            link = new Link(new Vector2(70, 155));
             room = Content.Load<Level>("Room1");
             roomData = new Room(room, this);
         }
