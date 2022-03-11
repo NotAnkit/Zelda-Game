@@ -1,5 +1,4 @@
-﻿using System;
-namespace Zelda_Game
+﻿namespace Zelda_Game
 {
     public static class PlayerProjectileEnemyResponse
     {
@@ -10,10 +9,7 @@ namespace Zelda_Game
                 Game.link.TakeDamage();
                 for (int i = 0; i <= 70; i++)
                 {
-                    if (Game.link.position.X <= 59)
-                    {
-                        Game.link.position.X = 59;
-                    }
+                    if (Game.link.position.X <= 59) Game.link.position.X = 59;
                     Game.link.position.X--;
                 }
                 Game.link.speed = 2;

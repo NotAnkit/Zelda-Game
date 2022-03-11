@@ -20,7 +20,7 @@ namespace Zelda_Game
 
         }
 
-        public Dictionary<Vector2, IItem> LoadItems(Dictionary<Vector2, String> roomItems, Game1 game1)
+        public Dictionary<Vector2, IItem> LoadItems(Dictionary<Vector2, string> roomItems)
         {
             Dictionary<Vector2, IItem> itemList = new Dictionary<Vector2, IItem>();
             foreach (KeyValuePair<Vector2, string> item in roomItems)

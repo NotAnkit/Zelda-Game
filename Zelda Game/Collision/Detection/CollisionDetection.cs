@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
@@ -10,31 +9,20 @@ namespace Zelda_Game
         {
             string collisionType;
             Rectangle overlap = Rectangle.Intersect(rec1, rec2);
-            if (overlap.IsEmpty)
-            {
-                collisionType = "none";
-            }
+            if (overlap.IsEmpty) collisionType = "none";
             else if(overlap.Height > overlap.Width)
             {
-                if(rec1.X < rec2.X)
-                {
-                    collisionType = "left-right";
-                }
-                else
-                {
-                    collisionType = "right-left";
-                }
+                if(rec1.X < rec2.X) collisionType = "left-right";
+
+                else collisionType = "right-left";
+
             }
             else {
 
-                if (rec1.Y > rec2.Y)
-                {
-                    collisionType = "top-bottom";
-                }
-                else
-                {
-                    collisionType = "bottom-top";
-                }
+                if (rec1.Y > rec2.Y) collisionType = "top-bottom";
+
+                else collisionType = "bottom-top";
+
             }
             return collisionType;
         }

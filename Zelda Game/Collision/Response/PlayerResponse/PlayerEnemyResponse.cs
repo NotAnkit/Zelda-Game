@@ -1,5 +1,4 @@
-﻿using System;
-namespace Zelda_Game
+﻿namespace Zelda_Game
 {
     public class PlayerEnemyResponse
     {

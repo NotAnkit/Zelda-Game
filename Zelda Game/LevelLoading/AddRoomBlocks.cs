@@ -20,7 +20,7 @@ namespace Zelda_Game
 
         }
 
-        public Dictionary<Vector2, IEnvironment> LoadBlocks(Dictionary<Vector2, String> roomBlocks, Game1 game1)
+        public Dictionary<Vector2, IEnvironment> LoadBlocks(Dictionary<Vector2, String> roomBlocks)
         {
             Dictionary<Vector2, IEnvironment> blockList = new Dictionary<Vector2, IEnvironment>();
 

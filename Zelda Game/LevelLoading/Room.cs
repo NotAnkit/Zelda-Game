@@ -19,9 +19,9 @@ namespace Zelda_Game
             itemList = new Dictionary<Vector2, IItem>();
             doorList = new List<IDoor>();
 
-            blockList = AddRoomBlocks.Instance.LoadBlocks(room.Blocks, game1);
+            blockList = AddRoomBlocks.Instance.LoadBlocks(room.Blocks);
             enemyList = AddRoomEnemies.Instance.LoadEnemies(room.Enemies, game1);
-            itemList = AddRoomItems.Instance.LoadItems(room.Items, game1);
+            itemList = AddRoomItems.Instance.LoadItems(room.Items);
 
             for (int i = 0; i < room.Doors.Length; i++)
             {
