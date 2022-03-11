@@ -6,28 +6,29 @@ namespace Zelda_Game
 {
     public static class EnemyBlockResponse
     {
-        public static void EnemyBlock(string collisonDirection, IEnemy enemy)
+        public static void EnemyBlock(IEnemy enemy, string[] directionLocked, List<string> collisonDirection)
         {
+            for (int i = 0; i < collisonDirection.Count; i++)
+            {
+                if (collisonDirection[i].Equals("top-bottom"))
+                {
+                    directionLocked[i] = "down";
+                }
+                else if (collisonDirection[i].Equals("bottom-top"))
+                {
+                    directionLocked[i] = "up";
+                }
+                else if (collisonDirection[i].Equals("right-left"))
+                {
+                    directionLocked[i] = "left";
+                }
+                else
+                {
+                    directionLocked[i] = "right";
+                }
+            }
 
-            string directionLocked;
-            if (collisonDirection.Equals("top-bottom"))
-            {
-                directionLocked = "down";
-            }
-            else if (collisonDirection.Equals("bottom-top"))
-            {
-                directionLocked = "up";
-            }
-            else if (collisonDirection.Equals("right-left"))
-            {
-                directionLocked = "left";
-            }
-            else
-            {
-                directionLocked = "right";
-            } 
-
-            if (enemy.GetDirection().Equals(directionLocked))
+            if (enemy.GetDirection() == directionLocked[0] || enemy.GetDirection() == directionLocked[1] || enemy.GetDirection() == directionLocked[2])
             {
                 enemy.SetSpeed(0f);
             }

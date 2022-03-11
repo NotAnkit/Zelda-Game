@@ -8,14 +8,24 @@ namespace Zelda_Game
     {
         public static void EnemyLoop(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnvironment> blocks)
         {
-            string direction;
+            //List<string> collisonDirection = new List<string>();
+            //string[] directionLocked = new string[4];
             List<Vector2> deleteEnemy = new List<Vector2>();
+            String direction;
+            //directionLocked[0] = "none";
+            //directionLocked[1] = "none";
+            //directionLocked[2] = "none";
 
             foreach (KeyValuePair<Vector2, IEnemy> enemy in enemies)
             {
                 Rectangle linkRectangle = player.LinkRectangle;
                 Rectangle enemyRectangle = enemy.Value.enemyRectangle();
                 direction = CollisionDetection.getDirection(linkRectangle, enemyRectangle);
+                List<string> collisonDirection = new List<string>();
+                string[] directionLocked = new string[4];
+                directionLocked[0] = "none";
+                directionLocked[1] = "none";
+                directionLocked[2] = "none";
                 foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
                 {
                     PlayerEnemyResponse.PlayerEnemy(player, direction, block.Value);
@@ -27,9 +37,11 @@ namespace Zelda_Game
                     direction = CollisionDetection.getDirection(enemyRectangle, blockRectangle);
                     if (direction != "none")
                     {
-                        EnemyBlockResponse.EnemyBlock(direction, enemy.Value);
+                        collisonDirection.Add(direction);  
                     }
+                    EnemyBlockResponse.EnemyBlock(enemy.Value, directionLocked, collisonDirection);
                 }
+                
 
                 foreach (KeyValuePair<IProjectile, Vector2> projectile in player.items)
                 {
