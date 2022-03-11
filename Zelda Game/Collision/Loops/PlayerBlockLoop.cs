@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
@@ -10,7 +9,7 @@ namespace Zelda_Game
         {
             List<string> collisonDirection = new List<string>();
             string[] directionLocked = new string[3];
-            String direction;
+            string direction;
             directionLocked[0] = "none";
             directionLocked[1] = "none";
             directionLocked[2] = "none";
@@ -18,8 +17,8 @@ namespace Zelda_Game
             foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
             {
                 Rectangle linkRectangle = player.LinkRectangle;
-                Rectangle blockRectangle = block.Value.blockRectangle();
-                direction = CollisionDetection.getDirection(linkRectangle, blockRectangle);
+                Rectangle blockRectangle = block.Value.BlockRectangle();
+                direction = CollisionDetection.GetDirection(linkRectangle, blockRectangle);
                 if (direction != "none")
                 {
                     collisonDirection.Add(direction);

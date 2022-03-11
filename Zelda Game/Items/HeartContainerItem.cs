@@ -14,7 +14,7 @@ namespace Zelda_Game
             
         }
 
-        public Rectangle itemRectangle()
+        public Rectangle ItemRectangle()
         {
             return new Rectangle((int)position.X, (int)position.Y, 26, 26);
         }

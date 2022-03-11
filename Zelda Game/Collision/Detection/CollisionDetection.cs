@@ -6,9 +6,9 @@ namespace Zelda_Game
     public static class CollisionDetection
     {
 
-        public static String getDirection(Rectangle rec1, Rectangle rec2)
+        public static string GetDirection(Rectangle rec1, Rectangle rec2)
         {
-            String collisionType;
+            string collisionType;
             Rectangle overlap = Rectangle.Intersect(rec1, rec2);
             if (overlap.IsEmpty)
             {

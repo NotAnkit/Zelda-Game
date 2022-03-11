@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
@@ -13,8 +12,8 @@ namespace Zelda_Game
             foreach (KeyValuePair<Vector2, IItem> item in items)
             {
                 Rectangle linkRectangle = player.LinkRectangle;
-                Rectangle itemRectangle = item.Value.itemRectangle();
-                direction = CollisionDetection.getDirection(linkRectangle, itemRectangle);
+                Rectangle itemRectangle = item.Value.ItemRectangle();
+                direction = CollisionDetection.GetDirection(linkRectangle, itemRectangle);
                 if (direction != "none")
                 {
                     deleteItem.Add(item.Key);

@@ -11,11 +11,10 @@ namespace Zelda_Game
         public BlackBlock(Texture2D texture)
         {
             Texture = texture;
-            //position = location;
         }
 
 
-        public Rectangle blockRectangle()
+        public Rectangle BlockRectangle()
         {
             return new Rectangle((int)position.X, (int)position.Y, 32, 32);
         }

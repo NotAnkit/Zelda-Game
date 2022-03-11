@@ -13,7 +13,7 @@ namespace Zelda_Game
             Texture = texture;
             
         }
-        public Rectangle itemRectangle()
+        public Rectangle ItemRectangle()
         {
             return new Rectangle((int)position.X, (int)position.Y, 16, 28);
         }

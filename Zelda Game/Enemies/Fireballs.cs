@@ -15,7 +15,7 @@ namespace Zelda_Game
         private Vector2 position2;
         private Vector2 position3;
 
-        public Rectangle enemyRectangle
+        public Rectangle EnemyRectangle
         {
             get { return new Rectangle((int)position1.X, (int)position1.Y, 32, 32); }
         }

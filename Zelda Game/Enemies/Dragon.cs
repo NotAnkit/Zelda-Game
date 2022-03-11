@@ -17,7 +17,7 @@ namespace Zelda_Game
         private Fireballs fireballs;
         public string direction;
 
-        public Rectangle enemyRectangle()
+        public Rectangle EnemyRectangle()
         {
             return new Rectangle((int)position.X, (int)position.Y, 48, 64);
         }

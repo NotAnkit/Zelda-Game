@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
@@ -9,13 +8,13 @@ namespace Zelda_Game
         public static void EnemyLoop(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnvironment> blocks)
         {
             List<Vector2> deleteEnemy = new List<Vector2>();
-            String direction;
+            string direction;
 
             foreach (KeyValuePair<Vector2, IEnemy> enemy in enemies)
             {
                 Rectangle linkRectangle = player.LinkRectangle;
-                Rectangle enemyRectangle = enemy.Value.enemyRectangle();
-                direction = CollisionDetection.getDirection(linkRectangle, enemyRectangle);
+                Rectangle enemyRectangle = enemy.Value.EnemyRectangle();
+                direction = CollisionDetection.GetDirection(linkRectangle, enemyRectangle);
                 List<string> collisonDirection = new List<string>();
                 string[] directionLocked = new string[4];
                 directionLocked[0] = "none";
@@ -28,8 +27,8 @@ namespace Zelda_Game
 
                 foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
                 {
-                    Rectangle blockRectangle = block.Value.blockRectangle();
-                    direction = CollisionDetection.getDirection(enemyRectangle, blockRectangle);
+                    Rectangle blockRectangle = block.Value.BlockRectangle();
+                    direction = CollisionDetection.GetDirection(enemyRectangle, blockRectangle);
                     if (direction != "none")
                     {
                         collisonDirection.Add(direction);  
@@ -41,7 +40,7 @@ namespace Zelda_Game
                 foreach (KeyValuePair<IProjectile, Vector2> projectile in player.items)
                 {
                     Rectangle blockRectangle = projectile.Key.ProjectileRectangle();
-                    direction = CollisionDetection.getDirection(enemyRectangle, blockRectangle);
+                    direction = CollisionDetection.GetDirection(enemyRectangle, blockRectangle);
                     if (direction != "none")
                     {
                         deleteEnemy.Add(enemy.Key);

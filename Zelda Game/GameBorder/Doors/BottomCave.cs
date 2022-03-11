@@ -13,7 +13,7 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("RoomSheet");
         }
 
-        public Rectangle doorRectangle()
+        public Rectangle DoorRectangle()
         {
             return new Rectangle(217, 282, 65, 63);
         }

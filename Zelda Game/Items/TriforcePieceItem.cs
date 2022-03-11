@@ -17,7 +17,7 @@ namespace Zelda_Game
             totalFrames = 30;
         }
 
-        public Rectangle itemRectangle()
+        public Rectangle ItemRectangle()
         {
             return new Rectangle((int)position.X, (int)position.Y, 20, 20);
         }

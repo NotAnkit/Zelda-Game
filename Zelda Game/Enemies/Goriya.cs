@@ -15,9 +15,9 @@ namespace Zelda_Game
         private int windowWidth;
         private Vector2 position;
         public Trap trap;
-        bool trapFinished = false;
+        private bool trapFinished = false;
 
-        public Rectangle enemyRectangle()
+        public Rectangle EnemyRectangle()
         {
             return new Rectangle((int)position.X, (int)position.Y, 32, 32);
         }

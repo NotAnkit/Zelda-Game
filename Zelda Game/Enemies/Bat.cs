@@ -27,7 +27,7 @@ namespace Zelda_Game
             direction = "right";
         }
 
-        public Rectangle enemyRectangle()
+        public Rectangle EnemyRectangle()
         {
             return new Rectangle((int)position.X, (int)position.Y, 32, 32);
         }

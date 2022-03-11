@@ -13,7 +13,7 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("RoomSheet");
         }
 
-        public Rectangle blockRectangle()
+        public Rectangle BlockRectangle()
         {
             throw new NotImplementedException();
         }

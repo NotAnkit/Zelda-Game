@@ -14,7 +14,7 @@ namespace Zelda_Game
             Texture = texture;
         }
 
-        public Rectangle blockRectangle()
+        public Rectangle BlockRectangle()
         {
             throw new NotImplementedException();
         }

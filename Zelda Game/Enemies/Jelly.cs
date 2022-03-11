@@ -15,7 +15,7 @@ namespace Zelda_Game
         private Vector2 position;
         public string direction;
 
-        public Rectangle enemyRectangle()
+        public Rectangle EnemyRectangle()
         {
             return new Rectangle((int)position.X, (int)position.Y, 16, 32);
         }
