@@ -8,7 +8,6 @@ namespace Zelda_Game
         private MouseState currentState;
         private MouseState previousState;
         public Game1 Game;
-        public int currentRoomValue = 0;
 
         public List<Room> roomList;
 
@@ -41,17 +40,17 @@ namespace Zelda_Game
             currentState = Mouse.GetState();
             if (currentState.LeftButton == ButtonState.Pressed && previousState.LeftButton != ButtonState.Pressed)
             {
-                currentRoomValue--;
-                if (currentRoomValue < 0)
-                    currentRoomValue = roomList.Count - 1;
-                Game.roomData = roomList[currentRoomValue];
+                Game.currentRoom--;
+                if (Game.currentRoom < 0)
+                    Game.currentRoom = roomList.Count - 1;
+                Game.roomData = roomList[Game.currentRoom];
             }
             if (currentState.RightButton == ButtonState.Pressed && previousState.RightButton != ButtonState.Pressed)
             {
-                currentRoomValue++;
-                if (currentRoomValue >= roomList.Count)
-                    currentRoomValue = 0;
-                Game.roomData = roomList[currentRoomValue];
+                Game.currentRoom++;
+                if (Game.currentRoom >= roomList.Count)
+                    Game.currentRoom = 0;
+                Game.roomData = roomList[Game.currentRoom];
             }
 
         }

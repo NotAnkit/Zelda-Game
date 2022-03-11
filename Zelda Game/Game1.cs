@@ -12,6 +12,7 @@ namespace Zelda_Game
         private IEnvironment border;
         private Level room;
         private Collision collision;
+        public int currentRoom;
         public Room roomData;
         public GraphicsDeviceManager _graphics;
 
