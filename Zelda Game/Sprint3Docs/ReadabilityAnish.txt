@@ -1,0 +1,17 @@
+﻿Author of code review: Rama Naboulsi
+
+Date of the code review: 03/11/2022
+
+Sprint number: 3
+
+Name of the .cs file being reviewed: RoomController.cs
+
+Author of the .cs file being reviewed: Anish Chitti
+
+Number of minutes: 10 minutes
+
+Comments on Code Quality:
+The code is very well written and easy to follow.
+The code is written very succinctly with as few lines as possible.
+The names of the variables are also descriptive and well formatted.
+Overall, the code is easily readable. 

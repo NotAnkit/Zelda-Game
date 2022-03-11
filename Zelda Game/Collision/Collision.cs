@@ -9,23 +9,17 @@ namespace Zelda_Game
     {
         private Game1 Game;
 
-        private string[] directionLockedEnemy;
+        private string direction;
         private List<Vector2> deleteEnemy;
 
         public Collision(Game1 game)
         {
             Game = game;
             deleteEnemy = new List<Vector2>();
-            directionLockedEnemy = new string[8];
         }
 
         public void Collide(Room room)
         {
-            String direction;
-
-            directionLockedEnemy[0] = "none";
-            directionLockedEnemy[1] = "none";
-            directionLockedEnemy[2] = "none";
 
             //Enemy Block Collision
             //enemies can't run through blocks
