@@ -1,0 +1,17 @@
+﻿Author of Review: Anish Chitti
+
+Date: 3/11/2022
+
+Sprint 2
+
+File being reviewed: EnemyBlockResponse.cs
+
+Author of file being reviewed: Rama Naboulsi
+
+Time: 15 minutes
+
+Comments about code: The main body of this class is really well done and has a
+very readable implementation of the enemy’s response to block collison.
+By reading what the collison direction is, the enemies movement is set to the
+opposite of that direction. This way the enemy's response to a collison is
+always in the opposite direction.

@@ -1,0 +1,21 @@
+﻿Author of Review: Anish Chitti
+
+Date: 3/11/2022
+
+Sprint 3
+
+File being reviewed: PlayerEnemyResponse.cs
+
+Author of file being reviewed: Kiren Manoharan
+
+Time: 15 minutes
+
+Comments about code: The code is very simple and can easily be read as it
+responds if an enemy touches a player. The player switches to the damage state
+and their position also gets moved back.
+
+Hypothetical change: Currently the all enemy collisons push back link the same
+amount, but what if different enemies had different push back.
+New parameters may have to be passed in about the enemy type so that the
+position of link can be adjusted based on the enemy. The current class should be
+able to handle this change well as new parameters could be easily added. 
