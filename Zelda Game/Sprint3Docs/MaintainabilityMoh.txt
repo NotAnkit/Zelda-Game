@@ -4,13 +4,20 @@ Date of the code review: 03/11/2022
 
 Sprint number: 3
 
-Name of the .cs file being reviewed:
+Name of the .cs file being reviewed:PlayerDoorCollision.cs
 
 Author of the .cs file being reviewed: Moh Elzubeir
 
 Number of minutes: 10 minutes
 
 Comments on Code Quality:
+Overall the code is very maintainable.
+Seperating Detection and response made is so that the functionallity could be seperated into different classes.
+Additionally, each class could be specified for the specific types of object collision response.
+The code could also easily be extended to include more doors or a different player.
 
-
-Hypothetical Change: 
+Hypothetical Change:
+One change that could possibly be made is adding another door.
+This could be easily done by following the same process with one more IDoor Object.
+Another change could be changing the player.
+This could also be done easily by having a different character besides link Game1 class. 
