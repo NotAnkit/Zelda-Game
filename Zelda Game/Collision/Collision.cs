@@ -9,7 +9,6 @@ namespace Zelda_Game
     {
         private Game1 Game;
 
-        private List<string> collisionDirectionEnemy;
         private string[] directionLockedEnemy;
         private List<Vector2> deleteEnemy;
 
@@ -17,7 +16,6 @@ namespace Zelda_Game
         {
             Game = game;
             deleteEnemy = new List<Vector2>();
-            collisionDirectionEnemy = new List<string>();
             directionLockedEnemy = new string[8];
         }
 
@@ -28,7 +26,6 @@ namespace Zelda_Game
             directionLockedEnemy[0] = "none";
             directionLockedEnemy[1] = "none";
             directionLockedEnemy[2] = "none";
-            collisionDirectionEnemy = new List<string>();
 
             //Enemy Block Collision
             //enemies can't run through blocks
@@ -41,9 +38,8 @@ namespace Zelda_Game
                     direction = CollisionDetection.getDirection(enemyRectangle, blockRectangle);
                     if (direction != "none")
                     {
-                        collisionDirectionEnemy.Add(direction);
+                        EnemyBlockResponse.EnemyBlock(Game, direction, enemy.Value);
                     }
-                    //EnemyBlockResponse.EnemyBlock(Game, directionLocked, collisonDirection);
                 }
 
                 foreach (KeyValuePair<IProjectile, Vector2> projectile in Game.link.items)
