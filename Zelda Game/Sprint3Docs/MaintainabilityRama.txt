@@ -18,7 +18,7 @@ was very helpful for implementing collision response.
 Overall, the file has very high standards in code quality and simplicity.
 
 Hypothetical change:
-A hypothetical change that could be made is by using the rectangle sides as to
+A hypothetical change that could be made is to not use the rectangle sides as to
 which direction the collision is coming from. This would not be optimal, as this
 would result in more complicated code. Comparing the overlap height and overlap
-width makes it easy to know which direction the collision is coming from.
+width of the rectangles makes it easy to know which direction the collision is coming from.

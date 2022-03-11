@@ -3,7 +3,7 @@ namespace Zelda_Game
 {
     public class PlayerEnemyResponse
     {
-        public static void PlayerEnemy(Link player, String direction)
+        public static void PlayerEnemy(Link player, String direction, IEnvironment block)
         {
             if (direction == "left-right")
             {
@@ -15,9 +15,14 @@ namespace Zelda_Game
                         player.position.X = 59;
                     }
                     player.position.X--;
+                    
                 }
                 player.speed = 2;
-                
+                while (player.LinkRectangle.Intersects(block.blockRectangle()))
+                {
+                    player.position.X++;
+                }
+
             }
             if (direction == "right-left")
             {
@@ -31,6 +36,10 @@ namespace Zelda_Game
                     player.position.X++;
                 }
                 player.speed = 2;
+                while (player.LinkRectangle.Intersects(block.blockRectangle()))
+                {
+                    player.position.X--;
+                }
             }
             if (direction == "top-bottom")
             {
@@ -44,6 +53,10 @@ namespace Zelda_Game
                     player.position.Y++;
                 }
                 player.speed = 2;
+                while (player.LinkRectangle.Intersects(block.blockRectangle()))
+                {
+                    player.position.Y--;
+                }
             }
             if (direction == "bottom-top")
             {
@@ -57,6 +70,10 @@ namespace Zelda_Game
                     player.position.Y--;
                 }
                 player.speed = 2;
+                while (player.LinkRectangle.Intersects(block.blockRectangle()))
+                {
+                    player.position.Y++;
+                }
             }
         }
     }

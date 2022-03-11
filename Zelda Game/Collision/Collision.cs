@@ -51,7 +51,7 @@ namespace Zelda_Game
                 room.enemyList.Remove(enemy);
             }
 
-            PlayerEnemyLoop.EnemyLoop(room.enemyList, Game.link);
+            PlayerEnemyLoop.EnemyLoop(room.enemyList, Game.link, room.blockList);
 
             PlayerBlockLoop.BlockLoop(room.blockList, Game.link);
 
