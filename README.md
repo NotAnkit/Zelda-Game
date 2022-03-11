@@ -9,6 +9,8 @@ This Repository is for Team Alpha Won in CSE 3902 recreating the first dungen fr
 Controls | Function
 | :--- | :---:
 WASD or Arrow Keys  | to move Link around the screen.
+Mouse Left | Move to left room
+Mouse Right | Move to right room
   Z or N | to for Link to use the sword. 
   1 | to use Bomb Item
   2 | to use Blue Arrow
@@ -16,20 +18,17 @@ WASD or Arrow Keys  | to move Link around the screen.
   4 | to use Fire 
   5 | to use Green Boomerang
   6 | to use Blue Boomerang 
-  T and Y | to cycle through blocks
-  U and I | to cycle through items
-  O and P | to cycle through enemies
   Q | to quit
   R | to Reset
   
 #### Bugs
-  The project currently only allows for one item to be used at a time, such as only one arrow. Link can also chnage items mid animation, meaning the animations do not complete. When Link uses sword looking up or to the left, link moves back as the animation starts in the top left cornor of link. Link can move across the screen without animation due to the high number of frames and low number of animation frames. Currently the game is stuck on 60 frames for everything, would be better it was adjustable. 
+  The projet has a few bugs right now. One bug is that player and enemy projectiles can go through the border and go through blocks. Another bug is that enemy projectiles do not interact with the player. Another bug currently is that enemy when it hits a player and there is a block it gets teleported around. This is to try and ensure that player does not phase through the walls. Another bug is that the enemies are one hit and dies instantly. The final bug is that bomb kills enemies when the bomb hasnt exploded. 
 
 #### Code Metrics
 
-   - Week 1: 256 Stylistic Recomendations
-   - Week 2: 683 Stylistic Recomendations
-   - Week 3: 127 Stylistic Recomendations
+   - Week 1: 127 Stylistic Recomendations
+   - Week 2: 218 Stylistic Recomendations
+   - Week 3: 151 Stylistic Recomendations
    
   IDE0045: Convert to conditional expression
   dotnet_style_prefer_conditional_expression_over_assignment = false
