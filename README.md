@@ -22,7 +22,7 @@ Mouse Right | Move to right room
   R | to Reset
   
 #### Bugs
-  The projet has a few bugs right now. One bug is that player and enemy projectiles can go through the border and go through blocks. Another bug is that enemy projectiles do not interact with the player. Another bug currently is that enemy when it hits a player and there is a block it gets teleported around. This is to try and ensure that player does not phase through the walls. Another bug is that the enemies are one hit and dies instantly. The final bug is that bomb kills enemies when the bomb hasnt exploded. 
+  The projet has a few bugs right now. One bug is that player and enemy projectiles can go through the border and go through blocks. Another bug is that enemy projectiles do not interact with the player. Another bug currently is that enemy when it hits a player and there is a block it gets teleported around. This is to try and ensure that player does not phase through the walls. Another bug is that the enemies are one hit and dies instantly. Another bug is that bomb kills enemies when the bomb hasnt exploded. With the door there are a few bugs. One of this is that only the left and the right work and they iterate to the next door in the sequence, but not in the map. The second bug is that any type of door allows passage including locked and such, it can be fixed easily. The final bug is that when link goes through it sometimes it chnages multiple as link is so close to the next door.
 
 #### Code Metrics
 
