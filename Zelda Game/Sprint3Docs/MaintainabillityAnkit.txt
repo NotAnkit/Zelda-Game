@@ -1,1 +1,21 @@
-﻿
+﻿Author of code review: Mohamed Elzubeir
+
+Date of the code review: 03/11/2022
+
+Sprint number: 3
+
+Name of the .cs file being reviewed:Room.cs
+
+Author of the .cs file being reviewed: Ankit Kumar
+
+Number of minutes: 15 minutes
+
+Comments on Code Quality:
+This code was well-written and organized. 
+The code is straightforward in order to load the enemies, items, and blocks. 
+Passing foreach loops to create the enemies, items, and blocks simplified the room creation processs. 
+In general, the file adheres to the criteria of code quality and simplicity.
+
+Hypothetical Change:
+A hypothetical change could be made is adding another object for sprint 5,
+it would be very easy to change given the current code.

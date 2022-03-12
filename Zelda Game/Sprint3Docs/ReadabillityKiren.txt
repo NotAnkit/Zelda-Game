@@ -1,0 +1,17 @@
+﻿Author of code review: Mohamed Elzubeir
+
+Date of the code review: 03/11/2022
+
+Sprint number: 3
+
+Name of the .cs file being reviewed: PlayerEnemyResponse.cs
+
+Author of the .cs file being reviewed: Kiren Manoharan
+
+Number of minutes: 8 minutes
+
+Comments on Code Quality:
+The code is quite nicely written and straightforward to understand. 
+The code is written in a simple manner, with the fewest possible lines. 
+Additionally, the variable names are well-formatted and oraganized
+In general, the code is readable.
