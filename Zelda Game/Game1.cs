@@ -13,9 +13,10 @@ namespace Zelda_Game
         private Level room;
         private Collision collision;
         public int currentRoom;
+        public KeyValuePair<int, int> roomLocation;
         public Room roomData;
         public GraphicsDeviceManager _graphics;
-        public List<Room> roomList;
+        public Dictionary<KeyValuePair<int, int>, Room> roomList;
 
         public Game1()
         {
@@ -43,8 +44,9 @@ namespace Zelda_Game
             controllerList.Add(new KeyBoardController(this));
             border = new BorderBlock(this);
             collision = new Collision(this);
-            link = new Link(new Vector2(70, 155));
-            room = Content.Load<Level>("Room0");
+            roomLocation = new KeyValuePair<int, int>(2, 5);
+            link = new Link(new Vector2(235, 246));
+            room = Content.Load<Level>("Room10");
             roomData = new Room(room, this);
         }
 

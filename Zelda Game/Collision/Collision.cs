@@ -19,6 +19,7 @@ namespace Zelda_Game
         {
             string direction = "none";
             string previousDirection;
+            List<IDoor> roomDoors = room.doorList;
 
             PlayerEnemyLoop.EnemyLoop(room.enemyList, Game.link, room.blockList);
 
@@ -32,27 +33,80 @@ namespace Zelda_Game
                 Rectangle doorRectangle = door.DoorRectangle();
                 previousDirection = direction;
                 direction = CollisionDetection.GetDirection(linkRectangle, doorRectangle);
-                if (direction == "right-left" && previousDirection != "right-left")
+                if (direction == "right-left")
                 {
-                    Game.currentRoom++;
-                    if (Game.currentRoom >= Game.roomList.Count)
-                        Game.currentRoom = 0;
-                    Game.link.position = new Vector2(70, 155);
-                    Game.roomData = Game.roomList[Game.currentRoom];
+                    if(door is LeftDoor)
+                    {
+                        Game.roomLocation = new KeyValuePair<int, int>(Game.roomLocation.Key - 1, Game.roomLocation.Value);
+                        Game.link.position = new Vector2(404, 151);
+                        Game.roomData = Game.roomList[Game.roomLocation];
+                    }
+                    else if(door is LeftSealed)
+                    {
+                        if(Game.link.inventory.Contains(ItemSpriteFactory.Instance.KeyItem()))
+                        {
+                            roomDoors.Remove(door);
+                            roomDoors.Add(new LeftDoor(Game));
+                        }
+                    }
+
                 }
-                if (direction == "left-right" && previousDirection != "left-right")
+                if (direction == "left-right")
                 {
-                    Game.currentRoom--;
-                    if (Game.currentRoom < 0)
-                        Game.currentRoom = Game.roomList.Count - 1;
-                    Game.link.position = new Vector2(379, 155);
-                    Game.roomData = Game.roomList[Game.currentRoom];
+                    if(door is RightDoor)
+                    {
+                        Game.roomLocation = new KeyValuePair<int, int>(Game.roomLocation.Key + 1, Game.roomLocation.Value);
+                        Game.link.position = new Vector2(64, 151);
+                        Game.roomData = Game.roomList[Game.roomLocation];
+                    }
+                    else if (door is RightSealed)
+                    {
+                        if (Game.link.inventory.Contains(ItemSpriteFactory.Instance.KeyItem()))
+                        {
+                            roomDoors.Remove(door);
+                            roomDoors.Add(new RightDoor(Game));
+                        }
+                    }
+
                 }
-                if (Game.currentRoom == 16)
+                if (direction == "top-bottom")
                 {
-                    Game.currentRoom = 0;
+                    if(door is TopDoor)
+                    {
+                        Game.roomLocation = new KeyValuePair<int, int>(Game.roomLocation.Key, Game.roomLocation.Value - 1);
+                        Game.link.position = new Vector2(235, 480);
+                        Game.roomData = Game.roomList[Game.roomLocation];
+                    }
+                    else if (door is TopSealed)
+                    {
+                        if (Game.link.inventory.Contains(ItemSpriteFactory.Instance.KeyItem()))
+                        {
+                            roomDoors.Remove(door);
+                            roomDoors.Add(new TopDoor(Game));
+                        }
+                    }
+
+                }
+                if (direction == "bottom-top")
+                {
+                    if(door is BottomDoor)
+                    {
+                        Game.roomLocation = new KeyValuePair<int, int>(Game.roomLocation.Key, Game.roomLocation.Value + 1);
+                        Game.link.position = new Vector2(235, 246);
+                        Game.roomData = Game.roomList[Game.roomLocation];
+                    }
+                    else if (door is BottomSealed)
+                    {
+                        if (Game.link.inventory.Contains(ItemSpriteFactory.Instance.KeyItem()))
+                        {
+                            roomDoors.Remove(door);
+                            roomDoors.Add(new BottomDoor(Game));
+                        }
+                    }
                 }
             }
+
+            room.doorList = roomDoors;
 
         }
     }

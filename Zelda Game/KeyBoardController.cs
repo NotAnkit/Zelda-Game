@@ -98,8 +98,10 @@ namespace Zelda_Game
             {
 
                 game.link.UseItem("blue-boomerang");
-
-
+            }
+            else if (userInput.IsKeyDown(Keys.A))
+            {
+                
             }
             else if (userInput.IsKeyUp(Keys.W) || userInput.IsKeyUp(Keys.A) || userInput.IsKeyUp(Keys.S) || userInput.IsKeyUp(Keys.D))
             {

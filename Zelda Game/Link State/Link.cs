@@ -18,6 +18,7 @@ namespace Zelda_Game
         public ILinkState currentState;     
         private bool useItem;
         private IProjectile item;
+        public List<IItem> inventory;
 
         public Rectangle LinkRectangle
         {
@@ -33,6 +34,7 @@ namespace Zelda_Game
             items = new Dictionary<IProjectile, Vector2>();
             items2 = new Dictionary<IProjectile, Vector2>();
             removeItems = new List<IProjectile>();
+            inventory = new List<IItem>();
         }
 
         public void Update()

@@ -4,7 +4,7 @@ Date of the code review: 03/11/2022
 
 Sprint number: 3
 
-Name of the .cs file being reviewed:PlayerDoorCollision.cs
+Name of the .cs file being reviewed:Collision.cs
 
 Author of the .cs file being reviewed: Moh Elzubeir
 

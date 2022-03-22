@@ -1,0 +1,16 @@
+﻿Author of code review: Ankit Kumar
+
+Date of the code review: 03/11/2022
+
+Sprint number: 3
+
+Name of the .cs file being reviewed: Collision.cs
+
+Author of the .cs file being reviewed: Ankit Kumar
+
+Number of minutes: 12 minutes
+
+Comments on Readability:
+File was clean and easy to understand the flow. Would be better is was in a
+different file to increase the cohesion of the overall file. I think that
+it is easy to understand what it is doing for the most part. 
