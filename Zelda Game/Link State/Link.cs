@@ -20,6 +20,7 @@ namespace Zelda_Game
         private IProjectile item;
         public List<IItem> inventory;
 
+
         public Rectangle LinkRectangle
         {
             get { return new Rectangle((int)position.X, (int)position.Y, 29, 29); }
