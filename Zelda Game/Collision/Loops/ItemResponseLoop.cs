@@ -17,8 +17,8 @@ namespace Zelda_Game
                 if (direction != "none")
                 {
                     deleteItem.Add(item.Key);
-                    player.inventory.Add(item.Value);
-                }   
+                    player.inventory.AddKey();
+                }
             }
 
             foreach (Vector2 item in deleteItem)

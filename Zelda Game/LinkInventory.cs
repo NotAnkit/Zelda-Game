@@ -5,12 +5,13 @@ namespace Zelda_Game
 {
     public class LinkInventory
     {
+        //Turn into proporties
         private int numKeys;
         private int rupees;
         public List<IItem> items;
         public LinkInventory()
         {
-            numKeys = 0;
+            numKeys = 5;
             rupees = 24;
             items = new List<IItem>();
         }
