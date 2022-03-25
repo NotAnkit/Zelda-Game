@@ -95,6 +95,31 @@ namespace Zelda_Game
                             roomdata.doorList.RemoveAt(4);
                         }
                     }
+                    else if (door is TopWall)
+                    {
+                        if (game1.roomLocation.Key == 2 || game1.roomLocation.Key == 3 && game1.roomLocation.Value == 3)
+                        {
+                            foreach (KeyValuePair<IProjectile, Vector2> projectile in game1.link.items)
+                            {
+                                Rectangle blockRectangle = projectile.Key.ProjectileRectangle();
+                                direction = CollisionDetection.GetDirection(doorRectangle, blockRectangle);
+                                if (direction != "none" && projectile.Key is BombUpAnimation)
+                                {
+                                    Room roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value)];
+                                    roomdata.doorList.Insert(0, new TopCave(game1));
+                                    roomdata.doorList.RemoveAt(1);
+                                    roomDoors.Insert(0, new TopCave(game1));
+                                    roomDoors.RemoveAt(1);
+                                    game1.link.inventory.UseKey();
+                                    game1.link.position.X += 16;
+                                    roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key + 1, game1.roomLocation.Value)];
+                                    roomdata.doorList.Insert(3, new BottomCave(game1));
+                                    roomdata.doorList.RemoveAt(4);
+                                }
+                            }
+
+                        }
+                    }
 
                 }
                 if (direction == "bottom-top")
@@ -119,6 +144,31 @@ namespace Zelda_Game
                             roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value + 1)];
                             roomdata.doorList.Insert(0, new TopDoor(game1));
                             roomdata.doorList.RemoveAt(1);
+                        }
+                    }
+                    else if (door is BottomWall)
+                    {
+                        if (game1.link.inventory.NumKeys() > 0)
+                        {
+                            foreach (KeyValuePair<IProjectile, Vector2> projectile in game1.link.items)
+                            {
+                                Rectangle blockRectangle = projectile.Key.ProjectileRectangle();
+                                direction = CollisionDetection.GetDirection(doorRectangle, blockRectangle);
+                                if (direction != "none" && projectile.Key is BombDownAnimation)
+                                {
+                                    Room roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value)];
+                                    roomdata.doorList.Insert(3, new LeftCave(game1));
+                                    roomdata.doorList.RemoveAt(4);
+                                    roomDoors.Insert(3, new LeftCave(game1));
+                                    roomDoors.RemoveAt(4);
+                                    game1.link.inventory.UseKey();
+                                    game1.link.position.X -= 16;
+                                    roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key + 1, game1.roomLocation.Value)];
+                                    roomdata.doorList.Insert(0, new RightCave(game1));
+                                    roomdata.doorList.RemoveAt(1);
+                                }
+                            }
+
                         }
                     }
                 }

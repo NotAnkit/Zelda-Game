@@ -8,6 +8,7 @@ namespace Zelda_Game
         //Turn into proporties
         private int numKeys;
         private int rupees;
+        private int bombs;
         public List<IItem> items;
         public LinkInventory()
         {
@@ -44,6 +45,21 @@ namespace Zelda_Game
         public int NumRupees()
         {
             return rupees;
+        }
+
+        public void UseBomb()
+        {
+            bombs--;
+        }
+
+        public void AddBomb()
+        {
+            bombs++;
+        }
+
+        public int NumBombc()
+        {
+            return bombs;
         }
 
         public void AddItem(IItem item)
