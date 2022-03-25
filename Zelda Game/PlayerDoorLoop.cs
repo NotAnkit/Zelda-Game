@@ -30,10 +30,16 @@ namespace Zelda_Game
                     {
                         if (game1.link.inventory.NumKeys() > 0)
                         {
-                            roomDoors.Remove(door);
-                            roomDoors.Add(new LeftDoor(game1));
+                            Room roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value)];
+                            roomdata.doorList.Insert(1, new LeftDoor(game1));
+                            roomdata.doorList.RemoveAt(2);
+                            roomDoors.Insert(1, new LeftDoor(game1));
+                            roomDoors.RemoveAt(2);
                             game1.link.inventory.UseKey();
                             game1.link.position.X += 16;
+                            roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key + 1, game1.roomLocation.Value)];
+                            roomdata.doorList.Insert(2, new RightDoor(game1));
+                            roomdata.doorList.RemoveAt(3);
                         }
                     }
 
@@ -50,10 +56,17 @@ namespace Zelda_Game
                     {
                         if (game1.link.inventory.NumKeys() > 0)
                         {
-                            roomDoors.Remove(door);
-                            roomDoors.Add(new RightDoor(game1));
+                            Room roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value)];
+                            roomdata.doorList.Insert(2, new RightDoor(game1));
+                            roomdata.doorList.RemoveAt(3);
+                            roomDoors.Insert(2, new RightDoor(game1));
+                            roomDoors.RemoveAt(3);
                             game1.link.inventory.UseKey();
                             game1.link.position.X -= 16;
+                            roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key+1, game1.roomLocation.Value)];
+                            roomdata.doorList.Insert(1, new LeftDoor(game1));
+                            roomdata.doorList.RemoveAt(2);
+
                         }
                     }
 
@@ -70,10 +83,16 @@ namespace Zelda_Game
                     {
                         if (game1.link.inventory.NumKeys() > 0)
                         {
-                            roomDoors.Remove(door);
-                            roomDoors.Add(new TopDoor(game1));
+                            Room roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value)];
+                            roomdata.doorList.Insert(0, new TopDoor(game1));
+                            roomdata.doorList.RemoveAt(1);
+                            roomDoors.Insert(0, new TopDoor(game1));
+                            roomDoors.RemoveAt(1);
                             game1.link.inventory.UseKey();
                             game1.link.position.Y += 16;
+                            roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value - 1)];
+                            roomdata.doorList.Insert(3, new BottomDoor(game1));
+                            roomdata.doorList.RemoveAt(4);
                         }
                     }
 
@@ -90,10 +109,16 @@ namespace Zelda_Game
                     {
                         if (game1.link.inventory.NumKeys() > 0)
                         {
-                            roomDoors.Remove(door);
-                            roomDoors.Add(new BottomDoor(game1));
+                            Room roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value)];
+                            roomdata.doorList.Insert(0, new TopDoor(game1));
+                            roomdata.doorList.RemoveAt(1);
+                            roomDoors.Insert(3, new BottomDoor(game1));
+                            roomDoors.RemoveAt(4);
                             game1.link.inventory.UseKey();
                             game1.link.position.Y -= 16;
+                            roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value + 1)];
+                            roomdata.doorList.Insert(0, new TopDoor(game1));
+                            roomdata.doorList.RemoveAt(1);
                         }
                     }
                 }
