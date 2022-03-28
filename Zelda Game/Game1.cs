@@ -30,7 +30,8 @@ namespace Zelda_Game
         {
             controllerList = new List<IController>();
             _graphics.PreferredBackBufferWidth = 503;
-            _graphics.PreferredBackBufferHeight = 345+100;
+            _graphics.PreferredBackBufferHeight = 345;
+            _graphics.PreferredBackBufferHeight = 345 + 100;
             _graphics.ApplyChanges();
             base.Initialize();
         }
