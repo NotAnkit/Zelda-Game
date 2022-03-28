@@ -14,7 +14,7 @@ namespace Zelda_Game
 
         public InventoryDisplay(Game1 game)
         {
-            Texture = game.Content.Load<Texture2D>("WeaponSheet");
+            Texture = game.Content.Load<Texture2D>("Inventory");
             //Font = game.Content.Load<SpriteFont>("SpriteFont");
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
@@ -29,9 +29,9 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
-            sourceRectangle = new Rectangle(72, 0, 8, 16);
-            destinationRectangle = new Rectangle(0, 400, 16, 32);
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.Pink);
+            sourceRectangle = new Rectangle(258, 11, 256, 56);
+            destinationRectangle = new Rectangle(0, 400, 256, 56);
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.Pink); //gem
         }
     }
 }
