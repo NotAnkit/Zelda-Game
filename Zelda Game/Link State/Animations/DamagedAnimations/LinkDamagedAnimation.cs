@@ -1,15 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
     public class LinkDamagedAnimation : ISprite
     {
         public Texture2D Texture;
+        public SoundEffect song;
 
-        public LinkDamagedAnimation(Texture2D texture)
+        public LinkDamagedAnimation(Texture2D texture, SoundEffect Song)
         {
             Texture = texture;
+            song = Song;
+            song.Play();
         }
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {

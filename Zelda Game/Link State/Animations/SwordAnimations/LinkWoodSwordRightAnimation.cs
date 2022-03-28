@@ -1,21 +1,26 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
     public class LinkWoodSwordRightAnimation : ISprite
     {
         public Texture2D Texture;
+        public SoundEffect song;
 
-        public LinkWoodSwordRightAnimation(Texture2D texture)
+        public LinkWoodSwordRightAnimation(Texture2D texture, SoundEffect Song)
         {
             Texture = texture;
+            song = Song;
+            song.Play();
         }
 
         private int currentFrame = 0;
         private int totalFrames = 30;
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
+            
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
@@ -46,6 +51,7 @@ namespace Zelda_Game
 
         public void Update()
         {
+            
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;

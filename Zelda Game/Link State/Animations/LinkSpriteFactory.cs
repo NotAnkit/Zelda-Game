@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
@@ -6,6 +7,8 @@ namespace Zelda_Game
     public class LinkSpriteFactory
     {
         private Texture2D LinkSpritesheet;
+        public SoundEffect sword;
+        public SoundEffect hurt;
 
         private static LinkSpriteFactory instance = new LinkSpriteFactory();
 
@@ -24,6 +27,8 @@ namespace Zelda_Game
         public void LoadAllTextures(ContentManager content)
         {
             LinkSpritesheet = content.Load<Texture2D>("LinkSheet");
+            sword = content.Load<SoundEffect>("sword");
+            sword = content.Load<SoundEffect>("Hurt");
         }
 
         public ISprite LinkDownAnimationSprite() => new LinkDownAnimation(LinkSpritesheet);
@@ -46,19 +51,19 @@ namespace Zelda_Game
          * Link Sprites for Wooden Sword
          */
 
-        public ISprite LinkWoodSwordDownAnimationSprite() => new LinkWoodSwordDownAnimation(LinkSpritesheet);
+        public ISprite LinkWoodSwordDownAnimationSprite() => new LinkWoodSwordDownAnimation(LinkSpritesheet, sword);
         
-        public ISprite LinkWoodSwordUpAnimationSprite() => new LinkWoodSwordUpAnimation(LinkSpritesheet);
+        public ISprite LinkWoodSwordUpAnimationSprite() => new LinkWoodSwordUpAnimation(LinkSpritesheet, sword);
 
-        public ISprite LinkWoodSwordLeftAnimationSprite() => new LinkWoodSwordLeftAnimation(LinkSpritesheet);
+        public ISprite LinkWoodSwordLeftAnimationSprite() => new LinkWoodSwordLeftAnimation(LinkSpritesheet, sword);
 
-        public ISprite LinkWoodSwordRightAnimationSprite() => new LinkWoodSwordRightAnimation(LinkSpritesheet);
+        public ISprite LinkWoodSwordRightAnimationSprite() => new LinkWoodSwordRightAnimation(LinkSpritesheet, sword);
 
         /*
          * Link Sprites for Damage
          */
 
-        public ISprite LinkDamageAnimationSprite() => new LinkDamagedAnimation(LinkSpritesheet);
+        public ISprite LinkDamageAnimationSprite() => new LinkDamagedAnimation(LinkSpritesheet, Hurt);
 
         /*
          * Link Sprites for Item

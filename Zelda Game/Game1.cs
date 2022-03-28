@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using System.Collections.Generic;
 
 namespace Zelda_Game
@@ -18,6 +19,8 @@ namespace Zelda_Game
         public GraphicsDeviceManager _graphics;
         public Dictionary<KeyValuePair<int, int>, Room> roomList;
         private InventoryDisplay inventoryDisplay;
+        public Song song;
+
 
         public Game1()
         {
@@ -49,7 +52,14 @@ namespace Zelda_Game
             link = new Link(new Vector2(235, 246));
             room = Content.Load<Level>("Room10");
             roomData = new Room(room, this);
+
             inventoryDisplay = new InventoryDisplay(this);
+
+            song = Content.Load<Song>("04 - Dungeon");
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
+
+
         }
 
         protected override void Update(GameTime gameTime)

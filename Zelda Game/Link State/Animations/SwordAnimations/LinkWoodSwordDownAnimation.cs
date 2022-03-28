@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
@@ -7,10 +8,13 @@ namespace Zelda_Game
     {
       
         public Texture2D Texture;
+        public SoundEffect song;
 
-        public LinkWoodSwordDownAnimation(Texture2D texture)
+        public LinkWoodSwordDownAnimation(Texture2D texture, SoundEffect Song)
         {
             Texture = texture;
+            song = Song;
+            song.Play();
         }
 
         private int currentFrame = 0;
@@ -47,6 +51,7 @@ namespace Zelda_Game
 
         public void Update()
         {
+            
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;

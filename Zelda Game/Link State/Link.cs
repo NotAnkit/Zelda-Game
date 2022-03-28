@@ -86,6 +86,7 @@ namespace Zelda_Game
         public void UseSword()
         {
             currentState.UseSword();
+
         }
 
         public void TakeDamage()
