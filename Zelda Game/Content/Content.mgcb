@@ -14,6 +14,12 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin 04 - Dungeon.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:04 - Dungeon.mp3
+
 #begin EnemySheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -158,6 +164,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprite Sheet.png
+
+#begin sword.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:sword.wav
 
 #begin WeaponSheet.png
 /importer:TextureImporter
