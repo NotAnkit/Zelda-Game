@@ -20,7 +20,8 @@ namespace Zelda_Game
         public Dictionary<KeyValuePair<int, int>, Room> roomList;
         private InventoryDisplay inventoryDisplay;
         public Song song;
-
+        public int windowWidth;
+        public int windowHeight;
 
         private ItemSelectionState itemSelectionState;
 
@@ -34,8 +35,8 @@ namespace Zelda_Game
         protected override void Initialize()
         {
             controllerList = new List<IController>();
-            _graphics.PreferredBackBufferWidth = 503;
-            _graphics.PreferredBackBufferHeight = 445;
+            windowWidth = _graphics.PreferredBackBufferWidth = 503;
+            windowHeight = _graphics.PreferredBackBufferHeight = 445;
             _graphics.ApplyChanges();
             base.Initialize();
         }
