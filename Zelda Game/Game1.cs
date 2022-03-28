@@ -17,6 +17,7 @@ namespace Zelda_Game
         public Room roomData;
         public GraphicsDeviceManager _graphics;
         public Dictionary<KeyValuePair<int, int>, Room> roomList;
+        private InventoryDisplay inventoryDisplay;
 
         public Game1()
         {
@@ -29,7 +30,7 @@ namespace Zelda_Game
         {
             controllerList = new List<IController>();
             _graphics.PreferredBackBufferWidth = 503;
-            _graphics.PreferredBackBufferHeight = 345;
+            _graphics.PreferredBackBufferHeight = 345+100;
             _graphics.ApplyChanges();
             base.Initialize();
         }
@@ -48,6 +49,7 @@ namespace Zelda_Game
             link = new Link(new Vector2(235, 246));
             room = Content.Load<Level>("Room10");
             roomData = new Room(room, this);
+            inventoryDisplay = new InventoryDisplay(this);
         }
 
         protected override void Update(GameTime gameTime)
@@ -59,6 +61,7 @@ namespace Zelda_Game
             link.Update();
             roomData.Update();
             collision.Collide(roomData);
+            inventoryDisplay.Update();
             base.Update(gameTime);
         }
 
@@ -69,6 +72,7 @@ namespace Zelda_Game
             border.Draw(_spriteBatch, new Vector2(0, 0));
             roomData.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
+            inventoryDisplay.Draw(_spriteBatch);
             base.Draw(gameTime);
             _spriteBatch.End();
         }
