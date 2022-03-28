@@ -68,7 +68,7 @@ namespace Zelda_Game
         protected override void Draw(GameTime gameTime)
         {
             _spriteBatch.Begin();
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
             border.Draw(_spriteBatch, new Vector2(0, 0));
             roomData.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
