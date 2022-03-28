@@ -22,6 +22,8 @@ namespace Zelda_Game
         public Song song;
 
 
+        private ItemSelectionState itemSelectionState;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -54,11 +56,10 @@ namespace Zelda_Game
             roomData = new Room(room, this);
 
             inventoryDisplay = new InventoryDisplay(this);
-
             song = Content.Load<Song>("04 - Dungeon");
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
-
+            itemSelectionState = new ItemSelectionState(this);
 
         }
 
@@ -72,6 +73,7 @@ namespace Zelda_Game
             roomData.Update();
             collision.Collide(roomData);
             inventoryDisplay.Update();
+            itemSelectionState.Update();
             base.Update(gameTime);
         }
 
@@ -83,6 +85,7 @@ namespace Zelda_Game
             roomData.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
             inventoryDisplay.Draw(_spriteBatch);
+            itemSelectionState.Update();
             base.Draw(gameTime);
             _spriteBatch.End();
         }
