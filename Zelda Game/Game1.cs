@@ -24,6 +24,7 @@ namespace Zelda_Game
         public int windowHeight;
 
         private ItemSelectionState itemSelectionState;
+        private Camera _camera;
 
         public Game1()
         {

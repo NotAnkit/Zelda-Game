@@ -28,7 +28,7 @@ namespace Zelda_Game
         {
             LinkSpritesheet = content.Load<Texture2D>("LinkSheet");
             sword = content.Load<SoundEffect>("sword");
-            hurt = content.Load<SoundEffect>("Hurt");
+            //hurt = content.Load<SoundEffect>("Hurt");
         }
 
         public ISprite LinkDownAnimationSprite() => new LinkDownAnimation(LinkSpritesheet);
@@ -63,7 +63,7 @@ namespace Zelda_Game
          * Link Sprites for Damage
          */
 
-        public ISprite LinkDamageAnimationSprite() => new LinkDamagedAnimation(LinkSpritesheet, hurt);
+        public ISprite LinkDamageAnimationSprite() => new LinkDamagedAnimation(LinkSpritesheet);
 
         /*
          * Link Sprites for Item

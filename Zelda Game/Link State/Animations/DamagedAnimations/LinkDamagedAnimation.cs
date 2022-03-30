@@ -9,11 +9,11 @@ namespace Zelda_Game
         public Texture2D Texture;
         public SoundEffect song;
 
-        public LinkDamagedAnimation(Texture2D texture, SoundEffect Song)
+        public LinkDamagedAnimation(Texture2D texture)
         {
             Texture = texture;
-            song = Song;
-            song.Play();
+            //song = Song;
+            //song.Play();
         }
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
