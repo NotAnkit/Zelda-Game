@@ -86,8 +86,8 @@ namespace Zelda_Game
             border.Draw(_spriteBatch, new Vector2(0, 0));
             roomData.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
-            inventoryDisplay.Draw(_spriteBatch);
-            itemSelectionState.Update();
+            //inventoryDisplay.Draw(_spriteBatch);
+            itemSelectionState.Draw(_spriteBatch);
             base.Draw(gameTime);
             _spriteBatch.End();
         }

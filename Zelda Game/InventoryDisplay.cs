@@ -30,7 +30,7 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
             sourceRectangle = new Rectangle(258, 11, 256, 56);
-            destinationRectangle = new Rectangle(0, 400, 256, 56);
+            destinationRectangle = new Rectangle(0, 345, 448, 98);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.Pink); //gem
         }
     }
