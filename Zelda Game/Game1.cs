@@ -24,7 +24,10 @@ namespace Zelda_Game
         public int windowHeight;
 
         private ItemSelectionState itemSelectionState;
-        private Camera _camera;
+
+        public RoomManager switcher;
+        public bool tansitionState;
+        public bool tansitionStateFinished;
 
         public Game1()
         {
@@ -59,9 +62,13 @@ namespace Zelda_Game
 
             inventoryDisplay = new InventoryDisplay(this);
             song = Content.Load<Song>("04 - Dungeon");
-            MediaPlayer.Play(song);
-            MediaPlayer.IsRepeating = true;
+            //MediaPlayer.Play(song);
+            //MediaPlayer.IsRepeating = true;
             itemSelectionState = new ItemSelectionState(this);
+
+            switcher = new RoomManager(this);
+            tansitionState = false;
+            tansitionStateFinished = false;
 
         }
 
@@ -76,6 +83,10 @@ namespace Zelda_Game
             collision.Collide(roomData);
             inventoryDisplay.Update();
             itemSelectionState.Update();
+            if (tansitionState)
+            {
+                switcher.Update();
+            }
             base.Update(gameTime);
         }
 
@@ -86,8 +97,12 @@ namespace Zelda_Game
             border.Draw(_spriteBatch, new Vector2(0, 0));
             roomData.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
-            //inventoryDisplay.Draw(_spriteBatch);
-            itemSelectionState.Draw(_spriteBatch);
+            inventoryDisplay.Draw(_spriteBatch);
+            //itemSelectionState.Draw(_spriteBatch);
+            if (tansitionState)
+            {
+                switcher.Draw(_spriteBatch);
+            }
             base.Draw(gameTime);
             _spriteBatch.End();
         }

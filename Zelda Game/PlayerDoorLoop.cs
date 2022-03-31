@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
-{ 
+{
     public static class PlayerDoorLoop
     {
         public static List<IDoor> PlayerLoop(List<IDoor> doorList, Game1 game1)
@@ -11,6 +10,7 @@ namespace Zelda_Game
             List<IDoor> roomDoors = doorList;
             string direction = "none";
             string previousDirection;
+            Vector2 position;
 
             foreach (IDoor door in doorList.ToArray())
             {
@@ -20,11 +20,15 @@ namespace Zelda_Game
                 direction = CollisionDetection.GetDirection(linkRectangle, doorRectangle);
                 if (direction == "right-left")
                 {
-                    if (door is LeftDoor)
+                    if (door is LeftDoor || door is LeftCave)
                     {
-                        game1.roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key - 1, game1.roomLocation.Value);
-                        game1.link.position = new Vector2(404, 151);
-                        game1.roomData = game1.roomList[game1.roomLocation];
+                        KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key - 1, game1.roomLocation.Value);
+                        position = new Vector2(404, 151);
+                        game1.tansitionState = true;
+                        if (game1.tansitionStateFinished) game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+
+
+
                     }
                     else if (door is LeftKey)
                     {
@@ -46,11 +50,12 @@ namespace Zelda_Game
                 }
                 if (direction == "left-right")
                 {
-                    if (door is RightDoor)
+                    if (door is RightDoor || door is RightCave)
                     {
-                        game1.roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key + 1, game1.roomLocation.Value);
-                        game1.link.position = new Vector2(64, 151);
-                        game1.roomData = game1.roomList[game1.roomLocation];
+                        KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key + 1, game1.roomLocation.Value);
+                        position = new Vector2(64, 151);
+                        game1.tansitionState = true;
+                        if (game1.tansitionStateFinished) game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
                     }
                     else if (door is RightKey)
                     {
@@ -63,7 +68,7 @@ namespace Zelda_Game
                             roomDoors.RemoveAt(3);
                             game1.link.inventory.UseKey();
                             game1.link.position.X -= 16;
-                            roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key+1, game1.roomLocation.Value)];
+                            roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key + 1, game1.roomLocation.Value)];
                             roomdata.doorList.Insert(1, new LeftDoor(game1));
                             roomdata.doorList.RemoveAt(2);
 
@@ -73,11 +78,13 @@ namespace Zelda_Game
                 }
                 if (direction == "top-bottom")
                 {
-                    if (door is TopDoor)
+                    if (door is TopDoor || door is TopCave)
                     {
-                        game1.roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value - 1);
-                        game1.link.position = new Vector2(235, 246);
-                        game1.roomData = game1.roomList[game1.roomLocation];
+                        KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value - 1);
+                        position = new Vector2(235, 246);
+                        game1.tansitionState = true;
+                        if (game1.tansitionStateFinished) game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+
                     }
                     else if (door is TopKey)
                     {
@@ -124,11 +131,13 @@ namespace Zelda_Game
                 }
                 if (direction == "bottom-top")
                 {
-                    if (door is BottomDoor)
+                    if (door is BottomDoor || door is BottomCave)
                     {
-                        game1.roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value + 1);
-                        game1.link.position = new Vector2(235, 64);
-                        game1.roomData = game1.roomList[game1.roomLocation];
+                        KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value + 1);
+                        position = new Vector2(235, 64);
+                        game1.tansitionState = true;
+                        if (game1.tansitionStateFinished) game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+
                     }
                     else if (door is BottomKey)
                     {

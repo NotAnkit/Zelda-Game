@@ -109,9 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />
-    <Compile Remove="RoomManager.cs" />
-    <Compile Remove="RoomManager.cs" />
-    <Compile Remove="RoomManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" />
