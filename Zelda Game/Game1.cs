@@ -29,6 +29,8 @@ namespace Zelda_Game
         public bool tansitionState;
         public bool tansitionStateFinished;
 
+        public bool pause;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -70,6 +72,8 @@ namespace Zelda_Game
             tansitionState = false;
             tansitionStateFinished = false;
 
+            pause = false;
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -78,14 +82,21 @@ namespace Zelda_Game
             {
                 controller.Update();
             }
-            link.Update();
-            roomData.Update();
-            collision.Collide(roomData);
-            inventoryDisplay.Update();
-            itemSelectionState.Update();
-            if (tansitionState)
+            if (!pause)
             {
-                switcher.Update();
+                link.Update();
+                roomData.Update();
+                collision.Collide(roomData);
+                inventoryDisplay.Update();
+                if (tansitionState)
+                {
+                    switcher.Update();
+                }
+            }
+            else
+            {
+                inventoryDisplay.Update();
+                itemSelectionState.Update();
             }
             base.Update(gameTime);
         }
@@ -94,15 +105,23 @@ namespace Zelda_Game
         {
             _spriteBatch.Begin();
             GraphicsDevice.Clear(Color.Black);
-            border.Draw(_spriteBatch, new Vector2(0, 0));
-            roomData.Draw(_spriteBatch);
-            link.Draw(_spriteBatch);
-            inventoryDisplay.Draw(_spriteBatch);
-            //itemSelectionState.Draw(_spriteBatch);
-            if (tansitionState)
+            if(!pause)
             {
-                switcher.Draw(_spriteBatch);
+                border.Draw(_spriteBatch, new Vector2(0, 0));
+                roomData.Draw(_spriteBatch);
+                link.Draw(_spriteBatch);
+                inventoryDisplay.Draw(_spriteBatch);
+                if (tansitionState)
+                {
+                    switcher.Draw(_spriteBatch);
+                }
             }
+            else
+            {
+                inventoryDisplay.Draw(_spriteBatch);
+                itemSelectionState.Draw(_spriteBatch);
+            }
+
             base.Draw(gameTime);
             _spriteBatch.End();
         }

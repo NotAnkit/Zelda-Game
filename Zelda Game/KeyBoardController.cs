@@ -7,6 +7,7 @@ namespace Zelda_Game
     {
         //comment
         private KeyboardState userInput;
+        private KeyboardState previousState;
         private Game1 game;
         public KeyBoardController(Game1 _game)
         {
@@ -14,6 +15,7 @@ namespace Zelda_Game
         }
         public void Update()
         {
+            previousState = userInput;
             userInput = Keyboard.GetState();
             if (userInput.IsKeyDown(Keys.Q))
             {
@@ -52,56 +54,48 @@ namespace Zelda_Game
 
 
             }
-            else if (userInput.IsKeyDown(Keys.E))
-            {
-
-                game.link.TakeDamage();
-
-
-            }
-            else if (userInput.IsKeyDown(Keys.D1))
+            else if (userInput.IsKeyDown(Keys.D1) && !previousState.IsKeyDown(Keys.D1))
             {
 
                 game.link.UseItem("bomb");
 
 
             }
-            else if (userInput.IsKeyDown(Keys.D2))
+            else if (userInput.IsKeyDown(Keys.D2) && !previousState.IsKeyDown(Keys.D2))
             {
 
                 game.link.UseItem("blue-arrow");
 
 
             }
-            else if (userInput.IsKeyDown(Keys.D3))
+            else if (userInput.IsKeyDown(Keys.D3) && !previousState.IsKeyDown(Keys.D3))
             {
 
                 game.link.UseItem("green-arrow");
 
 
             }
-            else if (userInput.IsKeyDown(Keys.D4))
+            else if (userInput.IsKeyDown(Keys.D4) && !previousState.IsKeyDown(Keys.D4))
             {
 
                 game.link.UseItem("fire");
 
 
             }
-            else if (userInput.IsKeyDown(Keys.D5))
+            else if (userInput.IsKeyDown(Keys.D5) && !previousState.IsKeyDown(Keys.D5))
             {
 
                 game.link.UseItem("green-boomerang");
 
 
             }
-            else if (userInput.IsKeyDown(Keys.D6))
+            else if (userInput.IsKeyDown(Keys.D6) && !previousState.IsKeyDown(Keys.D6))
             {
-
                 game.link.UseItem("blue-boomerang");
             }
-            else if (userInput.IsKeyDown(Keys.A))
+            else if (userInput.IsKeyDown(Keys.P) && !previousState.IsKeyDown(Keys.P))
             {
-                
+                game.pause = !game.pause;
             }
             else if (userInput.IsKeyUp(Keys.W) || userInput.IsKeyUp(Keys.A) || userInput.IsKeyUp(Keys.S) || userInput.IsKeyUp(Keys.D))
             {
