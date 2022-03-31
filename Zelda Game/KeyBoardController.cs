@@ -84,10 +84,7 @@ namespace Zelda_Game
             }
             else if (userInput.IsKeyDown(Keys.D5) && !previousState.IsKeyDown(Keys.D5))
             {
-
                 game.link.UseItem("green-boomerang");
-
-
             }
             else if (userInput.IsKeyDown(Keys.D6) && !previousState.IsKeyDown(Keys.D6))
             {
@@ -96,6 +93,7 @@ namespace Zelda_Game
             else if (userInput.IsKeyDown(Keys.P) && !previousState.IsKeyDown(Keys.P))
             {
                 game.pause = !game.pause;
+                
             }
             else if (userInput.IsKeyUp(Keys.W) || userInput.IsKeyUp(Keys.A) || userInput.IsKeyUp(Keys.S) || userInput.IsKeyUp(Keys.D))
             {

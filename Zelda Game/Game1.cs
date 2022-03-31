@@ -95,6 +95,10 @@ namespace Zelda_Game
             }
             else
             {
+                if (tansitionState)
+                {
+                    switcher.Update();
+                }
                 inventoryDisplay.Update();
                 itemSelectionState.Update();
             }
@@ -118,6 +122,10 @@ namespace Zelda_Game
             }
             else
             {
+                if (tansitionState)
+                {
+                    switcher.Draw(_spriteBatch);
+                }
                 inventoryDisplay.Draw(_spriteBatch);
                 itemSelectionState.Draw(_spriteBatch);
             }

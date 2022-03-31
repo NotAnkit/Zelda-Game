@@ -18,6 +18,8 @@
 
             room.itemList = ItemResponseLoop.ItemLoop(room.itemList, Game.link);
 
+            room.doorList = PlayerProjectileLoop.ProjectileLoop(Game.link, room.doorList, Game.roomLocation, Game);
+
             room.doorList = PlayerDoorLoop.PlayerLoop(room, Game);
 
         }
