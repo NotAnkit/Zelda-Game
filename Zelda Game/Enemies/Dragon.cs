@@ -29,7 +29,7 @@ namespace Zelda_Game
             currentFrame = 0;
             totalFrames = 60;
             spriteSpeed = 1f;
-            windowHeight = game._graphics.PreferredBackBufferHeight - 95;
+            windowHeight = game._graphics.PreferredBackBufferHeight - 195;
             windowWidth = game._graphics.PreferredBackBufferWidth - 81;
             position = location;
             fireballs = new Fireballs(game, new Vector2(position.X, position.Y));

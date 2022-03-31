@@ -5,7 +5,7 @@
         <Item>TopDoor</Item>
         <Item>LeftDoor</Item>
         <Item>RightKey</Item>
-        <Item>BottomCave</Item>
+        <Item>BottomWall</Item>
     </Doors>
      <Blocks>
       <Item>

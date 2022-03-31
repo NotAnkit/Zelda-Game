@@ -26,9 +26,6 @@ namespace Zelda_Game
                         position = new Vector2(404, 151);
                         game1.tansitionState = true;
                         if (game1.tansitionStateFinished) game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
-
-
-
                     }
                     else if (door is LeftKey)
                     {
@@ -119,7 +116,7 @@ namespace Zelda_Game
                                     roomDoors.RemoveAt(1);
                                     game1.link.inventory.UseKey();
                                     game1.link.position.X += 16;
-                                    roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key + 1, game1.roomLocation.Value)];
+                                    roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value - 1)];
                                     roomdata.doorList.Insert(3, new BottomCave(game1));
                                     roomdata.doorList.RemoveAt(4);
                                 }
@@ -144,10 +141,10 @@ namespace Zelda_Game
                         if (game1.link.inventory.NumKeys() > 0)
                         {
                             Room roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value)];
-                            roomdata.doorList.Insert(0, new TopDoor(game1));
+                            roomdata.doorList.Insert(0, new BottomDoor(game1));
                             roomdata.doorList.RemoveAt(1);
-                            roomDoors.Insert(3, new BottomDoor(game1));
-                            roomDoors.RemoveAt(4);
+                            roomDoors.Insert(0, new BottomDoor(game1));
+                            roomDoors.RemoveAt(1);
                             game1.link.inventory.UseKey();
                             game1.link.position.Y -= 16;
                             roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value + 1)];
@@ -166,14 +163,14 @@ namespace Zelda_Game
                                 if (direction != "none" && projectile.Key is BombDownAnimation)
                                 {
                                     Room roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value)];
-                                    roomdata.doorList.Insert(3, new LeftCave(game1));
+                                    roomdata.doorList.Insert(3, new BottomCave(game1));
                                     roomdata.doorList.RemoveAt(4);
-                                    roomDoors.Insert(3, new LeftCave(game1));
+                                    roomDoors.Insert(3, new BottomCave(game1));
                                     roomDoors.RemoveAt(4);
                                     game1.link.inventory.UseKey();
                                     game1.link.position.X -= 16;
-                                    roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key + 1, game1.roomLocation.Value)];
-                                    roomdata.doorList.Insert(0, new RightCave(game1));
+                                    roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value + 1)];
+                                    roomdata.doorList.Insert(0, new TopCave(game1));
                                     roomdata.doorList.RemoveAt(1);
                                 }
                             }
