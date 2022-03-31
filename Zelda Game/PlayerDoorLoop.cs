@@ -5,14 +5,14 @@ namespace Zelda_Game
 {
     public static class PlayerDoorLoop
     {
-        public static List<IDoor> PlayerLoop(List<IDoor> doorList, Game1 game1)
+        public static List<IDoor> PlayerLoop(Room room, Game1 game1)
         {
-            List<IDoor> roomDoors = doorList;
+            List<IDoor> roomDoors = room.doorList;
             string direction = "none";
             string previousDirection;
             Vector2 position;
 
-            foreach (IDoor door in doorList.ToArray())
+            foreach (IDoor door in room.doorList.ToArray())
             {
                 Rectangle linkRectangle = game1.link.LinkRectangle;
                 Rectangle doorRectangle = door.DoorRectangle();
@@ -25,7 +25,15 @@ namespace Zelda_Game
                         KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key - 1, game1.roomLocation.Value);
                         position = new Vector2(404, 151);
                         game1.tansitionState = true;
-                        if (game1.tansitionStateFinished) game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+                        FreezeMovement.freezeObjects(room.enemyList, game1.link);
+                        FreezeMovement.freezeObjects(game1.roomList[roomLocation].enemyList, game1.link);
+                        if (game1.tansitionStateFinished)
+                        {
+                            game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+                            FreezeMovement.unFreezeObjects(room.enemyList, game1.link);
+                            FreezeMovement.unFreezeObjects(game1.roomList[roomLocation].enemyList, game1.link);
+                        }
+                        
                     }
                     else if (door is LeftKey)
                     {
@@ -52,7 +60,14 @@ namespace Zelda_Game
                         KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key + 1, game1.roomLocation.Value);
                         position = new Vector2(64, 151);
                         game1.tansitionState = true;
-                        if (game1.tansitionStateFinished) game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+                        FreezeMovement.freezeObjects(room.enemyList, game1.link);
+                        FreezeMovement.freezeObjects(game1.roomList[roomLocation].enemyList, game1.link);
+                        if (game1.tansitionStateFinished)
+                        {
+                            game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+                            FreezeMovement.unFreezeObjects(room.enemyList, game1.link);
+                            FreezeMovement.unFreezeObjects(game1.roomList[roomLocation].enemyList, game1.link);
+                        }
                     }
                     else if (door is RightKey)
                     {
@@ -80,7 +95,14 @@ namespace Zelda_Game
                         KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value - 1);
                         position = new Vector2(235, 246);
                         game1.tansitionState = true;
-                        if (game1.tansitionStateFinished) game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+                        FreezeMovement.freezeObjects(room.enemyList, game1.link);
+                        FreezeMovement.freezeObjects(game1.roomList[roomLocation].enemyList, game1.link);
+                        if (game1.tansitionStateFinished)
+                        {
+                            game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+                            FreezeMovement.unFreezeObjects(room.enemyList, game1.link);
+                            FreezeMovement.unFreezeObjects(game1.roomList[roomLocation].enemyList, game1.link);
+                        }
 
                     }
                     else if (door is TopKey)
@@ -133,7 +155,14 @@ namespace Zelda_Game
                         KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value + 1);
                         position = new Vector2(235, 64);
                         game1.tansitionState = true;
-                        if (game1.tansitionStateFinished) game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+                        FreezeMovement.freezeObjects(room.enemyList, game1.link);
+                        FreezeMovement.freezeObjects(game1.roomList[roomLocation].enemyList, game1.link);
+                        if (game1.tansitionStateFinished)
+                        {
+                            game1.switcher.ChangeRoom(game1.roomLocation, roomLocation, position);
+                            FreezeMovement.unFreezeObjects(room.enemyList, game1.link);
+                            FreezeMovement.unFreezeObjects(game1.roomList[roomLocation].enemyList, game1.link);
+                        }
 
                     }
                     else if (door is BottomKey)

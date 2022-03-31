@@ -1,19 +1,12 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System;
-
-namespace Zelda_Game
+﻿namespace Zelda_Game
 {
     public class Collision
     {
         private Game1 Game;
 
-        private List<Vector2> deleteEnemy;
-
         public Collision(Game1 game)
         {
             Game = game;
-            deleteEnemy = new List<Vector2>();
         }
 
         public void Collide(Room room)
@@ -25,7 +18,7 @@ namespace Zelda_Game
 
             room.itemList = ItemResponseLoop.ItemLoop(room.itemList, Game.link);
 
-            room.doorList = PlayerDoorLoop.PlayerLoop(room.doorList, Game);
+            room.doorList = PlayerDoorLoop.PlayerLoop(room, Game);
 
         }
     }
