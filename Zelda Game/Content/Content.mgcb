@@ -20,6 +20,13 @@
 /processorParam:Quality=Best
 /build:04 - Dungeon.mp3
 
+#begin Display.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Display.spritefont
+
 #begin EnemySheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
