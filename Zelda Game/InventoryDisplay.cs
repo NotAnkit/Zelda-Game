@@ -4,7 +4,6 @@ using System;
 
 namespace Zelda_Game
 {
-    /*not showing up???*/
     public class InventoryDisplay
     {
         public Texture2D Texture;
@@ -31,7 +30,7 @@ namespace Zelda_Game
             Rectangle destinationRectangle;
             sourceRectangle = new Rectangle(258, 11, 256, 56);
             destinationRectangle = new Rectangle(0, 345, 448, 98);
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.Pink); //gem
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.Pink);
         }
     }
 }
