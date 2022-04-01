@@ -85,8 +85,8 @@ namespace Zelda_Game
             if (!pause)
             {
                 link.Update();
-                roomData.Update();
                 collision.Collide(roomData);
+                roomData.Update();
                 inventoryDisplay.Update();
                 if (tansitionState)
                 {

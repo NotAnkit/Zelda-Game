@@ -51,6 +51,7 @@
     <None Remove="OldFiles\" />
     <None Remove="Collision\Loops\" />
     <None Remove="Sprint3Docs\CodeReviews\" />
+    <None Remove="Screens\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -106,6 +107,7 @@
     <Folder Include="OldFiles\" />
     <Folder Include="Collision\Loops\" />
     <Folder Include="Sprint3Docs\CodeReviews\" />
+    <Folder Include="Screens\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />
