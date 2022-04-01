@@ -17,7 +17,7 @@ namespace Zelda_Game
         {
             Texture = game.Content.Load<Texture2D>("Inventory");
             Font = game.Content.Load<SpriteFont>("Display");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
+            windowHeight = game._graphics.PreferredBackBufferHeight-100;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             inventory = new LinkInventory();
         }
@@ -31,9 +31,13 @@ namespace Zelda_Game
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
+            Vector2 destination;
             sourceRectangle = new Rectangle(258, 11, 256, 56);
             destinationRectangle = new Rectangle(0, 345, 503, 100);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.Pink);
+            string output = "X" + rupees.ToString();
+            destination = new Vector2(200, 32 + windowHeight);
+            spriteBatch.DrawString(Font, output, destination, Color.DarkRed);
         }
     }
 }
