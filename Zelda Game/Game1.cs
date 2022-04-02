@@ -127,7 +127,7 @@ namespace Zelda_Game
                     switcher.Draw(_spriteBatch);
                 }
                 inventoryDisplay.Draw(_spriteBatch);
-                itemSelectionState.Draw(_spriteBatch);
+                itemSelectionState.Draw(_spriteBatch, link);
             }
 
             base.Draw(gameTime);

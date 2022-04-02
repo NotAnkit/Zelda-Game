@@ -24,19 +24,27 @@ namespace Zelda_Game
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Link link)
         {
             Rectangle sourceRectangle = new Rectangle(1, 11, 256, 88);
             Rectangle sourceRectangle2 = new Rectangle(258, 112, 256, 88);
-            //Rectangle sourceRectangle3 = new Rectangle(88, 0, 8, 16); // For Map Item
+            Rectangle mapRectangle = new Rectangle(601, 156, 8, 16); // For Map Item
+            Rectangle CompassRectangle = new Rectangle(612, 156, 15, 16); // For Compass Item
 
             Rectangle destinationRectangle = new Rectangle(0, 20, 448, 154);
             Rectangle destinationRectangle2 = new Rectangle(0, 182, 448, 154);
-            //Rectangle destinationRectangle3 = new Rectangle(20, 20, 16, 32); // For Map Item
+            if (link.inventory.NumMaps() == 1) {
+                Rectangle destinationMap = new Rectangle(20, 20, 16, 32); // For Map Item
+                spriteBatch.Draw(Texture, destinationMap, mapRectangle, Color.White);
+            }
+            if (link.inventory.NumCompass() == 1)
+            {
+                Rectangle destinationCompass = new Rectangle(20, 20, 16, 32); // For Compass Item
+                spriteBatch.Draw(Texture, destinationCompass, CompassRectangle, Color.White);
+            }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.Draw(Texture, destinationRectangle2, sourceRectangle2, Color.White);
-            //spriteBatch.Draw(Texture, destinationRectangle3, sourceRectangle3, Color.White);
 
         }
     }

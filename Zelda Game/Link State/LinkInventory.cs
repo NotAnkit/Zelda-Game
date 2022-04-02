@@ -9,10 +9,14 @@ namespace Zelda_Game
         private int numKeys;
         private int rupees;
         private int bombs;
+        private int numMaps;
+        private int numCompass;
         public List<IItem> items;
         public LinkInventory()
         {
             numKeys = 5;
+            numMaps = 0;
+            numCompass = 0;
             rupees = 24;
             items = new List<IItem>();
         }
@@ -75,6 +79,36 @@ namespace Zelda_Game
         public List<IItem> ItemList()
         {
             return items;
+        }
+
+        public void UseMap()
+        {
+            numMaps--;
+        }
+
+        public void AddMap()
+        {
+            numMaps++;
+        }
+
+        public int NumMaps()
+        {
+            return numMaps;
+        }
+
+        public void UseCompass()
+        {
+            numCompass--;
+        }
+
+        public void AddCompass()
+        {
+            numCompass++;
+        }
+
+        public int NumCompass()
+        {
+            return numCompass;
         }
     }
 }
