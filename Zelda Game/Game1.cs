@@ -64,8 +64,8 @@ namespace Zelda_Game
 
             inventoryDisplay = new InventoryDisplay(this);
             song = Content.Load<Song>("04 - Dungeon");
-            //MediaPlayer.Play(song);
-            //MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
             itemSelectionState = new ItemSelectionState(this);
 
             switcher = new RoomManager(this);
