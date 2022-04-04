@@ -17,8 +17,8 @@ namespace Zelda_Game
         {
             numLives = 4;
             numKeys = 5;
-            numMaps = 0;
-            numCompass = 0;
+            numMaps = 1;
+            numCompass = 1;
             rupees = 24;
             items = new List<IItem>();
         }
