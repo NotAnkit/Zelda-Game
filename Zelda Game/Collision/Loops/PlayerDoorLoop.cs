@@ -94,8 +94,8 @@ namespace Zelda_Game
                     else if (door is TopKey && game1.link.inventory.NumKeys() > 0)
                     {
                             Room roomdata = game1.roomList[new KeyValuePair<int, int>(game1.roomLocation.Key, game1.roomLocation.Value)];
-                            //room.doorList.Insert(0, new TopDoor(game1));
-                            //room.doorList.RemoveAt(1);
+                            room.doorList.Insert(0, new TopDoor(game1));
+                            room.doorList.RemoveAt(1);
                             roomDoors.Insert(0, new TopDoor(game1));
                             roomDoors.RemoveAt(1);
                             game1.link.inventory.UseKey();

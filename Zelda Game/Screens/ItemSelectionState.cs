@@ -38,12 +38,12 @@ namespace Zelda_Game
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.Draw(Texture, destinationRectangle2, sourceRectangle2, Color.White);
 
-            if (link.inventory.NumMaps() == 1)
+            if (link.inventory.MapState())
             {
                 Rectangle destinationMap = new Rectangle(78, 213, 24, 48); // For Map Item
                 spriteBatch.Draw(Texture, destinationMap, mapRectangle, Color.White);
             }
-            if (link.inventory.NumCompass() == 1)
+            if (link.inventory.CompassState())
             {
                 Rectangle destinationCompass = new Rectangle(70, 283, 45, 48); // For Compass Item
                 spriteBatch.Draw(Texture, destinationCompass, CompassRectangle, Color.White);

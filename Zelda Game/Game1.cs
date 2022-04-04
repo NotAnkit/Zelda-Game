@@ -62,7 +62,7 @@ namespace Zelda_Game
             room = Content.Load<Level>("Room10");
             roomData = new Room(room, this);
 
-            inventoryDisplay = new InventoryDisplay(this);
+            inventoryDisplay = new InventoryDisplay(this, link.inventory);
             song = Content.Load<Song>("04 - Dungeon");
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
@@ -87,7 +87,7 @@ namespace Zelda_Game
                 link.Update();
                 collision.Collide(roomData);
                 roomData.Update();
-                inventoryDisplay.Update();
+                inventoryDisplay.Update(link);
                 if (tansitionState)
                 {
                     switcher.Update();
@@ -99,7 +99,7 @@ namespace Zelda_Game
                 {
                     switcher.Update();
                 }
-                inventoryDisplay.Update();
+                inventoryDisplay.Update(link);
                 itemSelectionState.Update();
             }
             base.Update(gameTime);

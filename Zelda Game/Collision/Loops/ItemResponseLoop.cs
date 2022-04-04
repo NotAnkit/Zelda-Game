@@ -16,8 +16,32 @@ namespace Zelda_Game
                 direction = CollisionDetection.GetDirection(linkRectangle, itemRectangle);
                 if (direction != "none")
                 {
+                    if(item.Value is KeyItem)
+                    {
+                        player.inventory.AddKey();
+                    }
+                    else if(item.Value is MapItem)
+                    {
+                        player.inventory.CollectMap();
+                    }
+                    else if (item.Value is CompassItem)
+                    {
+                        player.inventory.CollectCompass();
+                    }
+                    else if (item.Value is RupeeItem)
+                    {
+                        player.inventory.AddRupees();
+                    }
+                    else if (item.Value is BombItem)
+                    {
+                        player.inventory.AddBomb();
+                    }
+                    else
+                    {
+                        player.inventory.AddItem(item.Value);
+                    }
                     deleteItem.Add(item.Key);
-                    player.inventory.AddKey();
+                    
                 }
             }
 

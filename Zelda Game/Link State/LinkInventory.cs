@@ -10,15 +10,15 @@ namespace Zelda_Game
         private int numKeys;
         private int rupees;
         private int bombs;
-        private int numMaps;
-        private int numCompass;
+        private bool maps;
+        private bool compass;
         public List<IItem> items;
         public LinkInventory()
         {
             numLives = 4;
-            numKeys = 5;
-            numMaps = 1;
-            numCompass = 1;
+            numKeys = 0;
+            maps = false;
+            compass = false;
             rupees = 24;
             items = new List<IItem>();
         }
@@ -106,34 +106,24 @@ namespace Zelda_Game
             return items;
         }
 
-        public void UseMap()
+        public void CollectMap()
         {
-            numMaps--;
+            maps = true;
         }
 
-        public void AddMap()
+        public bool MapState()
         {
-            numMaps++;
+            return maps;
         }
 
-        public int NumMaps()
+        public void CollectCompass()
         {
-            return numMaps;
+            compass = true;
         }
 
-        public void UseCompass()
+        public bool CompassState()
         {
-            numCompass--;
-        }
-
-        public void AddCompass()
-        {
-            numCompass++;
-        }
-
-        public int NumCompass()
-        {
-            return numCompass;
+            return compass;
         }
     }
 }

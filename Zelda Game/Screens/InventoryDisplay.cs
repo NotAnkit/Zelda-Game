@@ -16,17 +16,18 @@ namespace Zelda_Game
         private int bombs;
         private int lives;
 
-        public InventoryDisplay(Game1 game)
+        public InventoryDisplay(Game1 game, LinkInventory inventory)
         {
             Texture = game.Content.Load<Texture2D>("Inventory");
             Font = game.Content.Load<SpriteFont>("Display");
             windowHeight = game._graphics.PreferredBackBufferHeight-100;
             windowWidth = game._graphics.PreferredBackBufferWidth;
-            inventory = new LinkInventory();
+            this.inventory = inventory;
         }
 
-        public void Update()
+        public void Update(Link player)
         {
+            inventory = player.inventory;
             rupees = inventory.NumRupees();
             keys = inventory.NumKeys();
             bombs = inventory.NumBombs();
