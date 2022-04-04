@@ -20,7 +20,7 @@ namespace Zelda_Game
                     {
                         player.inventory.AddKey();
                     }
-                    else if(item.Value is MapItem)
+                    else if (item.Value is MapItem)
                     {
                         player.inventory.CollectMap();
                     }
