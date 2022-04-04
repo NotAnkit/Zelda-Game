@@ -6,6 +6,7 @@ namespace Zelda_Game
     public class LinkInventory
     {
         //Turn into proporties
+        private int numLives;
         private int numKeys;
         private int rupees;
         private int bombs;
@@ -14,11 +15,35 @@ namespace Zelda_Game
         public List<IItem> items;
         public LinkInventory()
         {
+            numLives = 4;
             numKeys = 5;
             numMaps = 0;
             numCompass = 0;
             rupees = 24;
             items = new List<IItem>();
+        }
+
+        public void LoseLife()
+        {
+           numLives--;
+            if(numLives <= 0)
+            {
+                numLives = 0;
+            }
+        }
+
+        public void EarnLife()
+        {
+            numLives++;
+            if(numLives >= 4)
+            {
+                numLives = 4;
+            }
+        }
+
+        public int NumLives()
+        {
+            return numLives;
         }
 
         public void UseKey()

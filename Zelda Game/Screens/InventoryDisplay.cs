@@ -30,7 +30,7 @@ namespace Zelda_Game
             rupees = inventory.NumRupees();
             keys = inventory.NumKeys();
             bombs = inventory.NumBombs();
-            lives = 4;
+            lives = inventory.NumLives();
         }
 
         public static void DrawBlackout(SpriteBatch spriteBatch, Texture2D texture)
