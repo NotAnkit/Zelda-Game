@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
@@ -14,9 +15,10 @@ namespace Zelda_Game
         public Texture2D Texture;
         
         private bool flip;
-        public BlueBoomerangDownAnimation(Texture2D texture)
+        public BlueBoomerangDownAnimation(Texture2D texture, SoundEffect song)
         {
             Texture = texture;
+            song.Play();
             flip = false;
         }
 

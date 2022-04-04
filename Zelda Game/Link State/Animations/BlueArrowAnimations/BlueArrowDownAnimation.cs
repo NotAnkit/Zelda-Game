@@ -1,12 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
+using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
     public class BlueArrowDownAnimation : IProjectile
-    {
-        
+    { 
 
         public Texture2D Texture;
         public Vector2 location;
@@ -16,9 +15,10 @@ namespace Zelda_Game
             return new Rectangle((int) location.X, (int) location.Y, 16, 32);
         }
 
-        public BlueArrowDownAnimation(Texture2D texture)
+        public BlueArrowDownAnimation(Texture2D texture, SoundEffect song)
         {
             Texture = texture;
+            song.Play();
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)

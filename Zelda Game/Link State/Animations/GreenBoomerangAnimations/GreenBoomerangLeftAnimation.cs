@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
@@ -12,10 +13,11 @@ namespace Zelda_Game
         private Vector2 location;
         public Texture2D Texture;
         private bool flip;
-        public GreenBoomerangLeftAnimation(Texture2D texture)
+        public GreenBoomerangLeftAnimation(Texture2D texture, SoundEffect song)
         {
             Texture = texture;
             flip = false;
+            song.Play();
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)

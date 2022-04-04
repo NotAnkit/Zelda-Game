@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
@@ -7,10 +8,11 @@ namespace Zelda_Game
     {
         public Texture2D Texture;
 
-        public LinkPickUpItem2(Texture2D texture)
+        public LinkPickUpItem2(Texture2D texture, SoundEffect song)
         {
             Texture = texture;
-           
+            song.Play();
+
         }
 
         public void Update()

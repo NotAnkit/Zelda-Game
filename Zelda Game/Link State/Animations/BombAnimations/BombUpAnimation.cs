@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
@@ -14,10 +15,11 @@ namespace Zelda_Game
         private Vector2 location;
         private bool finished;
 
-        public BombUpAnimation(Texture2D texture)
+        public BombUpAnimation(Texture2D texture, SoundEffect song)
         {
             Texture = texture;
             finished = false;
+            song.Play();
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
