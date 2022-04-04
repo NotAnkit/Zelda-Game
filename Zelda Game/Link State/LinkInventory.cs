@@ -16,7 +16,7 @@ namespace Zelda_Game
         public LinkInventory()
         {
             numLives = 4;
-            numKeys = 0;
+            numKeys = 20;
             maps = false;
             compass = false;
             rupees = 24;
