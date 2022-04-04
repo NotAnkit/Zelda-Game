@@ -20,7 +20,7 @@ namespace Zelda_Game
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Link link)
         {
             Rectangle sourceRoom1 = new Rectangle(528, 108, 8, 8);
             Rectangle sourceRoom2 = new Rectangle(618, 108, 8, 8);
@@ -53,20 +53,24 @@ namespace Zelda_Game
             Rectangle destinationRoom13 = new Rectangle(306, 230, 16, 16);
             Rectangle destinationRoom14 = new Rectangle(274, 214, 16, 16);
 
-            spriteBatch.Draw(Texture, destinationRoom1, sourceRoom1, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom2, sourceRoom2, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom3, sourceRoom3, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom4, sourceRoom4, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom5, sourceRoom5, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom6, sourceRoom6, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom7, sourceRoom7, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom8, sourceRoom8, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom9, sourceRoom9, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom10, sourceRoom10, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom11, sourceRoom11, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom12, sourceRoom12, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom13, sourceRoom13, Color.White);
-            spriteBatch.Draw(Texture, destinationRoom14, sourceRoom14, Color.White);
+
+            if (link.inventory.MapState())
+            {
+                spriteBatch.Draw(Texture, destinationRoom1, sourceRoom1, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom2, sourceRoom2, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom3, sourceRoom3, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom4, sourceRoom4, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom5, sourceRoom5, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom6, sourceRoom6, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom7, sourceRoom7, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom8, sourceRoom8, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom9, sourceRoom9, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom10, sourceRoom10, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom11, sourceRoom11, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom12, sourceRoom12, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom13, sourceRoom13, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom14, sourceRoom14, Color.White);
+            }
         }
     }
 }
