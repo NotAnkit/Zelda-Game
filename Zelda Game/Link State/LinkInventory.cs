@@ -61,7 +61,7 @@ namespace Zelda_Game
             bombs++;
         }
 
-        public int NumBombc()
+        public int NumBombs()
         {
             return bombs;
         }
