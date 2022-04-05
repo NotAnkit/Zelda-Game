@@ -35,7 +35,11 @@ namespace Zelda_Game
             Rectangle sourceRoom11 = new Rectangle(609, 108, 8, 8);
             Rectangle sourceRoom12 = new Rectangle(627, 108, 8, 8);
             Rectangle sourceRoom13 = new Rectangle(555, 108, 8, 8);
-            Rectangle sourceRoom14 = new Rectangle(555, 108, 8, 8);
+            Rectangle sourceRoom14 = new Rectangle(537, 108, 8, 8);
+            Rectangle sourceRoom15 = new Rectangle(609, 108, 8, 8);
+            Rectangle sourceRoom16 = new Rectangle(528, 108, 8, 8);
+            Rectangle sourceRoom17 = new Rectangle(537, 108, 8, 8);
+
 
 
             Rectangle destinationRoom1 = new Rectangle(260, 294, 16, 16);
@@ -52,10 +56,16 @@ namespace Zelda_Game
             Rectangle destinationRoom12 = new Rectangle(274, 230, 16, 16);
             Rectangle destinationRoom13 = new Rectangle(306, 230, 16, 16);
             Rectangle destinationRoom14 = new Rectangle(274, 214, 16, 16);
+            Rectangle destinationRoom15 = new Rectangle(290, 262, 16, 16);
+            Rectangle destinationRoom16 = new Rectangle(260, 214, 16, 16);
+            Rectangle destinationRoom17 = new Rectangle(320, 230, 16, 16);
 
+            Rectangle sourceTriForce = new Rectangle(519, 126, 3, 3);
+            Rectangle destinationTriForce = new Rectangle(326, 233, 9, 9);
 
             if (link.inventory.MapState())
             {
+            
                 spriteBatch.Draw(Texture, destinationRoom1, sourceRoom1, Color.White);
                 spriteBatch.Draw(Texture, destinationRoom2, sourceRoom2, Color.White);
                 spriteBatch.Draw(Texture, destinationRoom3, sourceRoom3, Color.White);
@@ -70,6 +80,14 @@ namespace Zelda_Game
                 spriteBatch.Draw(Texture, destinationRoom12, sourceRoom12, Color.White);
                 spriteBatch.Draw(Texture, destinationRoom13, sourceRoom13, Color.White);
                 spriteBatch.Draw(Texture, destinationRoom14, sourceRoom14, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom15, sourceRoom15, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom16, sourceRoom16, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom17, sourceRoom17, Color.White);
+
+                if (link.inventory.CompassState())
+                {
+                    spriteBatch.Draw(Texture, sourceTriForce, destinationTriForce, Color.White);
+                }
             }
         }
     }
