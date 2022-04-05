@@ -15,7 +15,7 @@ namespace Zelda_Game
                 Rectangle projectileRectangle = projectile.Key.ProjectileRectangle();
                 foreach (IDoor door in roomDoors.ToArray())
                 {
-                    if(door is TopWall && roomLocation.Key == 2 || roomLocation.Key == 3 && roomLocation.Value == 3)
+                    if(door is TopWall && (roomLocation.Key == 2 || roomLocation.Key == 3) && roomLocation.Value == 3)
                     {
                         Rectangle doorRectangle = door.DoorRectangle();
                         direction = CollisionDetection.GetDirection(projectileRectangle, doorRectangle);
@@ -28,7 +28,7 @@ namespace Zelda_Game
                             nextRoomdata.doorList.RemoveAt(4);
                         }   
                     }
-                    else if (door is BottomWall && roomLocation.Key == 2 || roomLocation.Key == 3 && roomLocation.Value == 2)
+                    else if (door is BottomWall && (roomLocation.Key == 2 || roomLocation.Key == 3) && roomLocation.Value == 2)
                     {
                           Rectangle doorRectangle = projectile.Key.ProjectileRectangle();
                           direction = CollisionDetection.GetDirection(projectileRectangle, doorRectangle);

@@ -5,7 +5,7 @@ namespace Zelda_Game
     {
         public static void PlayerBlock(Link player, string[] directionLocked, List<string> collisonDirection, IEnvironment blockType)
         {
-            if (!(blockType is BlueSand))
+            if (!(blockType is BlueSand) && !(blockType is PushableBlock))
             {
                 for (int i = 0; i < collisonDirection.Count; i++)
                 {
@@ -21,6 +21,11 @@ namespace Zelda_Game
                 if (player.direction == directionLocked[0] || player.direction == directionLocked[1] || player.direction == directionLocked[2])  player.speed = 0;
 
                 else  player.speed = 2;
+            }
+
+            if(blockType is PushableBlock)
+            {
+
             }
         }
     }

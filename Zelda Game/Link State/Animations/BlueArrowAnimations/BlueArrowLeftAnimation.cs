@@ -39,6 +39,11 @@ namespace Zelda_Game
                 finished = true;
             }
 
+            if (location.X < 59)
+            {
+                finished = true;
+            }
+
             SpriteEffects s = SpriteEffects.FlipHorizontally;
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);
             return finished;

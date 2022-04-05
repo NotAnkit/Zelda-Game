@@ -39,6 +39,11 @@ namespace Zelda_Game
                 finished = true;
             }
 
+            if (location.Y > 253)
+            {
+                finished = true;
+            }
+
             SpriteEffects s = SpriteEffects.FlipVertically;
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);
             return finished;

@@ -49,6 +49,11 @@ namespace Zelda_Game
                 finished = true;
             }
 
+            if (location.X < 59)
+            {
+                finished = true;
+            }
+
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             return finished;
         }

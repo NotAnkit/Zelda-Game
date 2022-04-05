@@ -48,6 +48,10 @@ namespace Zelda_Game
                 destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 32);
             }
 
+            if (location.X < 59)
+            {
+                flip = true;
+            }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             return finished;
