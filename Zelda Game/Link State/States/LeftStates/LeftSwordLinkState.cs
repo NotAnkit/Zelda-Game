@@ -15,6 +15,7 @@ namespace Zelda_Game
         {
             player = link;
             sprite = LinkSpriteFactory.Instance.LinkWoodSwordLeftAnimationSprite();
+            link.hitbox = new Rectangle((int)link.position.X-16, (int)link.position.Y, 50, 29);
         }
 
         public void ChangeDirection(string direction)
@@ -48,6 +49,7 @@ namespace Zelda_Game
 
         public void Update()
         {
+            player.hitbox = new Rectangle((int)player.position.X-16, (int)player.position.Y, 50, 29);
             sprite.Update();
             animationCount++;
         }

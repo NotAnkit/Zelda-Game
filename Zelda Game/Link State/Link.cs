@@ -19,14 +19,17 @@ namespace Zelda_Game
         private bool useItem;
         private IProjectile item;
         public LinkInventory inventory;
+        public Rectangle hitbox;
 
         public Rectangle LinkRectangle
         {
-            get { return new Rectangle((int)position.X, (int)position.Y, 29, 29); }
+            get { return hitbox; }
+            set { hitbox = value; }
         }
 
         public Link(Vector2 location)
         {
+            
             position = location;
             itemPosition = location;
             useItem = false;
@@ -35,10 +38,12 @@ namespace Zelda_Game
             items2 = new Dictionary<IProjectile, Vector2>();
             removeItems = new List<IProjectile>();
             inventory = new LinkInventory();
+            hitbox = new Rectangle((int)position.X, (int)position.Y, 29, 29);
         }
 
         public void Update()
         {
+            hitbox = new Rectangle((int)position.X, (int)position.Y, 29, 29);
             position = currentState.ChangePosition(position, speed);
             currentState.Update();
             currentState.ChangeDirection(direction);

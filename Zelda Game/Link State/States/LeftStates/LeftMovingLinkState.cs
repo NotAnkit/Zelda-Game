@@ -13,6 +13,7 @@ namespace Zelda_Game.LinkState
         {
             player = link;
             sprite = LinkSpriteFactory.Instance.LinkLeftAnimationSprite();
+            link.hitbox = new Rectangle((int)link.position.X, (int)link.position.Y, 29, 29);
         }
 
         public void ChangeDirection(string direction)
