@@ -8,9 +8,9 @@ namespace Zelda_Game
         Rectangle EnemyRectangle();
         void Update();
         void Draw(SpriteBatch spriteBatch, Vector2 location);
-        float GetSpeed();
         void SetSpeed(float speed);
         string GetDirection();
-        void SetPosition(Vector2 newPosition);
+        void DecreaseHealth();
+        int Health();
     }
 }

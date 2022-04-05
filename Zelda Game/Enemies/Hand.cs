@@ -6,14 +6,15 @@ namespace Zelda_Game
 {
     public class Hand : IEnemy
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int currentFrame;
         private int totalFrames;
         private float spriteSpeed;
         private int windowHeight;
         private int windowWidth;
         private Vector2 position;
-        public string direction;
+        private string direction;
+        private int health;
 
         public Rectangle EnemyRectangle()
         {
@@ -30,6 +31,7 @@ namespace Zelda_Game
             windowWidth = game._graphics.PreferredBackBufferWidth - 97;
             position = location;
             direction = "right";
+            health = 30;
         }
 
         private int movementCounter = 0;
@@ -91,24 +93,24 @@ namespace Zelda_Game
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
 
-        public float GetSpeed()
-        {
-            return spriteSpeed;
-        }
-
         public void SetSpeed(float speed)
         {
             spriteSpeed = speed;
         }
 
+        public void DecreaseHealth()
+        {
+            health--;
+        }
+
+        public int Health()
+        {
+            return health;
+        }
+
         public string GetDirection()
         {
             return direction;
-        }
-
-        public void SetPosition(Vector2 newPosition)
-        {
-            position = newPosition;
         }
     }
 }

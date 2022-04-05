@@ -12,7 +12,7 @@ namespace Zelda_Game
 
         public Rectangle ProjectileRectangle()
         {
-            return new Rectangle((int) location.X, (int) location.Y, 16, 32);
+            return new Rectangle((int)location.X+8, (int) location.Y+32, 1, 1);
         }
 
         public BlueArrowDownAnimation(Texture2D texture, SoundEffect song)

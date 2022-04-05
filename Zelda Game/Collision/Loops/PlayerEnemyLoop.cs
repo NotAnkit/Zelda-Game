@@ -20,10 +20,9 @@ namespace Zelda_Game
                 directionLocked[0] = "none";
                 directionLocked[1] = "none";
                 directionLocked[2] = "none";
-                foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
-                {
-                    PlayerEnemyResponse.PlayerEnemy(player, direction, block.Value);
-                }
+
+                PlayerEnemyResponse.PlayerEnemy(player, direction, enemy.Value);
+                
 
                 foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
                 {
@@ -43,8 +42,13 @@ namespace Zelda_Game
                     direction = CollisionDetection.GetDirection(enemyRectangle, blockRectangle);
                     if (direction != "none")
                     {
-                        deleteEnemy.Add(enemy.Key);
+                        enemy.Value.DecreaseHealth();
                     }
+                }
+
+                if (enemy.Value.Health() <= 0)
+                {
+                    deleteEnemy.Add(enemy.Key);
                 }
 
             }

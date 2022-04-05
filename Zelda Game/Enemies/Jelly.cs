@@ -6,14 +6,15 @@ namespace Zelda_Game
 {
     public class Jelly : IEnemy
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int currentFrame;
         private int totalFrames;
         private float spriteSpeed;
         private int windowHeight;
         private int windowWidth;
         private Vector2 position;
-        public string direction;
+        private string direction;
+        private int health;
 
         public Rectangle EnemyRectangle()
         {
@@ -29,6 +30,7 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight - 195;
             windowWidth = game._graphics.PreferredBackBufferWidth - 81;
             position = location;
+            health = 1;
             direction = "right";
         }
 
@@ -93,24 +95,24 @@ namespace Zelda_Game
             
         }
 
-        public float GetSpeed()
-        {
-            return spriteSpeed;
-        }
-
         public void SetSpeed(float speed)
         {
             spriteSpeed = speed;
         }
 
+        public void DecreaseHealth()
+        {
+            health--;
+        }
+
+        public int Health()
+        {
+            return health;
+        }
+
         public string GetDirection()
         {
             return direction;
-        }
-
-        public void SetPosition(Vector2 newPosition)
-        {
-            position = newPosition;
         }
 
     }

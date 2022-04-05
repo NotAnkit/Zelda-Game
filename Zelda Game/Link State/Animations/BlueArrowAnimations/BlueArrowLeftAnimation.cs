@@ -9,7 +9,7 @@ namespace Zelda_Game
 
         public Rectangle ProjectileRectangle()
         {
-            return new Rectangle((int)location.X, (int)location.Y, 16, 32);
+            return new Rectangle((int)location.X, (int)location.Y+8, 1, 1);
         }
 
         public Texture2D Texture;

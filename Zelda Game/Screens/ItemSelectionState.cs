@@ -10,6 +10,7 @@ namespace Zelda_Game
         public SpriteFont Font;
         private int windowHeight;
         private int windowWidth;
+        private MapPauseScreen mapPauseScreen;
 
         public ItemSelectionState(Game1 game)
         {
@@ -17,11 +18,12 @@ namespace Zelda_Game
             //Font = game.Content.Load<SpriteFont>("SpriteFont");
             windowHeight = game._graphics.PreferredBackBufferHeight;
             windowWidth = game._graphics.PreferredBackBufferWidth;
+            mapPauseScreen = new MapPauseScreen(game);
         }
 
         public void Update()
         {
-
+            mapPauseScreen.Update();
         }
 
         public void Draw(SpriteBatch spriteBatch, Link link)
@@ -42,12 +44,15 @@ namespace Zelda_Game
             {
                 Rectangle destinationMap = new Rectangle(78, 213, 24, 48); // For Map Item
                 spriteBatch.Draw(Texture, destinationMap, mapRectangle, Color.White);
+                mapPauseScreen.Draw(spriteBatch, link);
             }
             if (link.inventory.CompassState())
             {
                 Rectangle destinationCompass = new Rectangle(70, 283, 45, 48); // For Compass Item
                 spriteBatch.Draw(Texture, destinationCompass, CompassRectangle, Color.White);
             }
+
+            
 
         }
     }

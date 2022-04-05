@@ -2,77 +2,76 @@
 {
     public class PlayerEnemyResponse
     {
-        public static void PlayerEnemy(Link player, string direction, IEnvironment block)
+        public static void PlayerEnemy(Link player, string direction, IEnemy enemy)
         {
             if (direction == "left-right")
             {
-                player.TakeDamage();
-                for (int i = 0; i <= 70; i++)
+                if(player.currentState is RightSwordLinkState)
                 {
-                    if (player.position.X <= 59)
+                    enemy.DecreaseHealth();
+                }
+                else
+                {
+                    player.TakeDamage();
+                    for (int i = 0; i <= 70; i++)
                     {
-                        player.position.X = 59;
-                    }
-                    player.position.X--;
 
+                    }
+                    player.speed = 2;
                 }
-                player.speed = 2;
-                while (player.LinkRectangle.Intersects(block.BlockRectangle()))
-                {
-                    player.position.X++;
-                }
+                
 
             }
             if (direction == "right-left")
             {
-                player.TakeDamage();
-                for (int i = 0; i <= 70; i++)
+                if (player.currentState is LeftSwordLinkState)
                 {
-                    if (player.position.X >= 411)
+                    enemy.DecreaseHealth();
+                }
+                else
+                {
+                    player.TakeDamage();
+                    for (int i = 0; i <= 70; i++)
                     {
-                        player.position.X = 411;
+
                     }
-                    player.position.X++;
+                    player.speed = 2;
                 }
-                player.speed = 2;
-                while (player.LinkRectangle.Intersects(block.BlockRectangle()))
-                {
-                    player.position.X--;
-                }
+                
             }
             if (direction == "top-bottom")
             {
-                player.TakeDamage();
-                for (int i = 0; i <= 70; i++)
+                if (player.currentState is UpSwordLinkState)
                 {
-                    if (player.position.Y >= 253)
+                    enemy.DecreaseHealth();
+                }
+                else
+                {
+                    player.TakeDamage();
+                    for (int i = 0; i <= 70; i++)
                     {
-                        player.position.Y = 253;
+
                     }
-                    player.position.Y++;
+                    player.speed = 2;
                 }
-                player.speed = 2;
-                while (player.LinkRectangle.Intersects(block.BlockRectangle()))
-                {
-                    player.position.Y--;
-                }
+                
             }
             if (direction == "bottom-top")
             {
-                player.TakeDamage();
-                for (int i = 0; i <= 70; i++)
+                if (player.currentState is DownSwordLinkState)
                 {
-                    if (player.position.Y <= 61)
+                    enemy.DecreaseHealth();
+                }
+                else
+                {
+                    player.TakeDamage();
+                    for (int i = 0; i <= 70; i++)
                     {
-                        player.position.Y = 61;
+
                     }
-                    player.position.Y--;
+                    player.speed = 2;
                 }
-                player.speed = 2;
-                while (player.LinkRectangle.Intersects(block.BlockRectangle()))
-                {
-                    player.position.Y++;
-                }
+                
             }
         }
     }

@@ -24,7 +24,7 @@ namespace Zelda_Game
         public int windowHeight;
 
         private ItemSelectionState itemSelectionState;
-        private MapPauseScreen mapPauseScreen;
+        
 
         public RoomManager switcher;
         public bool tansitionState;
@@ -68,7 +68,7 @@ namespace Zelda_Game
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
             itemSelectionState = new ItemSelectionState(this);
-            mapPauseScreen = new MapPauseScreen(this);
+            
 
         switcher = new RoomManager(this);
             tansitionState = false;
@@ -103,7 +103,7 @@ namespace Zelda_Game
                 }
                 inventoryDisplay.Update(link);
                 itemSelectionState.Update();
-                mapPauseScreen.Update();
+                
             }
             base.Update(gameTime);
         }
@@ -131,7 +131,7 @@ namespace Zelda_Game
                 }
                 inventoryDisplay.Draw(_spriteBatch);
                 itemSelectionState.Draw(_spriteBatch, link);
-                mapPauseScreen.Draw(_spriteBatch, link);
+                
             }
 
             base.Draw(gameTime);

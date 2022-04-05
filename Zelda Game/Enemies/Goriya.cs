@@ -6,15 +6,16 @@ namespace Zelda_Game
 {
     public class Goriya : IEnemy
     {
-        public Game1 Game;
-        public Texture2D Texture;
+        private Game1 Game;
+        private Texture2D Texture;
         private int currentFrame;
         private int totalFrames;
         private float spriteSpeed;
         private int windowHeight;
         private int windowWidth;
         private Vector2 position;
-        public Trap trap;
+        private int health;
+        private Trap trap;
         private bool trapFinished = false;
 
         public Rectangle EnemyRectangle()
@@ -32,6 +33,7 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight - 195;
             windowWidth = game._graphics.PreferredBackBufferWidth - 97;
             position = location;
+            health = 30;
             trap = new Trap(game, location);
             direction = "right";
         }
@@ -131,24 +133,24 @@ namespace Zelda_Game
                 trapFinished = trap.Draw(spriteBatch);
         }
 
-        public float GetSpeed()
-        {
-            return spriteSpeed;
-        }
-
         public void SetSpeed(float speed)
         {
             spriteSpeed = speed;
         }
 
+        public void DecreaseHealth()
+        {
+            health--;
+        }
+
+        public int Health()
+        {
+            return health;
+        }
+
         public string GetDirection()
         {
             return direction;
-        }
-
-        public void SetPosition(Vector2 newPosition)
-        {
-            position = newPosition;
         }
 
     }
