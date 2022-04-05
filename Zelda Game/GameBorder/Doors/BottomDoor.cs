@@ -15,7 +15,7 @@ namespace Zelda_Game
 
         public Rectangle DoorRectangle()
         {
-            return new Rectangle(217, 282, 65, 63);
+            return new Rectangle(250, 282, 5, 60);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
