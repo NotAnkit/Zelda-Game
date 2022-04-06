@@ -89,7 +89,7 @@ namespace Zelda_Game
                 if (link.inventory.CompassState())
                 {
                     SpriteEffects s = SpriteEffects.None;
-                    spriteBatch.Draw(rectangle, new Vector2(326, 233), null, new Color(1f, 1f, 1f, 1), 0f, Vector2.Zero, new Vector2(5, 5), s, 0);
+                    spriteBatch.Draw(rectangle, new Vector2(326, 236), null, new Color(1f, 1f, 1f, 1), 0f, Vector2.Zero, new Vector2(5, 5), s, 0);
                     
                 }
             }
