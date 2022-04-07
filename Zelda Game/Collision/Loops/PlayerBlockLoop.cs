@@ -19,7 +19,7 @@ namespace Zelda_Game
                 Rectangle linkRectangle = player.LinkRectangle;
                 Rectangle blockRectangle = block.Value.BlockRectangle();
                 direction = CollisionDetection.GetDirection(linkRectangle, blockRectangle);
-                if (direction != "none")
+                if (direction != "none" && !(block.Value is PushableBlock))
                 {
                     collisonDirection.Add(direction);
                 }

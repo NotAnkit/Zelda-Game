@@ -59,7 +59,7 @@ namespace Zelda_Game
             collision = new Collision(this);
             roomLocation = new KeyValuePair<int, int>(2, 5);
             link = new Link(new Vector2(235, 246));
-            room = Content.Load<Level>("Room10");
+            room = Content.Load<Level>("Room1");
             roomData = new Room(room, this);
 
             inventoryDisplay = new InventoryDisplay(this, link.inventory);
