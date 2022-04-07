@@ -23,5 +23,10 @@ namespace Zelda_Game
         {
             return location;
         }
+
+        public void SetFinished(bool finishedState)
+        {
+            //finished = finishedState;
+        }
     }
 }

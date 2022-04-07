@@ -24,7 +24,6 @@ namespace Zelda_Game
         public int windowHeight;
 
         private ItemSelectionState itemSelectionState;
-        
 
         public RoomManager switcher;
         public bool tansitionState;
@@ -70,10 +69,9 @@ namespace Zelda_Game
             itemSelectionState = new ItemSelectionState(this);
             
 
-        switcher = new RoomManager(this);
+            switcher = new RoomManager(this);
             tansitionState = false;
             tansitionStateFinished = false;
-
             pause = false;
 
         }
@@ -131,7 +129,6 @@ namespace Zelda_Game
                 }
                 inventoryDisplay.Draw(_spriteBatch);
                 itemSelectionState.Draw(_spriteBatch, link);
-                
             }
 
             base.Draw(gameTime);

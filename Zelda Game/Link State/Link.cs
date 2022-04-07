@@ -29,7 +29,6 @@ namespace Zelda_Game
 
         public Link(Vector2 location)
         {
-            
             position = location;
             itemPosition = location;
             useItem = false;

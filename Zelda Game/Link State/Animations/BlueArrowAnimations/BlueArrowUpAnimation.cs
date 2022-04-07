@@ -12,20 +12,22 @@ namespace Zelda_Game
             return new Rectangle((int)location.X+8, (int)location.Y-16, 1, 1);
         }
 
-        public Texture2D Texture;
-        public Vector2 location;
+        private Texture2D Texture;
+        private Vector2 location;
+        private bool finished;
 
         public BlueArrowUpAnimation(Texture2D texture, SoundEffect song)
         {
             Texture = texture;
             song.Play();
+            finished = false;
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
-            bool finished = false;
+            
 
             if (startLocation.Y - location.Y <= 160)
             {
@@ -53,6 +55,11 @@ namespace Zelda_Game
             position.Y--;
             location = position;
             return position;
+        }
+
+        public void SetFinished(bool finishedState)
+        {
+            finished = finishedState;
         }
     }
 }

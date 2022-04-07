@@ -64,5 +64,10 @@ namespace Zelda_Game
             location = position;
             return position;
         }
+
+        public void SetFinished(bool finishedState)
+        {
+            finished = finishedState;
+        }
     }
 }

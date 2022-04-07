@@ -13,6 +13,7 @@ namespace Zelda_Game
         private Vector2 location;
         public Texture2D Texture;
         private bool flip;
+
         public GreenBoomerangUpAnimation(Texture2D texture, SoundEffect song)
         {
             Texture = texture;
@@ -71,6 +72,11 @@ namespace Zelda_Game
             }
             location = position;
             return position;
+        }
+
+        public void SetFinished(bool finishedState)
+        {
+            flip = finishedState;
         }
     }
 }

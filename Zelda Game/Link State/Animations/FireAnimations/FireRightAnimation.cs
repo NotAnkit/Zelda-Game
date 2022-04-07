@@ -11,19 +11,21 @@ namespace Zelda_Game
             return new Rectangle((int)location.X, (int)location.Y, 32, 32);
         }
 
-        public Texture2D Texture;
+        private Texture2D Texture;
         private Vector2 location;
+        private bool finished;
+
         public FireRightAnimation(Texture2D texture, SoundEffect song)
         {
             Texture = texture;
             song.Play();
+            finished = false;
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
-            bool finished = false;
 
             if (location.X - startLocation.X <= 128)
             {
@@ -51,6 +53,11 @@ namespace Zelda_Game
             position.X++;
             location = position;
             return position;
+        }
+
+        public void SetFinished(bool finishedState)
+        {
+            finished = finishedState;
         }
     }
 }

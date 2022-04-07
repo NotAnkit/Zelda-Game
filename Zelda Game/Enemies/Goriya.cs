@@ -33,7 +33,7 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight - 195;
             windowWidth = game._graphics.PreferredBackBufferWidth - 97;
             position = location;
-            health = 30;
+            health = 5;
             trap = new Trap(game, location);
             direction = "right";
         }

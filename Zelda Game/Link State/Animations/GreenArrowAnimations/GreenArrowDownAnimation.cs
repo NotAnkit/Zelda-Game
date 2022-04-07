@@ -10,13 +10,16 @@ namespace Zelda_Game
         {
             return new Rectangle((int)location.X + 8, (int)location.Y + 32, 1, 1);
         }
+
+        private Texture2D Texture;
         private Vector2 location;
-        public Texture2D Texture;
+        private bool finished;
 
         public GreenArrowDownAnimation(Texture2D texture, SoundEffect song)
         {
             Texture = texture;
             song.Play();
+            finished = false;
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
@@ -52,6 +55,11 @@ namespace Zelda_Game
             position.Y++;
             location = position;
             return position;
+        }
+
+        public void SetFinished(bool finishedState)
+        {
+            finished = finishedState;
         }
     }
 }

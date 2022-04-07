@@ -42,6 +42,7 @@ namespace Zelda_Game
                     direction = CollisionDetection.GetDirection(enemyRectangle, blockRectangle);
                     if (direction != "none")
                     {
+                        projectile.Key.SetFinished(true);
                         enemy.Value.DecreaseHealth();
                     }
                 }

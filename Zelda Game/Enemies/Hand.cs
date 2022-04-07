@@ -31,7 +31,7 @@ namespace Zelda_Game
             windowWidth = game._graphics.PreferredBackBufferWidth - 97;
             position = location;
             direction = "right";
-            health = 30;
+            health = 5;
         }
 
         private int movementCounter = 0;
