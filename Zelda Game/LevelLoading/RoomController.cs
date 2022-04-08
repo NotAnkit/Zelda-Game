@@ -14,7 +14,7 @@ namespace Zelda_Game
             Game = game;
 
             Game.roomList = new Dictionary<KeyValuePair<int, int>, Room>();
-            Game.roomList.Add(new KeyValuePair<int, int>(0, 2), new Room(Game.Content.Load<Level>("Room0"), Game));
+            Game.roomList.Add(new KeyValuePair<int, int>(0, 2), new Room(Game.Content.Load<Level>("File"), Game));
             Game.roomList.Add(new KeyValuePair<int, int>(2, 0), new Room(Game.Content.Load<Level>("Room16"), Game));
             Game.roomList.Add(new KeyValuePair<int, int>(1, 0), new Room(Game.Content.Load<Level>("Room15"), Game));
             Game.roomList.Add(new KeyValuePair<int, int>(5, 1), new Room(Game.Content.Load<Level>("Room14"), Game));

@@ -39,6 +39,11 @@
 /processorParam:TextureFormat=Color
 /build:EnemySheet.png
 
+#begin File.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:File.xml
+
 #begin Inventory.png
 /importer:TextureImporter
 /processor:TextureProcessor

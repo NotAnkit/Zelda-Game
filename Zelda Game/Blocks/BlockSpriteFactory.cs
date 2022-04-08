@@ -28,6 +28,8 @@ namespace Zelda_Game
 
         public IEnvironment BlackBlock() => new BlackBlock(blockSpritesheet);
 
+        public IEnvironment BigBlackBlock() => new BigBlackBlock(blockSpritesheet);
+
         public IEnvironment PushableBlock() => new PushableBlock(blockSpritesheet);
 
         public IEnvironment BlueSand() => new BlueSand(blockSpritesheet);

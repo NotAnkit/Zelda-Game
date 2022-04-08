@@ -30,6 +30,8 @@ namespace Zelda_Game
 
                 else if (block.Value.Equals("BLB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.BlackBlock());
 
+                else if (block.Value.Equals("BBLB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.BigBlackBlock());
+
                 else if (block.Value.Equals("BS")) blockList.Add(block.Key, BlockSpriteFactory.Instance.BlueSand());
 
                 else if (block.Value.Equals("BB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.BrickBlock());
