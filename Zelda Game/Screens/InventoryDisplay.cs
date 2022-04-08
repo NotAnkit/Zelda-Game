@@ -78,6 +78,20 @@ namespace Zelda_Game
             }
         }
 
+        public static void DrawSelectionA(SpriteBatch spriteBatch, Texture2D texture)
+        {
+            Rectangle sourceRectangle = new Rectangle(552, 134, 12, 20);
+            Rectangle destinationRectangle = new Rectangle(293, 380, 24, 40);
+            spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Pink);
+        }
+
+        public static void DrawSelectionB(SpriteBatch spriteBatch, Texture2D texture)
+        {
+            Rectangle sourceRectangle = new Rectangle(584, 134, 8, 20);
+            Rectangle destinationRectangle = new Rectangle(250, 380, 16, 40);
+            spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Pink);
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle = new Rectangle(258, 11, 256, 56);
@@ -88,6 +102,8 @@ namespace Zelda_Game
             DrawKeys(spriteBatch, keys, Font);
             DrawBombs(spriteBatch, bombs, Font);
             DrawLives(spriteBatch, lives, Texture);
+            DrawSelectionA(spriteBatch, Texture);
+            DrawSelectionB(spriteBatch, Texture);
         }
     }
 }
