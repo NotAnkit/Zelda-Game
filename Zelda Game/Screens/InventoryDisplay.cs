@@ -6,10 +6,8 @@ namespace Zelda_Game
 {
     public class InventoryDisplay
     {
-        public Texture2D Texture;
-        public SpriteFont Font;
-        private int windowHeight;
-        private int windowWidth;
+        private Texture2D Texture;
+        private SpriteFont Font;
         private LinkInventory inventory;
         private int rupees;
         private int keys;
@@ -17,6 +15,7 @@ namespace Zelda_Game
         private int lives;
         private string itemA;
         private string itemB;
+
         public string ItemASlot
         {
             get { return itemA; }
@@ -32,8 +31,6 @@ namespace Zelda_Game
         {
             Texture = game.Content.Load<Texture2D>("Inventory");
             Font = game.Content.Load<SpriteFont>("Display");
-            windowHeight = game._graphics.PreferredBackBufferHeight-100;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
             this.inventory = inventory;
             itemA = "sword";
             itemB = "green-boomerang";

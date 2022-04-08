@@ -8,16 +8,12 @@ namespace Zelda_Game
     {
         public Texture2D Texture;
         public SpriteFont Font;
-        private int windowHeight;
-        private int windowWidth;
         private MapPauseScreen mapPauseScreen;
 
         public ItemSelectionState(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("Inventory");
             //Font = game.Content.Load<SpriteFont>("SpriteFont");
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
             mapPauseScreen = new MapPauseScreen(game);
         }
 

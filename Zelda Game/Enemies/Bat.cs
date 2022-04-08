@@ -15,6 +15,7 @@ namespace Zelda_Game
         private Vector2 position;
         private string direction;
         private int health;
+        private Color spriteColor;
 
         public Bat(Game1 game, Vector2 location)
         {
@@ -22,11 +23,12 @@ namespace Zelda_Game
             currentFrame = 0;
             totalFrames = 30;
             spriteSpeed = 1f;
-            windowHeight = game._graphics.PreferredBackBufferHeight - 195;
-            windowWidth = game._graphics.PreferredBackBufferWidth  - 97;
+            windowHeight = game.WindowSizeHeight - 195;
+            windowWidth = game.WindowSizeWidth - 97;
             position = location;
             health = 1;
             direction = "right";
+            spriteColor = Color.White;
         }
 
         public Rectangle EnemyRectangle()
@@ -92,8 +94,7 @@ namespace Zelda_Game
                 sourceRectangle = new Rectangle(200, 11, 16, 16);
 
             
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor);
         }
 
 
@@ -104,6 +105,7 @@ namespace Zelda_Game
 
         public void DecreaseHealth()
         {
+            spriteColor = Color.Red;
             health--;
         }
 

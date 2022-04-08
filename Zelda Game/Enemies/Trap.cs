@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public class Trap
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int currentFrame;
         private int totalFrames;
         private float spriteSpeed;
@@ -26,8 +26,8 @@ namespace Zelda_Game
             currentFrame = 0;
             totalFrames = 30;
             spriteSpeed = 3f;
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            windowHeight = game.WindowSizeHeight;
+            windowWidth = game.WindowSizeWidth;
             position = location;
             startPosition = location;
         }

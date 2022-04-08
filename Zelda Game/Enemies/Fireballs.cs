@@ -8,7 +8,11 @@ namespace Zelda_Game
         public Texture2D Texture;
         private int currentFrame;
         private int totalFrames;
-        private float spriteSpeed;
+        private float spriteSpeed1X;
+        private float spriteSpeed1Y;
+        private float spriteSpeed2X;
+        private float spriteSpeed3X;
+        private float spriteSpeed3Y;
         private int windowHeight;
         private int windowWidth;
         private Vector2 position1;
@@ -25,9 +29,13 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("EnemySheet");
             currentFrame = 0;
             totalFrames = 30;
-            spriteSpeed = 3f;
-            windowHeight = game._graphics.PreferredBackBufferHeight;
-            windowWidth = game._graphics.PreferredBackBufferWidth;
+            spriteSpeed1X = 3f;
+            spriteSpeed1Y = 3f;
+            spriteSpeed2X = 3f;
+            spriteSpeed3X = 3f;
+            spriteSpeed3Y = 3f;
+            windowHeight = game.WindowSizeHeight;
+            windowWidth = game.WindowSizeWidth;
             position1 = startPosition;
             position2 = startPosition;
             position3 = startPosition;
@@ -39,13 +47,55 @@ namespace Zelda_Game
             if (currentFrame == totalFrames)
                 currentFrame = 0;
 
-            if (position1.X <= windowWidth)
+            position1.X -= spriteSpeed1X;
+            position1.Y -= spriteSpeed1Y;
+
+            position2.X -= spriteSpeed2X;
+
+            position3.X -= spriteSpeed3X;
+            position3.Y += spriteSpeed3Y;
+
+            if (position1.X < 59)
             {
-                position1.X -= spriteSpeed;
-                position1.Y -= spriteSpeed;
-                position2.X -= spriteSpeed;
-                position3.X -= spriteSpeed;
-                position3.Y += spriteSpeed;
+                spriteSpeed1X = (spriteSpeed1X)*(-1);
+            }
+            else if (position1.X > windowWidth - 97)
+            {
+                spriteSpeed1X = -spriteSpeed1X;
+            }
+            if (position1.Y > windowHeight - 197)
+            {
+                spriteSpeed1Y = -spriteSpeed1Y;
+            }
+            else if (position1.Y < 61)
+            {
+                spriteSpeed1Y = (spriteSpeed1Y) * (-1);
+            }
+
+            if (position2.X < 59)
+            {
+                spriteSpeed2X = (spriteSpeed2X) * (-1);
+            }
+            else if (position2.X > windowWidth - 97)
+            {
+                spriteSpeed2X = -spriteSpeed2X;
+            }
+
+            if (position3.X < 59)
+            {
+                spriteSpeed3X = (spriteSpeed3X) * (-1);
+            }
+            else if (position3.X > windowWidth - 97)
+            {
+                spriteSpeed3X = -spriteSpeed3X;
+            }
+            if (position3.Y > windowHeight - 197)
+            {
+                spriteSpeed3Y = -spriteSpeed3Y;
+            }
+            else if (position3.Y < 61)
+            {
+                spriteSpeed3Y = (spriteSpeed3Y) * (-1);
             }
         }
 

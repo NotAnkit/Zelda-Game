@@ -9,26 +9,45 @@ namespace Zelda_Game
     {
         private SpriteBatch _spriteBatch;
         private List<IController> controllerList;
+        private Collision collision;
+        private Song song;
+        private ItemSelectionState itemSelectionState;
+        private GraphicsDeviceManager _graphics;
+        private int windowWidth;
+        private int windowHeight;
+
+        public int WindowSizeWidth
+        {
+            get { return windowWidth; }
+            set { windowWidth = value; }
+        }
+
+        public int WindowSizeHeight
+        {
+            get { return windowHeight; }
+            set { windowHeight = value; }
+        }
+
+
         public Link link;
+
         private IEnvironment border;
         private Level room;
-        private Collision collision;
-        public int currentRoom;
+
+
         public KeyValuePair<int, int> roomLocation;
         public Room roomData;
-        public GraphicsDeviceManager _graphics;
         public Dictionary<KeyValuePair<int, int>, Room> roomList;
+
+        /*pass in invetory display items*/
         public InventoryDisplay inventoryDisplay;
-        public Song song;
-        public int windowWidth;
-        public int windowHeight;
 
-        private ItemSelectionState itemSelectionState;
 
+        /* Need to stay will manage room from here*/
         public RoomManager switcher;
+
         public bool tansitionState;
         public bool tansitionStateFinished;
-
         public bool pause;
 
         public Game1()
@@ -59,7 +78,7 @@ namespace Zelda_Game
             collision = new Collision(this);
             roomLocation = new KeyValuePair<int, int>(2, 5);
             link = new Link(new Vector2(235, 246));
-            room = Content.Load<Level>("Room10");
+            room = Content.Load<Level>("Room13");
             roomData = new Room(room, this);
 
             inventoryDisplay = new InventoryDisplay(this, link.inventory);

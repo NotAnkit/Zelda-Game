@@ -17,6 +17,7 @@ namespace Zelda_Game
         private int health;
         private Trap trap;
         private bool trapFinished = false;
+        private Color spriteColor;
 
         public Rectangle EnemyRectangle()
         {
@@ -30,12 +31,13 @@ namespace Zelda_Game
             currentFrame = 0;
             totalFrames = 30;
             spriteSpeed = 1f;
-            windowHeight = game._graphics.PreferredBackBufferHeight - 195;
-            windowWidth = game._graphics.PreferredBackBufferWidth - 97;
+            windowHeight = game.WindowSizeHeight - 195;
+            windowWidth = game.WindowSizeWidth - 97;
             position = location;
             health = 5;
             trap = new Trap(game, location);
             direction = "right";
+            spriteColor = Color.White;
         }
 
         private int movementCounter = 0;
@@ -128,8 +130,9 @@ namespace Zelda_Game
                     s = SpriteEffects.FlipHorizontally;
             }
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White, 0, Vector2.Zero, s, 0);
-            if(!trapFinished)
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor, 0, Vector2.Zero, s, 0);
+            spriteColor = Color.White;
+            if (!trapFinished)
                 trapFinished = trap.Draw(spriteBatch);
         }
 
@@ -140,6 +143,7 @@ namespace Zelda_Game
 
         public void DecreaseHealth()
         {
+            spriteColor = Color.Red;
             health--;
         }
 

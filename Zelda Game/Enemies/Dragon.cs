@@ -17,6 +17,7 @@ namespace Zelda_Game
         private Fireballs fireballs;
         private string direction;
         private int health;
+        private Color spriteColor;
 
         public Rectangle EnemyRectangle()
         {
@@ -31,11 +32,12 @@ namespace Zelda_Game
             totalFrames = 60;
             spriteSpeed = 1f;
             health = 10;
-            windowHeight = game._graphics.PreferredBackBufferHeight - 195;
-            windowWidth = game._graphics.PreferredBackBufferWidth - 81;
+            windowHeight = game.WindowSizeHeight - 195;
+            windowWidth = game.WindowSizeWidth - 81;
             position = location;
             fireballs = new Fireballs(game, new Vector2(position.X, position.Y));
             direction = "right";
+            spriteColor = Color.White;
         }
 
         private int movementCounter = 0;
@@ -86,7 +88,8 @@ namespace Zelda_Game
             else
                 sourceRectangle = new Rectangle(76, 11, 24, 32);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor);
+            spriteColor = Color.White;
             fireballs.Draw(spriteBatch);
         }
 
@@ -97,6 +100,7 @@ namespace Zelda_Game
 
         public void DecreaseHealth()
         {
+            spriteColor = Color.Red;
             health--;
         }
 
