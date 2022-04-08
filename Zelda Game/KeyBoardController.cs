@@ -27,27 +27,27 @@ namespace Zelda_Game
                 game2.Run();
                 game.Exit();
             }
-            else if (userInput.IsKeyDown(Keys.W) || userInput.IsKeyDown(Keys.Up))
+            else if (userInput.IsKeyDown(Keys.Up))
             {
                 game.link.direction = "up";
 
             }
-            else if (userInput.IsKeyDown(Keys.A) || userInput.IsKeyDown(Keys.Left))
+            else if (userInput.IsKeyDown(Keys.Left))
             {
                 game.link.direction = "left";
 
             }
-            else if (userInput.IsKeyDown(Keys.S) || userInput.IsKeyDown(Keys.Down))
+            else if (userInput.IsKeyDown(Keys.Down))
             {
                 game.link.direction = "down";
 
             }
-            else if (userInput.IsKeyDown(Keys.D) || userInput.IsKeyDown(Keys.Right))
+            else if (userInput.IsKeyDown(Keys.Right))
             {
                 game.link.direction = "right";
 
             }
-            else if (userInput.IsKeyDown(Keys.Z) || userInput.IsKeyDown(Keys.N))
+            /*else if (userInput.IsKeyDown(Keys.Z) || userInput.IsKeyDown(Keys.N))
             {
 
                 game.link.UseSword();
@@ -77,11 +77,9 @@ namespace Zelda_Game
             }
             else if (userInput.IsKeyDown(Keys.D4) && !previousState.IsKeyDown(Keys.D4))
             {
-
                 game.link.UseItem("fire");
-
-
             }
+
             else if (userInput.IsKeyDown(Keys.D5) && !previousState.IsKeyDown(Keys.D5))
             {
                 game.link.UseItem("green-boomerang");
@@ -89,11 +87,20 @@ namespace Zelda_Game
             else if (userInput.IsKeyDown(Keys.D6) && !previousState.IsKeyDown(Keys.D6))
             {
                 game.link.UseItem("blue-boomerang");
-            }
+            }*/
             else if (userInput.IsKeyDown(Keys.P) && !previousState.IsKeyDown(Keys.P))
             {
+                game.tansitionState = !game.pause;
                 game.pause = !game.pause;
                 
+            }
+            else if (userInput.IsKeyDown(Keys.B) && !previousState.IsKeyDown(Keys.B))
+            {
+                game.link.UseItem(game.inventoryDisplay.ItemBSlot);
+            }
+            else if (userInput.IsKeyDown(Keys.A) && !previousState.IsKeyDown(Keys.A))
+            {
+                game.link.UseItem(game.inventoryDisplay.ItemASlot);
             }
             else if (userInput.IsKeyUp(Keys.W) || userInput.IsKeyUp(Keys.A) || userInput.IsKeyUp(Keys.S) || userInput.IsKeyUp(Keys.D))
             {

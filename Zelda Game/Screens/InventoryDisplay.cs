@@ -15,6 +15,18 @@ namespace Zelda_Game
         private int keys;
         private int bombs;
         private int lives;
+        private string itemA;
+        private string itemB;
+        public string ItemASlot
+        {
+            get { return itemA; }
+            set { itemA = value; }
+        }
+        public string ItemBSlot
+        {
+            get { return itemB; }
+            set { itemB = value; }
+        }
 
         public InventoryDisplay(Game1 game, LinkInventory inventory)
         {
@@ -23,6 +35,8 @@ namespace Zelda_Game
             windowHeight = game._graphics.PreferredBackBufferHeight-100;
             windowWidth = game._graphics.PreferredBackBufferWidth;
             this.inventory = inventory;
+            itemA = "sword";
+            itemB = "green-boomerang";
         }
 
         public void Update(Link player)

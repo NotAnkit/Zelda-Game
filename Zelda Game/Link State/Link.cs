@@ -32,7 +32,7 @@ namespace Zelda_Game
             position = location;
             itemPosition = location;
             useItem = false;
-            currentState = new RightIdleLinkState(this);
+            currentState = new UpIdleLinkState(this);
             items = new Dictionary<IProjectile, Vector2>();
             items2 = new Dictionary<IProjectile, Vector2>();
             removeItems = new List<IProjectile>();
@@ -79,12 +79,18 @@ namespace Zelda_Game
 
         public void UseItem(string itemName)
         {
-            itemPosition = position;
-            itemPositionStart = position;
-            item = currentState.UseItem(itemName);
-            items.Add(item, itemPosition);
-            items2.Add(item, itemPositionStart);
-
+            if(itemName.Equals("sword"))
+            {
+                UseSword();
+            }
+            else
+            {
+                itemPosition = position;
+                itemPositionStart = position;
+                item = currentState.UseItem(itemName);
+                items.Add(item, itemPosition);
+                items2.Add(item, itemPositionStart);
+            }
         }
 
         public void UseSword()

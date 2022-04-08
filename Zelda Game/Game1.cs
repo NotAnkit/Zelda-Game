@@ -18,7 +18,7 @@ namespace Zelda_Game
         public Room roomData;
         public GraphicsDeviceManager _graphics;
         public Dictionary<KeyValuePair<int, int>, Room> roomList;
-        private InventoryDisplay inventoryDisplay;
+        public InventoryDisplay inventoryDisplay;
         public Song song;
         public int windowWidth;
         public int windowHeight;
@@ -59,7 +59,7 @@ namespace Zelda_Game
             collision = new Collision(this);
             roomLocation = new KeyValuePair<int, int>(2, 5);
             link = new Link(new Vector2(235, 246));
-            room = Content.Load<Level>("Room1");
+            room = Content.Load<Level>("Room10");
             roomData = new Room(room, this);
 
             inventoryDisplay = new InventoryDisplay(this, link.inventory);
@@ -102,6 +102,7 @@ namespace Zelda_Game
                 inventoryDisplay.Update(link);
                 itemSelectionState.Update();
                 
+
             }
             base.Update(gameTime);
         }
@@ -129,6 +130,7 @@ namespace Zelda_Game
                 }
                 inventoryDisplay.Draw(_spriteBatch);
                 itemSelectionState.Draw(_spriteBatch, link);
+                
             }
 
             base.Draw(gameTime);
