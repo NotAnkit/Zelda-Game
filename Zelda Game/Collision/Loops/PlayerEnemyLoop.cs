@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public static class PlayerEnemyLoop
     {
-        public static void EnemyLoop(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnvironment> blocks)
+        public static void EnemyLoop(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnvironment> blocks, List<IDoor> doors, Game1 game)
         {
             List<Vector2> deleteEnemy = new List<Vector2>();
             string direction;
@@ -57,6 +57,33 @@ namespace Zelda_Game
             foreach (Vector2 enemy in deleteEnemy)
             {
                 enemies.Remove(enemy);
+            }
+
+            if (enemies.Count == 0)
+            {
+                foreach (IDoor door in doors.ToArray())
+                {
+                    if (door is LeftSealed)
+                    {
+                        doors.Insert(1, new LeftDoor(game));
+                        doors.RemoveAt(2);
+                    }
+                    if (door is RightSealed)
+                    {
+                        doors.Insert(2, new RightDoor(game));
+                        doors.RemoveAt(3);
+                    }
+                    if (door is TopSealed)
+                    {
+                        doors.Insert(0, new TopDoor(game));
+                        doors.RemoveAt(1);
+                    }
+                    if (door is BottomSealed)
+                    {
+                        doors.Insert(3, new BottomDoor(game));
+                        doors.RemoveAt(4);
+                    }
+                }
             }
         }
     }

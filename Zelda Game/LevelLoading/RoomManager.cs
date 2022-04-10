@@ -35,7 +35,6 @@ namespace Zelda_Game
             collision = new Collision(this, game1.link, game1);
             roomLocation = new KeyValuePair<int, int>(2, 5);
             border = new BorderBlock(game1);
-            roomLocation = new KeyValuePair<int, int>(2, 5);
             fader = new ScreenFade(game1);
             tansitionState = false;
             tansitionStateFinished = false;

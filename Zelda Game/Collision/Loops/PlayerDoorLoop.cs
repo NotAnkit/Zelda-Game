@@ -45,7 +45,6 @@ namespace Zelda_Game
                             roomdata.doorList.Insert(2, new RightDoor(game1));
                             roomdata.doorList.RemoveAt(3);
                     }
-
                 }
                 else if (direction == "left-right")
                 {
