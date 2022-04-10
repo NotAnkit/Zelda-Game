@@ -83,6 +83,9 @@ namespace Zelda_Game
             {
                 UseSword();
             }
+            else if(itemName.Equals("bomb") && !(inventory.NumBombs() > 0))
+            {
+            }
             else
             {
                 itemPosition = position;

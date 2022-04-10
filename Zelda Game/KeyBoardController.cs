@@ -61,6 +61,10 @@ namespace Zelda_Game
             {
                 game.link.UseItem(game.inventoryDisplay.ItemASlot);
             }
+            else if (userInput.IsKeyDown(Keys.E) && !previousState.IsKeyDown(Keys.E))
+            {
+                game.link.UseItem("bomb");
+            }
             else if (userInput.IsKeyUp(Keys.W) || userInput.IsKeyUp(Keys.A) || userInput.IsKeyUp(Keys.S) || userInput.IsKeyUp(Keys.D))
             {
                 game.link.direction = "idle";
