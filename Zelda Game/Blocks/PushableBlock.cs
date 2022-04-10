@@ -8,8 +8,9 @@ namespace Zelda_Game
         private Texture2D Texture;
         public Vector2 position;
 
-        public PushableBlock(Texture2D texture)
+        public PushableBlock(Texture2D texture, Vector2 position)
         {
+            this.position = position;
             Texture = texture;
         }
 
@@ -19,14 +20,14 @@ namespace Zelda_Game
         }
 
         public void Update()
-        {      
+        {
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(1001, 11, 16, 16);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 32, 32);
-            position = location;
+            Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 

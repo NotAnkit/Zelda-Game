@@ -40,7 +40,7 @@ namespace Zelda_Game
 
                 else if (block.Value.Equals("NBB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.NavyBlueBlock());
 
-                else if (block.Value.Equals("PB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.PushableBlock());
+                else if (block.Value.Equals("PB")) blockList.Add(block.Key, BlockSpriteFactory.Instance.PushableBlock(block.Key));
 
                 else if (block.Value.Equals("S")) blockList.Add(block.Key, BlockSpriteFactory.Instance.Stairs());
 

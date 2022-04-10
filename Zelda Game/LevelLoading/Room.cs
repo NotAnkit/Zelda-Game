@@ -60,6 +60,7 @@ namespace Zelda_Game
             {
                 item.Value.Update();
             }
+            
         }
     }
 }

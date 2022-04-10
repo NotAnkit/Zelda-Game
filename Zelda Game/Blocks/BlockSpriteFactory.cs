@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
@@ -30,7 +31,7 @@ namespace Zelda_Game
 
         public IEnvironment BigBlackBlock() => new BigBlackBlock(blockSpritesheet);
 
-        public IEnvironment PushableBlock() => new PushableBlock(blockSpritesheet);
+        public IEnvironment PushableBlock(Vector2 position) => new PushableBlock(blockSpritesheet, position);
 
         public IEnvironment BlueSand() => new BlueSand(blockSpritesheet);
 

@@ -7,11 +7,22 @@ namespace Zelda_Game
         {
             if (blockType is PushableBlock)
             {
-                //PushableBlock block = blockType as PushableBlock;
-                //block.position.Y -= 2;
-            }
+                for (int i = 0; i < collisonDirection.Count; i++)
+                {
+                    if (collisonDirection[i].Equals("top-bottom")) ((PushableBlock)blockType).position.Y -= 2;
 
-            if (!(blockType is BlueSand))
+                    else if (collisonDirection[i].Equals("bottom-top")) ((PushableBlock)blockType).position.Y += 2;
+
+                    else if (collisonDirection[i].Equals("right-left")) ((PushableBlock)blockType).position.X -= 2;
+
+                    else if (collisonDirection[i].Equals("left-right")) ((PushableBlock)blockType).position.X += 2;
+                }
+            }
+            else if(blockType is BlueSand)
+            {
+
+            }
+            else
             {
                 for (int i = 0; i < collisonDirection.Count; i++)
                 {
