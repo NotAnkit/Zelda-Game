@@ -6,7 +6,7 @@ namespace Zelda_Game
 {
     public static class PlayerProjectileLoop
     {
-        public static List<IDoor> ProjectileLoop(Link player, List<IDoor> roomDoors, KeyValuePair<int, int> roomLocation, Game1 game1)
+        public static List<IDoor> ProjectileLoop(Link player, List<IDoor> roomDoors, KeyValuePair<int, int> roomLocation, Game1 game1, RoomManager manager)
         {
             string direction;
             List<IDoor> doorList = roomDoors;
@@ -23,7 +23,7 @@ namespace Zelda_Game
                         {
                             doorList.Insert(0, new TopCave(game1));
                             doorList.RemoveAt(1);
-                            Room nextRoomdata = game1.roomList[new KeyValuePair<int, int>(roomLocation.Key, roomLocation.Value - 1)];
+                            Room nextRoomdata = manager.roomList[new KeyValuePair<int, int>(roomLocation.Key, roomLocation.Value - 1)];
                             nextRoomdata.doorList.Insert(3, new BottomCave(game1));
                             nextRoomdata.doorList.RemoveAt(4);
                         }   
@@ -36,7 +36,7 @@ namespace Zelda_Game
                           {   
                               doorList.Insert(3, new BottomCave(game1));
                               doorList.RemoveAt(4);
-                              Room nextRoomdata = game1.roomList[new KeyValuePair<int, int>(roomLocation.Key, roomLocation.Value + 1)];
+                              Room nextRoomdata = manager.roomList[new KeyValuePair<int, int>(roomLocation.Key, roomLocation.Value + 1)];
                               nextRoomdata.doorList.Insert(0, new TopCave(game1));
                               nextRoomdata.doorList.RemoveAt(1);
                           }

@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public class TransitionScreen
     {
-        Texture2D rectangle;
+        private Texture2D rectangle;
         private float opacity;
 
         public TransitionScreen(Game1 game1)

@@ -9,7 +9,6 @@ namespace Zelda_Game
     {
         private SpriteBatch _spriteBatch;
         private List<IController> controllerList;
-        private Collision collision;
         private Song song;
         private ItemSelectionState itemSelectionState;
         private GraphicsDeviceManager _graphics;
@@ -30,24 +29,10 @@ namespace Zelda_Game
 
 
         public Link link;
-
-        private IEnvironment border;
-        private Level room;
-
-
-        public KeyValuePair<int, int> roomLocation;
-        public Room roomData;
-        public Dictionary<KeyValuePair<int, int>, Room> roomList;
-
-        /*pass in invetory display items*/
         public InventoryDisplay inventoryDisplay;
+        public RoomManager manager;
 
 
-        /* Need to stay will manage room from here*/
-        public RoomManager switcher;
-
-        public bool tansitionState;
-        public bool tansitionStateFinished;
         public bool pause;
 
         public Game1()
@@ -72,25 +57,16 @@ namespace Zelda_Game
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
-            controllerList.Add(new RoomController(this));
-            controllerList.Add(new KeyBoardController(this));
-            border = new BorderBlock(this);
-            collision = new Collision(this);
-            roomLocation = new KeyValuePair<int, int>(2, 5);
             link = new Link(new Vector2(235, 246));
-            room = Content.Load<Level>("Room13");
-            roomData = new Room(room, this);
-
+            manager = new RoomManager(this);
+            manager.LoadRooms(this);
+            controllerList.Add(new KeyBoardController(this));
             inventoryDisplay = new InventoryDisplay(this, link.inventory);
             song = Content.Load<Song>("04 - Dungeon");
-            MediaPlayer.Play(song);
-            MediaPlayer.IsRepeating = true;
+            //MediaPlayer.Play(song);
+            //MediaPlayer.IsRepeating = true;
             itemSelectionState = new ItemSelectionState(this);
-            
 
-            switcher = new RoomManager(this);
-            tansitionState = false;
-            tansitionStateFinished = false;
             pause = false;
 
         }
@@ -104,23 +80,21 @@ namespace Zelda_Game
             if (!pause)
             {
                 link.Update();
-                collision.Collide(roomData);
-                roomData.Update();
+                manager.Update();
                 inventoryDisplay.Update(link);
-                if (tansitionState)
+                if (manager.TransitionState)
                 {
-                    switcher.Update();
+                    manager.TransitionUpdate();
                 }
             }
             else
             {
-                if (tansitionState)
+                if (manager.TransitionState && !manager.TransitionStateFinished)
                 {
-                    switcher.Update();
+                    manager.TransitionUpdate();
                 }
-                inventoryDisplay.Update(link);
                 itemSelectionState.Update();
-                
+                inventoryDisplay.Update(link);
 
             }
             base.Update(gameTime);
@@ -132,24 +106,28 @@ namespace Zelda_Game
             GraphicsDevice.Clear(Color.Black);
             if(!pause)
             {
-                border.Draw(_spriteBatch, new Vector2(0, 0));
-                roomData.Draw(_spriteBatch);
+                manager.Draw(_spriteBatch);
                 link.Draw(_spriteBatch);
                 inventoryDisplay.Draw(_spriteBatch);
-                if (tansitionState)
+                if (manager.TransitionState)
                 {
-                    switcher.Draw(_spriteBatch);
+                    manager.TransitionDraw(_spriteBatch);
                 }
             }
             else
             {
-                if (tansitionState)
+                manager.Draw(_spriteBatch);
+           
+                if (manager.TransitionState)
                 {
-                    switcher.Draw(_spriteBatch);
+                    manager.TransitionDraw(_spriteBatch);
+
+                }
+                if (manager.TransitionStateFinished)
+                {
+                    itemSelectionState.Draw(_spriteBatch, link);
                 }
                 inventoryDisplay.Draw(_spriteBatch);
-                itemSelectionState.Draw(_spriteBatch, link);
-                
             }
 
             base.Draw(gameTime);

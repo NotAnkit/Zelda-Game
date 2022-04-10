@@ -2,25 +2,29 @@
 {
     public class Collision
     {
-        private Game1 Game;
+        private RoomManager manager;
+        private Link player;
+        private Game1 game;
 
-        public Collision(Game1 game)
+        public Collision(RoomManager manager, Link player, Game1 game1)
         {
-            Game = game;
+            this.manager = manager;
+            this.player = player;
+            game = game1;
         }
 
         public void Collide(Room room)
         {
             
-            //PlayerEnemyLoop.EnemyLoop(room.enemyList, Game.link, room.blockList);
+            PlayerEnemyLoop.EnemyLoop(room.enemyList, player, room.blockList);
 
-            PlayerBlockLoop.BlockLoop(room.blockList, Game.link);
+            PlayerBlockLoop.BlockLoop(room.blockList, player);
 
-            room.itemList = ItemResponseLoop.ItemLoop(room.itemList, Game.link);
+            room.itemList = ItemResponseLoop.ItemLoop(room.itemList, player);
 
-            room.doorList = PlayerProjectileLoop.ProjectileLoop(Game.link, room.doorList, Game.roomLocation, Game);
+            room.doorList = PlayerProjectileLoop.ProjectileLoop(player, room.doorList, manager.roomLocation, game, manager);
 
-            room.doorList = PlayerDoorLoop.PlayerLoop(room, Game);
+            room.doorList = PlayerDoorLoop.PlayerLoop(room, game, manager);
 
         }
     }
