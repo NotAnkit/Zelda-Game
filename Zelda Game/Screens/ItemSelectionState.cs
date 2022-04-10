@@ -12,7 +12,7 @@ namespace Zelda_Game
 
         public ItemSelectionState(Game1 game)
         {
-            Texture = game.Content.Load<Texture2D÷>("Inventory");
+            Texture = game.Content.Load<Texture2D>("Inventory");
             //Font = game.Content.Load<SpriteFont>("SpriteFont");
             mapPauseScreen = new MapPauseScreen(game);
         }
