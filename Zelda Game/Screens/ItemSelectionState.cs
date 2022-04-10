@@ -12,7 +12,7 @@ namespace Zelda_Game
 
         public ItemSelectionState(Game1 game)
         {
-            Texture = game.Content.Load<Texture2D>("Inventory");
+            Texture = game.Content.Load<Texture2D÷>("Inventory");
             //Font = game.Content.Load<SpriteFont>("SpriteFont");
             mapPauseScreen = new MapPauseScreen(game);
         }
@@ -47,8 +47,6 @@ namespace Zelda_Game
                 Rectangle destinationCompass = new Rectangle(70, 283, 45, 48); // For Compass Item
                 spriteBatch.Draw(Texture, destinationCompass, CompassRectangle, Color.White);
             }
-
-            
 
         }
     }

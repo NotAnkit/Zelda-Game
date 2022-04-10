@@ -12,6 +12,8 @@ namespace Zelda_Game
         private int bombs;
         private bool maps;
         private bool compass;
+        private bool bomb;
+        private bool boomerang;
         public List<IItem> items;
         public LinkInventory()
         {
@@ -19,6 +21,8 @@ namespace Zelda_Game
             numKeys = 20;
             maps = false;
             compass = false;
+            bomb = false; //Created another bomb for weaponselection
+            boomerang = false;
             rupees = 24;
             items = new List<IItem>();
         }
@@ -124,6 +128,26 @@ namespace Zelda_Game
         public bool CompassState()
         {
             return compass;
+        }
+
+        public void CollectBomb() //Added for WeaponSelection file
+        {
+            bomb = true;
+        }
+
+        public bool BombState()
+        {
+            return bomb;
+        }
+
+        public void CollectBoomerang()
+        {
+            boomerang = true;
+        }
+
+        public bool BoomerangState()
+        {
+            return boomerang;
         }
     }
 }
