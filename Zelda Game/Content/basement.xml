@@ -8,103 +8,143 @@
         <Item>BottomWall</Item>
     </Doors>
      <Blocks>
-      <Item>
-        <Key>91 93</Key>
-        <Value>S1</Value>
+         <Item>
+            <Key>32 224</Key>
+            <Value>SB</Value>
+         </Item>
+         <Item>
+            <Key>64 0</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>64 32</Key>
+            <Value>SB</Value>
+        </Item>
+         <Item>
+            <Key>64 64</Key>
+         <Value>SB</Value>
+        </Item>
+         <Item>
+            <Key>64 96</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>64 128</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>64 160</Key>
+            <Value>SB</Value>
+         </Item>
+        <Item>
+            <Key>64 192</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>128 0</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>128 32</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>128 64</Key>
+            <Value>SB</Value>
+         </Item>
+        <Item>
+            <Key>128 96</Key>
+            <Value>SB</Value>
+         </Item>
+        <Item>
+            <Key>128 128</Key>
+            <Value>SB</Value>
+        </Item>
+         <Item>
+            <Key>128 160</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>128 192</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>64 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>96 256</Key>
+            <Value>SB</Value>
+        </Item>
+         <Item>
+             <Key>128 256</Key>
+            <Value>SB</Value>
+         </Item>
+        <Item>
+            <Key>160 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>192 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>224 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>256 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>288 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>320 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>352 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>384 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>416 256</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>192 192</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>224 192</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>256 192</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>228 192</Key>
+            <Value>SB</Value>
+        </Item>
+        <Item>
+            <Key>320 192</Key>
+            <Value>SB</Value>
+        </Item>
+         <Item>
+        <Key>384 192</Key>
+        <Value>SB</Value>
       </Item>
       <Item>
-        <Key>91 157</Key>
-        <Value>S1</Value>
+        <Key>416 192</Key>
+        <Value>SB</Value>
       </Item>
-      <Item>
-        <Key>91 221</Key>
-        <Value>S1</Value>
-      </Item>
-      <Item>
-        <Key>187 93</Key>
-        <Value>S1</Value>
-      </Item>
-      <Item>
-        <Key>187 157</Key>
-        <Value>S1</Value>
-      </Item>
-      <Item>
-        <Key>187 221</Key>
-        <Value>S1</Value>
-      </Item>
-      <Item>
-        <Key>283 93</Key>
-        <Value>S2</Value>
-      </Item>
-      <Item>
-        <Key>283 157</Key>
-        <Value>S2</Value>
-      </Item>
-      <Item>
-        <Key>283 221</Key>
-        <Value>S2</Value>
-      </Item>
-      <Item>
-        <Key>379 93</Key>
-        <Value>S2</Value>
-      </Item>
-      <Item>
-        <Key>379 157</Key>
-        <Value>S2</Value>
-      </Item>
-      <Item>
-        <Key>379 221</Key>
-        <Value>S2</Value>
-      </Item>
-      <Item>
-        <Key>219 189</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>251 189</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>155 221</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>219 221</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>251 221</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>315 221</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>155 253</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>187 253</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>219 253</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>251 253</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>283 253</Key>
-        <Value>BS</Value>
-      </Item>
-      <Item>
-        <Key>315 253</Key>
-        <Value>BS</Value>
-      </Item>
-    </Blocks>
+     </Blocks>
     <Enemies>
     </Enemies>
     <Items>
