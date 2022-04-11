@@ -53,6 +53,8 @@
     <None Remove="Sprint3Docs\CodeReviews\" />
     <None Remove="Screens\" />
     <None Remove="Content\boomerang.wav" />
+    <None Remove="Sprint4Docs\" />
+    <None Remove="Sprint4Docs\CodeReviews\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -109,6 +111,8 @@
     <Folder Include="Collision\Loops\" />
     <Folder Include="Sprint3Docs\CodeReviews\" />
     <Folder Include="Screens\" />
+    <Folder Include="Sprint4Docs\" />
+    <Folder Include="Sprint4Docs\CodeReviews\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />

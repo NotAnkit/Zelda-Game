@@ -1,0 +1,27 @@
+﻿Author of code review: Kiren Manoharan
+
+Date of the code review: 04/11/2022
+
+Sprint number: 4
+
+Name of the .cs file being reviewed: PlayerDoorLoop
+
+Author of the .cs file being reviewed: Ankit Kumar
+
+Number of minutes: 18 minutes
+
+Comments on Code Quality:
+The quality of this code was very neat and organized.
+The code is simple for the purpose of detecting collision between the player and doors.
+Passing strings as detection to indicate the direction of the collision
+was very helpful for implementing collision response and then keeping track of links
+keys and how many he has at all times.
+Using the room manager to manage rooms was coded efficiently.
+Overall, the file has very high standards in code quality and simplicity.
+
+Hypothetical change:
+A hypothetical change that could be made is to not pass in strings as to
+which direction the collision is coming from. This would not be optimal, because this
+would result in more complicated code in order to figure which direction the collision
+is coming from. Passing in strings for detection makes it easy to know which door the
+player in entering and coming out of. The rooms are setup very efficiently.
