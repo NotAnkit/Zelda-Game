@@ -3,7 +3,7 @@ namespace Zelda_Game
 {
     public class PlayerEnemyProjectileResponse
     {
-        public static void PlayerEnemyProjectile(Link player, string direction, IEnemyProjectile projectile)
+        public static void PlayerEnemyProjectile(Link player, string direction)
         {
             if(direction != "none")
             {

@@ -19,7 +19,17 @@ namespace Zelda_Game
         private Vector2 position2;
         private Vector2 position3;
 
-        public Rectangle EnemyRectangle => new Rectangle((int)position1.X, (int)position1.Y, 32, 32);
+        public Rectangle EnemyRectangle(int number)
+        {
+            if (number == 1)
+                return new Rectangle((int)position1.X, (int)position1.Y, 32, 32);
+            else if (number == 2)
+                return new Rectangle((int)position2.X, (int)position2.Y, 32, 32);
+            else if (number == 3)
+                return new Rectangle((int)position3.X, (int)position3.Y, 32, 32);
+            else
+                return new Rectangle(0, 0, 0, 0);
+        }
 
         public Fireballs(Game1 game, Vector2 startPosition)
         {

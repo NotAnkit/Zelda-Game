@@ -15,7 +15,13 @@ namespace Zelda_Game
         private Vector2 startPosition;
         private bool flip = false;
 
-        public Rectangle EnemyRectangle => new Rectangle((int)position.X, (int)position.Y, 32, 32);
+        public Rectangle EnemyRectangle(int number)
+        {
+            if (number == 1)
+                return new Rectangle((int)position.X, (int)position.Y, 32, 32);
+            else
+                return new Rectangle(0, 0, 0, 0);
+        }
 
         public Trap(Game1 game, Vector2 location)
         {
