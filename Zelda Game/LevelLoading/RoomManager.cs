@@ -11,7 +11,7 @@ namespace Zelda_Game
         private readonly Collision collision;
         public Room roomData;
         public Dictionary<KeyValuePair<int, int>, Room> roomList;
-        private readonly IEnvironment border;
+        private IEnvironment border;
         private Level room;
         private readonly ScreenFade fader;
         private bool tansitionState;
@@ -61,7 +61,7 @@ namespace Zelda_Game
             roomList.Add(new KeyValuePair<int, int>(3, 2), new Room(Game.Content.Load<Level>("Room3"), Game));
             roomList.Add(new KeyValuePair<int, int>(2, 2), new Room(Game.Content.Load<Level>("Room2"), Game));
             roomList.Add(new KeyValuePair<int, int>(1, 2), new Room(Game.Content.Load<Level>("Room1"), Game));
-            roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("basement"), Game));
+            roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("underground"), Game));
 
             room = game1.Content.Load<Level>("room10");
             roomData = new Room(room, game1);
@@ -76,8 +76,18 @@ namespace Zelda_Game
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            border.Draw(spriteBatch, new Vector2(0, 0));
-            roomData.Draw(spriteBatch);
+            if (roomLocation.Key == 1 && roomLocation.Value == 1)
+            {
+                roomData.Draw(spriteBatch);
+                border = new BasementBlock(game1);
+                border.Draw(spriteBatch, new Vector2(0, 0));
+            }
+            else
+            {
+                border = new BorderBlock(game1);
+                border.Draw(spriteBatch, new Vector2(0, 0));
+                roomData.Draw(spriteBatch);
+            }
         }
 
         public void Update()
