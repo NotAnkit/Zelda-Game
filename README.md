@@ -8,16 +8,9 @@ This Repository is for Team Alpha Won in CSE 3902 recreating the first dungen fr
 
 Controls | Function
 | :--- | :---:
-WASD or Arrow Keys  | to move Link around the screen.
-Mouse Left | Move to left room
-Mouse Right | Move to right room
-  Z or N | to for Link to use the sword. 
-  1 | to use Bomb Item
-  2 | to use Blue Arrow
-  3 | to use Green Arrow
-  4 | to use Fire 
-  5 | to use Green Boomerang
-  6 | to use Blue Boomerang 
+Arrow Keys  | to move Link around the screen.
+  A | to for Link to use the sword. 
+  B | to use Items
   Q | to quit
   R | to Reset
   
@@ -26,9 +19,9 @@ Mouse Right | Move to right room
 
 #### Code Metrics
 
-   - Week 1: 127 Stylistic Recomendations
-   - Week 2: 218 Stylistic Recomendations
-   - Week 3: 151 Stylistic Recomendations
+   - Week 1: 251 Stylistic Recomendations
+   - Week 2: 53 Stylistic Recomendations
+   - Week 3: 22 Stylistic Recomendations
    
   IDE0045: Convert to conditional expression
   dotnet_style_prefer_conditional_expression_over_assignment = false
