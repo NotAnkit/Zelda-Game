@@ -1,12 +1,12 @@
 ﻿namespace Zelda_Game
 {
-    public class Collision
+    public class Collisions
     {
         private readonly RoomManager manager;
         private readonly Link player;
         private readonly Game1 game;
 
-        public Collision(RoomManager manager, Link player, Game1 game1)
+        public Collisions(RoomManager manager, Link player, Game1 game1)
         {
             this.manager = manager;
             this.player = player;
@@ -15,7 +15,7 @@
 
         public void Collide(Room room)
         {
-            
+
             PlayerEnemyLoop.EnemyLoop(room.enemyList, player, room.blockList, room.doorList, game);
 
             PlayerBlockLoop.BlockLoop(room.blockList, player);

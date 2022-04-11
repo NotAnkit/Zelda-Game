@@ -8,7 +8,7 @@ namespace Zelda_Game
     {
         private readonly Game1 game1;
         public KeyValuePair<int, int> roomLocation;
-        private readonly Collision collision;
+        private readonly Collisions collision;
         public Room roomData;
         public Dictionary<KeyValuePair<int, int>, Room> roomList;
         private IEnvironment border;
@@ -32,7 +32,7 @@ namespace Zelda_Game
         public RoomManager(Game1 game1)
         {
             this.game1 = game1;
-            collision = new Collision(this, game1.link, game1);
+            collision = new Collisions(this, game1.link, game1);
             roomLocation = new KeyValuePair<int, int>(2, 5);
             border = new BorderBlock(game1);
             fader = new ScreenFade(game1);
@@ -61,7 +61,7 @@ namespace Zelda_Game
             roomList.Add(new KeyValuePair<int, int>(3, 2), new Room(Game.Content.Load<Level>("Room3"), Game));
             roomList.Add(new KeyValuePair<int, int>(2, 2), new Room(Game.Content.Load<Level>("Room2"), Game));
             roomList.Add(new KeyValuePair<int, int>(1, 2), new Room(Game.Content.Load<Level>("Room1"), Game));
-            roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("underground"), Game));
+            roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("basement"), Game));
 
             room = game1.Content.Load<Level>("room10");
             roomData = new Room(room, game1);

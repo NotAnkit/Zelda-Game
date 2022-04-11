@@ -114,6 +114,10 @@ namespace Zelda_Game
             return direction;
         }
 
+        public void DropItem(Vector2 location)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
