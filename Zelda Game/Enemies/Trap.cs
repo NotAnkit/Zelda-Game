@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
-    public class Trap
+    public class Trap : IEnemyProjectile
     {
         private readonly Texture2D Texture;
         private int currentFrame;

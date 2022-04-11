@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
-    public class Fireballs
+    public class Fireballs : IEnemyProjectile
     {
         public readonly Texture2D Texture;
         private int currentFrame;
@@ -96,7 +96,7 @@ namespace Zelda_Game
             }
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public bool Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle1 = new Rectangle((int)position1.X, (int)position1.Y, 16, 32);
@@ -115,6 +115,8 @@ namespace Zelda_Game
             spriteBatch.Draw(Texture, destinationRectangle1, sourceRectangle, Color.White);
             spriteBatch.Draw(Texture, destinationRectangle2, sourceRectangle, Color.White);
             spriteBatch.Draw(Texture, destinationRectangle3, sourceRectangle, Color.White);
+
+            return true;
         }
     }
 }
