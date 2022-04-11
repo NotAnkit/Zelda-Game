@@ -6,7 +6,7 @@ namespace Zelda_Game
 {
     public class BorderBlock : IEnvironment
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private readonly Floor floor;
 
         public BorderBlock(Game1 game)

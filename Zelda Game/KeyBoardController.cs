@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework.Input;
 
 namespace Zelda_Game
 {
@@ -7,7 +6,8 @@ namespace Zelda_Game
     {
         private KeyboardState userInput;
         private KeyboardState previousState;
-        private Game1 game;
+        private readonly Game1 game;
+
         public KeyBoardController(Game1 _game)
         {
             game = _game;

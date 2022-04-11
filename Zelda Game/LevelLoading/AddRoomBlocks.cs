@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
     public class AddRoomBlocks
     {
-        private static AddRoomBlocks instance = new AddRoomBlocks();
+        private static readonly AddRoomBlocks instance = new AddRoomBlocks();
 
-        public static AddRoomBlocks Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static AddRoomBlocks Instance => instance;
+
         private AddRoomBlocks()
         {
 
         }
 
-        public Dictionary<Vector2, IEnvironment> LoadBlocks(Dictionary<Vector2, String> roomBlocks)
+        public Dictionary<Vector2, IEnvironment> LoadBlocks(Dictionary<Vector2, string> roomBlocks)
         {
             Dictionary<Vector2, IEnvironment> blockList = new Dictionary<Vector2, IEnvironment>();
 

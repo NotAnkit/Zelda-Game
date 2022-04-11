@@ -19,10 +19,7 @@ namespace Zelda_Game
         private Vector2 position2;
         private Vector2 position3;
 
-        public Rectangle EnemyRectangle
-        {
-            get { return new Rectangle((int)position1.X, (int)position1.Y, 32, 32); }
-        }
+        public Rectangle EnemyRectangle => new Rectangle((int)position1.X, (int)position1.Y, 32, 32);
 
         public Fireballs(Game1 game, Vector2 startPosition)
         {
@@ -57,7 +54,7 @@ namespace Zelda_Game
 
             if (position1.X < 59)
             {
-                spriteSpeed1X = spriteSpeed1X*-1;
+                spriteSpeed1X *= -1;
             }
             else if (position1.X > windowWidth - 97)
             {
@@ -69,12 +66,12 @@ namespace Zelda_Game
             }
             else if (position1.Y < 61)
             {
-                spriteSpeed1Y = spriteSpeed1Y * -1;
+                spriteSpeed1Y *= -1;
             }
 
             if (position2.X < 59)
             {
-                spriteSpeed2X = spriteSpeed2X * -1;
+                spriteSpeed2X *= -1;
             }
             else if (position2.X > windowWidth - 97)
             {
@@ -83,7 +80,7 @@ namespace Zelda_Game
 
             if (position3.X < 59)
             {
-                spriteSpeed3X = spriteSpeed3X * (-1);
+                spriteSpeed3X *= -1;
             }
             else if (position3.X > windowWidth - 97)
             {
@@ -95,7 +92,7 @@ namespace Zelda_Game
             }
             else if (position3.Y < 61)
             {
-                spriteSpeed3Y = spriteSpeed3Y * -1;
+                spriteSpeed3Y *= -1;
             }
         }
 

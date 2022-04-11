@@ -5,9 +5,9 @@ namespace Zelda_Game
 {
     public class RupeeItem : IItem
     {
-        public Texture2D Texture;
+        private readonly Texture2D Texture;
         private int currentFrame;
-        private int totalFrames;
+        private readonly int totalFrames;
         private Vector2 position;
 
         public RupeeItem(Texture2D texture)

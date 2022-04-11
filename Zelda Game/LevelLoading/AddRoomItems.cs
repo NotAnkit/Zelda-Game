@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public class AddRoomItems
     {
-        private static AddRoomItems instance = new AddRoomItems();
+        private static readonly AddRoomItems instance = new AddRoomItems();
 
         public static AddRoomItems Instance => instance;
 

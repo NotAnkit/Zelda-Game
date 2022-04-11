@@ -7,7 +7,7 @@ namespace Zelda_Game
     public class BlueArrowDownAnimation : IProjectile
     {
 
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private Vector2 location;
         private bool finished;
 

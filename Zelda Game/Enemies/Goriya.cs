@@ -6,13 +6,13 @@ namespace Zelda_Game
 {
     public class Goriya : IEnemy
     {
-        private Game1 Game;
-        private Texture2D Texture;
+        private readonly Game1 Game;
+        private readonly Texture2D Texture;
         private int currentFrame;
-        private int totalFrames;
+        private readonly int totalFrames;
         private float spriteSpeed;
-        private int windowHeight;
-        private int windowWidth;
+        private readonly int windowHeight;
+        private readonly int windowWidth;
         private Vector2 position;
         private int health;
         private Trap trap;

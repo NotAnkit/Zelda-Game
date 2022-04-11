@@ -5,20 +5,17 @@ namespace Zelda_Game
 {
     public class Trap
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private int currentFrame;
-        private int totalFrames;
-        private float spriteSpeed;
-        private int windowHeight;
-        private int windowWidth;
+        private readonly int totalFrames;
+        private readonly float spriteSpeed;
+        private readonly int windowHeight;
+        private readonly int windowWidth;
         private Vector2 position;
         private Vector2 startPosition;
         private bool flip = false;
 
-        public Rectangle EnemyRectangle
-        {
-            get { return new Rectangle((int)position.X, (int)position.Y, 32, 32); }
-        }
+        public Rectangle EnemyRectangle => new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
         public Trap(Game1 game, Vector2 location)
         {

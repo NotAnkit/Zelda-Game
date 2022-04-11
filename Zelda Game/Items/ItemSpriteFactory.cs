@@ -7,15 +7,9 @@ namespace Zelda_Game
     {
         private Texture2D ItemSheet;
 
-        private static ItemSpriteFactory instance = new ItemSpriteFactory();
+        private static readonly ItemSpriteFactory instance = new ItemSpriteFactory();
 
-        public static ItemSpriteFactory Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static ItemSpriteFactory Instance => instance;
 
         private ItemSpriteFactory()
         {

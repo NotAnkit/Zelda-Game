@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
     public class AddRoomEnemies
     {
-        private static AddRoomEnemies instance = new AddRoomEnemies();
+        private static readonly AddRoomEnemies instance = new AddRoomEnemies();
 
-        public static AddRoomEnemies Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static AddRoomEnemies Instance => instance;
         private AddRoomEnemies()
         {
 
         }
 
-        public Dictionary<Vector2, IEnemy> LoadEnemies(Dictionary<Vector2, String> roomEnemies, Game1 game1)
+        public Dictionary<Vector2, IEnemy> LoadEnemies(Dictionary<Vector2, string> roomEnemies, Game1 game1)
         {
             Dictionary<Vector2, IEnemy> enemyList = new Dictionary<Vector2, IEnemy>();
             foreach (KeyValuePair<Vector2, string> enemy in roomEnemies)

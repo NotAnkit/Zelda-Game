@@ -27,7 +27,7 @@ namespace Zelda_Game
                         FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         if (manager.TransitionStateFinished)
                         {
-                            manager.ChangeRoom(manager.roomLocation, roomLocation, position);
+                            manager.ChangeRoom(roomLocation, position);
                             FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         }
                         
@@ -56,7 +56,7 @@ namespace Zelda_Game
                         FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         if (manager.TransitionStateFinished)
                         {
-                            manager.ChangeRoom(manager.roomLocation, roomLocation, position);
+                            manager.ChangeRoom(roomLocation, position);
                             FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         }
                     }
@@ -85,7 +85,7 @@ namespace Zelda_Game
                         FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         if (manager.TransitionStateFinished)
                         {
-                            manager.ChangeRoom(manager.roomLocation, roomLocation, position);
+                            manager.ChangeRoom(roomLocation, position);
                             FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         }
 
@@ -115,7 +115,7 @@ namespace Zelda_Game
                         FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         if (manager.TransitionStateFinished)
                         {
-                            manager.ChangeRoom(manager.roomLocation, roomLocation, position);
+                            manager.ChangeRoom(roomLocation, position);
                             FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         }
 

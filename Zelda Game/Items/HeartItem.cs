@@ -5,10 +5,10 @@ namespace Zelda_Game
 {
     public class HeartItem : IItem
     {
-        public Texture2D Texture;
+        private readonly Texture2D Texture;
         private int currentFrame;
         private Vector2 position;
-        private int totalFrames;
+        private readonly int totalFrames;
 
         public HeartItem(Texture2D texture)
         {

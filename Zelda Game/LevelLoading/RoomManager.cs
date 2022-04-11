@@ -6,27 +6,27 @@ namespace Zelda_Game
 {
     public class RoomManager
     {
-        private Game1 game1;
+        private readonly Game1 game1;
         public KeyValuePair<int, int> roomLocation;
-        private Collision collision;
+        private readonly Collision collision;
         public Room roomData;
         public Dictionary<KeyValuePair<int, int>, Room> roomList;
-        private IEnvironment border;
+        private readonly IEnvironment border;
         private Level room;
-        private ScreenFade fader;
+        private readonly ScreenFade fader;
         private bool tansitionState;
         private bool tansitionStateFinished;
 
         public bool TransitionState
         {
-            get { return tansitionState; }
-            set { tansitionState = value; }
+            get => tansitionState;
+            set => tansitionState = value;
         }
 
         public bool TransitionStateFinished
         {
-            get { return tansitionStateFinished; }
-            set { tansitionStateFinished = value; }
+            get => tansitionStateFinished;
+            set => tansitionStateFinished = value;
         }
 
         public RoomManager(Game1 game1)
@@ -66,7 +66,7 @@ namespace Zelda_Game
             roomData = new Room(room, game1);
         }
 
-        public void ChangeRoom(KeyValuePair<int, int> currentRoom, KeyValuePair<int, int> roomLocation, Vector2 position)
+        public void ChangeRoom(KeyValuePair<int, int> roomLocation, Vector2 position)
         {
             this.roomLocation = roomLocation;
             game1.link.position = position;
