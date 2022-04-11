@@ -36,6 +36,11 @@ namespace Zelda_Game
             return new Rectangle((int)position.X, (int)position.Y, 32, 32);
         }
 
+        public Rectangle ProjectileRectangle(int num)
+        {
+            return new Rectangle(0, 0, 0, 0);
+        }
+
         private int movementCounter;
         private int num;
 

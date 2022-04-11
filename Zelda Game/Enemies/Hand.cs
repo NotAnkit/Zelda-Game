@@ -22,6 +22,11 @@ namespace Zelda_Game
             return new Rectangle((int)position.X, (int)position.Y, 32, 32);
         }
 
+        public Rectangle ProjectileRectangle(int num)
+        {
+            return new Rectangle(0, 0, 0, 0);
+        }
+
         public Hand(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");

@@ -24,6 +24,11 @@ namespace Zelda_Game
             return new Rectangle((int)position.X, (int)position.Y, 32, 32);
         }
 
+        public Rectangle ProjectileRectangle(int num)
+        {
+            return trap.EnemyRectangle(num);
+        }
+
         public Goriya(Game1 game, Vector2 location)
         {
             Game = game;

@@ -14,7 +14,7 @@ namespace Zelda_Game
         private readonly int windowHeight;
         private readonly int windowWidth;
         private Vector2 position;
-        private Fireballs fireballs;
+        public Fireballs fireballs;
         private string direction;
         private int health;
         private Color spriteColor;
@@ -22,6 +22,11 @@ namespace Zelda_Game
         public Rectangle EnemyRectangle()
         {
             return new Rectangle((int)position.X, (int)position.Y, 48, 64);
+        }
+
+        public Rectangle ProjectileRectangle(int num)
+        {
+                return fireballs.EnemyRectangle(num);
         }
 
         public Dragon(Game1 game, Vector2 location)

@@ -52,6 +52,11 @@ namespace Zelda_Game
                     deleteEnemy.Add(enemy.Key);
                 }
 
+                if(enemy.Value is Dragon | enemy.Value is Goriya)
+                {
+                    PlayerEnemyProjectileLoop.EnemyProjectileLoop(enemy.Value, player);
+                }
+
             }
 
             foreach (Vector2 enemy in deleteEnemy)
