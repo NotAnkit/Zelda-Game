@@ -20,8 +20,8 @@ namespace Zelda_Game
             numKeys = 20;
             maps = false;
             compass = false;
-            bomb = false; //Created another bomb for weaponselection
-            boomerang = false;
+            bomb = true; //Created another bomb for weaponselection
+            boomerang = true;
             rupees = 24;
             items = new List<IItem>();
         }

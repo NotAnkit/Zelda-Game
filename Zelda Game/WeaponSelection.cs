@@ -19,16 +19,30 @@ namespace Zelda_Game
             mapPauseScreen.Update();
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Link link)
         {
             Rectangle bombRectangle = new Rectangle(604, 137, 8, 14); // For bomb item
             Rectangle boomerangRectangle = new Rectangle(585, 141, 5, 8); // For boomerang item
 
-            Rectangle destinationBomb = new Rectangle(90, 90, 20, 20); // Change values
-            Rectangle destinationBoomerang = new Rectangle(100, 100, 20, 20); // Fill with something
+            //Rectangle destinationBomb = new Rectangle(90, 90, 20, 20); // Change values
+            //Rectangle destinationBoomerang = new Rectangle(100, 100, 20, 20); // Fill with something
 
-            spriteBatch.Draw(Texture, destinationBomb, bombRectangle, Color.White);
-            spriteBatch.Draw(Texture, destinationBoomerang, boomerangRectangle, Color.White);
+            //spriteBatch.Draw(Texture, destinationBomb, bombRectangle, Color.White);
+            //spriteBatch.Draw(Texture, destinationBoomerang, boomerangRectangle, Color.White);
+            //mapPauseScreen.Draw(spriteBatch, link);
+
+            if (link.inventory.BombState())
+            {
+                Rectangle destinationBomb = new Rectangle(90, 90, 20, 20); // For Map Item
+                spriteBatch.Draw(Texture, destinationBomb, bombRectangle, Color.White);
+                mapPauseScreen.Draw(spriteBatch, link);
+            }
+            if (link.inventory.BoomerangState())
+            {
+                Rectangle destinationBoomerang = new Rectangle(100, 100, 20, 20); // For Map Item
+                spriteBatch.Draw(Texture, destinationBoomerang, boomerangRectangle, Color.White);
+                mapPauseScreen.Draw(spriteBatch, link);
+            }
         }
     }
 }
