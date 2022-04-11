@@ -1,0 +1,19 @@
+﻿Author of Review: Ankit Kumar
+
+Date: 4/11/2022
+
+Sprint 4
+
+File being reviewed: ItemSelectionState.cs
+
+Author of file being reviewed: Kiren Manoharan
+
+Time: 25 minutes
+
+Comments about code: The code has a lot of the same time and some code that is
+commented and not used. The actual code is very simple and and is just drawing
+based on what link has in his inventory
+
+Hypothetical change: Currently there is lot of rectangles being draw and such,
+and it would be better to have helper methods to make the code simpler and
+maybe allow for reuse. 

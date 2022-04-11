@@ -41,7 +41,7 @@ namespace Zelda_Game
                             roomDoors.RemoveAt(2);
                             game1.link.inventory.Keys--;
                             game1.link.position.X += 16;
-                            roomdata = manager.roomList[new KeyValuePair<int, int>(manager.roomLocation.Key + 1, manager.roomLocation.Value)];
+                            roomdata = manager.roomList[new KeyValuePair<int, int>(manager.roomLocation.Key - 1, manager.roomLocation.Value)];
                             roomdata.doorList.Insert(2, new RightDoor(game1));
                             roomdata.doorList.RemoveAt(3);
                     }
