@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:ns="Microsoft.Xna.Framework">
+  <Asset Type="Zelda_Game.Level">
+    <Doors>
+        <Item>TopKey</Item>
+        <Item>LeftDoor</Item>
+        <Item>RightDoor</Item>
+        <Item>BottomWall</Item>
+    </Doors>
+     <Blocks>
+      <Item>
+        <Key>91 93</Key>
+        <Value>S1</Value>
+      </Item>
+      <Item>
+        <Key>91 157</Key>
+        <Value>S1</Value>
+      </Item>
+      <Item>
+        <Key>91 221</Key>
+        <Value>S1</Value>
+      </Item>
+      <Item>
+        <Key>187 93</Key>
+        <Value>S1</Value>
+      </Item>
+      <Item>
+        <Key>187 157</Key>
+        <Value>S1</Value>
+      </Item>
+      <Item>
+        <Key>187 221</Key>
+        <Value>S1</Value>
+      </Item>
+      <Item>
+        <Key>283 93</Key>
+        <Value>S2</Value>
+      </Item>
+      <Item>
+        <Key>283 157</Key>
+        <Value>S2</Value>
+      </Item>
+      <Item>
+        <Key>283 221</Key>
+        <Value>S2</Value>
+      </Item>
+      <Item>
+        <Key>379 93</Key>
+        <Value>S2</Value>
+      </Item>
+      <Item>
+        <Key>379 157</Key>
+        <Value>S2</Value>
+      </Item>
+      <Item>
+        <Key>379 221</Key>
+        <Value>S2</Value>
+      </Item>
+      <Item>
+        <Key>219 189</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>251 189</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>155 221</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>219 221</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>251 221</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>315 221</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>155 253</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>187 253</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>219 253</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>251 253</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>283 253</Key>
+        <Value>BS</Value>
+      </Item>
+      <Item>
+        <Key>315 253</Key>
+        <Value>BS</Value>
+      </Item>
+    </Blocks>
+    <Enemies>
+    </Enemies>
+    <Items>
+    </Items>
+  </Asset>
+</XnaContent>

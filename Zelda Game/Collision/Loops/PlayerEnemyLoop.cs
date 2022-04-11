@@ -61,6 +61,15 @@ namespace Zelda_Game
 
             if (enemies.Count == 0)
             {
+                if (game.manager.roomLocation.Key == 3 && game.manager.roomLocation.Value == 5)
+                {
+                    if(!game.manager.roomData.itemList.ContainsKey(new Vector2(200, 100)))
+                    {
+                        game.manager.roomData.itemList.Add(new Vector2(200, 100), ItemSpriteFactory.Instance.BowItem());
+                    }
+                    
+                }
+
                 foreach (IDoor door in doors.ToArray())
                 {
                     if (door is LeftSealed)
@@ -84,6 +93,8 @@ namespace Zelda_Game
                         doors.RemoveAt(4);
                     }
                 }
+
+                
             }
         }
     }

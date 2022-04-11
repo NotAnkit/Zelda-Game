@@ -20,6 +20,11 @@
 /processorParam:Quality=Best
 /build:04 - Dungeon.mp3
 
+#begin basement.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:basement.xml
+
 #begin Display.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
