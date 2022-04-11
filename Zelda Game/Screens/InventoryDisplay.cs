@@ -95,10 +95,12 @@ namespace Zelda_Game
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Pink);
         }
 
-        public static void DrawSelectionB(SpriteBatch spriteBatch, Texture2D texture)
+        public static void DrawSelectionB(SpriteBatch spriteBatch, Texture2D texture, string item)
         {
             Rectangle sourceRectangle = new Rectangle(584, 134, 8, 20);
             Rectangle destinationRectangle = new Rectangle(250, 380, 16, 40);
+            if(item.Equals("green-boomerang"))
+                sourceRectangle = new Rectangle(584, 134, 8, 20);
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Pink);
         }
 
@@ -113,7 +115,7 @@ namespace Zelda_Game
             DrawBombs(spriteBatch, bombs, Font);
             DrawLives(spriteBatch, lives, Texture);
             DrawSelectionA(spriteBatch, Texture);
-            DrawSelectionB(spriteBatch, Texture);
+            DrawSelectionB(spriteBatch, Texture, itemB);
         }
     }
 }
