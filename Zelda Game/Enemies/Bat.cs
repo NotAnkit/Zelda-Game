@@ -88,12 +88,12 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
-            if (currentFrame <= totalFrames/2)
+            if (currentFrame <= totalFrames / 2)
                 sourceRectangle = new Rectangle(183, 11, 16, 16);
             else
                 sourceRectangle = new Rectangle(200, 11, 16, 16);
 
-            
+
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor);
         }
 
@@ -119,6 +119,22 @@ namespace Zelda_Game
             return direction;
         }
 
+        public void DropItem(Vector2 location)
+        {
+            Random rnd = new Random();
+            int num = rnd.Next(1, 2);
+            if (num == 1) //drop bomb
+            {
+                IItem drawBomb = ItemSpriteFactory.Instance.BombItem();
+                //drawBomb.Draw(spriteBatch, location);
+
+            }
+            else //draw Rupee
+            {
+                IItem drawRupee = ItemSpriteFactory.Instance.RupeeItem();
+                //drawRupee.Draw(spriteBatch, location);
+            }
+        }
     }
 }
 

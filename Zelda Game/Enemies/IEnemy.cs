@@ -12,5 +12,6 @@ namespace Zelda_Game
         string GetDirection();
         void DecreaseHealth();
         int Health();
+        void DropItem(Vector2 location);
     }
 }
