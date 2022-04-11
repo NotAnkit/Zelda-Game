@@ -18,7 +18,7 @@ namespace Zelda_Game
                 {
                     if(item.Value is KeyItem)
                     {
-                        player.inventory.AddKey();
+                        player.inventory.Keys++;
                     }
                     else if (item.Value is MapItem)
                     {
@@ -30,11 +30,11 @@ namespace Zelda_Game
                     }
                     else if (item.Value is RupeeItem)
                     {
-                        player.inventory.AddRupees();
+                        player.inventory.Rupees++;
                     }
                     else if (item.Value is BombItem)
                     {
-                        player.inventory.AddBomb();
+                        player.inventory.Bombs++;
                     }
                     else
                     {

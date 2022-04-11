@@ -39,9 +39,9 @@ namespace Zelda_Game
         public void Update(Link player)
         {
             inventory = player.inventory;
-            rupees = inventory.NumRupees();
-            keys = inventory.NumKeys();
-            bombs = inventory.NumBombs();
+            rupees = inventory.Rupees;
+            keys = inventory.Keys;
+            bombs = inventory.Bombs;
             lives = inventory.NumLives();
         }
 

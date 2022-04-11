@@ -50,49 +50,22 @@ namespace Zelda_Game
             return numLives;
         }
 
-        public void UseKey()
+        public int Keys
         {
-            numKeys--;
+            get { return numKeys; }
+            set { numKeys = value; }
         }
 
-        public void AddKey()
+        public int Rupees
         {
-            numKeys++;
+            get { return rupees; }
+            set { rupees = value; }
         }
 
-        public int NumKeys()
+        public int Bombs
         {
-            return numKeys;
-        }
-
-        public void UseRupees()
-        {
-            rupees--;
-        }
-
-        public void AddRupees()
-        {
-            numKeys++;
-        }
-
-        public int NumRupees()
-        {
-            return rupees;
-        }
-
-        public void UseBomb()
-        {
-            bombs--;
-        }
-
-        public void AddBomb()
-        {
-            bombs++;
-        }
-
-        public int NumBombs()
-        {
-            return bombs;
+            get { return bombs; }
+            set { bombs = value; }
         }
 
         public void AddItem(IItem item)

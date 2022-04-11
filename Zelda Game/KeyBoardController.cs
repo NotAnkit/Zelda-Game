@@ -5,7 +5,6 @@ namespace Zelda_Game
 {
     public class KeyBoardController : IController
     {
-        //comment
         private KeyboardState userInput;
         private KeyboardState previousState;
         private Game1 game;
