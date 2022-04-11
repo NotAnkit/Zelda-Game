@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
 {
     public static class FreezeMovement
     {
-        public static void unFreezeObjects(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnemy> nextEnemies)
+        public static void UnFreezeObjects(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnemy> nextEnemies)
         {
             player.speed = 2;
 
@@ -21,7 +20,7 @@ namespace Zelda_Game
             }
         }
 
-        public static void freezeObjects(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnemy> nextEnemies)
+        public static void FreezeObjects(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnemy> nextEnemies)
         {
             player.speed = 0;
 

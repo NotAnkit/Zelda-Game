@@ -6,8 +6,8 @@ namespace Zelda_Game
 {
     public class HoldingItemState : ILinkState
     {
-        private Link player;
-        private ISprite sprite;
+        private readonly Link player;
+        private readonly ISprite sprite;
         public HoldingItemState(Link link)
         {
             player = link;

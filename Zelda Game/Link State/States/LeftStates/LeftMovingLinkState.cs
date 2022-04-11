@@ -6,8 +6,8 @@ namespace Zelda_Game.LinkState
 {
     public class LeftMovingLinkState : ILinkState
     {
-        private Link player;
-        private ISprite sprite;
+        private readonly Link player;
+        private readonly ISprite sprite;
         private IProjectile item;
         public LeftMovingLinkState(Link link)
         {

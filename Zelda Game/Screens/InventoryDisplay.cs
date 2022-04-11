@@ -1,13 +1,12 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using System;
 
 namespace Zelda_Game
 {
     public class InventoryDisplay
     {
-        private Texture2D Texture;
-        private SpriteFont Font;
+        private readonly Texture2D Texture;
+        private readonly SpriteFont Font;
         private LinkInventory inventory;
         private int rupees;
         private int keys;
@@ -18,13 +17,13 @@ namespace Zelda_Game
 
         public string ItemASlot
         {
-            get { return itemA; }
-            set { itemA = value; }
+            get => itemA;
+            set => itemA = value;
         }
         public string ItemBSlot
         {
-            get { return itemB; }
-            set { itemB = value; }
+            get => itemB;
+            set => itemB = value;
         }
 
         public InventoryDisplay(Game1 game, LinkInventory inventory)

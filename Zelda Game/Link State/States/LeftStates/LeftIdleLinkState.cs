@@ -7,8 +7,8 @@ namespace Zelda_Game
 {
     public class LeftIdleLinkState : ILinkState
     {
-        private Link player;
-        private ISprite sprite;
+        private readonly Link player;
+        private readonly ISprite sprite;
         private IProjectile item;
         public LeftIdleLinkState(Link link)
         {

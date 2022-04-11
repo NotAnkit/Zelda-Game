@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public class PushableBlock : IEnvironment
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         public Vector2 position;
 
         public PushableBlock(Texture2D texture, Vector2 position)

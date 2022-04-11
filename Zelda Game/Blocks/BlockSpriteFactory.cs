@@ -8,15 +8,9 @@ namespace Zelda_Game
     {
         private Texture2D blockSpritesheet;
 
-        private static BlockSpriteFactory instance = new BlockSpriteFactory();
+        private static readonly BlockSpriteFactory instance = new BlockSpriteFactory();
 
-        public static BlockSpriteFactory Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static BlockSpriteFactory Instance => instance;
 
         private BlockSpriteFactory()
         {

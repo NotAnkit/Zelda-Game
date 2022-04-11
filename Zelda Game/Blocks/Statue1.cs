@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public class Statue1 : IEnvironment
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private Vector2 position;
 
         public Statue1(Texture2D texture)

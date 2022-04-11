@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public class Stairs : IEnvironment
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private Vector2 position;
 
         public Stairs(Texture2D texture)

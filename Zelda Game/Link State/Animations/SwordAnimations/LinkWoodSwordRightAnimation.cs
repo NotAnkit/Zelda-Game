@@ -17,7 +17,7 @@ namespace Zelda_Game
         }
 
         private int currentFrame = 0;
-        private int totalFrames = 30;
+        private readonly int totalFrames = 30;
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             

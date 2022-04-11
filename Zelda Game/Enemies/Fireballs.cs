@@ -5,16 +5,16 @@ namespace Zelda_Game
 {
     public class Fireballs
     {
-        public Texture2D Texture;
+        public readonly Texture2D Texture;
         private int currentFrame;
-        private int totalFrames;
+        private readonly int totalFrames;
         private float spriteSpeed1X;
         private float spriteSpeed1Y;
         private float spriteSpeed2X;
         private float spriteSpeed3X;
         private float spriteSpeed3Y;
-        private int windowHeight;
-        private int windowWidth;
+        private readonly int windowHeight;
+        private readonly int windowWidth;
         private Vector2 position1;
         private Vector2 position2;
         private Vector2 position3;
@@ -57,7 +57,7 @@ namespace Zelda_Game
 
             if (position1.X < 59)
             {
-                spriteSpeed1X = (spriteSpeed1X)*(-1);
+                spriteSpeed1X = spriteSpeed1X*-1;
             }
             else if (position1.X > windowWidth - 97)
             {
@@ -69,12 +69,12 @@ namespace Zelda_Game
             }
             else if (position1.Y < 61)
             {
-                spriteSpeed1Y = (spriteSpeed1Y) * (-1);
+                spriteSpeed1Y = spriteSpeed1Y * -1;
             }
 
             if (position2.X < 59)
             {
-                spriteSpeed2X = (spriteSpeed2X) * (-1);
+                spriteSpeed2X = spriteSpeed2X * -1;
             }
             else if (position2.X > windowWidth - 97)
             {
@@ -83,7 +83,7 @@ namespace Zelda_Game
 
             if (position3.X < 59)
             {
-                spriteSpeed3X = (spriteSpeed3X) * (-1);
+                spriteSpeed3X = spriteSpeed3X * (-1);
             }
             else if (position3.X > windowWidth - 97)
             {
@@ -95,7 +95,7 @@ namespace Zelda_Game
             }
             else if (position3.Y < 61)
             {
-                spriteSpeed3Y = (spriteSpeed3Y) * (-1);
+                spriteSpeed3Y = spriteSpeed3Y * -1;
             }
         }
 

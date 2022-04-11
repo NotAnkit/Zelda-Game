@@ -6,7 +6,7 @@ namespace Zelda_Game
 {
     public class Floor : IEnvironment
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
 
         public Floor(Game1 game)
         {

@@ -1,14 +1,12 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using System;
 
 namespace Zelda_Game
 {
     public class ItemSelectionState
     {
-        public Texture2D Texture;
-        public SpriteFont Font;
-        private MapPauseScreen mapPauseScreen;
+        private readonly Texture2D Texture;
+        private readonly MapPauseScreen mapPauseScreen;
 
         public ItemSelectionState(Game1 game)
         {

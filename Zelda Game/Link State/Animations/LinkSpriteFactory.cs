@@ -15,15 +15,9 @@ namespace Zelda_Game
         public SoundEffect fire;
         public SoundEffect boomerang;
 
-        private static LinkSpriteFactory instance = new LinkSpriteFactory();
+        private static readonly LinkSpriteFactory instance = new LinkSpriteFactory();
 
-        public static LinkSpriteFactory Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static LinkSpriteFactory Instance => instance;
 
         private LinkSpriteFactory()
         {

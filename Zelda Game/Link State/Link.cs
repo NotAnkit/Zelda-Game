@@ -13,8 +13,8 @@ namespace Zelda_Game
         private Vector2 itemPosition;
         public int speed = 2;
         public Dictionary<IProjectile, Vector2> items;
-        private Dictionary<IProjectile, Vector2> items2;
-        private List<IProjectile> removeItems;
+        private readonly Dictionary<IProjectile, Vector2> items2;
+        private readonly List<IProjectile> removeItems;
         public ILinkState currentState;     
         private bool useItem;
         private IProjectile item;
@@ -23,8 +23,8 @@ namespace Zelda_Game
 
         public Rectangle LinkRectangle
         {
-            get { return hitbox; }
-            set { hitbox = value; }
+            get => hitbox;
+            set => hitbox = value;
         }
 
         public Link(Vector2 location)

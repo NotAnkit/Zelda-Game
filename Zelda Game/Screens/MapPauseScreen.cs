@@ -1,14 +1,12 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using System;
 
 namespace Zelda_Game
 {
     public class MapPauseScreen
     {
-        public Texture2D Texture;
-        public SpriteFont Font;
-        Texture2D rectangle;
+        private readonly Texture2D Texture;
+        private readonly Texture2D rectangle;
 
         public MapPauseScreen(Game1 game)
         {
@@ -61,9 +59,6 @@ namespace Zelda_Game
             Rectangle destinationRoom15 = new Rectangle(290, 262, 16, 16);
             Rectangle destinationRoom16 = new Rectangle(260, 214, 16, 16);
             Rectangle destinationRoom17 = new Rectangle(320, 230, 16, 16);
-
-            Rectangle sourceTriForce = new Rectangle(633, 86, 3, 3);
-            Rectangle destinationTriForce = new Rectangle(326, 233, 9, 9);
 
             if (link.inventory.MapState())
             {

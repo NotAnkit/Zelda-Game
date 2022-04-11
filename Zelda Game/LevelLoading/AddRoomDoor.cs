@@ -4,15 +4,10 @@ namespace Zelda_Game
 {
     public class AddDoors
     {
-        private static AddDoors instance = new AddDoors();
+        private static readonly AddDoors instance = new AddDoors();
 
-        public static AddDoors Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static AddDoors Instance => instance;
+
         private AddDoors()
         {
 

@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public class NavyBlueBlock : IEnvironment
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private Vector2 position;
 
         public NavyBlueBlock(Texture2D texture)

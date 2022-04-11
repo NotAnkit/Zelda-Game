@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Zelda_Game
@@ -8,13 +7,8 @@ namespace Zelda_Game
     {
         private static AddRoomItems instance = new AddRoomItems();
 
-        public static AddRoomItems Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
+        public static AddRoomItems Instance => instance;
+
         private AddRoomItems()
         {
 

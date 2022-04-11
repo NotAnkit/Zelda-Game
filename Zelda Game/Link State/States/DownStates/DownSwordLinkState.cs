@@ -7,8 +7,8 @@ namespace Zelda_Game
 {
     public class DownSwordLinkState : ILinkState
     {
-        private Link player;
-        private ISprite sprite;
+        private readonly Link player;
+        private readonly ISprite sprite;
         private IProjectile item;
         private int animationCount;
         public DownSwordLinkState(Link link)

@@ -12,7 +12,7 @@ namespace Zelda_Game
             return new Rectangle((int)location.X, (int)location.Y, 16, 32);
         }
 
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private Vector2 location;
         private bool finished;
 

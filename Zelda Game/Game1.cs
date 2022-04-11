@@ -11,20 +11,20 @@ namespace Zelda_Game
         private List<IController> controllerList;
         private Song song;
         private ItemSelectionState itemSelectionState;
-        private GraphicsDeviceManager _graphics;
+        private readonly GraphicsDeviceManager _graphics;
         private int windowWidth;
         private int windowHeight;
 
         public int WindowSizeWidth
         {
-            get { return windowWidth; }
-            set { windowWidth = value; }
+            get => windowWidth; 
+            set => windowWidth = value; 
         }
 
         public int WindowSizeHeight
         {
-            get { return windowHeight; }
-            set { windowHeight = value; }
+            get => windowHeight; 
+            set => windowHeight = value; 
         }
 
 

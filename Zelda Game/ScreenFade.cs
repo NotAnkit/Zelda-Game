@@ -1,14 +1,13 @@
-﻿using System;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
     public class ScreenFade
     {
-        private TransitionScreen screenFade;
+        private readonly TransitionScreen screenFade;
         private int count;
         private bool fade;
-        private Game1 game1;
+        private readonly Game1 game1;
 
         public ScreenFade(Game1 game1)
         {

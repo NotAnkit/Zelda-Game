@@ -6,12 +6,12 @@ namespace Zelda_Game
 {
     public class Jelly : IEnemy
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private int currentFrame;
-        private int totalFrames;
+        private readonly int totalFrames;
         private float spriteSpeed;
-        private int windowHeight;
-        private int windowWidth;
+        private readonly int windowHeight;
+        private readonly int windowWidth;
         private Vector2 position;
         private string direction;
         private int health;

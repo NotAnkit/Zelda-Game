@@ -6,7 +6,7 @@ namespace Zelda_Game
 {
     public class BrickBlock : IEnvironment
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private Vector2 position;
 
         public BrickBlock(Texture2D texture)

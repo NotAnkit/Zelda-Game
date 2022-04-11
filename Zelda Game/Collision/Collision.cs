@@ -2,9 +2,9 @@
 {
     public class Collision
     {
-        private RoomManager manager;
-        private Link player;
-        private Game1 game;
+        private readonly RoomManager manager;
+        private readonly Link player;
+        private readonly Game1 game;
 
         public Collision(RoomManager manager, Link player, Game1 game1)
         {

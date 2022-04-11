@@ -24,11 +24,11 @@ namespace Zelda_Game
                         KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(manager.roomLocation.Key - 1, manager.roomLocation.Value);
                         position = new Vector2(404, 151);
                         manager.TransitionState = true;
-                        FreezeMovement.freezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                        FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         if (manager.TransitionStateFinished)
                         {
                             manager.ChangeRoom(manager.roomLocation, roomLocation, position);
-                            FreezeMovement.unFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                            FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         }
                         
                     }
@@ -53,11 +53,11 @@ namespace Zelda_Game
                         KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(manager.roomLocation.Key + 1, manager.roomLocation.Value);
                         position = new Vector2(64, 151);
                         manager.TransitionState = true;
-                        FreezeMovement.freezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                        FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         if (manager.TransitionStateFinished)
                         {
                             manager.ChangeRoom(manager.roomLocation, roomLocation, position);
-                            FreezeMovement.unFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                            FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         }
                     }
                     else if (door is RightKey && game1.link.inventory.Keys > 0)
@@ -82,11 +82,11 @@ namespace Zelda_Game
                         KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(manager.roomLocation.Key, manager.roomLocation.Value - 1);
                         position = new Vector2(235, 246);
                         manager.TransitionState = true;
-                        FreezeMovement.freezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                        FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         if (manager.TransitionStateFinished)
                         {
                             manager.ChangeRoom(manager.roomLocation, roomLocation, position);
-                            FreezeMovement.unFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                            FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         }
 
                     }
@@ -112,11 +112,11 @@ namespace Zelda_Game
                         KeyValuePair<int, int> roomLocation = new KeyValuePair<int, int>(manager.roomLocation.Key, manager.roomLocation.Value + 1);
                         position = new Vector2(235, 64);
                         manager.TransitionState = true;
-                        FreezeMovement.freezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                        FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         if (manager.TransitionStateFinished)
                         {
                             manager.ChangeRoom(manager.roomLocation, roomLocation, position);
-                            FreezeMovement.unFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                            FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                         }
 
                     }

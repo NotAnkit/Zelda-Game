@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Zelda_Game
 {
@@ -52,20 +51,20 @@ namespace Zelda_Game
 
         public int Keys
         {
-            get { return numKeys; }
-            set { numKeys = value; }
+            get => numKeys; 
+            set => numKeys = value; 
         }
 
         public int Rupees
         {
-            get { return rupees; }
-            set { rupees = value; }
+            get => rupees; 
+            set => rupees = value; 
         }
 
         public int Bombs
         {
-            get { return bombs; }
-            set { bombs = value; }
+            get => bombs;
+            set => bombs = value;
         }
 
         public void AddItem(IItem item)

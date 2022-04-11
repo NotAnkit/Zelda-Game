@@ -1,12 +1,12 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using System;
+
 namespace Zelda_Game
 {
     public class WeaponSelection
     {
-        public Texture2D Texture;
-        private MapPauseScreen mapPauseScreen;
+        public readonly Texture2D Texture;
+        private readonly MapPauseScreen mapPauseScreen;
 
         public WeaponSelection(Game1 game)
         {
@@ -19,7 +19,7 @@ namespace Zelda_Game
             mapPauseScreen.Update();
         }
 
-        public void Draw(SpriteBatch spriteBatch, Link link)
+        public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle bombRectangle = new Rectangle(604, 137, 8, 14); // For bomb item
             Rectangle boomerangRectangle = new Rectangle(585, 141, 5, 8); // For boomerang item
