@@ -15,7 +15,7 @@ Arrow Keys  | to move Link around the screen.
   R | to Reset
   
 #### Bugs
-  The projet has a few bugs right now. One bug is that player and enemy projectiles can go through the border and go through blocks. Another bug is that enemy projectiles do not interact with the player. Another bug currently is that enemy when it hits a player and there is a block it gets teleported around. This is to try and ensure that player does not phase through the walls. Another bug is that the enemies are one hit and dies instantly. Another bug is that bomb kills enemies when the bomb hasnt exploded. With the door there are a few bugs. One of this is that only the left and the right work and they iterate to the next door in the sequence, but not in the map. The second bug is that any type of door allows passage including locked and such, it can be fixed easily. The final bug is that when link goes through it sometimes it chnages multiple as link is so close to the next door.
+  The project has a few bugs right now. One bug is in room 15 you can force move the pushable block from faraway. Honestly might even be a feature. Next bug is with enemies taking damage the sword weapons are not supposed to one hit kill but it does for some reason. The Sound plays multiple times which can crash the game. Link can get hit through doors, which is a result of it not freezing fast enough. 
 
 #### Code Metrics
 
@@ -54,3 +54,24 @@ Arrow Keys  | to move Link around the screen.
   IDE0052: Remove unread private members
   dotnet_diagnostic.IDE0052.severity = none
    - Supressed because unknown whether need to be able to modify in the future
+
+  IDE0032: Use auto property
+  dotnet_diagnostic.IDE0032.severity = none
+  - Auto proprerty does not set them up correctly and this needs to be suppresed
+
+  IDE0078: Use pattern matching
+  dotnet_diagnostic.IDE0078.severity = none
+  - Pattern Matching is not allowed in the current version of C# we are using 
+
+  IDE0063: Use simple 'using' statement
+  csharp_prefer_simple_using_statement = false
+  - This is part is generated monogame and thus we can not modify it
+
+  IDE0008: Use explicit type
+  dotnet_diagnostic.IDE0008.severity = none
+  - Can not do this because this is part of the monogame
+
+  IDE0038: Use pattern matching
+  csharp_style_pattern_matching_over_is_with_cast_check = false
+  - Pattern matching is not allowed for current version C#
+
