@@ -10,7 +10,7 @@ namespace Zelda_Game
         private SpriteBatch _spriteBatch;
         private List<IController> controllerList;
         private Song song;
-        private ItemSelectionState itemSelectionState;
+        public ItemSelectionState itemSelectionState;
         private readonly GraphicsDeviceManager _graphics;
         private int windowWidth;
         private int windowHeight;

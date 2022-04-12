@@ -63,7 +63,7 @@ namespace Zelda_Game
             roomList.Add(new KeyValuePair<int, int>(1, 2), new Room(Game.Content.Load<Level>("Room1"), Game));
             roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("basement"), Game));
 
-            room = game1.Content.Load<Level>("Room2");
+            room = game1.Content.Load<Level>("Room10");
             roomData = new Room(room, game1);
         }
 

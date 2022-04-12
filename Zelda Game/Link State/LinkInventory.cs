@@ -12,7 +12,11 @@ namespace Zelda_Game
         private bool maps;
         private bool compass;
         private bool bomb;
-        private bool boomerang;
+        private bool yellowBoomerang;
+        private bool blueBoomerang;
+        private bool bow;
+        private bool greenArrow;
+        private bool blueArrow;
         public List<IItem> items;
         public LinkInventory()
         {
@@ -20,16 +24,20 @@ namespace Zelda_Game
             numKeys = 20;
             maps = false;
             compass = false;
-            bomb = true; //Created another bomb for weaponselection
-            boomerang = true;
+            bomb = false;
+            yellowBoomerang = false;
+            blueBoomerang = false;
+            bow = false;
+            blueArrow = false;
+            greenArrow = false;
             rupees = 24;
             items = new List<IItem>();
         }
 
         public void LoseLife()
         {
-           numLives--;
-            if(numLives <= 0)
+            numLives--;
+            if (numLives <= 0)
             {
                 numLives = 0;
             }
@@ -38,7 +46,7 @@ namespace Zelda_Game
         public void EarnLife()
         {
             numLives++;
-            if(numLives >= 4)
+            if (numLives >= 4)
             {
                 numLives = 4;
             }
@@ -51,14 +59,14 @@ namespace Zelda_Game
 
         public int Keys
         {
-            get => numKeys; 
-            set => numKeys = value; 
+            get => numKeys;
+            set => numKeys = value;
         }
 
         public int Rupees
         {
-            get => rupees; 
-            set => rupees = value; 
+            get => rupees;
+            set => rupees = value;
         }
 
         public int Bombs
@@ -69,17 +77,27 @@ namespace Zelda_Game
 
         public void AddItem(IItem item)
         {
+            if(item is BowItem)
+            {
+                bow = true;
+            }
+            if (item is ArrowItem)
+            {
+                greenArrow = true;
+            }
+            if (item is ArrowItem2)
+            {
+                blueArrow = true;
+            }
+            if (item is GreenBoomerang)
+            {
+                yellowBoomerang = true;
+            }
+            if (item is BlueBoomerang)
+            {
+                blueBoomerang = true;
+            }
             items.Add(item);
-        }
-
-        public void RemoveItem(IItem item)
-        {
-            items.Remove(item);
-        }
-
-        public List<IItem> ItemList()
-        {
-            return items;
         }
 
         public void CollectMap() => maps = true;
@@ -87,29 +105,38 @@ namespace Zelda_Game
         public bool MapState() => maps;
 
         public void CollectCompass() => compass = true;
-        
 
         public bool CompassState() => compass;
 
-
-        public void CollectBomb() //Added for WeaponSelection file
-        {
-            bomb = true;
-        }
 
         public bool BombState()
         {
             return bomb;
         }
 
-        public void CollectBoomerang()
+        public bool YellowBoomerangState()
         {
-            boomerang = true;
+            return yellowBoomerang;
         }
 
-        public bool BoomerangState()
+        public bool BlueBoomerangState()
         {
-            return boomerang;
+            return blueBoomerang;
+        }
+
+        public bool BowState()
+        {
+            return bow;
+        }
+
+        public bool GreenArrowState()
+        {
+            return greenArrow;
+        }
+
+        public bool BlueArrowState()
+        {
+            return blueArrow;
         }
     }
 }

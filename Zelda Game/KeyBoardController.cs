@@ -50,19 +50,18 @@ namespace Zelda_Game
             {
                 game.manager.TransitionState = true;
                 game.pause = !game.pause;
-                
+
             }
             else if (userInput.IsKeyDown(Keys.B) && !previousState.IsKeyDown(Keys.B))
             {
                 if (game.pause)
                 {
-
+                    game.itemSelectionState.weaponSelector.nextWeapon();
                 }
                 else
                 {
                     game.link.UseItem(game.inventoryDisplay.ItemBSlot);
                 }
-                
             }
             else if (userInput.IsKeyDown(Keys.A) && !previousState.IsKeyDown(Keys.A))
             {
