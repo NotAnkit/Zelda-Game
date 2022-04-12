@@ -1,0 +1,22 @@
+﻿Author of code review: Mohamed Elzubeir
+
+Date of the code review: 04/11/2022
+
+Sprint number: 4
+
+Name of the .cs file being reviewed: InventoryDisplay.cs
+
+Author of the .cs file being reviewed: Rama
+
+Number of minutes: 18 minutes
+
+Comments on Code Quality:
+This code was really well-written and well-structured.
+To display the inventory in the pause menu, the code is kept as basic as possible.
+In order to develop collision response, passing strings as detection to signal the direction of the
+collision was quite beneficial.
+The overall grade of code quality and simplicity is really good. 
+
+Hypothetical change:
+A hypothetical change that could be made is making the draw selection B method able to change weapons, and equip other inventory weapons.
+As I am sure this will be completed by the next sprint, given the current code, the change can be easily made.

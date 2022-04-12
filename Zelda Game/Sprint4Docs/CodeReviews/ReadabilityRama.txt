@@ -1,0 +1,15 @@
+﻿Author of code review: Mohamed Elzubeir
+Date of the code review: 04/11/2022
+
+Sprint number: 4
+
+Name of the .cs file being reviewed: InventoryDisplay.cs
+
+Author of the .cs file being reviewed: Rama 
+
+Number of minutes: 14 minutes
+
+Comments on Readability:
+Reading and comprehending this document was a simple.
+Using the draw feature to draw all the items in the inventory and have them connect connect to the Mappause screen was well thought out.
+As a whole, the document was quite accessible and straightforward.
