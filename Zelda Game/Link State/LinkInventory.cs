@@ -82,25 +82,15 @@ namespace Zelda_Game
             return items;
         }
 
-        public void CollectMap()
-        {
-            maps = true;
-        }
+        public void CollectMap() => maps = true;
 
-        public bool MapState()
-        {
-            return maps;
-        }
+        public bool MapState() => maps;
 
-        public void CollectCompass()
-        {
-            compass = true;
-        }
+        public void CollectCompass() => compass = true;
+        
 
-        public bool CompassState()
-        {
-            return compass;
-        }
+        public bool CompassState() => compass;
+
 
         public void CollectBomb() //Added for WeaponSelection file
         {
