@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public static class PlayerBlockLoop
     {
-        public static void BlockLoop(Dictionary<Vector2, IEnvironment> blocks, Link player)
+        public static void BlockLoop(Dictionary<Vector2, IEnvironment> blocks, Link player, RoomManager manager)
         {
             List<string> collisonDirection = new List<string>();
             string[] directionLocked = new string[3];
@@ -23,7 +23,7 @@ namespace Zelda_Game
                 {
                     collisonDirection.Add(direction);
                 }
-                PlayerBlockResponse.PlayerBlock(player, directionLocked, collisonDirection, block.Value);
+                PlayerBlockResponse.PlayerBlock(player, directionLocked, collisonDirection, block.Value, manager);
             }
         }
     }

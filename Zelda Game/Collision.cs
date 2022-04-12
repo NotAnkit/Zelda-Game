@@ -17,7 +17,7 @@
         {
             PlayerEnemyLoop.EnemyLoop(room.enemyList, player, room.blockList, room.doorList, game);
 
-            PlayerBlockLoop.BlockLoop(room.blockList, player);
+            PlayerBlockLoop.BlockLoop(room.blockList, player, manager);
 
             room.itemList = ItemResponseLoop.ItemLoop(room.itemList, player);
 

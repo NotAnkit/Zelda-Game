@@ -7,7 +7,6 @@ namespace Zelda_Game
     public class BasementBlock : IEnvironment
     {
         private Texture2D Texture;
-        private readonly Floor floor;
 
         public BasementBlock(Game1 game)
         {
@@ -31,7 +30,6 @@ namespace Zelda_Game
             Rectangle destinationRectangle = new Rectangle(0, 0, 512, 320);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            //floor.Draw(spriteBatch, new Vector2(100, 100));
         }
     }
 }

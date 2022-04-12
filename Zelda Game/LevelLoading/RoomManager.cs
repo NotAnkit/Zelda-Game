@@ -33,7 +33,7 @@ namespace Zelda_Game
         {
             this.game1 = game1;
             collision = new Collisions(this, game1.link, game1);
-            roomLocation = new KeyValuePair<int, int>(2, 0);
+            roomLocation = new KeyValuePair<int, int>(1, 0);
             border = new BorderBlock(game1);
             fader = new ScreenFade(game1);
             tansitionState = false;
@@ -63,7 +63,7 @@ namespace Zelda_Game
             roomList.Add(new KeyValuePair<int, int>(1, 2), new Room(Game.Content.Load<Level>("Room1"), Game));
             roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("basement"), Game));
 
-            room = game1.Content.Load<Level>("Room16");
+            room = game1.Content.Load<Level>("Room15");
             roomData = new Room(room, game1);
         }
 
@@ -78,9 +78,9 @@ namespace Zelda_Game
         {
             if (roomLocation.Key == 1 && roomLocation.Value == 1)
             {
-                roomData.Draw(spriteBatch);
                 border = new BasementBlock(game1);
                 border.Draw(spriteBatch, new Vector2(0, 0));
+                roomData.Draw(spriteBatch);
             }
             else
             {

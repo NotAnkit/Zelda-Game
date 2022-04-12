@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+
 namespace Zelda_Game
 {
     public static class PlayerBlockResponse
     {
-        public static void PlayerBlock(Link player, string[] directionLocked, List<string> collisonDirection, IEnvironment blockType)
+        public static void PlayerBlock(Link player, string[] directionLocked, List<string> collisonDirection, IEnvironment blockType, RoomManager manager)
         {
             if (blockType is PushableBlock)
             {
@@ -21,6 +23,19 @@ namespace Zelda_Game
             else if(blockType is BlueSand)
             {
 
+            }
+            else if (blockType is Stairs)
+            {
+                for (int i = 0; i < collisonDirection.Count; i++)
+                {
+                    if (collisonDirection[i].Equals("left-right"))
+                    {
+                        player.position = new Vector2(100, 50);
+                        manager.roomLocation = new KeyValuePair<int, int>(1, 1);
+                        manager.roomData = manager.roomList[manager.roomLocation];
+                    }
+                }
+                
             }
             else
             {

@@ -54,7 +54,15 @@ namespace Zelda_Game
             }
             else if (userInput.IsKeyDown(Keys.B) && !previousState.IsKeyDown(Keys.B))
             {
-                game.link.UseItem(game.inventoryDisplay.ItemBSlot);
+                if (game.pause)
+                {
+
+                }
+                else
+                {
+                    game.link.UseItem(game.inventoryDisplay.ItemBSlot);
+                }
+                
             }
             else if (userInput.IsKeyDown(Keys.A) && !previousState.IsKeyDown(Keys.A))
             {
