@@ -1,0 +1,21 @@
+﻿Author of code review: Rama Naboulsi
+
+Date of the code review: 04/11/2022
+
+Sprint number: 4
+
+Name of the .cs file being reviewed: ScreenFade.cs
+
+Author of the .cs file being reviewed: Anish
+
+Number of minutes: 15 minutes
+
+Comments on Code Quality:
+Overall the code is very maintainable.
+It is also very easily readable which makes it easy to update.
+It also uses the readonly identifier in order to ensure that only certain variables can be changed.
+
+Hypothetical Change:
+One change that could possibly be made is changing the speed in which the screen fades.
+This can easily be done by increasing and decreasing the count.
+Doing so will make the fade happen either quicker or slower. 

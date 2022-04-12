@@ -1,0 +1,17 @@
+﻿Author of code review: Rama Naboulsi
+
+Date of the code review: 04/11/2022
+
+Sprint number: 4
+
+Name of the .cs file being reviewed: ItemSelectionState.cs
+
+Author of the .cs file being reviewed: Kiren
+
+Number of minutes: 15 minutes
+
+Comments on Code Quality:
+The code is very well written and easy to follow and uses as few lines as possible.
+The names of the variables are also descriptive and well formatted.
+The readonly identifier is also used to help distinguish which variables will and will not change. 
+Overall, the code is easily readable. 
