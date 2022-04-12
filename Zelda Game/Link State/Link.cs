@@ -85,9 +85,17 @@ namespace Zelda_Game
             }
             else if(itemName.Equals("bomb") && !(inventory.Bombs > 0))
             {
+                
+            }
+            else if (itemName.Equals("blank-projectile"))
+            {
             }
             else
             {
+                if (itemName.Equals("bomb"))
+                {
+                    inventory.Bombs--;
+                }
                 itemPosition = position;
                 itemPositionStart = position;
                 item = currentState.UseItem(itemName);
@@ -99,7 +107,6 @@ namespace Zelda_Game
         public void UseSword()
         {
             currentState.UseSword();
-
         }
 
         public void TakeDamage()

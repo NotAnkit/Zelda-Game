@@ -8,12 +8,14 @@ namespace Zelda_Game
         private readonly Texture2D Texture;
         private readonly MapPauseScreen mapPauseScreen;
         public WeaponSelection weaponSelector;
+        private readonly InventoryDisplay display;
 
         public ItemSelectionState(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("Inventory");
             mapPauseScreen = new MapPauseScreen(game);
             weaponSelector = new WeaponSelection(game);
+            display = game.inventoryDisplay;
         }
 
         public void Update()
@@ -45,7 +47,7 @@ namespace Zelda_Game
                 Rectangle destinationCompass = new Rectangle(70, 283, 45, 48); // For Compass Item
                 spriteBatch.Draw(Texture, destinationCompass, CompassRectangle, Color.White);
             }
-            weaponSelector.Draw(spriteBatch, link);
+            weaponSelector.Draw(spriteBatch, link, display);
         }
     }
 }

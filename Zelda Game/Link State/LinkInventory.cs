@@ -22,14 +22,15 @@ namespace Zelda_Game
         {
             numLives = 4;
             numKeys = 20;
+            bombs = 4;
             maps = false;
             compass = false;
-            bomb = false;
-            yellowBoomerang = false;
-            blueBoomerang = false;
-            bow = false;
-            blueArrow = false;
-            greenArrow = false;
+            bomb = true;
+            yellowBoomerang = true;
+            blueBoomerang = true;
+            bow = true;
+            blueArrow = true;
+            greenArrow = true;
             rupees = 24;
             items = new List<IItem>();
         }

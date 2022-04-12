@@ -6,22 +6,21 @@ namespace Zelda_Game
     public class WeaponSelection
     {
         private readonly Texture2D Texture;
-        private readonly MapPauseScreen mapPauseScreen;
+        
 
-        Vector2 selectionPosition = new Vector2(235, 100); // MOVE TO WEAPONSELECTION FILE
+        Vector2 selectionPosition = new Vector2(230, 100); // MOVE TO WEAPONSELECTION FILE
 
         public WeaponSelection(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("Inventory");
-            mapPauseScreen = new MapPauseScreen(game);
         }
 
         public void Update()
         {
-            mapPauseScreen.Update();
+            
         }
 
-        public void Draw(SpriteBatch spriteBatch, Link link)
+        public void Draw(SpriteBatch spriteBatch, Link link, InventoryDisplay display)
         {
             Rectangle bombRectangle = new Rectangle(604, 137, 8, 14); // Bomb selection
             Rectangle yellowBoomerangRectangle = new Rectangle(585, 141, 5, 8); // Yellow boomerang selection
@@ -37,54 +36,90 @@ namespace Zelda_Game
 
             if (link.inventory.BombState())
             {
-                Rectangle bombDestination = new Rectangle(235, 105, 15, 20);
+                Rectangle bombDestination = new Rectangle(235, 105, 15, 15);
                 spriteBatch.Draw(Texture, bombDestination, bombRectangle, Color.White);
-                mapPauseScreen.Draw(spriteBatch, link);
+                if(selectionPosition.X == 230 && selectionPosition.Y == 100)
+                {
+                    bombDestination = new Rectangle(115, 105, 20, 20);
+                    spriteBatch.Draw(Texture, bombDestination, bombRectangle, Color.White);
+                    display.ItemBSlot = "bomb";
+                }
+                
             }
             if (link.inventory.YellowBoomerangState())
             {
-                Rectangle yellowbBoomerangDestination = new Rectangle(275, 105, 12, 18);
+                Rectangle yellowbBoomerangDestination = new Rectangle(275, 105, 15, 15);
                 spriteBatch.Draw(Texture, yellowbBoomerangDestination, yellowBoomerangRectangle, Color.White);
-                mapPauseScreen.Draw(spriteBatch, link);
+                if (selectionPosition.X == 270 && selectionPosition.Y == 100)
+                {
+                    yellowbBoomerangDestination = new Rectangle(115, 105, 20, 20);
+                    spriteBatch.Draw(Texture, yellowbBoomerangDestination, yellowBoomerangRectangle, Color.White);
+                    display.ItemBSlot = "green-boomerang";
+                }
+
             }
             if (link.inventory.BlueBoomerangState())
             {
-                Rectangle blueBoomerangDestination = new Rectangle(310, 105, 12, 18);
+                Rectangle blueBoomerangDestination = new Rectangle(315, 105, 15, 15);
                 spriteBatch.Draw(Texture, blueBoomerangDestination, blueBoomerangRectangle, Color.White);
-                mapPauseScreen.Draw(spriteBatch, link);
+                if (selectionPosition.X == 310 && selectionPosition.Y == 100)
+                {
+                    blueBoomerangDestination = new Rectangle(115, 105, 20, 20);
+                    spriteBatch.Draw(Texture, blueBoomerangDestination, blueBoomerangRectangle, Color.White);
+                    display.ItemBSlot = "blue-boomerang";
+                }
+
             }
             if (link.inventory.BowState())
             {
-                Rectangle bowDestination = new Rectangle(350, 105, 15, 20);
+                Rectangle bowDestination = new Rectangle(360, 105, 15, 15);
                 spriteBatch.Draw(Texture, bowDestination, bowRectangle, Color.White);
-                mapPauseScreen.Draw(spriteBatch, link);
+                if (selectionPosition.X == 350 && selectionPosition.Y == 100)
+                {
+                    bowDestination = new Rectangle(115, 105, 20, 20);
+                    spriteBatch.Draw(Texture, bowDestination, bowRectangle, Color.White);
+                    display.ItemBSlot = "bow";
+                }
+
             }
             if (link.inventory.GreenArrowState())
             {
-                Rectangle greenArrowDestination = new Rectangle(235, 135, 15, 25);
+                Rectangle greenArrowDestination = new Rectangle(238, 140, 15, 20);
                 spriteBatch.Draw(Texture, greenArrowDestination, greenArrowRectangle, Color.White);
-                mapPauseScreen.Draw(spriteBatch, link);
+                if (selectionPosition.X == 230 && selectionPosition.Y == 135)
+                {
+                    greenArrowDestination = new Rectangle(115, 105, 20, 25);
+                    spriteBatch.Draw(Texture, greenArrowDestination, greenArrowRectangle, Color.White);
+                    display.ItemBSlot = "green-arrow";
+                }
+
             }
             if (link.inventory.BlueArrowState())
             {
-                Rectangle blueArrowDestination = new Rectangle(275, 135, 15, 25);
+                Rectangle blueArrowDestination = new Rectangle(278, 140, 15, 20);
                 spriteBatch.Draw(Texture, blueArrowDestination, blueArrowRectangle, Color.White);
-                mapPauseScreen.Draw(spriteBatch, link);
+                if (selectionPosition.X == 270 && selectionPosition.Y == 135)
+                {
+                    blueArrowDestination = new Rectangle(115, 105, 20, 25);
+                    spriteBatch.Draw(Texture, blueArrowDestination, blueArrowRectangle, Color.White);
+                    display.ItemBSlot = "blue-arrow";
+                }
+
             }
 
         }
 
         public void nextWeapon()
         {
-            selectionPosition.X += 35;
+            selectionPosition.X += 40;
             if (selectionPosition.X > 350)
             {
-                selectionPosition.X = 235;
+                selectionPosition.X = 230;
                 selectionPosition.Y += 35;
             }
             if (selectionPosition.X > 135 && selectionPosition.Y > 135)
             {
-                selectionPosition.X = 235;
+                selectionPosition.X = 230;
                 selectionPosition.Y -= 70;
             }
         }

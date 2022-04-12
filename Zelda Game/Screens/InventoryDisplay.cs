@@ -32,7 +32,7 @@ namespace Zelda_Game
             Font = game.Content.Load<SpriteFont>("Display");
             this.inventory = inventory;
             itemA = "sword";
-            itemB = "green-boomerang";
+            itemB = "blank-projectile";
         }
 
         public void Update(Link player)
@@ -95,13 +95,27 @@ namespace Zelda_Game
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Pink);
         }
 
-        public static void DrawSelectionB(SpriteBatch spriteBatch, Texture2D texture, string item)
+        public void DrawSelectionB(SpriteBatch spriteBatch, Texture2D texture, string item)
         {
-            Rectangle sourceRectangle = new Rectangle(584, 134, 8, 20);
             Rectangle destinationRectangle = new Rectangle(250, 380, 16, 40);
-            if(item.Equals("green-boomerang"))
-                sourceRectangle = new Rectangle(584, 134, 8, 20);
-            spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Pink);
+            Rectangle sourceRectangle;
+            if(!item.Equals("blank-projectile"))
+            {
+                if (item.Equals("blue-boomerang"))
+                    sourceRectangle = new Rectangle(594, 134, 8, 20);
+                else if (item.Equals("green-boomerang"))
+                    sourceRectangle = new Rectangle(584, 134, 8, 20);
+                else if (item.Equals("bow"))
+                    sourceRectangle = new Rectangle(633, 134, 8, 20);
+                else if (item.Equals("green-arrow"))
+                    sourceRectangle = new Rectangle(617, 134, 8, 20);
+                else if (item.Equals("blue-arrow"))
+                    sourceRectangle = new Rectangle(626, 134, 8, 20);
+                else
+                    sourceRectangle = new Rectangle(604, 134, 8, 20);
+                spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Pink);
+            }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)
