@@ -15,7 +15,7 @@ Arrow Keys  | to move Link around the screen.
   R | to Reset
   
 #### Bugs
-  The project has a few bugs right now. One bug is in room 15 you can force move the pushable block from faraway. Honestly might even be a feature. Next bug is with enemies taking damage the sword weapons are not supposed to one hit kill but it does for some reason. The Sound plays multiple times which can crash the game. Link can get hit through doors, which is a result of it not freezing fast enough. 
+  The project has a few bugs right now. One bug is in room 15 you can force move the pushable block from faraway. Honestly might even be a feature. Next bug is with enemies taking damage the sword weapons are not supposed to one hit kill but it does for some reason. The Sound plays multiple times which can crash the game. Link can get hit through doors, which is a result of it not freezing fast enough. Another bug with room 15 is the stairs and how you can ascess them but not steping ont he right block, something with they way the collision is analyzed.
 
 #### Code Metrics
 
