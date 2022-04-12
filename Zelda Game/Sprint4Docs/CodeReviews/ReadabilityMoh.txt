@@ -1,0 +1,17 @@
+﻿Author of Review: Ankit Kumar
+
+Date: 4/11/2022
+
+Sprint 4
+
+File being reviewed: WeaponSelection.cs
+
+Author of file being reviewed: Moh Elzubeir
+
+Time: 10 minutes
+
+Comments about code: Overall the code is very simple and does not have too many
+layers thus making it easy to read. The coupling is also not high as it just
+relies on the content builder and the inventory of link. Overall It is good maybe
+to make it better a good idea would be for each item to have a helper method,
+and store those in a seperate file and only call them in the main.

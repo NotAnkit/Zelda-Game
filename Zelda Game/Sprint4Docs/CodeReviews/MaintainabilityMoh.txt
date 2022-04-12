@@ -1,0 +1,20 @@
+﻿Author of Review: Anish Chitti
+
+Date: 4/11/2022
+
+Sprint 4
+
+File being reviewed: WeaponSelection.cs
+
+Author of file being reviewed: Moh Elzubeir
+
+Time: 15 minutes
+
+Comments about code: The code is very simple and can easily be read as it
+handles weapon selection. The sprite gets drawn for whichever weapon wants to be
+selected in the inventory to be used.
+
+Hypothetical change: A change that could be handled pretty easily is if a new
+weapon was added to the game. This could be easily added as the new weapon would
+have to be drawn and then it can be selected. How the weapon functions will be
+done by a seperate class.
