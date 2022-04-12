@@ -10,6 +10,7 @@ namespace Zelda_Game
         public Dictionary<Vector2, IEnemy> enemyList;
         public Dictionary<Vector2, IItem> itemList;
         public List<IDoor> doorList;
+        public bool itemPickedUp;
 
 
         public Room(Level room, Game1 game1)
@@ -18,7 +19,7 @@ namespace Zelda_Game
             enemyList = new Dictionary<Vector2, IEnemy>();
             itemList = new Dictionary<Vector2, IItem>();
             doorList = new List<IDoor>();
-
+            itemPickedUp = false;
             blockList = AddRoomBlocks.Instance.LoadBlocks(room.Blocks);
             enemyList = AddRoomEnemies.Instance.LoadEnemies(room.Enemies, game1);
             itemList = AddRoomItems.Instance.LoadItems(room.Items);

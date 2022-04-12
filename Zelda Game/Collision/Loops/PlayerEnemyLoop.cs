@@ -66,10 +66,7 @@ namespace Zelda_Game
 
             if (enemies.Count == 0)
             {
-                if (game.manager.roomLocation.Key == 3 && game.manager.roomLocation.Value == 5)
-                {
-                   game.manager.roomData.itemList.Add(new Vector2(300, 100), ItemSpriteFactory.Instance.BowItem());
-                }
+                GetWeapons.DropWeapons(game.manager);
 
                 foreach (IDoor door in doors.ToArray())
                 {

@@ -44,5 +44,11 @@ namespace Zelda_Game
 
         public IItem TriforcePieceItem() => new TriforcePieceItem(ItemSheet);
 
+        public IItem ArrowItem2() => new ArrowItem2(ItemSheet);
+
+        public IItem BlueBoomerang() => new BlueBoomerang(ItemSheet);
+
+        public IItem GreenBoomerang() => new GreenBoomerang(ItemSheet);
+
     }
 }
