@@ -48,19 +48,19 @@
     <Enemies>
       <Item>
         <Key>59 61</Key>
-        <Value>T</Value>
+        <Value>SE</Value>
       </Item>
       <Item>
         <Key>411 61</Key>
-        <Value>T</Value>
+        <Value>SE</Value>
       </Item>
       <Item>
         <Key>59 253</Key>
-        <Value>T</Value>
+        <Value>SE</Value>
       </Item>
       <Item>
         <Key>411 253</Key>
-        <Value>T</Value>
+        <Value>SE</Value>
       </Item>
     </Enemies>
     <Items>

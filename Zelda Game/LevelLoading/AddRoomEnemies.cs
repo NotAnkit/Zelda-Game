@@ -29,6 +29,8 @@ namespace Zelda_Game
                 else if (enemy.Value.Equals("H")) enemyList.Add(enemy.Key, new Hand(game1, enemy.Key));
 
                 else if (enemy.Value.Equals("S")) enemyList.Add(enemy.Key, new Stalfos(game1, enemy.Key));
+
+                else if (enemy.Value.Equals("SE")) enemyList.Add(enemy.Key, new SpikeEnemy(game1, enemy.Key));
             }
             return enemyList;
         }
