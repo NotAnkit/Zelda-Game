@@ -30,7 +30,7 @@ namespace Zelda_Game
             Rectangle bowRectangle = new Rectangle(633, 137, 8, 16); // Bow selection
             Rectangle greenArrowRectangle = new Rectangle(617, 137, 5, 16); // Green arrow selection
             Rectangle blueArrowRectangle = new Rectangle(626, 137, 5, 16); // Blue arrow selection
-            Rectangle fireRectangle = new Rectangle(191, 181, 16, 32);
+            Rectangle fireRectangle = new Rectangle(191, 181, 16, 32); // Fire selection
 
             //Code below for weapon selection rectangle
             Rectangle selectionRectangle = new Rectangle(519, 137, 16, 16);
