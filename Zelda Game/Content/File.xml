@@ -17,12 +17,20 @@
     </Enemies>
     <Items>
        <Item>
-        <Key>155 157</Key>
+        <Key>155 257</Key>
         <Value>BB</Value>
       </Item>
       <Item>
-        <Key>315 157</Key>
+        <Key>315 257</Key>
         <Value>BB</Value>
+      </Item>
+       <Item>
+        <Key>155 157</Key>
+        <Value>FI</Value>
+      </Item>
+      <Item>
+        <Key>315 157</Key>
+        <Value>FI</Value>
       </Item>
     </Items>
   </Asset>

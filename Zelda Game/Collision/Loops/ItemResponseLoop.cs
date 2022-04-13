@@ -36,6 +36,10 @@ namespace Zelda_Game
                     {
                         player.inventory.Bombs++;
                     }
+                    else if (item.Value is BombItem)
+                    {
+                        player.inventory.Bombs++;
+                    }
                     else
                     {
                         player.inventory.AddItem(item.Value);

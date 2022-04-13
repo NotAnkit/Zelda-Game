@@ -42,6 +42,8 @@ namespace Zelda_Game
                 else if (item.Value.Equals("R")) itemList.Add(item.Key, ItemSpriteFactory.Instance.RupeeItem());
 
                 else if (item.Value.Equals("T")) itemList.Add(item.Key, ItemSpriteFactory.Instance.TriforcePieceItem());
+
+                else if (item.Value.Equals("FI")) itemList.Add(item.Key, ItemSpriteFactory.Instance.Fire());
             }
             return itemList;
         }

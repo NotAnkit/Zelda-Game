@@ -6,6 +6,7 @@ namespace Zelda_Game
     public class InventoryDisplay
     {
         private readonly Texture2D Texture;
+        private Texture2D Texture2;
         private readonly SpriteFont Font;
         private LinkInventory inventory;
         private int rupees;
@@ -29,6 +30,7 @@ namespace Zelda_Game
         public InventoryDisplay(Game1 game, LinkInventory inventory)
         {
             Texture = game.Content.Load<Texture2D>("Inventory");
+            Texture2 = game.Content.Load<Texture2D>("LinkSheet");
             Font = game.Content.Load<SpriteFont>("Display");
             this.inventory = inventory;
             itemA = "sword";
@@ -111,6 +113,11 @@ namespace Zelda_Game
                     sourceRectangle = new Rectangle(617, 134, 8, 20);
                 else if (item.Equals("blue-arrow"))
                     sourceRectangle = new Rectangle(626, 134, 8, 20);
+                else if (item.Equals("fire"))
+                {
+                    texture = Texture2;
+                    sourceRectangle = new Rectangle(191, 181, 16, 32); ;
+                }
                 else
                     sourceRectangle = new Rectangle(604, 134, 8, 20);
                 spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Pink);

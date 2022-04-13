@@ -6,6 +6,7 @@ namespace Zelda_Game
     public class ItemSpriteFactory
     {
         private Texture2D ItemSheet;
+        private Texture2D ItemSheet2;
 
         private static readonly ItemSpriteFactory instance = new ItemSpriteFactory();
 
@@ -18,6 +19,7 @@ namespace Zelda_Game
         public void LoadAllTextures(ContentManager content)
         {
             ItemSheet = content.Load<Texture2D>("WeaponSheet");
+            ItemSheet2 = content.Load<Texture2D>("LinkSheet");
         }
 
         public IItem ArrowItem() => new ArrowItem(ItemSheet);
@@ -49,6 +51,8 @@ namespace Zelda_Game
         public IItem BlueBoomerang() => new BlueBoomerang(ItemSheet);
 
         public IItem GreenBoomerang() => new GreenBoomerang(ItemSheet);
+
+        public IItem Fire() => new FireItem(ItemSheet2);
 
     }
 }

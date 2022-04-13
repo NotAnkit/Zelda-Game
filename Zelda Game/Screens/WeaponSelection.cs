@@ -6,13 +6,15 @@ namespace Zelda_Game
     public class WeaponSelection
     {
         private readonly Texture2D Texture;
-        
+        private readonly Texture2D Texture2;
+
 
         Vector2 selectionPosition = new Vector2(230, 100); // MOVE TO WEAPONSELECTION FILE
 
         public WeaponSelection(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("Inventory");
+            Texture2 = game.Content.Load<Texture2D>("LinkSheet");
         }
 
         public void Update()
@@ -28,6 +30,7 @@ namespace Zelda_Game
             Rectangle bowRectangle = new Rectangle(633, 137, 8, 16); // Bow selection
             Rectangle greenArrowRectangle = new Rectangle(617, 137, 5, 16); // Green arrow selection
             Rectangle blueArrowRectangle = new Rectangle(626, 137, 5, 16); // Blue arrow selection
+            Rectangle fireRectangle = new Rectangle(191, 181, 16, 32);
 
             //Code below for weapon selection rectangle
             Rectangle selectionRectangle = new Rectangle(519, 137, 16, 16);
@@ -103,6 +106,18 @@ namespace Zelda_Game
                     blueArrowDestination = new Rectangle(115, 105, 20, 25);
                     spriteBatch.Draw(Texture, blueArrowDestination, blueArrowRectangle, Color.White);
                     display.ItemBSlot = "blue-arrow";
+                }
+
+            }
+            if (link.inventory.FireState())
+            {
+                Rectangle fireDestination = new Rectangle(318, 140, 16, 38);
+                spriteBatch.Draw(Texture2, fireDestination, fireRectangle, Color.White);
+                if (selectionPosition.X == 310 && selectionPosition.Y == 135)
+                {
+                    fireDestination = new Rectangle(115, 105, 20, 38);
+                    spriteBatch.Draw(Texture2, fireDestination, fireRectangle, Color.White);
+                    display.ItemBSlot = "fire";
                 }
 
             }

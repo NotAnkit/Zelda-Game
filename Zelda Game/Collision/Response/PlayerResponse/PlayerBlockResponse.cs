@@ -20,7 +20,7 @@ namespace Zelda_Game
                     else if (collisonDirection[i].Equals("left-right")) ((PushableBlock)blockType).position.X += 2;
                 }
             }
-            else if(blockType is BlueSand)
+            else if(blockType is BlueSand || blockType is BigBlackBlock)
             {
 
             }

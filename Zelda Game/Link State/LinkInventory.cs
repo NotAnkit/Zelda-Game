@@ -17,6 +17,7 @@ namespace Zelda_Game
         private bool bow;
         private bool greenArrow;
         private bool blueArrow;
+        private bool fire;
         public List<IItem> items;
         public LinkInventory()
         {
@@ -31,6 +32,7 @@ namespace Zelda_Game
             bow = true;
             blueArrow = true;
             greenArrow = true;
+            fire = true;
             rupees = 24;
             items = new List<IItem>();
         }
@@ -98,6 +100,10 @@ namespace Zelda_Game
             {
                 blueBoomerang = true;
             }
+            if (item is FireItem)
+            {
+                fire = true;
+            }
             items.Add(item);
         }
 
@@ -113,6 +119,11 @@ namespace Zelda_Game
         public bool BombState()
         {
             return bomb;
+        }
+
+        public bool FireState()
+        {
+            return fire;
         }
 
         public bool YellowBoomerangState()
