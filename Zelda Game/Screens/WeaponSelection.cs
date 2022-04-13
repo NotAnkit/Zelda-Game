@@ -32,7 +32,6 @@ namespace Zelda_Game
             Rectangle blueArrowRectangle = new Rectangle(626, 137, 5, 16); // Blue arrow selection
             Rectangle fireRectangle = new Rectangle(191, 181, 16, 32); // Fire selection
 
-            //Code below for weapon selection rectangle
             Rectangle selectionRectangle = new Rectangle(519, 137, 16, 16);
             Rectangle selectionDestination = new Rectangle((int)selectionPosition.X, (int)selectionPosition.Y, 30, 30);
             spriteBatch.Draw(Texture, selectionDestination, selectionRectangle, Color.White);
