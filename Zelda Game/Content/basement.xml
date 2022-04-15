@@ -21,6 +21,10 @@
         <Value>SB</Value>
       </Item>
       <Item>
+        <Key>96 64</Key>
+        <Value>S</Value>
+      </Item>
+      <Item>
         <Key>64 96</Key>
         <Value>SB</Value>
       </Item>
@@ -113,6 +117,10 @@
         <Value>SB</Value>
       </Item>
       <Item>
+        <Key>160 192</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
         <Key>192 192</Key>
         <Value>SB</Value>
       </Item>
@@ -125,7 +133,7 @@
         <Value>SB</Value>
       </Item>
       <Item>
-        <Key>228 192</Key>
+        <Key>288 192</Key>
         <Value>SB</Value>
       </Item>
       <Item>
@@ -133,11 +141,71 @@
         <Value>SB</Value>
       </Item>
       <Item>
+        <Key>320 160</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>288 160</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>256 160</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>224 160</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
         <Key>384 192</Key>
         <Value>SB</Value>
       </Item>
       <Item>
+        <Key>384 160</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>416 160</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
         <Key>416 192</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>192 128</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>192 96</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>224 96</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>256 96</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>288 96</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>320 96</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>352 96</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>384 96</Key>
+        <Value>SB</Value>
+      </Item>
+      <Item>
+        <Key>416 96</Key>
         <Value>SB</Value>
       </Item>
     </Blocks>

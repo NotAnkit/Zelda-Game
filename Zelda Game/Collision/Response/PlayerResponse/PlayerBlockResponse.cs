@@ -30,8 +30,16 @@ namespace Zelda_Game
                 {
                     if (collisonDirection[i].Equals("left-right"))
                     {
-                        player.position = new Vector2(100, 50);
+                        player.position = new Vector2(100, 100);
+                        //Sould to transition here
                         manager.roomLocation = new KeyValuePair<int, int>(1, 1);
+                        manager.roomData = manager.roomList[manager.roomLocation];
+                    }
+                    else if (collisonDirection[i].Equals("top-bottom"))
+                    {
+                        player.position = new Vector2(221, 157);
+                        //Sould to transition here
+                        manager.roomLocation = new KeyValuePair<int, int>(1, 0);
                         manager.roomData = manager.roomList[manager.roomLocation];
                     }
                 }
