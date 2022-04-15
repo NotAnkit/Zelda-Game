@@ -11,7 +11,6 @@ namespace Zelda_Game
         public BasementBlock(Game1 game)
         {
             Texture = game.Content.Load<Texture2D>("RoomSheet");
-
         }
 
         public Rectangle BlockRectangle()

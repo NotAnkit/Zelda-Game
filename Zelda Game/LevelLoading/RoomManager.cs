@@ -78,15 +78,17 @@ namespace Zelda_Game
         {
             if (roomLocation.Key == 1 && roomLocation.Value == 1)
             {
+                roomData.Draw(spriteBatch);
                 border = new BasementBlock(game1);
                 border.Draw(spriteBatch, new Vector2(0, 0));
-                roomData.Draw(spriteBatch);
+                
             }
             else
-            {
+            {   
                 border = new BorderBlock(game1);
                 border.Draw(spriteBatch, new Vector2(0, 0));
                 roomData.Draw(spriteBatch);
+
             }
         }
 

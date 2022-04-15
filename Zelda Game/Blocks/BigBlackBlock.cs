@@ -16,7 +16,7 @@ namespace Zelda_Game
 
         public Rectangle BlockRectangle()
         {
-            return new Rectangle((int)position.X, (int)position.Y, 384, 224);
+            return new Rectangle((int)position.X, (int)position.Y, 0, 0);
         }
 
 

@@ -79,6 +79,13 @@ namespace Zelda_Game
             spriteBatch.DrawString(font, output, destination, Color.Red);
         }
 
+        public static void DrawLevel(SpriteBatch spriteBatch, int levelNum, SpriteFont font)
+        {
+            string output = "LEVEL-" + levelNum.ToString();
+            Vector2 destination = new Vector2(20, 350);
+            spriteBatch.DrawString(font, output, destination, Color.White);
+        }
+
         public static void DrawLives(SpriteBatch spriteBatch, int numLives, Texture2D texture)
         {
             Rectangle sourceRectangle = new Rectangle(645, 117, 8, 8);
@@ -137,6 +144,7 @@ namespace Zelda_Game
             DrawLives(spriteBatch, lives, Texture);
             DrawSelectionA(spriteBatch, Texture);
             DrawSelectionB(spriteBatch, Texture, itemB);
+            DrawLevel(spriteBatch, 1, Font);
         }
     }
 }

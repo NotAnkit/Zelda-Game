@@ -42,6 +42,8 @@ namespace Zelda_Game
 
                 else if (block.Value.Equals("S2")) blockList.Add(block.Key, BlockSpriteFactory.Instance.Statue2());
 
+                else if (block.Value.Equals("OM")) blockList.Add(block.Key, BlockSpriteFactory.Instance.OldMan());
+
             }
 
             return blockList;

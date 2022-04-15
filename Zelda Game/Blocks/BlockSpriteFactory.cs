@@ -7,6 +7,8 @@ namespace Zelda_Game
     public class BlockSpriteFactory
     {
         private Texture2D blockSpritesheet;
+        private Texture2D oldManSheet;
+        private SpriteFont secretMessage;
 
         private static readonly BlockSpriteFactory instance = new BlockSpriteFactory();
 
@@ -19,6 +21,8 @@ namespace Zelda_Game
         public void LoadAllTextures(ContentManager content)
         {
             blockSpritesheet = content.Load<Texture2D>("RoomSheet");
+            oldManSheet = content.Load<Texture2D>("Sprite Sheet");
+            secretMessage = content.Load<SpriteFont>("Display");
         }
 
         public IEnvironment BlackBlock() => new BlackBlock(blockSpritesheet);
@@ -42,6 +46,8 @@ namespace Zelda_Game
         public IEnvironment Statue2() => new Statue2(blockSpritesheet);
 
         public IEnvironment LadderBlock() => new LadderBlock(blockSpritesheet);
+
+        public IEnvironment OldMan() => new OldMan(oldManSheet, secretMessage);
     }
 }
 

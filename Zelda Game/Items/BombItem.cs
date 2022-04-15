@@ -24,7 +24,7 @@ namespace Zelda_Game
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(136, 0, 8, 14);
+            Rectangle sourceRectangle = new Rectangle(136, 0, 7, 14);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 16, 28);
             position = location;
 
