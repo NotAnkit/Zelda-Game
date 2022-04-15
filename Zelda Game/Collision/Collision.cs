@@ -15,7 +15,7 @@
 
         public void Collide(Room room)
         {
-            PlayerEnemyLoop.EnemyLoop(room.enemyList, player, room.blockList, room.doorList, game);
+            PlayerEnemyLoop.EnemyLoop(room.enemyList, player, room.blockList, room.doorList, room.itemList, game);
 
             PlayerBlockLoop.BlockLoop(room.blockList, player, manager);
 

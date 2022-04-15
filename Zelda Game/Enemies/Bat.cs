@@ -16,6 +16,7 @@ namespace Zelda_Game
         private string direction;
         private int health;
         private Color spriteColor;
+        private bool spawn;
 
         public Bat(Game1 game, Vector2 location)
         {
@@ -29,6 +30,7 @@ namespace Zelda_Game
             health = 1;
             direction = "right";
             spriteColor = Color.White;
+            spawn = true;
         }
 
         public Rectangle EnemyRectangle()
@@ -49,6 +51,7 @@ namespace Zelda_Game
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
+               
 
             Random rnd = new Random();
             movementCounter++;
@@ -86,12 +89,24 @@ namespace Zelda_Game
                     position.Y += spriteSpeed;
                 direction = "down";
             }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
+
+            if (spawn)
+            {
+                sourceRectangle = new Rectangle(339, 5, 13, 17);
+                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor);
+            }
+            else if(health <= 0)
+            {
+                sourceRectangle = new Rectangle(355, 5, 13, 17);
+                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor);
+            }
 
             if (currentFrame <= totalFrames / 2)
                 sourceRectangle = new Rectangle(183, 11, 16, 16);
@@ -122,23 +137,6 @@ namespace Zelda_Game
         public string GetDirection()
         {
             return direction;
-        }
-
-        public void DropItem(Vector2 location)
-        {
-            Random rnd = new Random();
-            int num = rnd.Next(1, 2);
-            if (num == 1) //drop bomb
-            {
-                IItem drawBomb = ItemSpriteFactory.Instance.BombItem();
-                //drawBomb.Draw(spriteBatch, location);
-
-            }
-            else //draw Rupee
-            {
-                IItem drawRupee = ItemSpriteFactory.Instance.RupeeItem();
-                //drawRupee.Draw(spriteBatch, location);
-            }
         }
     }
 }

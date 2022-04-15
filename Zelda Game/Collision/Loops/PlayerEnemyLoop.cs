@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public static class PlayerEnemyLoop
     {
-        public static void EnemyLoop(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnvironment> blocks, List<IDoor> doors, Game1 game)
+        public static void EnemyLoop(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnvironment> blocks, List<IDoor> doors, Dictionary<Vector2, IItem> items, Game1 game)
         {
             List<Vector2> deleteEnemy = new List<Vector2>();
             string direction;
@@ -61,6 +61,7 @@ namespace Zelda_Game
 
             foreach (Vector2 enemy in deleteEnemy)
             {
+                DropItem.EnemyDrop(items, enemy);
                 enemies.Remove(enemy);
             }
 
