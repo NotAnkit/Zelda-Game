@@ -27,12 +27,12 @@ namespace Zelda_Game
         {
             LinkSpritesheet = content.Load<Texture2D>("LinkSheet");
             sword = content.Load<SoundEffect>("sword");
-            hurt = content.Load<SoundEffect>("sword");
-            item = content.Load<SoundEffect>("sword");
-            bomb = content.Load<SoundEffect>("sword");
-            arrow = content.Load<SoundEffect>("sword");
-            fire = content.Load<SoundEffect>("sword");
-            boomerang = content.Load<SoundEffect>("sword");
+            hurt = content.Load<SoundEffect>("Hurt");
+            item = content.Load<SoundEffect>("PickUpItem");
+            bomb = content.Load<SoundEffect>("BombEffect");
+            arrow = content.Load<SoundEffect>("UseArrow");
+            fire = content.Load<SoundEffect>("Fire");
+            boomerang = content.Load<SoundEffect>("Boomerang");
         }
 
         public ISprite LinkDownAnimationSprite() => new LinkDownAnimation(LinkSpritesheet);

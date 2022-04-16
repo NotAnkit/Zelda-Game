@@ -25,6 +25,18 @@
 /processor:PassThroughProcessor
 /build:basement.xml
 
+#begin BombEffect.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:BombEffect.mp3
+
+#begin Boomerang.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Boomerang.mp3
+
 #begin Display.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
@@ -48,6 +60,18 @@
 /importer:XmlImporter
 /processor:PassThroughProcessor
 /build:File.xml
+
+#begin Fire.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Fire.mp3
+
+#begin Hurt.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Hurt.mp3
 
 #begin Inventory.png
 /importer:TextureImporter
@@ -84,6 +108,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:LinkSheet.png
+
+#begin PickUpItem.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:PickUpItem.mp3
 
 #begin Room0.xml
 /importer:XmlImporter
@@ -182,6 +212,12 @@
 /processorParam:TextureFormat=Color
 /build:RoomSheet.png
 
+#begin RupeePickUp.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:RupeePickUp.mp3
+
 #begin Sprite Sheet.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -199,6 +235,18 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:sword.wav
+
+#begin TransitionMusic.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:TransitionMusic.mp3
+
+#begin UseArrow.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:UseArrow.mp3
 
 #begin WeaponSheet.png
 /importer:TextureImporter

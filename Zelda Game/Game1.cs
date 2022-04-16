@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using System.Collections.Generic;
+using System.Media;
 
 namespace Zelda_Game
 {
@@ -31,7 +32,6 @@ namespace Zelda_Game
         public Link link;
         public InventoryDisplay inventoryDisplay;
         public RoomManager manager;
-
 
         public bool pause;
 
