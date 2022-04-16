@@ -22,8 +22,9 @@ namespace Zelda_Game
                 if (direction != "none")
                 {
                     collisonDirection.Add(direction);
+                    PlayerBlockResponse.PlayerBlock(player, directionLocked, collisonDirection, block.Value, manager);
                 }
-                PlayerBlockResponse.PlayerBlock(player, directionLocked, collisonDirection, block.Value, manager);
+                
             }
         }
     }
