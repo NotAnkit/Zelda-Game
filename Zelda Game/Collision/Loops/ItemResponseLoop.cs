@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public static class ItemResponseLoop
     {
-        public static Dictionary<Vector2, IItem> ItemLoop(Dictionary<Vector2, IItem> items, Link player, Dictionary<Vector2, IEnemy> enemies)
+        public static List<Vector2> ItemLoop(Dictionary<Vector2, IItem> items, Link player, Dictionary<Vector2, IEnemy> enemies)
         {
             string direction;
             List<Vector2> deleteItem = new List<Vector2>();
@@ -52,17 +52,13 @@ namespace Zelda_Game
                     {
                         player.inventory.AddItem(item.Value);
                     }
+
                     deleteItem.Add(item.Key);
                     
                 }
             }
 
-            foreach (Vector2 item in deleteItem)
-            {
-                items.Remove(item);
-            }
-
-            return items;
+            return deleteItem;
 
         }
     }

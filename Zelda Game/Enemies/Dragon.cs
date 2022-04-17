@@ -18,6 +18,7 @@ namespace Zelda_Game
         private string direction;
         private int health;
         private Color spriteColor;
+        private int count;
 
         public Rectangle EnemyRectangle()
         {
@@ -35,7 +36,7 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("EnemySheet");
             currentFrame = 0;
             totalFrames = 60;
-            spriteSpeed = 1f;
+            spriteSpeed = 0f;
             health = 10;
             windowHeight = game.WindowSizeHeight - 195;
             windowWidth = game.WindowSizeWidth - 81;
@@ -49,6 +50,11 @@ namespace Zelda_Game
         private int num = 0;
         public void Update()
         {
+            if (count < 20)
+            {
+                count++;
+            }
+
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
@@ -84,14 +90,25 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 48, 64);
 
-            if (currentFrame <= totalFrames / 4)
-                sourceRectangle = new Rectangle(1, 11, 24, 32);
-            else if(currentFrame > totalFrames / 4 && currentFrame <= totalFrames / 2)
-                sourceRectangle = new Rectangle(26, 11, 24, 32);
-            else if(currentFrame > totalFrames / 2 && currentFrame <= 3 * totalFrames / 4)
-                sourceRectangle = new Rectangle(51, 11, 24, 32);
+            if (count < 20)
+            {
+                sourceRectangle = new Rectangle(339, 5, 13, 17);
+            }
+            else if (health <= 0)
+            {
+                sourceRectangle = new Rectangle(355, 5, 13, 17);
+            }
             else
-                sourceRectangle = new Rectangle(76, 11, 24, 32);
+            {
+                if (currentFrame <= totalFrames / 4)
+                    sourceRectangle = new Rectangle(1, 11, 24, 32);
+                else if (currentFrame > totalFrames / 4 && currentFrame <= totalFrames / 2)
+                    sourceRectangle = new Rectangle(26, 11, 24, 32);
+                else if (currentFrame > totalFrames / 2 && currentFrame <= 3 * totalFrames / 4)
+                    sourceRectangle = new Rectangle(51, 11, 24, 32);
+                else
+                    sourceRectangle = new Rectangle(76, 11, 24, 32);
+            }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor);
             spriteColor = Color.White;

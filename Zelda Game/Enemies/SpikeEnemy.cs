@@ -18,13 +18,14 @@ namespace Zelda_Game
         private Color spriteColor;
         private int movementCounter;
         private int num;
+        private int count;
 
         public SpikeEnemy(Game1 game, Vector2 location)
         {
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
             totalFrames = 30;
-            spriteSpeed = 1f;
+            spriteSpeed = 0f;
             windowHeight = game.WindowSizeHeight - 195;
             windowWidth = game.WindowSizeWidth - 97;
             position = location;
@@ -49,6 +50,11 @@ namespace Zelda_Game
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
+
+            if (count < 20)
+            {
+                count++;
+            }
 
             Random rnd = new Random();
             movementCounter++;
@@ -90,10 +96,23 @@ namespace Zelda_Game
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            Rectangle sourceRectangle = new Rectangle(162, 59, 20, 16);
+            Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor);
+            if (count < 20)
+            {
+                sourceRectangle = new Rectangle(339, 5, 13, 17);
+            }
+            else if (health <= 0)
+            {
+                sourceRectangle = new Rectangle(355, 5, 13, 17);
+            }
+            else
+            {
+                sourceRectangle = new Rectangle(162, 59, 20, 16);
+            }
+
+                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor);
         }
 
 

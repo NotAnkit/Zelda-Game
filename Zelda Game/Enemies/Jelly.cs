@@ -16,6 +16,7 @@ namespace Zelda_Game
         private string direction;
         private int health;
         private Color spriteColor;
+        private int count;
 
         public Rectangle EnemyRectangle()
         {
@@ -32,7 +33,7 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
             totalFrames = 30;
-            spriteSpeed = 1f;
+            spriteSpeed = 0f;
             windowHeight = game.WindowSizeHeight - 195;
             windowWidth = game.WindowSizeWidth - 81;
             position = location;
@@ -48,6 +49,11 @@ namespace Zelda_Game
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
+
+            if (count < 20)
+            {
+                count++;
+            }
 
             Random rnd = new Random();
             movementCounter++;
@@ -92,10 +98,22 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 16, 32);
 
-            if (currentFrame <= totalFrames/2)
-                sourceRectangle = new Rectangle(1,11, 8, 16);
+            if (count < 20)
+            {
+                sourceRectangle = new Rectangle(339, 5, 13, 17);
+            }
+            else if (health <= 0)
+            {
+                sourceRectangle = new Rectangle(355, 5, 13, 17);
+            }
             else
-                sourceRectangle = new Rectangle(10, 11, 8, 16);
+            {
+
+                if (currentFrame <= totalFrames / 2)
+                    sourceRectangle = new Rectangle(1, 11, 8, 16);
+                else
+                    sourceRectangle = new Rectangle(10, 11, 8, 16);
+            }
 
             
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor);

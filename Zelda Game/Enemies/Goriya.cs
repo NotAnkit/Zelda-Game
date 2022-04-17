@@ -18,6 +18,7 @@ namespace Zelda_Game
         private Trap trap;
         private bool trapFinished = false;
         private Color spriteColor;
+        private int count;
 
         public Rectangle EnemyRectangle()
         {
@@ -35,7 +36,7 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
             totalFrames = 30;
-            spriteSpeed = 1f;
+            spriteSpeed = 0f;
             windowHeight = game.WindowSizeHeight - 195;
             windowWidth = game.WindowSizeWidth - 97;
             position = location;
@@ -53,6 +54,11 @@ namespace Zelda_Game
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
+
+            if (count < 20)
+            {
+                count++;
+            }
 
             Random rnd = new Random();
             movementCounter++;
@@ -104,35 +110,51 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 32, 32);
 
-            SpriteEffects s;
-            if (direction == "right")
+            SpriteEffects s = SpriteEffects.None;
+
+            if (count < 20)
             {
-                s = SpriteEffects.None;
-                if (currentFrame <= totalFrames / 2)
-                    sourceRectangle = new Rectangle(256, 11, 16, 16);
-                else
-                    sourceRectangle = new Rectangle(273, 11, 16, 16);
-            } else if(direction == "up")
+                sourceRectangle = new Rectangle(339, 5, 13, 17);
+            }
+            else if (health <= 0)
             {
-                sourceRectangle = new Rectangle(222, 11, 16, 16);
-                if (currentFrame <= totalFrames / 2)
+                sourceRectangle = new Rectangle(355, 5, 13, 17);
+            }
+            else
+            {
+
+                if (direction == "right")
+                {
                     s = SpriteEffects.None;
-                else
+                    if (currentFrame <= totalFrames / 2)
+                        sourceRectangle = new Rectangle(256, 11, 16, 16);
+                    else
+                        sourceRectangle = new Rectangle(273, 11, 16, 16);
+                }
+                else if (direction == "up")
+                {
+                    sourceRectangle = new Rectangle(222, 11, 16, 16);
+                    if (currentFrame <= totalFrames / 2)
+                        s = SpriteEffects.None;
+                    else
+                        s = SpriteEffects.FlipHorizontally;
+                }
+                else if (direction == "left")
+                {
                     s = SpriteEffects.FlipHorizontally;
-            } else if(direction == "left")
-            {
-                s = SpriteEffects.FlipHorizontally;
-                if (currentFrame <= totalFrames / 2)
-                    sourceRectangle = new Rectangle(256, 11, 16, 16);
+                    if (currentFrame <= totalFrames / 2)
+                        sourceRectangle = new Rectangle(256, 11, 16, 16);
+                    else
+                        sourceRectangle = new Rectangle(273, 11, 16, 16);
+                }
                 else
-                    sourceRectangle = new Rectangle(273, 11, 16, 16);
-            } else
-            {
-                sourceRectangle = new Rectangle(239, 11, 16, 16);
-                if (currentFrame <= totalFrames / 2)
-                    s = SpriteEffects.None;
-                else
-                    s = SpriteEffects.FlipHorizontally;
+                {
+                    sourceRectangle = new Rectangle(239, 11, 16, 16);
+                    if (currentFrame <= totalFrames / 2)
+                        s = SpriteEffects.None;
+                    else
+                        s = SpriteEffects.FlipHorizontally;
+                }
             }
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, spriteColor, 0, Vector2.Zero, s, 0);
