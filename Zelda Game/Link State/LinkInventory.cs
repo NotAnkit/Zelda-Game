@@ -4,7 +4,6 @@ namespace Zelda_Game
 {
     public class LinkInventory
     {
-        //Turn into proporties
         private int numLives;
         private int numKeys;
         private int rupees;

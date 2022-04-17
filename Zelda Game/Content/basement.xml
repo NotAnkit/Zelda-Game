@@ -212,6 +212,10 @@
     <Enemies>
     </Enemies>
     <Items>
+       <Item>
+        <Key>256 128</Key>
+        <Value>F</Value>
+      </Item>
     </Items>
   </Asset>
 </XnaContent>

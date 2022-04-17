@@ -29,7 +29,7 @@ namespace Zelda_Game
 
                 else if (item.Value.Equals("CM")) itemList.Add(item.Key, ItemSpriteFactory.Instance.CompassItem());
 
-                else if (item.Value.Equals("F")) itemList.Add(item.Key, ItemSpriteFactory.Instance.FairyItem());
+                else if (item.Value.Equals("F")) itemList.Add(item.Key, ItemSpriteFactory.Instance.FairyItem(item.Key));
 
                 else if (item.Value.Equals("HC")) itemList.Add(item.Key, ItemSpriteFactory.Instance.HeartContainerItem());
 

@@ -71,7 +71,7 @@ namespace Zelda_Game
         {
             this.roomLocation = roomLocation;
             game1.link.position = position;
-            roomData = roomList[roomLocation];
+            roomData = roomList[this.roomLocation];
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -81,7 +81,7 @@ namespace Zelda_Game
                 roomData.Draw(spriteBatch);
                 border = new BasementBlock(game1);
                 border.Draw(spriteBatch, new Vector2(0, 0));
-                //roomData.Draw(spriteBatch);
+                roomData.DrawItems(spriteBatch);
 
             }
             else
@@ -89,7 +89,6 @@ namespace Zelda_Game
                 border = new BorderBlock(game1);
                 border.Draw(spriteBatch, new Vector2(0, 0));
                 roomData.Draw(spriteBatch);
-
             }
         }
 

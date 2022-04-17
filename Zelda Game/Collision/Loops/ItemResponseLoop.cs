@@ -20,7 +20,6 @@ namespace Zelda_Game
                     if(item.Value is KeyItem)
                     {
                         player.inventory.Keys++;
-                        
                     }
                     else if (item.Value is MapItem)
                     {
@@ -35,6 +34,10 @@ namespace Zelda_Game
                         player.inventory.Rupees++;
                     }
                     else if (item.Value is BombItem)
+                    {
+                        player.inventory.Bombs++;
+                    }
+                    else if (item.Value is FairyItem)
                     {
                         player.inventory.Bombs++;
                     }

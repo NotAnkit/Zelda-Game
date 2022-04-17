@@ -33,22 +33,11 @@ namespace Zelda_Game
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            foreach (KeyValuePair<Vector2, IEnvironment> block in blockList)
-            {
-                block.Value.Draw(spriteBatch, block.Key);
-            }
-            foreach (KeyValuePair<Vector2, IEnemy> enemy in enemyList)
-            {
-                enemy.Value.Draw(spriteBatch, enemy.Key);
-            }
-            foreach (KeyValuePair<Vector2, IItem> item in itemList)
-            {
-                item.Value.Draw(spriteBatch, item.Key);
-            }
-            foreach (IDoor door in doorList)
-            {
-                door.Draw(spriteBatch, new Vector2(100, 100));
-            }
+            DrawBlocks(spriteBatch, blockList);
+            DrawEneimes(spriteBatch, enemyList);
+            DrawItems(spriteBatch);
+            DrawDoors(spriteBatch, doorList);
+
         }
 
         public void Update()
@@ -62,6 +51,38 @@ namespace Zelda_Game
                 item.Value.Update();
             }
             
+        }
+
+        public static void DrawBlocks(SpriteBatch spriteBatch, Dictionary<Vector2, IEnvironment> blockList)
+        {
+            foreach (KeyValuePair<Vector2, IEnvironment> block in blockList)
+            {
+                block.Value.Draw(spriteBatch, block.Key);
+            }
+        }
+
+        public static void DrawEneimes(SpriteBatch spriteBatch, Dictionary<Vector2, IEnemy> enemyList)
+        {
+            foreach (KeyValuePair<Vector2, IEnemy> enemy in enemyList)
+            {
+                enemy.Value.Draw(spriteBatch, enemy.Key);
+            }
+        }
+
+        public void DrawItems(SpriteBatch spriteBatch)
+        {
+            foreach (KeyValuePair<Vector2, IItem> item in itemList)
+            {
+                item.Value.Draw(spriteBatch, item.Key);
+            }
+        }
+
+        public static void DrawDoors(SpriteBatch spriteBatch, List<IDoor> doorList)
+        {
+            foreach (IDoor door in doorList)
+            {
+                door.Draw(spriteBatch, new Vector2(100, 100));
+            }
         }
     }
 }

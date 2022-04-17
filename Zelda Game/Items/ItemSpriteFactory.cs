@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
@@ -32,7 +33,7 @@ namespace Zelda_Game
 
         public IItem CompassItem() => new CompassItem(ItemSheet);
 
-        public IItem FairyItem() => new FairyItem(ItemSheet);
+        public IItem FairyItem(Vector2 location) => new FairyItem(ItemSheet, location);
 
         public IItem HeartContainerItem() => new HeartContainerItem(ItemSheet);
 
