@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public static class ItemResponseLoop
     {
-        public static Dictionary<Vector2, IItem> ItemLoop(Dictionary<Vector2, IItem> items, Link player)
+        public static Dictionary<Vector2, IItem> ItemLoop(Dictionary<Vector2, IItem> items, Link player, Dictionary<Vector2, IEnemy> enemies)
         {
             string direction;
             List<Vector2> deleteItem = new List<Vector2>();
@@ -17,7 +17,7 @@ namespace Zelda_Game
                 if (direction != "none")
                 {
                     bool temp = player.soundManager.PlayItem;
-                    if(item.Value is KeyItem)
+                    if (item.Value is KeyItem)
                     {
                         player.inventory.Keys++;
                     }
@@ -40,6 +40,13 @@ namespace Zelda_Game
                     else if (item.Value is FairyItem)
                     {
                         player.inventory.Bombs++;
+                    }
+                    else if (item.Value is ClockItem)
+                    {
+                        foreach (KeyValuePair<Vector2, IEnemy> enemy in enemies)
+                        {
+                            enemy.Value.SetSpeed(0f);
+                        }
                     }
                     else
                     {

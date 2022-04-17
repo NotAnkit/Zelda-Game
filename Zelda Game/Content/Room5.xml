@@ -60,6 +60,10 @@
       </Item>
     </Enemies>
     <Items>
+       <Item>
+        <Key>250 80</Key>
+        <Value>C</Value>
+      </Item>
     </Items>
   </Asset>
 </XnaContent>

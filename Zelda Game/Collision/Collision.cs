@@ -19,7 +19,7 @@
 
             PlayerBlockLoop.BlockLoop(room.blockList, player, manager);
 
-            room.itemList = ItemResponseLoop.ItemLoop(room.itemList, player);
+            room.itemList = ItemResponseLoop.ItemLoop(room.itemList, player, room.enemyList);
 
             room.doorList = PlayerProjectileLoop.ProjectileLoop(player, room.doorList, manager.roomLocation, game, manager);
 

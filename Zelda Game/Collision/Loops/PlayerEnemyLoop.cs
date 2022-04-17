@@ -30,9 +30,10 @@ namespace Zelda_Game
                     direction = CollisionDetection.GetDirection(enemyRectangle, blockRectangle);
                     if (direction != "none")
                     {
-                        collisonDirection.Add(direction);  
+                        collisonDirection.Add(direction);
+                        EnemyBlockResponse.EnemyBlock(enemy.Value, directionLocked, collisonDirection);
                     }
-                    EnemyBlockResponse.EnemyBlock(enemy.Value, directionLocked, collisonDirection);
+                    
                 }
                 
 
