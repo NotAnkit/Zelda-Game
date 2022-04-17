@@ -1,8 +1,11 @@
-﻿namespace Zelda_Game
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+
+namespace Zelda_Game
 {
     public class PlayerEnemyResponse
     {
-        public static void PlayerEnemy(Link player, string direction, IEnemy enemy)
+        public static void PlayerEnemy(Link player, string direction, IEnemy enemy, Dictionary<Vector2, IEnvironment> blocks)
         {
             if (direction == "left-right")
             {
@@ -13,11 +16,24 @@
                 else
                 {
                     player.TakeDamage();
-                    for (int i = 0; i <= 70; i++)
+                    for (int i = 0; i <= 10; i++)
                     {
+                        if (!(player.position.X < 59))
+                        {
+                            player.position.X -= player.speed;
+                        }
+                        foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
+                        {
+                            Rectangle linkRectangle = player.LinkRectangle;
+                            Rectangle blockRectangle = block.Value.BlockRectangle();
+                            direction = CollisionDetection.GetDirection(linkRectangle, blockRectangle);
+                            if (direction != "none")
+                            {
+                                player.position.X += player.speed;
+                            }
 
+                        }
                     }
-                    player.speed = 2;
                 }
                 
 
@@ -31,11 +47,25 @@
                 else
                 {
                     player.TakeDamage();
-                    for (int i = 0; i <= 70; i++)
+                    for (int i = 0; i <= 10; i++)
                     {
+                        if (!(player.position.X > 411))
+                        {
+                            player.position.X += player.speed;
+                        }
+                        foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
+                        {
+                            Rectangle linkRectangle = player.LinkRectangle;
+                            Rectangle blockRectangle = block.Value.BlockRectangle();
+                            direction = CollisionDetection.GetDirection(linkRectangle, blockRectangle);
+                            if (direction != "none")
+                            {
+                                player.position.X -= player.speed;
+                            }
+
+                        }
 
                     }
-                    player.speed = 2;
                 }
                 
             }
@@ -48,11 +78,25 @@
                 else
                 {
                     player.TakeDamage();
-                    for (int i = 0; i <= 70; i++)
+                    for (int i = 0; i <= 10; i++)
                     {
+                        
+                        if (!(player.position.Y > 253))
+                        {
+                            player.position.Y += player.speed;
+                        }
+                        foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
+                        {
+                            Rectangle linkRectangle = player.LinkRectangle;
+                            Rectangle blockRectangle = block.Value.BlockRectangle();
+                            direction = CollisionDetection.GetDirection(linkRectangle, blockRectangle);
+                            if (direction != "none")
+                            {
+                                player.position.Y -= player.speed;
+                            }
 
+                        }
                     }
-                    player.speed = 2;
                 }
                 
             }
@@ -65,11 +109,25 @@
                 else
                 {
                     player.TakeDamage();
-                    for (int i = 0; i <= 70; i++)
+                    for (int i = 0; i <= 10; i++)
                     {
+                        
+                        if (!(player.position.Y < 61))
+                        {
+                            player.position.Y -= player.speed;
+                        }
+                        foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
+                        {
+                            Rectangle linkRectangle = player.LinkRectangle;
+                            Rectangle blockRectangle = block.Value.BlockRectangle();
+                            direction = CollisionDetection.GetDirection(linkRectangle, blockRectangle);
+                            if (direction != "none")
+                            {
+                                player.position.Y += player.speed;
+                            }
 
+                        }
                     }
-                    player.speed = 2;
                 }
                 
             }

@@ -16,9 +16,11 @@ namespace Zelda_Game
                 direction = CollisionDetection.GetDirection(linkRectangle, itemRectangle);
                 if (direction != "none")
                 {
+                    bool temp = player.soundManager.PlayItem;
                     if(item.Value is KeyItem)
                     {
                         player.inventory.Keys++;
+                        
                     }
                     else if (item.Value is MapItem)
                     {

@@ -20,7 +20,8 @@ namespace Zelda_Game
         private IProjectile item;
         public LinkInventory inventory;
         private Rectangle hitbox;
-        private SoundManager soundManager;
+        public SoundManager soundManager;
+        private bool hurtSound;
 
         public Rectangle LinkRectangle
         {
@@ -30,6 +31,7 @@ namespace Zelda_Game
 
         public Link(Vector2 location, SoundManager soundManager)
         {
+            hurtSound = false;
             this.soundManager = soundManager;
             position = location;
             itemPosition = location;
@@ -114,7 +116,12 @@ namespace Zelda_Game
 
         public void TakeDamage()
         {
-            bool temp = soundManager.PlayHurt;
+            hurtSound = !hurtSound;
+            if(hurtSound)
+            {
+                //bool temp = soundManager.PlayHurt;
+            }
+            
             currentState.TakeDamage();
         }
 

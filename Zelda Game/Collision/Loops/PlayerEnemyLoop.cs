@@ -21,7 +21,7 @@ namespace Zelda_Game
                 directionLocked[1] = "none";
                 directionLocked[2] = "none";
 
-                PlayerEnemyResponse.PlayerEnemy(player, direction, enemy.Value);
+                PlayerEnemyResponse.PlayerEnemy(player, direction, enemy.Value, blocks);
                 
 
                 foreach (KeyValuePair<Vector2, IEnvironment> block in blocks)
