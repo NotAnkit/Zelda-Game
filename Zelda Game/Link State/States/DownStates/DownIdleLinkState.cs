@@ -14,7 +14,7 @@ namespace Zelda_Game
         {
             player = link;
             sprite = LinkSpriteFactory.Instance.LinkDownIdleSprite();
-            link.hitbox = new Rectangle((int)link.position.X, (int)link.position.Y, 29, 29);
+            link.LinkRectangle = new Rectangle((int)link.position.X, (int)link.position.Y, 29, 29);
         }
 
         public void ChangeDirection(string direction)
@@ -40,19 +40,43 @@ namespace Zelda_Game
             
         }
 
-        public IProjectile UseItem(string itemName)
+        public IProjectile UseItem(string itemName, SoundManager soundManager)
         {
-            if (itemName.Equals("bomb")) item = LinkSpriteFactory.Instance.LinkBombDownAnimationSprite();
+            bool temp;
+            if (itemName.Equals("bomb"))
+            {
+                item = LinkSpriteFactory.Instance.LinkBombDownAnimationSprite();
+                temp = soundManager.PlayBomb;
+            }
+            else if (itemName.Equals("blue-arrow"))
+            {
+                item = LinkSpriteFactory.Instance.LinkBlueArrowDownAnimationSprite();
+                temp = soundManager.PlayArrow;
+            }
 
-            else if (itemName.Equals("blue-arrow")) item = LinkSpriteFactory.Instance.LinkBlueArrowDownAnimationSprite();
-                
-            else if (itemName.Equals("fire")) item = LinkSpriteFactory.Instance.LinkFireDownAnimationSprite();
-                
-            else if (itemName.Equals("green-arrow")) item = LinkSpriteFactory.Instance.LinkGreenArrowDownAnimationSprite();
+            else if (itemName.Equals("fire"))
+            {
+                item = LinkSpriteFactory.Instance.LinkFireDownAnimationSprite();
+                temp = soundManager.PlayFire;
+            }
 
-            else if (itemName.Equals("green-boomerang")) item = LinkSpriteFactory.Instance.LinkGreenBoomerangDownAnimationSprite();
+            else if (itemName.Equals("green-arrow"))
+            {
+                item = LinkSpriteFactory.Instance.LinkGreenArrowDownAnimationSprite();
+                temp = soundManager.PlayArrow;
+            }
 
-            else if (itemName.Equals("blue-boomerang")) item = LinkSpriteFactory.Instance.LinkBlueBoomerangDownAnimationSprite();
+            else if (itemName.Equals("green-boomerang"))
+            {
+                item = LinkSpriteFactory.Instance.LinkGreenBoomerangDownAnimationSprite();
+                temp = soundManager.PlayBoomerang;
+            }
+
+            else if (itemName.Equals("blue-boomerang"))
+            {
+                item = LinkSpriteFactory.Instance.LinkBlueBoomerangDownAnimationSprite();
+                temp = soundManager.PlayBoomerang;
+            }
 
             return item;
         }

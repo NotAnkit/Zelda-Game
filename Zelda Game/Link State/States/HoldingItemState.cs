@@ -35,9 +35,9 @@ namespace Zelda_Game
             sprite.Update();
         }
 
-        public IProjectile UseItem(string itemName)
+        public IProjectile UseItem(string itemName, SoundManager soundManager)
         {
-            return null;
+            return new BlankProjectile();
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)

@@ -6,13 +6,11 @@ namespace Zelda_Game
 {
     public class LinkPickUpItem2 : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
 
-        public LinkPickUpItem2(Texture2D texture, SoundEffect song)
+        public LinkPickUpItem2(Texture2D texture)
         {
             Texture = texture;
-            song.Play();
-
         }
 
         public void Update()

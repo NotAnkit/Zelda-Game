@@ -6,12 +6,11 @@ namespace Zelda_Game
 {
     public class LinkDamagedAnimation : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
 
-        public LinkDamagedAnimation(Texture2D texture, SoundEffect song)
+        public LinkDamagedAnimation(Texture2D texture)
         {
             Texture = texture;
-            song.Play();
         }
         public Vector2 Draw(SpriteBatch spriteBatch, Vector2 location)
         {

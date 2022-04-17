@@ -13,10 +13,9 @@ namespace Zelda_Game
         private Vector2 location;
         public Texture2D Texture;
         private bool flip;
-        public BlueBoomerangUpAnimation(Texture2D texture, SoundEffect song)
+        public BlueBoomerangUpAnimation(Texture2D texture)
         {
             Texture = texture;
-            song.Play();
             flip = false;
         }
 

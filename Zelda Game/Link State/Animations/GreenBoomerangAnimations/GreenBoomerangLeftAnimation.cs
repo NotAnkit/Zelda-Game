@@ -13,11 +13,10 @@ namespace Zelda_Game
         private Vector2 location;
         public Texture2D Texture;
         private bool flip;
-        public GreenBoomerangLeftAnimation(Texture2D texture, SoundEffect song)
+        public GreenBoomerangLeftAnimation(Texture2D texture)
         {
             Texture = texture;
             flip = false;
-            song.Play();
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)

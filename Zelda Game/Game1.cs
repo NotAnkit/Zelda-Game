@@ -11,10 +11,10 @@ namespace Zelda_Game
         private SpriteBatch _spriteBatch;
         private List<IController> controllerList;
         private Song song;
-        public ItemSelectionState itemSelectionState;
         private readonly GraphicsDeviceManager _graphics;
         private int windowWidth;
         private int windowHeight;
+        private SoundManager soundManager;
 
         public int WindowSizeWidth
         {
@@ -31,8 +31,8 @@ namespace Zelda_Game
 
         public Link link;
         public InventoryDisplay inventoryDisplay;
+        public ItemSelectionState itemSelectionState;
         public RoomManager manager;
-
         public bool pause;
 
         public Game1()
@@ -57,7 +57,9 @@ namespace Zelda_Game
             LinkSpriteFactory.Instance.LoadAllTextures(Content);
             BlockSpriteFactory.Instance.LoadAllTextures(Content);
             ItemSpriteFactory.Instance.LoadAllTextures(Content);
-            link = new Link(new Vector2(235, 246));
+            soundManager = new SoundManager();
+            soundManager.LoadSounds(Content);
+            link = new Link(new Vector2(235, 246), soundManager);
             manager = new RoomManager(this);
             manager.LoadRooms(this);
             controllerList.Add(new KeyBoardController(this));

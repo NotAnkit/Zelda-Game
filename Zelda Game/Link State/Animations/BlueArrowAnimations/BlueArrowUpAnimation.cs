@@ -16,10 +16,9 @@ namespace Zelda_Game
         private Vector2 location;
         private bool finished;
 
-        public BlueArrowUpAnimation(Texture2D texture, SoundEffect song)
+        public BlueArrowUpAnimation(Texture2D texture)
         {
             Texture = texture;
-            song.Play();
             finished = false;
         }
 

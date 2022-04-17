@@ -16,10 +16,9 @@ namespace Zelda_Game
             return new Rectangle((int)location.X+8, (int) location.Y+32, 1, 1);
         }
 
-        public BlueArrowDownAnimation(Texture2D texture, SoundEffect song)
+        public BlueArrowDownAnimation(Texture2D texture)
         {
             Texture = texture;
-            song.Play();
             finished = false;
         }
 

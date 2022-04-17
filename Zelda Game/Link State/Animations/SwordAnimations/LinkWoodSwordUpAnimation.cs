@@ -6,16 +6,11 @@ namespace Zelda_Game
 {
     public class LinkWoodSwordUpAnimation : ISprite
     {
+        private Texture2D Texture;
 
-    
-        public Texture2D Texture;
-        public SoundEffect song;
-
-        public LinkWoodSwordUpAnimation(Texture2D texture, SoundEffect Song)
+        public LinkWoodSwordUpAnimation(Texture2D texture)
         {
             Texture = texture;
-            song = Song;
-            song.Play();
         }
 
         private int currentFrame = 0;

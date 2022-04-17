@@ -15,10 +15,9 @@ namespace Zelda_Game
         private Vector2 location;
         private bool finished;
 
-        public BombLeftAnimation(Texture2D texture, SoundEffect song)
+        public BombLeftAnimation(Texture2D texture)
         {
             Texture = texture;
-            song.Play();
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)

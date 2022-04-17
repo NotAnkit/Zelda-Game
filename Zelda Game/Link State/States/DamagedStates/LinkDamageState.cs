@@ -56,7 +56,7 @@ namespace Zelda_Game
             animationCount++;
         }
 
-        public IProjectile UseItem(string itemName)
+        public IProjectile UseItem(string itemName, SoundManager soundManager)
         {
             return new BlankProjectile();
         }
@@ -68,7 +68,7 @@ namespace Zelda_Game
 
         public void TakeDamage()
         {
-            player.currentState = new LinkDamageState(player);
+
         }
     }
 }

@@ -15,10 +15,9 @@ namespace Zelda_Game
         private Vector2 location;
         private bool finished;
 
-        public FireDownAnimation(Texture2D texture, SoundEffect song)
+        public FireDownAnimation(Texture2D texture)
         {
             Texture = texture;
-            song.Play();
             finished = false;
         }
 

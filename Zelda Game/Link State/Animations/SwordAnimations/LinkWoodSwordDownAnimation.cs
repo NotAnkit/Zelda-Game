@@ -1,20 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
     public class LinkWoodSwordDownAnimation : ISprite
     {
       
-        public Texture2D Texture;
-        public SoundEffect song;
+        private Texture2D Texture;
 
-        public LinkWoodSwordDownAnimation(Texture2D texture, SoundEffect Song)
+        public LinkWoodSwordDownAnimation(Texture2D texture)
         {
             Texture = texture;
-            song = Song;
-            song.Play();
         }
 
         private int currentFrame = 0;

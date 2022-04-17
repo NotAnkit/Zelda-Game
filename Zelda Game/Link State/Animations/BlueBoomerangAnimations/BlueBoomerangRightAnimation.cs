@@ -14,10 +14,9 @@ namespace Zelda_Game
         public Texture2D Texture;
         private bool flip;
 
-        public BlueBoomerangRightAnimation(Texture2D texture, SoundEffect song)
+        public BlueBoomerangRightAnimation(Texture2D texture)
         {
             Texture = texture;
-            song.Play();
             flip = false;
         }
 

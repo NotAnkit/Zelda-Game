@@ -19,7 +19,8 @@ namespace Zelda_Game
         private bool useItem;
         private IProjectile item;
         public LinkInventory inventory;
-        public Rectangle hitbox;
+        private Rectangle hitbox;
+        private SoundManager soundManager;
 
         public Rectangle LinkRectangle
         {
@@ -27,8 +28,9 @@ namespace Zelda_Game
             set => hitbox = value;
         }
 
-        public Link(Vector2 location)
+        public Link(Vector2 location, SoundManager soundManager)
         {
+            this.soundManager = soundManager;
             position = location;
             itemPosition = location;
             useItem = false;
@@ -98,7 +100,7 @@ namespace Zelda_Game
                 }
                 itemPosition = position;
                 itemPositionStart = position;
-                item = currentState.UseItem(itemName);
+                item = currentState.UseItem(itemName, soundManager);
                 items.Add(item, itemPosition);
                 items2.Add(item, itemPositionStart);
             }
@@ -106,11 +108,13 @@ namespace Zelda_Game
 
         public void UseSword()
         {
+            bool temp = soundManager.PlaySword;
             currentState.UseSword();
         }
 
         public void TakeDamage()
         {
+            bool temp = soundManager.PlayHurt;
             currentState.TakeDamage();
         }
 

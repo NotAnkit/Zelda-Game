@@ -7,13 +7,6 @@ namespace Zelda_Game
     public class LinkSpriteFactory
     {
         private Texture2D LinkSpritesheet;
-        public SoundEffect sword;
-        public SoundEffect hurt;
-        public SoundEffect item;
-        public SoundEffect bomb;
-        public SoundEffect arrow;
-        public SoundEffect fire;
-        public SoundEffect boomerang;
 
         private static readonly LinkSpriteFactory instance = new LinkSpriteFactory();
 
@@ -26,13 +19,6 @@ namespace Zelda_Game
         public void LoadAllTextures(ContentManager content)
         {
             LinkSpritesheet = content.Load<Texture2D>("LinkSheet");
-            sword = content.Load<SoundEffect>("sword");
-            hurt = content.Load<SoundEffect>("Hurt");
-            item = content.Load<SoundEffect>("PickUpItem");
-            bomb = content.Load<SoundEffect>("BombEffect");
-            arrow = content.Load<SoundEffect>("UseArrow");
-            fire = content.Load<SoundEffect>("Fire");
-            boomerang = content.Load<SoundEffect>("Boomerang");
         }
 
         public ISprite LinkDownAnimationSprite() => new LinkDownAnimation(LinkSpritesheet);
@@ -55,97 +41,97 @@ namespace Zelda_Game
          * Link Sprites for Wooden Sword
          */
 
-        public ISprite LinkWoodSwordDownAnimationSprite() => new LinkWoodSwordDownAnimation(LinkSpritesheet, sword);
+        public ISprite LinkWoodSwordDownAnimationSprite() => new LinkWoodSwordDownAnimation(LinkSpritesheet);
         
-        public ISprite LinkWoodSwordUpAnimationSprite() => new LinkWoodSwordUpAnimation(LinkSpritesheet, sword);
+        public ISprite LinkWoodSwordUpAnimationSprite() => new LinkWoodSwordUpAnimation(LinkSpritesheet);
 
-        public ISprite LinkWoodSwordLeftAnimationSprite() => new LinkWoodSwordLeftAnimation(LinkSpritesheet, sword);
+        public ISprite LinkWoodSwordLeftAnimationSprite() => new LinkWoodSwordLeftAnimation(LinkSpritesheet);
 
-        public ISprite LinkWoodSwordRightAnimationSprite() => new LinkWoodSwordRightAnimation(LinkSpritesheet, sword);
+        public ISprite LinkWoodSwordRightAnimationSprite() => new LinkWoodSwordRightAnimation(LinkSpritesheet);
 
         /*
          * Link Sprites for Damage
          */
 
-        public ISprite LinkDamageAnimationSprite() => new LinkDamagedAnimation(LinkSpritesheet, hurt);
+        public ISprite LinkDamageAnimationSprite() => new LinkDamagedAnimation(LinkSpritesheet);
 
         /*
          * Link Sprites for Item
          */
 
-        public ISprite LinkItemAnimationSprite() => new LinkPickUpItem2(LinkSpritesheet, item);
+        public ISprite LinkItemAnimationSprite() => new LinkPickUpItem2(LinkSpritesheet);
 
         /*
          * Link Sprites for bomb item
          */
 
-        public IProjectile LinkBombDownAnimationSprite() => new BombDownAnimation(LinkSpritesheet, bomb);
+        public IProjectile LinkBombDownAnimationSprite() => new BombDownAnimation(LinkSpritesheet);
 
-        public IProjectile LinkBombUpAnimationSprite() => new BombUpAnimation(LinkSpritesheet, bomb);
+        public IProjectile LinkBombUpAnimationSprite() => new BombUpAnimation(LinkSpritesheet);
 
-        public IProjectile LinkBombLeftAnimationSprite() => new BombLeftAnimation(LinkSpritesheet, bomb);
+        public IProjectile LinkBombLeftAnimationSprite() => new BombLeftAnimation(LinkSpritesheet);
 
-        public IProjectile LinkBombRightAnimationSprite() => new BombRightAnimation(LinkSpritesheet, bomb);
+        public IProjectile LinkBombRightAnimationSprite() => new BombRightAnimation(LinkSpritesheet);
 
         /*
          * Link Sprites for blue arrow
          */
 
-        public IProjectile LinkBlueArrowDownAnimationSprite() => new BlueArrowDownAnimation(LinkSpritesheet, arrow);
+        public IProjectile LinkBlueArrowDownAnimationSprite() => new BlueArrowDownAnimation(LinkSpritesheet);
 
-        public IProjectile LinkBlueArrowUpAnimationSprite() => new BlueArrowUpAnimation(LinkSpritesheet, arrow);
+        public IProjectile LinkBlueArrowUpAnimationSprite() => new BlueArrowUpAnimation(LinkSpritesheet);
 
-        public IProjectile LinkBlueArrowLeftAnimationSprite() => new BlueArrowLeftAnimation(LinkSpritesheet, arrow);
+        public IProjectile LinkBlueArrowLeftAnimationSprite() => new BlueArrowLeftAnimation(LinkSpritesheet);
 
-        public IProjectile LinkBlueArrowRightAnimationSprite() => new BlueArrowRightAnimation(LinkSpritesheet, arrow);
+        public IProjectile LinkBlueArrowRightAnimationSprite() => new BlueArrowRightAnimation(LinkSpritesheet);
 
         /*
          * Link Sprites for green arrow
          */
 
-        public IProjectile LinkGreenArrowDownAnimationSprite() => new GreenArrowDownAnimation(LinkSpritesheet, arrow);
+        public IProjectile LinkGreenArrowDownAnimationSprite() => new GreenArrowDownAnimation(LinkSpritesheet);
 
-        public IProjectile LinkGreenArrowUpAnimationSprite() => new GreenArrowUpAnimation(LinkSpritesheet, arrow);
+        public IProjectile LinkGreenArrowUpAnimationSprite() => new GreenArrowUpAnimation(LinkSpritesheet);
 
-        public IProjectile LinkGreenArrowLeftAnimationSprite() => new GreenArrowLeftAnimation(LinkSpritesheet, arrow);
+        public IProjectile LinkGreenArrowLeftAnimationSprite() => new GreenArrowLeftAnimation(LinkSpritesheet);
 
-        public IProjectile LinkGreenArrowRightAnimationSprite() => new GreenArrowRightAnimation(LinkSpritesheet, arrow);
+        public IProjectile LinkGreenArrowRightAnimationSprite() => new GreenArrowRightAnimation(LinkSpritesheet);
 
         /*
          * Link Sprites for fire item
          */
 
-        public IProjectile LinkFireRightAnimationSprite() => new FireRightAnimation(LinkSpritesheet, fire);
+        public IProjectile LinkFireRightAnimationSprite() => new FireRightAnimation(LinkSpritesheet);
 
-        public IProjectile LinkFireDownAnimationSprite() => new FireDownAnimation(LinkSpritesheet, fire);
+        public IProjectile LinkFireDownAnimationSprite() => new FireDownAnimation(LinkSpritesheet);
 
-        public IProjectile LinkFireUpAnimationSprite() => new FireUpAnimation(LinkSpritesheet, fire);
+        public IProjectile LinkFireUpAnimationSprite() => new FireUpAnimation(LinkSpritesheet);
 
-        public IProjectile LinkFireLeftAnimationSprite() => new FireLeftAnimation(LinkSpritesheet, fire);
+        public IProjectile LinkFireLeftAnimationSprite() => new FireLeftAnimation(LinkSpritesheet);
 
         /*
          * Link Sprites for blue boomerang item
          */
 
-        public IProjectile LinkBlueBoomerangRightAnimationSprite() => new BlueBoomerangRightAnimation(LinkSpritesheet, boomerang);
+        public IProjectile LinkBlueBoomerangRightAnimationSprite() => new BlueBoomerangRightAnimation(LinkSpritesheet);
 
-        public IProjectile LinkBlueBoomerangDownAnimationSprite() => new BlueBoomerangDownAnimation(LinkSpritesheet, boomerang);
+        public IProjectile LinkBlueBoomerangDownAnimationSprite() => new BlueBoomerangDownAnimation(LinkSpritesheet);
 
-        public IProjectile LinkBlueBoomerangUpAnimationSprite() => new BlueBoomerangUpAnimation(LinkSpritesheet, boomerang);
+        public IProjectile LinkBlueBoomerangUpAnimationSprite() => new BlueBoomerangUpAnimation(LinkSpritesheet);
 
-        public IProjectile LinkBlueBoomerangLeftAnimationSprite() => new BlueBoomerangLeftAnimation(LinkSpritesheet, boomerang);
+        public IProjectile LinkBlueBoomerangLeftAnimationSprite() => new BlueBoomerangLeftAnimation(LinkSpritesheet);
 
         /*
          * Link Sprites for green boomerang item
          */
 
-        public IProjectile LinkGreenBoomerangRightAnimationSprite() => new GreenBoomerangRightAnimation(LinkSpritesheet, boomerang);
+        public IProjectile LinkGreenBoomerangRightAnimationSprite() => new GreenBoomerangRightAnimation(LinkSpritesheet);
 
-        public IProjectile LinkGreenBoomerangDownAnimationSprite() => new GreenBoomerangDownAnimation(LinkSpritesheet, boomerang);
+        public IProjectile LinkGreenBoomerangDownAnimationSprite() => new GreenBoomerangDownAnimation(LinkSpritesheet);
         
-        public IProjectile LinkGreenBoomerangUpAnimationSprite() => new GreenBoomerangUpAnimation(LinkSpritesheet, boomerang);
+        public IProjectile LinkGreenBoomerangUpAnimationSprite() => new GreenBoomerangUpAnimation(LinkSpritesheet);
 
-        public IProjectile LinkGreenBoomerangLeftAnimationSprite() => new GreenBoomerangLeftAnimation(LinkSpritesheet, boomerang);
+        public IProjectile LinkGreenBoomerangLeftAnimationSprite() => new GreenBoomerangLeftAnimation(LinkSpritesheet);
 
     }
 }
