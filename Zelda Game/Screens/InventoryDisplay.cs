@@ -62,21 +62,21 @@ namespace Zelda_Game
         {
             string output = "X" + numRupees.ToString();
             Vector2 destination = new Vector2(193, 369);
-            spriteBatch.DrawString(font, output, destination, Color.Red);
+            spriteBatch.DrawString(font, output, destination, Color.White);
         }
 
         public static void DrawKeys(SpriteBatch spriteBatch, int numKeys, SpriteFont font)
         {
             string output = "X" + numKeys.ToString();
             Vector2 destination = new Vector2(193, 397);
-            spriteBatch.DrawString(font, output, destination, Color.Red);
+            spriteBatch.DrawString(font, output, destination, Color.White);
         }
 
         public static void DrawBombs(SpriteBatch spriteBatch, int numBombs, SpriteFont font)
         {
             string output = "X" + numBombs.ToString();
             Vector2 destination = new Vector2(193, 414);
-            spriteBatch.DrawString(font, output, destination, Color.Red);
+            spriteBatch.DrawString(font, output, destination, Color.White);
         }
 
         public static void DrawLevel(SpriteBatch spriteBatch, int levelNum, SpriteFont font)

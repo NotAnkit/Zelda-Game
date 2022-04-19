@@ -54,6 +54,10 @@ namespace Zelda_Game
         {
             sprite.Update();
             animationCount++;
+            if (animationCount == 10)
+            {
+                player.inventory.LoseLife();
+            }
         }
 
         public IProjectile UseItem(string itemName, SoundManager soundManager)
@@ -68,7 +72,6 @@ namespace Zelda_Game
 
         public void TakeDamage()
         {
-
         }
     }
 }
