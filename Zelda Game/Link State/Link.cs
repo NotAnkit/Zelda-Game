@@ -42,6 +42,7 @@ namespace Zelda_Game
             removeItems = new List<IProjectile>();
             inventory = new LinkInventory();
             hitbox = new Rectangle((int)position.X, (int)position.Y, 29, 29);
+            direction = "idle";
         }
 
         public void Update()

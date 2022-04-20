@@ -63,6 +63,7 @@ namespace Zelda_Game
             manager = new RoomManager(this);
             manager.LoadRooms(this);
             controllerList.Add(new KeyBoardController(this));
+            controllerList.Add(new GamePadController(this));
             inventoryDisplay = new InventoryDisplay(this, link.inventory);
             song = Content.Load<Song>("04 - Dungeon");
             //MediaPlayer.Play(song);
