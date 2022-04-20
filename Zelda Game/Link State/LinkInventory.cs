@@ -20,7 +20,7 @@ namespace Zelda_Game
         public List<IItem> items;
         public LinkInventory()
         {
-            numLives = 5;
+            numLives = 2;
             numKeys = 20;
             bombs = 4;
             maps = false;
@@ -57,6 +57,11 @@ namespace Zelda_Game
         public int NumLives()
         {
             return numLives;
+        }
+
+        public void SetLives(int lives)
+        {
+            numLives = lives;
         }
 
         public int Keys

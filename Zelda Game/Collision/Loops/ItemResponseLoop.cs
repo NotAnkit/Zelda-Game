@@ -39,7 +39,7 @@ namespace Zelda_Game
                     }
                     else if (item.Value is FairyItem)
                     {
-                        player.inventory.Bombs++;
+                        player.inventory.SetLives(5);
                     }
                     else if (item.Value is ClockItem)
                     {
