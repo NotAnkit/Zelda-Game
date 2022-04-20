@@ -19,38 +19,37 @@ namespace Zelda_Game
         {
             previousState = userInput;
             userInput = GamePad.GetState(PlayerIndex.One);
-            if (userInput.IsButtonDown(Buttons.Back))
+            if (userInput.IsButtonDown(Buttons.Y) && !previousState.IsButtonDown(Buttons.Y))
             {
                 game.Exit();
             }
-            if (userInput.IsButtonDown(Buttons.B))
+            if (userInput.IsButtonDown(Buttons.B) && !previousState.IsButtonDown(Buttons.B))
             {
                 var game2 = new Game1();
                 game2.Run();
                 game.Exit();
             }
-            else if (capabilities.HasLeftYThumbStick)
+            if (capabilities.HasLeftYThumbStick && capabilities.HasLeftXThumbStick)
             {
-                if(userInput.ThumbSticks.Left.Y <= 0)
+                if (userInput.ThumbSticks.Left.Y > 0)
                     game.link.direction = "up";
-                else
+                else if (userInput.ThumbSticks.Left.Y < 0)
                     game.link.direction = "down";
+                else if (userInput.ThumbSticks.Left.X < 0)
+                    game.link.direction = "left";
+                else if (userInput.ThumbSticks.Left.X > 0)
+                    game.link.direction = "right";
+                else
+                    game.link.direction = "idle";
 
             }
-            else if (capabilities.HasLeftXThumbStick)
-            {
-                if (userInput.ThumbSticks.Left.X <= 0)
-                    game.link.direction = "left";
-                else
-                    game.link.direction = "right";
-            }
-            else if (userInput.IsButtonDown(Buttons.Start) && !previousState.IsButtonDown(Buttons.Start))
+            if (userInput.IsButtonDown(Buttons.Start) && !previousState.IsButtonDown(Buttons.Start))
             {
                 game.manager.TransitionState = true;
                 game.pause = !game.pause;
-
+                 
             }
-            else if (userInput.IsButtonDown(Buttons.X) && !previousState.IsButtonDown(Buttons.X))
+            if (userInput.IsButtonDown(Buttons.X) && !previousState.IsButtonDown(Buttons.X))
             {
                 if (game.pause)
                 {
@@ -61,14 +60,11 @@ namespace Zelda_Game
                     game.link.UseItem(game.inventoryDisplay.ItemBSlot);
                 }
             }
-            else if (userInput.IsButtonDown(Buttons.A) && !previousState.IsButtonDown(Buttons.A))
+            if (userInput.IsButtonDown(Buttons.A) && !previousState.IsButtonDown(Buttons.A))
             {
                 game.link.UseItem(game.inventoryDisplay.ItemASlot);
             }
-            /*else if (userInput.IsButtonUp(Keys.W) || userInput.IsButtonUp(Keys.A) || userInput.IsButtonUp(Keys.S) || userInput.IsButtonUp(Keys.D))
-            {
-                game.link.direction = "idle";
-            }*/
+          
         }
     }
 }
