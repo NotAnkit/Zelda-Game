@@ -13,15 +13,23 @@ namespace Zelda_Game
         public bool itemPickedUp;
 
 
-        public Room(Level room, Game1 game1)
+        public Room(Level room, Game1 game1, bool random)
         {
             blockList = new Dictionary<Vector2, IEnvironment>();
             enemyList = new Dictionary<Vector2, IEnemy>();
             itemList = new Dictionary<Vector2, IItem>();
             doorList = new List<IDoor>();
             itemPickedUp = false;
-            blockList = AddRoomBlocks.Instance.LoadBlocks(room.Blocks);
-            enemyList = AddRoomEnemies.Instance.LoadEnemies(room.Enemies, game1);
+            if (random == true)
+            {
+                blockList = AddRandomRoomBlocks.Instance.LoadBlocks();
+                enemyList = AddRandomRoomEnemies.Instance.LoadEnemies(game1);
+            }
+            else
+            {
+                blockList = AddRoomBlocks.Instance.LoadBlocks(room.Blocks);
+                enemyList = AddRoomEnemies.Instance.LoadEnemies(room.Enemies, game1);
+            }
             itemList = AddRoomItems.Instance.LoadItems(room.Items);
 
             for (int i = 0; i < room.Doors.Length; i++)

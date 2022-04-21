@@ -16,6 +16,7 @@ namespace Zelda_Game
         private readonly ScreenFade fader;
         private bool tansitionState;
         private bool tansitionStateFinished;
+        public bool random;
 
         public bool TransitionState
         {
@@ -38,33 +39,34 @@ namespace Zelda_Game
             fader = new ScreenFade(game1);
             tansitionState = false;
             tansitionStateFinished = false;
+            random = false;
 
         }
 
         public void LoadRooms(Game1 Game)
         {
             roomList = new Dictionary<KeyValuePair<int, int>, Room>();
-            roomList.Add(new KeyValuePair<int, int>(0, 2), new Room(Game.Content.Load<Level>("File"), Game));
-            roomList.Add(new KeyValuePair<int, int>(2, 0), new Room(Game.Content.Load<Level>("Room16"), Game));
-            roomList.Add(new KeyValuePair<int, int>(1, 0), new Room(Game.Content.Load<Level>("Room15"), Game));
-            roomList.Add(new KeyValuePair<int, int>(5, 1), new Room(Game.Content.Load<Level>("Room14"), Game));
-            roomList.Add(new KeyValuePair<int, int>(4, 1), new Room(Game.Content.Load<Level>("Room13"), Game));
-            roomList.Add(new KeyValuePair<int, int>(2, 1), new Room(Game.Content.Load<Level>("Room12"), Game));
-            roomList.Add(new KeyValuePair<int, int>(3, 5), new Room(Game.Content.Load<Level>("Room11"), Game));
-            roomList.Add(new KeyValuePair<int, int>(2, 5), new Room(Game.Content.Load<Level>("Room10"), Game));
-            roomList.Add(new KeyValuePair<int, int>(1, 5), new Room(Game.Content.Load<Level>("Room9"), Game));
-            roomList.Add(new KeyValuePair<int, int>(2, 4), new Room(Game.Content.Load<Level>("Room8"), Game));
-            roomList.Add(new KeyValuePair<int, int>(3, 3), new Room(Game.Content.Load<Level>("Room7"), Game));
-            roomList.Add(new KeyValuePair<int, int>(2, 3), new Room(Game.Content.Load<Level>("Room6"), Game));
-            roomList.Add(new KeyValuePair<int, int>(1, 3), new Room(Game.Content.Load<Level>("Room5"), Game));
-            roomList.Add(new KeyValuePair<int, int>(4, 2), new Room(Game.Content.Load<Level>("Room4"), Game));
-            roomList.Add(new KeyValuePair<int, int>(3, 2), new Room(Game.Content.Load<Level>("Room3"), Game));
-            roomList.Add(new KeyValuePair<int, int>(2, 2), new Room(Game.Content.Load<Level>("Room2"), Game));
-            roomList.Add(new KeyValuePair<int, int>(1, 2), new Room(Game.Content.Load<Level>("Room1"), Game));
-            roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("basement"), Game));
+            roomList.Add(new KeyValuePair<int, int>(0, 2), new Room(Game.Content.Load<Level>("File"), Game, false));
+            roomList.Add(new KeyValuePair<int, int>(2, 0), new Room(Game.Content.Load<Level>("Room16"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(1, 0), new Room(Game.Content.Load<Level>("Room15"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(5, 1), new Room(Game.Content.Load<Level>("Room14"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(4, 1), new Room(Game.Content.Load<Level>("Room13"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(2, 1), new Room(Game.Content.Load<Level>("Room12"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(3, 5), new Room(Game.Content.Load<Level>("Room11"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(2, 5), new Room(Game.Content.Load<Level>("Room10"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(1, 5), new Room(Game.Content.Load<Level>("Room9"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(2, 4), new Room(Game.Content.Load<Level>("Room8"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(3, 3), new Room(Game.Content.Load<Level>("Room7"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(2, 3), new Room(Game.Content.Load<Level>("Room6"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(1, 3), new Room(Game.Content.Load<Level>("Room5"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(4, 2), new Room(Game.Content.Load<Level>("Room4"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(3, 2), new Room(Game.Content.Load<Level>("Room3"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(2, 2), new Room(Game.Content.Load<Level>("Room2"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(1, 2), new Room(Game.Content.Load<Level>("Room1"), Game, random));
+            roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("basement"), Game, false));
 
             room = game1.Content.Load<Level>("Room10");
-            roomData = new Room(room, game1);
+            roomData = new Room(room, game1, random);
         }
 
         public void ChangeRoom(KeyValuePair<int, int> roomLocation, Vector2 position)

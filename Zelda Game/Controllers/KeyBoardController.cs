@@ -78,6 +78,11 @@ namespace Zelda_Game
             {
                 game.link.UseItem("bomb");
             }
+            else if (userInput.IsKeyDown(Keys.H) && !previousState.IsKeyDown(Keys.H))
+            {
+                game.manager.random = true;
+                game.manager.LoadRooms(game);
+            }
             else if (userInput.IsKeyUp(Keys.Up) || userInput.IsKeyUp(Keys.Down) || userInput.IsKeyUp(Keys.Left) || userInput.IsKeyUp(Keys.Right))
             {
                 game.link.direction = "idle";
