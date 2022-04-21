@@ -5,6 +5,7 @@ namespace Zelda_Game
     public class LinkInventory
     {
         private int numLives;
+        private int maxLives;
         private int numKeys;
         private int rupees;
         private int bombs;
@@ -20,6 +21,7 @@ namespace Zelda_Game
         public List<IItem> items;
         public LinkInventory()
         {
+            maxLives = 4;
             numLives = 2;
             numKeys = 20;
             bombs = 4;
@@ -48,9 +50,9 @@ namespace Zelda_Game
         public void EarnLife()
         {
             numLives++;
-            if (numLives >= 5)
+            if (numLives >= maxLives)
             {
-                numLives = 5;
+                numLives = maxLives;
             }
         }
 
@@ -68,6 +70,12 @@ namespace Zelda_Game
         {
             get => numKeys;
             set => numKeys = value;
+        }
+
+        public int MaxLives
+        {
+            get => maxLives;
+            set => maxLives = value;
         }
 
         public int Rupees

@@ -39,7 +39,7 @@ namespace Zelda_Game
                     }
                     else if (item.Value is FairyItem)
                     {
-                        player.inventory.SetLives(5);
+                        player.inventory.SetLives(player.inventory.MaxLives);
                     }
                     else if (item.Value is ClockItem)
                     {
@@ -47,6 +47,14 @@ namespace Zelda_Game
                         {
                             enemy.Value.SetSpeed(0f);
                         }
+                    }
+                    else if (item.Value is HeartContainerItem)
+                    {
+                        player.inventory.MaxLives = player.inventory.MaxLives++;
+                    }
+                    else if (item.Value is HeartItem)
+                    {
+                        player.inventory.EarnLife();
                     }
                     else
                     {
