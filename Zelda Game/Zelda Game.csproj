@@ -55,6 +55,8 @@
     <None Remove="Content\boomerang.wav" />
     <None Remove="Sprint4Docs\" />
     <None Remove="Sprint4Docs\CodeReviews\" />
+    <None Remove="Controllers\" />
+    <None Remove="Managers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -114,6 +116,8 @@
     <Folder Include="Sprint4Docs\" />
     <Folder Include="Sprint4Docs\CodeReviews\" />
 
+    <Folder Include="Controllers\" />
+    <Folder Include="Managers\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />

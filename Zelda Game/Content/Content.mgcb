@@ -67,6 +67,18 @@
 /processorParam:Quality=Best
 /build:Fire.mp3
 
+#begin gameOverScreen.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:gameOverScreen.jpg
+
 #begin Hurt.mp3
 /importer:Mp3Importer
 /processor:SoundEffectProcessor
@@ -247,6 +259,18 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:UseArrow.mp3
+
+#begin victoryScreen.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:victoryScreen.png
 
 #begin WeaponSheet.png
 /importer:TextureImporter

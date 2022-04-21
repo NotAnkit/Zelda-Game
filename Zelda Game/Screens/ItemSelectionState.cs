@@ -6,21 +6,25 @@ namespace Zelda_Game
     public class ItemSelectionState
     {
         private readonly Texture2D Texture;
+        private readonly Game1 game;
         private readonly MapPauseScreen mapPauseScreen;
         public WeaponSelection weaponSelector;
         private readonly InventoryDisplay display;
 
-        public ItemSelectionState(Game1 game)
+
+        public ItemSelectionState(Game1 game, InventoryDisplay display)
         {
             Texture = game.Content.Load<Texture2D>("Inventory");
             mapPauseScreen = new MapPauseScreen(game);
             weaponSelector = new WeaponSelection(game);
-            display = game.inventoryDisplay;
+            this.game = game;
+            this.display = display;
         }
 
         public void Update()
         {
             mapPauseScreen.Update();
+            display.Update(game.link);
         }
 
         public void Draw(SpriteBatch spriteBatch, Link link)
@@ -48,6 +52,8 @@ namespace Zelda_Game
                 spriteBatch.Draw(Texture, destinationCompass, CompassRectangle, Color.White);
             }
             weaponSelector.Draw(spriteBatch, link, display);
+
+            display.Draw(spriteBatch);
         }
     }
 }

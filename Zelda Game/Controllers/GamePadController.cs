@@ -46,12 +46,19 @@ namespace Zelda_Game
             if (userInput.IsButtonDown(Buttons.Start) && !previousState.IsButtonDown(Buttons.Start))
             {
                 game.manager.TransitionState = true;
-                game.pause = !game.pause;
-                 
+                if (game.gameManager.State == "paused")
+                {
+                    game.gameManager.State = "running";
+                }
+                else
+                {
+                    game.gameManager.State = "paused";
+                }
+
             }
             if (userInput.IsButtonDown(Buttons.X) && !previousState.IsButtonDown(Buttons.X))
             {
-                if (game.pause)
+                if (game.gameManager.State == "paused")
                 {
                     game.itemSelectionState.weaponSelector.nextWeapon();
                 }
