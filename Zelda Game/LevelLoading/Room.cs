@@ -24,13 +24,14 @@ namespace Zelda_Game
             {
                 blockList = AddRandomRoomBlocks.Instance.LoadBlocks();
                 enemyList = AddRandomRoomEnemies.Instance.LoadEnemies(game1);
+                itemList = AddRandomRoomItems.Instance.LoadItems();
             }
             else
             {
                 blockList = AddRoomBlocks.Instance.LoadBlocks(room.Blocks);
                 enemyList = AddRoomEnemies.Instance.LoadEnemies(room.Enemies, game1);
+                itemList = AddRoomItems.Instance.LoadItems(room.Items);
             }
-            itemList = AddRoomItems.Instance.LoadItems(room.Items);
 
             for (int i = 0; i < room.Doors.Length; i++)
             {
