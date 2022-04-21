@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:ns="Microsoft.Xna.Framework">
+  <Asset Type="Zelda_Game.Level">
+    <Doors>
+        <Item>TopWall</Item>
+        <Item>LeftSealed</Item>
+        <Item>RightWall</Item>
+        <Item>BottomWall</Item>
+    </Doors>
+     <Blocks>
+    </Blocks>
+    <Enemies>
+      <Item>
+        <Key>219 157</Key>
+        <Value>BO</Value>
+      </Item>
+    </Enemies>
+    <Items>
+    </Items>
+  </Asset>
+</XnaContent>
+

@@ -22,7 +22,9 @@ namespace Zelda_Game
 
                 else if (enemy.Value.Equals("B")) enemyList.Add(enemy.Key, new Bat(game1, enemy.Key));
 
-                else if (enemy.Value.Equals("D")) enemyList.Add(enemy.Key, new Boss(game1, enemy.Key));
+                else if (enemy.Value.Equals("D")) enemyList.Add(enemy.Key, new Dragon(game1, enemy.Key));
+
+                else if (enemy.Value.Equals("BO")) enemyList.Add(enemy.Key, new Boss(game1, enemy.Key));
 
                 else if (enemy.Value.Equals("G")) enemyList.Add(enemy.Key, new Goriya(game1, enemy.Key));
 

@@ -4,7 +4,7 @@
     <Doors>
         <Item>TopWall</Item>
         <Item>LeftDoor</Item>
-        <Item>RightWall</Item>
+        <Item>RightDoor</Item>
         <Item>BottomWall</Item>
     </Doors>
      <Blocks>

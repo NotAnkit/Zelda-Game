@@ -56,6 +56,11 @@
 /processorParam:TextureFormat=Color
 /build:EnemySheet.png
 
+#begin FakeRoom.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:FakeRoom.xml
+
 #begin File.xml
 /importer:XmlImporter
 /processor:PassThroughProcessor
