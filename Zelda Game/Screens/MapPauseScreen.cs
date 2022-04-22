@@ -82,14 +82,13 @@ namespace Zelda_Game
                 spriteBatch.Draw(Texture, destinationRoom15, sourceRoom15, Color.White);
                 spriteBatch.Draw(Texture, destinationRoom16, sourceRoom16, Color.White);
                 spriteBatch.Draw(Texture, destinationRoom17, sourceRoom17, Color.White);
-                spriteBatch.Draw(Texture, destinationRoom18, sourceRoom18, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom18, sourceRoom18, Color.White);   
+            }
+            if (link.inventory.CompassState())
+            {
+                SpriteEffects s = SpriteEffects.None;
+                spriteBatch.Draw(rectangle, new Vector2(343, 236), null, new Color(1f, 1f, 1f, 1), 0f, Vector2.Zero, new Vector2(5, 5), s, 0);
 
-                if (link.inventory.CompassState())
-                {
-                    SpriteEffects s = SpriteEffects.None;
-                    spriteBatch.Draw(rectangle, new Vector2(343, 236), null, new Color(1f, 1f, 1f, 1), 0f, Vector2.Zero, new Vector2(5, 5), s, 0);
-                    
-                }
             }
         }
     }

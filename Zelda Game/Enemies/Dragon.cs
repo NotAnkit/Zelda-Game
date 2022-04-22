@@ -36,7 +36,7 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("EnemySheet");
             currentFrame = 0;
             totalFrames = 60;
-            spriteSpeed = 0f;
+            spriteSpeed = 1f;
             health = 10;
             windowHeight = game.WindowSizeHeight - 195;
             windowWidth = game.WindowSizeWidth - 81;

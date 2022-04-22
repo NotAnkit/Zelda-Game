@@ -98,7 +98,7 @@ namespace Zelda_Game
 
         public void TakeDamage()
         {
-            player.currentState = new LinkDamageState(player);
+            player.currentState = new UpDamageLinkState(player);
         }
     }
 }

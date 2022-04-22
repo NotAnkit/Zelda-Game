@@ -22,7 +22,7 @@ namespace Zelda_Game
         public LinkInventory()
         {
             maxLives = 4;
-            numLives = 2;
+            numLives = 4;
             numKeys = 20;
             bombs = 4;
             maps = true;

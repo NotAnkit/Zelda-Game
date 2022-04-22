@@ -13,12 +13,13 @@ namespace Zelda_Game
         }
         private Vector2 location;
         public Texture2D Texture;
-        
         private bool flip;
+        private int speed;
         public BlueBoomerangDownAnimation(Texture2D texture)
         {
             Texture = texture;
             flip = false;
+            speed = 2;
         }
 
         
@@ -64,12 +65,12 @@ namespace Zelda_Game
         {
             if (position.Y - startLocation.Y <= 160 && !flip)
             {
-                position.Y++;
+                position.Y += speed;
             }
             else
             {
                 flip = true;
-                position.Y--;
+                position.Y -= speed;
             }
             location = position;
             return position;

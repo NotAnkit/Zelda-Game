@@ -33,7 +33,7 @@ namespace Zelda_Game
             Texture = game.Content.Load<Texture2D>("ItemSheet");
             currentFrame = 0;
             totalFrames = 30;
-            spriteSpeed = 0f;
+            spriteSpeed = 1f;
             windowHeight = game.WindowSizeHeight - 195;
             windowWidth = game.WindowSizeWidth - 97;
             position = location;

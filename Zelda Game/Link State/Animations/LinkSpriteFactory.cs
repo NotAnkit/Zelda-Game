@@ -54,6 +54,10 @@ namespace Zelda_Game
          */
 
         public ISprite LinkDamageAnimationSprite() => new LinkDamagedAnimation(LinkSpritesheet);
+        public ISprite LinkDamageDownAnimationSprite() => new LinkDownDamage(LinkSpritesheet);
+        public ISprite LinkDamageUpAnimationSprite() => new LinkUpDamage(LinkSpritesheet);
+        public ISprite LinkDamageLeftAnimationSprite() => new LinkLeftDamage(LinkSpritesheet);
+        public ISprite LinkDamageRightAnimationSprite() => new LinkRightDamage(LinkSpritesheet);
 
         /*
          * Link Sprites for Item

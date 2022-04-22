@@ -25,6 +25,7 @@ namespace Zelda_Game
                         position = new Vector2(404, 151);
                         manager.TransitionState = true;
                         FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                        game1.link.ClearItems();
                         if (manager.TransitionStateFinished)
                         {
                             manager.ChangeRoom(roomLocation, position);
@@ -54,6 +55,7 @@ namespace Zelda_Game
                         position = new Vector2(64, 151);
                         manager.TransitionState = true;
                         FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                        game1.link.ClearItems();
                         if (manager.TransitionStateFinished)
                         {
                             manager.ChangeRoom(roomLocation, position);
@@ -83,6 +85,7 @@ namespace Zelda_Game
                         position = new Vector2(235, 246);
                         manager.TransitionState = true;
                         FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                        game1.link.ClearItems();
                         if (manager.TransitionStateFinished)
                         {
                             manager.ChangeRoom(roomLocation, position);
@@ -113,6 +116,7 @@ namespace Zelda_Game
                         position = new Vector2(235, 64);
                         manager.TransitionState = true;
                         FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                        game1.link.ClearItems();
                         if (manager.TransitionStateFinished)
                         {
                             manager.ChangeRoom(roomLocation, position);

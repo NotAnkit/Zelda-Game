@@ -5,27 +5,31 @@ using Zelda_Game.LinkState;
 
 namespace Zelda_Game
 {
-    public class UpIdleLinkState : ILinkState
+    public class LeftDamageLinkState : ILinkState
     {
         private readonly Link player;
         private readonly ISprite sprite;
         private IProjectile item;
-        public UpIdleLinkState(Link link)
+        private int animationCount;
+        public LeftDamageLinkState(Link link)
         {
             player = link;
-            sprite = LinkSpriteFactory.Instance.LinkUpIdleSprite();
+            sprite = LinkSpriteFactory.Instance.LinkDamageLeftAnimationSprite();
             link.LinkRectangle = new Rectangle((int)link.position.X, (int)link.position.Y, 29, 29);
         }
 
         public void ChangeDirection(string direction)
         {
-            if (direction.Equals("up")) player.currentState = new UpMovingLinkState(player);
+            if (direction.Equals("up") && animationCount == 10) player.currentState = new UpMovingLinkState(player);
 
-            else if (direction.Equals("left")) player.currentState = new LeftMovingLinkState(player);
+            else if (direction.Equals("left") && animationCount == 10) player.currentState = new LeftMovingLinkState(player);
 
-            else if (direction.Equals("down")) player.currentState = new DownMovingLinkState(player);
+            else if (direction.Equals("down") && animationCount == 10) player.currentState = new DownMovingLinkState(player);
 
-            else if (direction.Equals("right")) player.currentState = new RightMovingLinkState(player);
+            else if (direction.Equals("right") && animationCount == 10) player.currentState = new RightMovingLinkState(player);
+
+            else if (direction.Equals("idle") && animationCount == 10) player.currentState = new LeftIdleLinkState(player);
+
         }
 
         public void ChangeWeapon()
@@ -36,6 +40,12 @@ namespace Zelda_Game
         public void Update()
         {
             sprite.Update();
+            animationCount++;
+            if (animationCount == 10)
+            {
+                player.inventory.LoseLife();
+            }
+
         }
 
         public IProjectile UseItem(string itemName, SoundManager soundManager)
@@ -43,44 +53,46 @@ namespace Zelda_Game
             bool temp;
             if (itemName.Equals("bomb"))
             {
-                item = LinkSpriteFactory.Instance.LinkBombUpAnimationSprite();
+                item = LinkSpriteFactory.Instance.LinkBombLeftAnimationSprite();
                 temp = soundManager.PlayBomb;
             }
             else if (itemName.Equals("blue-arrow"))
             {
-                item = LinkSpriteFactory.Instance.LinkBlueArrowUpAnimationSprite();
+                item = LinkSpriteFactory.Instance.LinkBlueArrowLeftAnimationSprite();
                 temp = soundManager.PlayArrow;
             }
 
             else if (itemName.Equals("fire"))
             {
-                item = LinkSpriteFactory.Instance.LinkFireUpAnimationSprite();
+                item = LinkSpriteFactory.Instance.LinkFireLeftAnimationSprite();
                 temp = soundManager.PlayFire;
             }
 
             else if (itemName.Equals("green-arrow"))
             {
-                item = LinkSpriteFactory.Instance.LinkGreenArrowUpAnimationSprite();
+                item = LinkSpriteFactory.Instance.LinkGreenArrowLeftAnimationSprite();
                 temp = soundManager.PlayArrow;
             }
 
             else if (itemName.Equals("green-boomerang"))
             {
-                item = LinkSpriteFactory.Instance.LinkGreenBoomerangUpAnimationSprite();
+                item = LinkSpriteFactory.Instance.LinkGreenBoomerangLeftAnimationSprite();
                 temp = soundManager.PlayBoomerang;
             }
 
             else if (itemName.Equals("blue-boomerang"))
             {
-                item = LinkSpriteFactory.Instance.LinkBlueBoomerangUpAnimationSprite();
+                item = LinkSpriteFactory.Instance.LinkBlueBoomerangLeftAnimationSprite();
                 temp = soundManager.PlayBoomerang;
             }
+
             return item;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             sprite.Draw(spriteBatch, location);
+
         }
 
         public Vector2 ChangePosition(Vector2 location, int speed)
@@ -90,12 +102,12 @@ namespace Zelda_Game
 
         public void UseSword()
         {
-            player.currentState = new UpSwordLinkState(player);
+            player.currentState = new LeftSwordLinkState(player);
         }
 
         public void TakeDamage()
         {
-            player.currentState = new UpDamageLinkState(player);
+            
         }
     }
 }

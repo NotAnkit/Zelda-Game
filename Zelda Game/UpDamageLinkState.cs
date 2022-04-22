@@ -5,27 +5,30 @@ using Zelda_Game.LinkState;
 
 namespace Zelda_Game
 {
-    public class UpIdleLinkState : ILinkState
+    public class UpDamageLinkState : ILinkState
     {
         private readonly Link player;
         private readonly ISprite sprite;
         private IProjectile item;
-        public UpIdleLinkState(Link link)
+        private int animationCount;
+        public UpDamageLinkState(Link link)
         {
             player = link;
-            sprite = LinkSpriteFactory.Instance.LinkUpIdleSprite();
+            sprite = LinkSpriteFactory.Instance.LinkDamageUpAnimationSprite();
             link.LinkRectangle = new Rectangle((int)link.position.X, (int)link.position.Y, 29, 29);
         }
 
         public void ChangeDirection(string direction)
         {
-            if (direction.Equals("up")) player.currentState = new UpMovingLinkState(player);
+            if (direction.Equals("up") && animationCount == 10) player.currentState = new UpMovingLinkState(player);
 
-            else if (direction.Equals("left")) player.currentState = new LeftMovingLinkState(player);
+            else if (direction.Equals("left") && animationCount == 10) player.currentState = new LeftMovingLinkState(player);
 
-            else if (direction.Equals("down")) player.currentState = new DownMovingLinkState(player);
+            else if (direction.Equals("down") && animationCount == 10) player.currentState = new DownMovingLinkState(player);
 
-            else if (direction.Equals("right")) player.currentState = new RightMovingLinkState(player);
+            else if (direction.Equals("right") && animationCount == 10) player.currentState = new RightMovingLinkState(player);
+
+            else if (direction.Equals("idle") && animationCount == 10) player.currentState = new UpIdleLinkState(player);
         }
 
         public void ChangeWeapon()
@@ -36,6 +39,11 @@ namespace Zelda_Game
         public void Update()
         {
             sprite.Update();
+            animationCount++;
+            if (animationCount == 10)
+            {
+                player.inventory.LoseLife();
+            }
         }
 
         public IProjectile UseItem(string itemName, SoundManager soundManager)
@@ -95,7 +103,7 @@ namespace Zelda_Game
 
         public void TakeDamage()
         {
-            player.currentState = new UpDamageLinkState(player);
+            
         }
     }
 }

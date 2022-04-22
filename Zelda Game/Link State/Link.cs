@@ -13,7 +13,7 @@ namespace Zelda_Game
         private Vector2 itemPosition;
         public int speed = 2;
         public Dictionary<IProjectile, Vector2> items;
-        private readonly Dictionary<IProjectile, Vector2> items2;
+        private Dictionary<IProjectile, Vector2> items2;
         private readonly List<IProjectile> removeItems;
         public ILinkState currentState;     
         private bool useItem;
@@ -135,6 +135,12 @@ namespace Zelda_Game
                 useItem = item.Key.Draw(spriteBatch, item.Value, items2[item.Key]);
                 if (useItem) removeItems.Add(item.Key);
             }
+        }
+
+        public void ClearItems()
+        {
+            items = new Dictionary<IProjectile, Vector2>();
+            items2 = new Dictionary<IProjectile, Vector2>();
         }
     }
 }

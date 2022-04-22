@@ -10,6 +10,7 @@ namespace Zelda_Game
         private readonly Texture2D Texture;
         private Vector2 location;
         private bool finished;
+        private int speed;
 
         public Rectangle ProjectileRectangle()
         {
@@ -20,6 +21,7 @@ namespace Zelda_Game
         {
             Texture = texture;
             finished = false;
+            speed = 2;
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
@@ -52,7 +54,7 @@ namespace Zelda_Game
 
         public Vector2 Update(Vector2 position, Vector2 startPosition)
         {
-            position.Y++;
+            position.Y += speed;
             location = position;
             return position;
         }

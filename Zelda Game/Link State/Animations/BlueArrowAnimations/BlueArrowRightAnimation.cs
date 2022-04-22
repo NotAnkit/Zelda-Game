@@ -15,11 +15,13 @@ namespace Zelda_Game
         private readonly Texture2D Texture;
         private Vector2 location;
         private bool finished;
+        private int speed;
 
         public BlueArrowRightAnimation(Texture2D texture)
         {
             Texture = texture;
             finished = false;
+            speed = 2;
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
@@ -50,7 +52,7 @@ namespace Zelda_Game
 
         public Vector2 Update(Vector2 position, Vector2 startPosition)
         {
-            position.X++;
+            position.X += speed;
             location = position;
             return position;
         }

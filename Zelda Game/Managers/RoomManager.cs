@@ -34,7 +34,7 @@ namespace Zelda_Game
         {
             this.game1 = game1;
             collision = new Collisions(this, game1.link, game1);
-            roomLocation = new KeyValuePair<int, int>(5, 1);
+            roomLocation = new KeyValuePair<int, int>(2, 5);
             border = new BorderBlock(game1);
             fader = new ScreenFade(game1);
             tansitionState = false;
@@ -66,7 +66,7 @@ namespace Zelda_Game
             roomList.Add(new KeyValuePair<int, int>(1, 2), new Room(Game.Content.Load<Level>("Room1"), Game, random));
             roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("basement"), Game, false));
 
-            room = game1.Content.Load<Level>("Room14");
+            room = game1.Content.Load<Level>("Room10");
             roomData = new Room(room, game1, random);
         }
 

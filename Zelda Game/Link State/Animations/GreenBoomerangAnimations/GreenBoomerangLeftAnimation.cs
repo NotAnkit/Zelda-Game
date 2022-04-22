@@ -13,10 +13,12 @@ namespace Zelda_Game
         private Vector2 location;
         public Texture2D Texture;
         private bool flip;
+        private int speed;
         public GreenBoomerangLeftAnimation(Texture2D texture)
         {
             Texture = texture;
             flip = false;
+            speed = 2;
         }
 
         public bool Draw(SpriteBatch spriteBatch, Vector2 location, Vector2 startLocation)
@@ -61,12 +63,12 @@ namespace Zelda_Game
         {
             if (startLocation.X - position.X <= 96 && !flip)
             {
-                position.X--;
+                position.X -= speed;
             }
             else
             {
                 flip = true;
-                position.X++;
+                position.X += speed;
             }
             location = position;
             return position;
