@@ -25,8 +25,8 @@ namespace Zelda_Game
             numLives = 2;
             numKeys = 20;
             bombs = 4;
-            maps = false;
-            compass = false;
+            maps = true;
+            compass = true;
             bomb = true;
             yellowBoomerang = true;
             blueBoomerang = true;

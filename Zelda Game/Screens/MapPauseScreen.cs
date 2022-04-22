@@ -31,14 +31,15 @@ namespace Zelda_Game
             Rectangle sourceRoom7 = new Rectangle(528, 108, 8, 8);
             Rectangle sourceRoom8 = new Rectangle(582, 108, 8, 8);
             Rectangle sourceRoom9 = new Rectangle(618, 108, 8, 8);
-            Rectangle sourceRoom10 = new Rectangle(546, 108, 8, 8);
+            Rectangle sourceRoom10 = new Rectangle(582, 108, 8, 8);
             Rectangle sourceRoom11 = new Rectangle(609, 108, 8, 8);
             Rectangle sourceRoom12 = new Rectangle(627, 108, 8, 8);
-            Rectangle sourceRoom13 = new Rectangle(555, 108, 8, 8);
-            Rectangle sourceRoom14 = new Rectangle(537, 108, 8, 8);
+            Rectangle sourceRoom13 = new Rectangle(564, 108, 8, 8);
+            Rectangle sourceRoom14 = new Rectangle(573, 108, 8, 8);
             Rectangle sourceRoom15 = new Rectangle(609, 108, 8, 8);
             Rectangle sourceRoom16 = new Rectangle(528, 108, 8, 8);
-            Rectangle sourceRoom17 = new Rectangle(537, 108, 8, 8);
+            Rectangle sourceRoom17 = new Rectangle(546, 108, 8, 8);
+            Rectangle sourceRoom18 = new Rectangle(537, 108, 8, 8);
 
 
 
@@ -58,7 +59,8 @@ namespace Zelda_Game
             Rectangle destinationRoom14 = new Rectangle(274, 214, 16, 16);
             Rectangle destinationRoom15 = new Rectangle(290, 262, 16, 16);
             Rectangle destinationRoom16 = new Rectangle(260, 214, 16, 16);
-            Rectangle destinationRoom17 = new Rectangle(320, 230, 16, 16);
+            Rectangle destinationRoom17 = new Rectangle(322, 230, 16, 16);
+            Rectangle destinationRoom18 = new Rectangle(338, 230, 16, 16);
 
             if (link.inventory.MapState())
             {
@@ -80,11 +82,12 @@ namespace Zelda_Game
                 spriteBatch.Draw(Texture, destinationRoom15, sourceRoom15, Color.White);
                 spriteBatch.Draw(Texture, destinationRoom16, sourceRoom16, Color.White);
                 spriteBatch.Draw(Texture, destinationRoom17, sourceRoom17, Color.White);
+                spriteBatch.Draw(Texture, destinationRoom18, sourceRoom18, Color.White);
 
                 if (link.inventory.CompassState())
                 {
                     SpriteEffects s = SpriteEffects.None;
-                    spriteBatch.Draw(rectangle, new Vector2(326, 236), null, new Color(1f, 1f, 1f, 1), 0f, Vector2.Zero, new Vector2(5, 5), s, 0);
+                    spriteBatch.Draw(rectangle, new Vector2(343, 236), null, new Color(1f, 1f, 1f, 1), 0f, Vector2.Zero, new Vector2(5, 5), s, 0);
                     
                 }
             }
