@@ -9,7 +9,6 @@ namespace Zelda_Game
     {
         public string direction;
         public Vector2 position;
-        private Vector2 itemPositionStart;
         private Vector2 itemPosition;
         public int speed = 2;
         public Dictionary<IProjectile, Vector2> items;
@@ -21,7 +20,6 @@ namespace Zelda_Game
         public LinkInventory inventory;
         private Rectangle hitbox;
         public SoundManager soundManager;
-        private bool hurtSound;
 
         public Rectangle LinkRectangle
         {
@@ -31,7 +29,6 @@ namespace Zelda_Game
 
         public Link(Vector2 location, SoundManager soundManager)
         {
-            hurtSound = false;
             this.soundManager = soundManager;
             position = location;
             itemPosition = location;
@@ -47,7 +44,14 @@ namespace Zelda_Game
 
         public void Update()
         {
-            hitbox = new Rectangle((int)position.X, (int)position.Y, 29, 29);
+            if(direction == "up" || direction == "down")
+            {
+                hitbox = new Rectangle((int)position.X, (int)position.Y, 28, 28);
+            }
+            else
+            {
+                hitbox = new Rectangle((int)position.X, (int)position.Y, 27, 27);
+            }
             position = currentState.ChangePosition(position, speed);
             currentState.Update();
             currentState.ChangeDirection(direction);
@@ -92,6 +96,10 @@ namespace Zelda_Game
             {
                 
             }
+            else if ((itemName.Equals("green-arrow") || itemName.Equals("blue-arrow")) && !(inventory.Rupees > 0))
+            {
+
+            }
             else if (itemName.Equals("blank-projectile"))
             {
             }
@@ -101,11 +109,14 @@ namespace Zelda_Game
                 {
                     inventory.Bombs--;
                 }
+                if (itemName.Equals("green-arrow") || itemName.Equals("blue-arrow"))
+                {
+                    inventory.Rupees--;
+                }
                 itemPosition = position;
-                itemPositionStart = position;
                 item = currentState.UseItem(itemName, soundManager);
-                items.Add(item, itemPosition);
-                items2.Add(item, itemPositionStart);
+                items.Add(item, position);
+                items2.Add(item, position);
             }
         }
 
@@ -117,11 +128,8 @@ namespace Zelda_Game
 
         public void TakeDamage()
         {
-            hurtSound = !hurtSound;
-            if(hurtSound)
-            {
-                //bool temp = soundManager.PlayHurt;
-            }
+
+             //bool temp = soundManager.PlayHurt;
             
             currentState.TakeDamage();
         }
