@@ -37,6 +37,7 @@ namespace Zelda_Game
 
         public void Update()
         {
+            //if (finished == false) {
             currentFrame++;
             if (currentFrame == totalFrames)
             {
@@ -47,10 +48,13 @@ namespace Zelda_Game
             {
                 position.X += spriteSpeed;
             }
-            else
+            else if(position.X >= startPosition.X)
             {
                 flip = true;
                 position.X -= spriteSpeed;
+            } else
+            {
+                position.X = 0;
             }
         }
 
@@ -59,7 +63,6 @@ namespace Zelda_Game
             Rectangle sourceRectangle;
             Rectangle destinationRectangle = new Rectangle((int)position.X, (int)position.Y, 16, 32);
             bool finished = false;
-
             if (startPosition.X == position.X && flip)
             {
                 finished = true;
