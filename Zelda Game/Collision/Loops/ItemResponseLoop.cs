@@ -16,7 +16,7 @@ namespace Zelda_Game
                 direction = CollisionDetection.GetDirection(linkRectangle, itemRectangle);
                 if (direction != "none")
                 {
-                    bool temp = player.soundManager.PlayItem;
+                    _ = player.soundManager.PlayItem;
                     if (item.Value is KeyItem)
                     {
                         player.inventory.Keys++;
@@ -35,6 +35,7 @@ namespace Zelda_Game
                     }
                     else if (item.Value is BombItem)
                     {
+                        player.inventory.SetBombState = true;
                         player.inventory.Bombs++;
                     }
                     else if (item.Value is FairyItem)

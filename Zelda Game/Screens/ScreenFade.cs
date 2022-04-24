@@ -19,15 +19,14 @@ namespace Zelda_Game
 
         public bool Draw(SpriteBatch spriteBatch)
         {
-            bool returnValue = true;
             screenFade.Draw(spriteBatch);
             if (count == 100)
             {
                 fade = true;
                 count = 0;
-                returnValue = false;
+                return false;
             }
-            return returnValue;
+            return true;
         }
 
         public bool Update()

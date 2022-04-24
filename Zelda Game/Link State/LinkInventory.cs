@@ -23,20 +23,20 @@ namespace Zelda_Game
         public LinkInventory()
         {
             maxLives = 4;
-            numLives = 4;
-            numKeys = 20;
-            bombs = 4;
-            maps = true;
-            compass = true;
-            bomb = true;
-            yellowBoomerang = true;
-            blueBoomerang = true;
-            bow = true;
-            blueArrow = true;
-            greenArrow = true;
-            fire = true;
+            numLives = 3;
+            numKeys = 1;
+            bombs = 0;
+            maps = false;
+            compass = false;
+            bomb = false;
+            yellowBoomerang = false;
+            blueBoomerang = false;
+            bow = false;
+            blueArrow = false;
+            greenArrow = false;
+            fire = false;
             triForce = false;
-            rupees = 24;
+            rupees = 10;
             items = new List<IItem>();
         }
 
@@ -96,6 +96,12 @@ namespace Zelda_Game
         {
             get => triForce;
             set => triForce = value;
+        }
+
+        public bool SetBombState
+        {
+            get => bomb;
+            set => bomb = value;
         }
 
         public void AddItem(IItem item)
