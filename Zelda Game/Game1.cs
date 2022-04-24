@@ -68,7 +68,7 @@ namespace Zelda_Game
             //MediaPlayer.Play(song);
             //MediaPlayer.IsRepeating = true;
             itemSelectionState = new ItemSelectionState(this, inventoryDisplay);
-            gameManager = new GameStateManager(this, manager, link, inventoryDisplay, itemSelectionState);
+            gameManager = new GameStateManager(this, manager, link, inventoryDisplay, itemSelectionState, soundManager);
 
         }
 

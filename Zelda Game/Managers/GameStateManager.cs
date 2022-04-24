@@ -13,6 +13,8 @@ namespace Zelda_Game
         private ItemSelectionState itemSelectionState;
         private LoseScreen loseScreen;
         private WinScreen winScreen;
+        private SoundManager soundManager;
+        private bool endState;
 
         public string State
         {
@@ -20,17 +22,18 @@ namespace Zelda_Game
             set { gameState = value; }
         }
 
-        public GameStateManager(Game1 game, RoomManager manager, Link player, InventoryDisplay hud, ItemSelectionState pauseMenu)
+        public GameStateManager(Game1 game, RoomManager manager, Link player, InventoryDisplay hud, ItemSelectionState pauseMenu, SoundManager soundManager)
         {
             gameState = "running";
             this.game = game;
             this.manager = manager;
             this.player = player;
             this.hud = hud;
+            this.soundManager = soundManager;
             itemSelectionState = pauseMenu;
             loseScreen = new LoseScreen(game);
             winScreen = new WinScreen(game);
-
+            endState = false;
         }
 
         public void Draw(SpriteBatch _spriteBatch)
@@ -89,13 +92,17 @@ namespace Zelda_Game
                 }
                 itemSelectionState.Update();
             }
-            if (player.inventory.TriForce)
+            if (player.inventory.TriForce && !endState)
             {
+                bool temp = soundManager.PlayWin;
                 gameState = "win";
+                endState = true;
             }
-            if (player.inventory.NumLives() == 0)
+            if (player.inventory.NumLives() == 0 && !endState)
             {
+                bool temo = soundManager.PlayLose;
                 gameState = "lose";
+                endState = true;
             }
         }
     }

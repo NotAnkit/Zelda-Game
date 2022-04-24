@@ -126,6 +126,12 @@
 /processorParam:TextureFormat=Color
 /build:LinkSheet.png
 
+#begin LoseSound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:LoseSound.mp3
+
 #begin PickUpItem.mp3
 /importer:Mp3Importer
 /processor:SoundEffectProcessor
@@ -288,4 +294,10 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:WeaponSheet.png
+
+#begin WinSound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:WinSound.mp3
 

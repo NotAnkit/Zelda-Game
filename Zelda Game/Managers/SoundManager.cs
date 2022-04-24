@@ -12,6 +12,8 @@ namespace Zelda_Game
         private SoundEffect arrow;
         private SoundEffect fire;
         private SoundEffect boomerang;
+        private SoundEffect win;
+        private SoundEffect lose;
 
         public SoundManager()
         {
@@ -27,6 +29,8 @@ namespace Zelda_Game
             arrow = content.Load<SoundEffect>("UseArrow");
             fire = content.Load<SoundEffect>("Fire");
             boomerang = content.Load<SoundEffect>("Boomerang");
+            win = content.Load<SoundEffect>("WinSound");
+            lose = content.Load<SoundEffect>("LoseSound");
         }
 
         public bool PlaySword
@@ -62,6 +66,16 @@ namespace Zelda_Game
         public bool PlayBoomerang
         {
             get => boomerang.Play();
+        }
+
+        public bool PlayWin
+        {
+            get => win.Play();
+        }
+
+        public bool PlayLose
+        {
+            get => lose.Play();
         }
     }
 }
