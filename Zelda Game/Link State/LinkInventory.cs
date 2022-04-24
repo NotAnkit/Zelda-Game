@@ -18,6 +18,7 @@ namespace Zelda_Game
         private bool greenArrow;
         private bool blueArrow;
         private bool fire;
+        private bool triForce;
         public List<IItem> items;
         public LinkInventory()
         {
@@ -34,6 +35,7 @@ namespace Zelda_Game
             blueArrow = true;
             greenArrow = true;
             fire = true;
+            triForce = false;
             rupees = 24;
             items = new List<IItem>();
         }
@@ -90,6 +92,12 @@ namespace Zelda_Game
             set => bombs = value;
         }
 
+        public bool TriForce
+        {
+            get => triForce;
+            set => triForce = value;
+        }
+
         public void AddItem(IItem item)
         {
             if(item is BowItem)
@@ -115,6 +123,10 @@ namespace Zelda_Game
             if (item is FireItem)
             {
                 fire = true;
+            }
+            if (item is TriforcePieceItem)
+            {
+                triForce = true;
             }
             items.Add(item);
         }

@@ -89,9 +89,9 @@ namespace Zelda_Game
                 }
                 itemSelectionState.Update();
             }
-            else if (gameState.Equals("win"))
+            if (player.inventory.TriForce)
             {
-
+                gameState = "win";
             }
             if (player.inventory.NumLives() == 0)
             {

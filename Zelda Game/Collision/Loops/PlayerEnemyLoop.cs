@@ -53,7 +53,7 @@ namespace Zelda_Game
                     deleteEnemy.Add(enemy.Key);
                 }
 
-                if(enemy.Value is Dragon | enemy.Value is Goriya)
+                if(enemy.Value is Dragon | enemy.Value is Goriya | enemy.Value is Boss)
                 {
                     PlayerEnemyProjectileLoop.EnemyProjectileLoop(enemy.Value, player);
                 }

@@ -31,6 +31,11 @@ namespace Zelda_Game
                 manager.roomData.itemList.Add(new Vector2(300, 100), ItemSpriteFactory.Instance.GreenBoomerang());
                 manager.roomData.itemPickedUp = true;
             }
+            if (manager.roomLocation.Key == 6 && manager.roomLocation.Value == 1 && !manager.roomData.itemPickedUp)
+            {
+                manager.roomData.itemList.Add(new Vector2(300, 100), ItemSpriteFactory.Instance.TriforcePieceItem());
+                manager.roomData.itemPickedUp = true;
+            }
         }
     }
 }

@@ -124,10 +124,6 @@
     <Enemies>
     </Enemies>
     <Items>
-        <Item>
-        <Key>243 173</Key>
-        <Value>T</Value>
-      </Item>
     </Items>
   </Asset>
 </XnaContent>
