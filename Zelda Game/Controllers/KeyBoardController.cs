@@ -63,7 +63,7 @@ namespace Zelda_Game
             {
                 if (game.gameManager.State == "paused")
                 {
-                    game.itemSelectionState.weaponSelector.nextWeapon();
+                    game.itemSelectionState.weaponSelector.NextWeapon();
                 }
                 else
                 {

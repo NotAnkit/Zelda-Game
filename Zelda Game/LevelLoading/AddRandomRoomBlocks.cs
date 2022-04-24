@@ -18,7 +18,7 @@ namespace Zelda_Game
         public Dictionary<Vector2, IEnvironment> LoadBlocks()
         {
             Dictionary<Vector2, IEnvironment> blockList = new Dictionary<Vector2, IEnvironment>();
-            int value = 0;
+            int value;
             Random r = new Random();
             int i = r.Next(5, 10);
             Vector2 location = new Vector2(59, 61);

@@ -55,40 +55,39 @@ namespace Zelda_Game
 
         public IProjectile UseItem(string itemName, SoundManager soundManager)
         {
-            bool temp;
             if (itemName.Equals("bomb"))
             {
                 item = LinkSpriteFactory.Instance.LinkBombUpAnimationSprite();
-                temp = soundManager.PlayBomb;
+                soundManager.PlayBomb();
             }
             else if (itemName.Equals("blue-arrow"))
             {
                 item = LinkSpriteFactory.Instance.LinkBlueArrowUpAnimationSprite();
-                temp = soundManager.PlayArrow;
+                soundManager.PlayArrow();
             }
 
             else if (itemName.Equals("fire"))
             {
                 item = LinkSpriteFactory.Instance.LinkFireUpAnimationSprite();
-                temp = soundManager.PlayFire;
+                soundManager.PlayFire();
             }
 
             else if (itemName.Equals("green-arrow"))
             {
                 item = LinkSpriteFactory.Instance.LinkGreenArrowUpAnimationSprite();
-                temp = soundManager.PlayArrow;
+                soundManager.PlayArrow();
             }
 
             else if (itemName.Equals("green-boomerang"))
             {
                 item = LinkSpriteFactory.Instance.LinkGreenBoomerangUpAnimationSprite();
-                temp = soundManager.PlayBoomerang;
+                soundManager.PlayBoomerang();
             }
 
             else if (itemName.Equals("blue-boomerang"))
             {
                 item = LinkSpriteFactory.Instance.LinkBlueBoomerangUpAnimationSprite();
-                temp = soundManager.PlayBoomerang;
+                soundManager.PlayBoomerang();
             }
             return item;
         }

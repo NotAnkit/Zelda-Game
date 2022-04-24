@@ -6,7 +6,7 @@ namespace Zelda_Game
     public class InventoryDisplay
     {
         private readonly Texture2D Texture;
-        private Texture2D Texture2;
+        private readonly Texture2D Texture2;
         private readonly SpriteFont Font;
         private LinkInventory inventory;
         private int rupees;

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
@@ -14,7 +13,7 @@ namespace Zelda_Game
         private Vector2 location;
         public Texture2D Texture;
         private bool flip;
-        private int speed;
+        private readonly int speed;
         public BlueBoomerangDownAnimation(Texture2D texture)
         {
             Texture = texture;

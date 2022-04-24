@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public class LoseScreen
     {
-        private Texture2D texture;
+        private readonly Texture2D texture;
 
         public LoseScreen(Game1 game)
         {

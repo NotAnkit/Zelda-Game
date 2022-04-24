@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
@@ -11,9 +10,9 @@ namespace Zelda_Game
             return new Rectangle((int)location.X, (int)location.Y, 16, 32);
         }
         private Vector2 location;
-        public Texture2D Texture;
+        private readonly Texture2D Texture;
         private bool flip;
-        private int speed;
+        private readonly int speed;
 
         public GreenBoomerangRightAnimation(Texture2D texture)
         {

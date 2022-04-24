@@ -6,7 +6,7 @@ namespace Zelda_Game
     public class LinkWoodSwordDownAnimation : ISprite
     {
       
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
 
         public LinkWoodSwordDownAnimation(Texture2D texture)
         {

@@ -122,7 +122,7 @@ namespace Zelda_Game
 
         public void UseSword()
         {
-            bool temp = soundManager.PlaySword;
+            soundManager.PlaySword();
             currentState.UseSword();
         }
 

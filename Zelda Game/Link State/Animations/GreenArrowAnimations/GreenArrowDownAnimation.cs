@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
@@ -14,7 +13,7 @@ namespace Zelda_Game
         private readonly Texture2D Texture;
         private Vector2 location;
         private bool finished;
-        private int speed;
+        private readonly int speed;
         public GreenArrowDownAnimation(Texture2D texture)
         {
             Texture = texture;

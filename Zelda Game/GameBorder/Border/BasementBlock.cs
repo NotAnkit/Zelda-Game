@@ -6,7 +6,7 @@ namespace Zelda_Game
 {
     public class BasementBlock : IEnvironment
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
 
         public BasementBlock(Game1 game)
         {

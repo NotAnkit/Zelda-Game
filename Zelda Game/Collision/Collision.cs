@@ -24,7 +24,7 @@ namespace Zelda_Game
         {
             Remove.RemoveRoomObjects(deleteEnemies, deleteItems, room.enemyList, room.itemList);
 
-            deleteEnemies = PlayerEnemyLoop.EnemyLoop(room.enemyList, player, room.blockList, room.doorList, room.itemList, game);
+            deleteEnemies = PlayerEnemyLoop.EnemyLoop(room.enemyList, player, room.blockList, room.doorList, game);
 
             PlayerBlockLoop.BlockLoop(room.blockList, player, manager);
 

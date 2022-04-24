@@ -24,10 +24,7 @@ namespace Zelda_Game
             set => tansitionState = value;
         }
 
-        public bool TransitionStateFinished
-        {
-            get => tansitionStateFinished;
-        }
+        public bool TransitionStateFinished => tansitionStateFinished;
 
         public RoomManager(Game1 game1)
         {
@@ -65,7 +62,7 @@ namespace Zelda_Game
             roomList.Add(new KeyValuePair<int, int>(1, 2), new Room(Game.Content.Load<Level>("Room1"), Game, random));
             roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("basement"), Game, false));
 
-            room = game1.Content.Load<Level>("Room10");
+            room = game1.Content.Load<Level>("Room16");
             roomData = new Room(room, game1, random);
         }
 

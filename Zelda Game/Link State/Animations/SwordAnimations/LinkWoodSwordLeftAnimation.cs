@@ -6,7 +6,7 @@ namespace Zelda_Game
     public class LinkWoodSwordLeftAnimation : ISprite
     {
   
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
 
         public LinkWoodSwordLeftAnimation(Texture2D texture)
         {

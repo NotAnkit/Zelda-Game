@@ -1,25 +1,24 @@
-﻿
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
     public class GameStateManager
     {
         private string gameState;
-        private Game1 game;
-        private RoomManager manager;
-        private Link player;
-        private InventoryDisplay hud;
-        private ItemSelectionState itemSelectionState;
-        private LoseScreen loseScreen;
-        private WinScreen winScreen;
-        private SoundManager soundManager;
+        private readonly Game1 game;
+        private readonly RoomManager manager;
+        private readonly Link player;
+        private readonly InventoryDisplay hud;
+        private readonly ItemSelectionState itemSelectionState;
+        private readonly LoseScreen loseScreen;
+        private readonly WinScreen winScreen;
+        private readonly SoundManager soundManager;
         private bool endState;
 
         public string State
         {
-            get { return gameState; }
-            set { gameState = value; }
+            get => gameState;
+            set => gameState = value;
         }
 
         public GameStateManager(Game1 game, RoomManager manager, Link player, InventoryDisplay hud, ItemSelectionState pauseMenu, SoundManager soundManager)
@@ -94,13 +93,13 @@ namespace Zelda_Game
             }
             if (player.inventory.TriForce && !endState)
             {
-                bool temp = soundManager.PlayWin;
+                soundManager.PlayWin();
                 gameState = "win";
                 endState = true;
             }
             if (player.inventory.NumLives() == 0 && !endState)
             {
-                bool temo = soundManager.PlayLose;
+                soundManager.PlayLose();
                 gameState = "lose";
                 endState = true;
             }

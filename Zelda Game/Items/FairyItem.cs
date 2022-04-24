@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public class FairyItem : IItem
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
         private Vector2 position;
         private float spriteSpeed;
         private int currentFrame;

@@ -5,7 +5,7 @@ namespace Zelda_Game
 {
     public static class PlayerEnemyLoop
     {
-        public static List<Vector2> EnemyLoop(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnvironment> blocks, List<IDoor> doors, Dictionary<Vector2, IItem> items, Game1 game)
+        public static List<Vector2> EnemyLoop(Dictionary<Vector2, IEnemy> enemies, Link player, Dictionary<Vector2, IEnvironment> blocks, List<IDoor> doors, Game1 game)
         {
             List<Vector2> deleteEnemy = new List<Vector2>();
             string direction;

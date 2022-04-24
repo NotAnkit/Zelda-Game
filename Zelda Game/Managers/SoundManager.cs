@@ -33,49 +33,49 @@ namespace Zelda_Game
             lose = content.Load<SoundEffect>("LoseSound");
         }
 
-        public bool PlaySword
+        public void PlaySword()
         {
-            get => sword.Play();
+            sword.Play();
         }
 
-        public bool PlayHurt
+        public void PlayHurt()
         {
-            get => hurt.Play();
+            hurt.Play();
         }
 
-        public bool PlayItem
+        public void PlayItem()
         {
-            get => item.Play();
+            item.Play();
         }
 
-        public bool PlayBomb
+        public void PlayBomb()
         {
-            get => bomb.Play();
+            bomb.Play();
         }
 
-        public bool PlayArrow
+        public void PlayArrow()
         {
-            get => arrow.Play();
+            arrow.Play();
         }
 
-        public bool PlayFire
+        public void PlayFire()
         {
-            get => fire.Play();
+            fire.Play();
         }
 
-        public bool PlayBoomerang
+        public void PlayBoomerang()
         {
-            get => boomerang.Play();
+            boomerang.Play();
         }
 
-        public bool PlayWin
+        public void PlayWin()
         {
-            get => win.Play();
+            win.Play();
         }
 
-        public bool PlayLose
+        public void PlayLose()
         {
-            get => lose.Play();
+            lose.Play();
         }
     }
 }

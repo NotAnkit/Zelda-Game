@@ -20,7 +20,7 @@ namespace Zelda_Game
             itemList = new Dictionary<Vector2, IItem>();
             doorList = new List<IDoor>();
             itemPickedUp = false;
-            if (random == true)
+            if (random)
             {
                 blockList = AddRandomRoomBlocks.Instance.LoadBlocks();
                 enemyList = AddRandomRoomEnemies.Instance.LoadEnemies(game1);

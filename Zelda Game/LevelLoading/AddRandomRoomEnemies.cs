@@ -18,7 +18,7 @@ namespace Zelda_Game
         public Dictionary<Vector2, IEnemy> LoadEnemies(Game1 game1)
         {
             Dictionary<Vector2, IEnemy> enemyList = new Dictionary<Vector2, IEnemy>();
-            int value = 0;
+            int value;
             Random r = new Random();
             int i = r.Next(1, 5);
             Vector2 location = new Vector2(59, 61);

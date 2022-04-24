@@ -18,7 +18,7 @@ namespace Zelda_Game
         public Dictionary<Vector2, IItem> LoadItems()
         {
             Dictionary<Vector2, IItem> itemList = new Dictionary<Vector2, IItem>();
-            int value = 0;
+            int value;
             Random r = new Random();
             int i = 1;
             Vector2 location = new Vector2(59, 61);

@@ -123,7 +123,7 @@ namespace Zelda_Game
 
         }
 
-        public void nextWeapon()
+        public void NextWeapon()
         {
             selectionPosition.X += 40;
             if (selectionPosition.X > 350)

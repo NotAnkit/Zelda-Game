@@ -1,12 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Audio;
 
 namespace Zelda_Game
 {
     public class LinkWoodSwordUpAnimation : ISprite
     {
-        private Texture2D Texture;
+        private readonly Texture2D Texture;
 
         public LinkWoodSwordUpAnimation(Texture2D texture)
         {

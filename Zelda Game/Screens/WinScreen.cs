@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
     public class WinScreen
     {
-        private Texture2D texture;
+        private readonly Texture2D texture;
 
         public WinScreen(Game1 game)
         {
