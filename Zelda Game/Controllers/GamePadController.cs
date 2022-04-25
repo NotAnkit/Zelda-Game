@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
 namespace Zelda_Game
@@ -8,73 +9,74 @@ namespace Zelda_Game
         private GamePadState userInput;
         private GamePadState previousState;
         private GamePadCapabilities capabilities;
+        private Dictionary<Buttons, ICommand> controllerMappings;
         private readonly Game1 game;
 
         public GamePadController(Game1 _game)
         {
             game = _game;
             capabilities = GamePad.GetCapabilities(PlayerIndex.One);
+            controllerMappings = new Dictionary<Buttons, ICommand>();
+            RegisterCommand(Buttons.LeftThumbstickLeft, new MoveUp(game));
+            RegisterCommand(Buttons.LeftThumbstickRight, new MoveDown(game));
+            RegisterCommand(Buttons.RightThumbstickLeft, new MoveLeft(game));
+            RegisterCommand(Buttons.RightThumbstickRight, new MoveRight(game));
+            RegisterCommand(Buttons.Y, new Exit(game));
+            RegisterCommand(Buttons.B, new Reset(game));
+            RegisterCommand(Buttons.Start, new Pause(game));
+            RegisterCommand(Buttons.X, new BButton(game));
+            RegisterCommand(Buttons.A, new AButton(game));
+            RegisterCommand(Buttons.RightStick, new HButton(game));
+            RegisterCommand(Buttons.LeftShoulder, new Idle(game));
         }
+
+        public void RegisterCommand(Buttons button, ICommand command)
+        {
+            controllerMappings.Add(button, command);
+        }
+
         public void Update()
         {
             previousState = userInput;
             userInput = GamePad.GetState(PlayerIndex.One);
             if (userInput.IsButtonDown(Buttons.Y) && !previousState.IsButtonDown(Buttons.Y))
             {
-                game.Exit();
+                controllerMappings[Buttons.Y].Execute();
             }
             if (userInput.IsButtonDown(Buttons.B) && !previousState.IsButtonDown(Buttons.B))
             {
-                var game2 = new Game1();
-                game2.Run();
-                game.Exit();
+                controllerMappings[Buttons.B].Execute();
             }
             if (capabilities.HasLeftYThumbStick && capabilities.HasLeftXThumbStick)
             {
                 if (userInput.ThumbSticks.Left.Y > 0)
-                    game.link.direction = "up";
+                    controllerMappings[Buttons.LeftThumbstickLeft].Execute();
                 else if (userInput.ThumbSticks.Left.Y < 0)
-                    game.link.direction = "down";
+                    controllerMappings[Buttons.LeftThumbstickRight].Execute();
                 else if (userInput.ThumbSticks.Left.X < 0)
-                    game.link.direction = "left";
+                    controllerMappings[Buttons.RightThumbstickLeft].Execute();
                 else if (userInput.ThumbSticks.Left.X > 0)
-                    game.link.direction = "right";
+                    controllerMappings[Buttons.RightThumbstickRight].Execute();
                 else
-                    game.link.direction = "idle";
+                    controllerMappings[Buttons.LeftShoulder].Execute();
 
             }
             if (userInput.IsButtonDown(Buttons.Start) && !previousState.IsButtonDown(Buttons.Start))
             {
-                game.manager.TransitionState = true;
-                if (game.gameManager.State == "paused")
-                {
-                    game.gameManager.State = "running";
-                }
-                else
-                {
-                    game.gameManager.State = "paused";
-                }
+                controllerMappings[Buttons.Start].Execute();
 
             }
             if (userInput.IsButtonDown(Buttons.X) && !previousState.IsButtonDown(Buttons.X))
             {
-                if (game.gameManager.State == "paused")
-                {
-                    game.itemSelectionState.weaponSelector.NextWeapon();
-                }
-                else
-                {
-                    game.link.UseItem(game.inventoryDisplay.ItemBSlot);
-                }
+                controllerMappings[Buttons.X].Execute();
             }
             if (userInput.IsButtonDown(Buttons.RightStick) && !previousState.IsButtonDown(Buttons.RightStick))
             {
-                game.manager.random = true;
-                game.manager.LoadRooms(game);
+                controllerMappings[Buttons.RightStick].Execute();
             }
             if (userInput.IsButtonDown(Buttons.A) && !previousState.IsButtonDown(Buttons.A))
             {
-                game.link.UseItem(game.inventoryDisplay.ItemASlot);
+                controllerMappings[Buttons.A].Execute();
             }
           
         }

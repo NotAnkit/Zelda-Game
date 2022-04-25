@@ -54,16 +54,19 @@
         public int Keys
         {
             get => numKeys;
+            set => numKeys = value;
         }
 
         public int Rupees
         {
             get => rupees;
+            set => rupees = value;
         }
 
         public int Bombs
         {
             get => bombs;
+            set => bombs = value;
         }
 
         public bool TriForce

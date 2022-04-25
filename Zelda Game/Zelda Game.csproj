@@ -57,6 +57,7 @@
     <None Remove="Sprint4Docs\CodeReviews\" />
     <None Remove="Controllers\" />
     <None Remove="Managers\" />
+    <None Remove="Controllers\Commands\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -118,6 +119,7 @@
 
     <Folder Include="Controllers\" />
     <Folder Include="Managers\" />
+    <Folder Include="Controllers\Commands\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />

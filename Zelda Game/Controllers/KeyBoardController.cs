@@ -1,9 +1,11 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework.Input;
 
 namespace Zelda_Game
 {
     public class KeyBoardController : IController
     {
+        private Dictionary<Keys, ICommand> controllerMappings;
         private KeyboardState userInput;
         private KeyboardState previousState;
         private readonly Game1 game;
@@ -11,81 +13,77 @@ namespace Zelda_Game
         public KeyBoardController(Game1 _game)
         {
             game = _game;
+            controllerMappings = new Dictionary<Keys, ICommand>();
+            RegisterCommand(Keys.Up, new MoveUp(game));
+            RegisterCommand(Keys.Down, new MoveDown(game));
+            RegisterCommand(Keys.Left, new MoveLeft(game));
+            RegisterCommand(Keys.Right, new MoveRight(game));
+            RegisterCommand(Keys.Q, new Exit(game));
+            RegisterCommand(Keys.R, new Reset(game));
+            RegisterCommand(Keys.P, new Pause(game));
+            RegisterCommand(Keys.B, new BButton(game));
+            RegisterCommand(Keys.A, new AButton(game));
+            RegisterCommand(Keys.H, new HButton(game));
+            RegisterCommand(Keys.V, new Idle(game));
         }
+
+        public void RegisterCommand(Keys key, ICommand command)
+        {
+            controllerMappings.Add(key, command);
+        }
+
         public void Update()
         {
+
             previousState = userInput;
             userInput = Keyboard.GetState();
             if (userInput.IsKeyDown(Keys.Q))
             {
-                game.Exit();
+                controllerMappings[Keys.Q].Execute();
             }
             if (userInput.IsKeyDown(Keys.R))
             {
-                var game2 = new Game1();
-                game2.Run();
-                game.Exit();
+                controllerMappings[Keys.R].Execute();
             }
             else if (userInput.IsKeyDown(Keys.Up))
             {
-                game.link.direction = "up";
+                controllerMappings[Keys.Up].Execute();
 
             }
             else if (userInput.IsKeyDown(Keys.Left))
             {
-                game.link.direction = "left";
+                controllerMappings[Keys.Left].Execute();
 
             }
             else if (userInput.IsKeyDown(Keys.Down))
             {
-                game.link.direction = "down";
+                controllerMappings[Keys.Down].Execute();
 
             }
             else if (userInput.IsKeyDown(Keys.Right))
             {
-                game.link.direction = "right";
+                controllerMappings[Keys.Right].Execute();
 
             }
             else if (userInput.IsKeyDown(Keys.P) && !previousState.IsKeyDown(Keys.P))
             {
-                game.manager.TransitionState = true;
-                if (game.gameManager.State == "paused")
-                {
-                    game.gameManager.State = "running";
-                }
-                else
-                {
-                    game.gameManager.State = "paused";
-                }
-
+                controllerMappings[Keys.P].Execute();
             }
             else if (userInput.IsKeyDown(Keys.B) && !previousState.IsKeyDown(Keys.B))
             {
-                if (game.gameManager.State == "paused")
-                {
-                    game.itemSelectionState.weaponSelector.NextWeapon();
-                }
-                else
-                {
-                    game.link.UseItem(game.inventoryDisplay.ItemBSlot);
-                }
+                controllerMappings[Keys.B].Execute();
             }
             else if (userInput.IsKeyDown(Keys.A) && !previousState.IsKeyDown(Keys.A))
             {
-                game.link.UseItem(game.inventoryDisplay.ItemASlot);
-            }
-            else if (userInput.IsKeyDown(Keys.E) && !previousState.IsKeyDown(Keys.E))
-            {
-                game.link.UseItem("bomb");
+                controllerMappings[Keys.A].Execute();
             }
             else if (userInput.IsKeyDown(Keys.H) && !previousState.IsKeyDown(Keys.H))
             {
-                game.manager.random = true;
-                game.manager.LoadRooms(game);
+                controllerMappings[Keys.H].Execute();
             }
             else if (userInput.IsKeyUp(Keys.Up) || userInput.IsKeyUp(Keys.Down) || userInput.IsKeyUp(Keys.Left) || userInput.IsKeyUp(Keys.Right))
             {
-                game.link.direction = "idle";
+                controllerMappings[Keys.V].Execute();
             }
         }
     }
