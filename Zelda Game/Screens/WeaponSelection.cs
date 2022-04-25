@@ -8,8 +8,7 @@ namespace Zelda_Game
         private readonly Texture2D Texture;
         private readonly Texture2D Texture2;
 
-
-        Vector2 selectionPosition = new Vector2(230, 100); // MOVE TO WEAPONSELECTION FILE
+        Vector2 selectionPosition = new Vector2(230, 100); 
 
         public WeaponSelection(Game1 game)
         {

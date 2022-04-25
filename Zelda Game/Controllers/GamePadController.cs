@@ -67,6 +67,11 @@ namespace Zelda_Game
                     game.link.UseItem(game.inventoryDisplay.ItemBSlot);
                 }
             }
+            if (userInput.IsButtonDown(Buttons.RightStick) && !previousState.IsButtonDown(Buttons.RightStick))
+            {
+                game.manager.random = true;
+                game.manager.LoadRooms(game);
+            }
             if (userInput.IsButtonDown(Buttons.A) && !previousState.IsButtonDown(Buttons.A))
             {
                 game.link.UseItem(game.inventoryDisplay.ItemASlot);

@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda_Game
 {
     public class TopKey : IDoor
     {
-        public Texture2D Texture;
+        private readonly Texture2D Texture;
 
         public TopKey(Game1 game)
         {
@@ -28,7 +27,7 @@ namespace Zelda_Game
 
         public void Update()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

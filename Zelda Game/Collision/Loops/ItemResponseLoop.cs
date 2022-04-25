@@ -17,45 +17,13 @@ namespace Zelda_Game
                 if (direction != "none")
                 {
                     player.soundManager.PlayItem();
-                    if (item.Value is KeyItem)
-                    {
-                        player.inventory.Keys++;
-                    }
-                    else if (item.Value is MapItem)
-                    {
-                        player.inventory.CollectMap();
-                    }
-                    else if (item.Value is CompassItem)
-                    {
-                        player.inventory.CollectCompass();
-                    }
-                    else if (item.Value is RupeeItem)
-                    {
-                        player.inventory.Rupees++;
-                    }
-                    else if (item.Value is BombItem)
-                    {
-                        player.inventory.SetBombState = true;
-                        player.inventory.Bombs++;
-                    }
-                    else if (item.Value is FairyItem)
-                    {
-                        player.inventory.SetLives(player.inventory.MaxLives);
-                    }
-                    else if (item.Value is ClockItem)
+
+                    if (item.Value is ClockItem)
                     {
                         foreach (KeyValuePair<Vector2, IEnemy> enemy in enemies)
                         {
                             enemy.Value.SetSpeed(0f);
                         }
-                    }
-                    else if (item.Value is HeartContainerItem)
-                    {
-                        player.inventory.MaxLives = player.inventory.MaxLives++;
-                    }
-                    else if (item.Value is HeartItem)
-                    {
-                        player.inventory.EarnLife();
                     }
                     else
                     {

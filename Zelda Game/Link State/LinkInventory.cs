@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Zelda_Game
+﻿namespace Zelda_Game
 {
     public class LinkInventory
     {
@@ -19,7 +17,7 @@ namespace Zelda_Game
         private bool blueArrow;
         private bool fire;
         private bool triForce;
-        public List<IItem> items;
+
         public LinkInventory()
         {
             maxLives = 4;
@@ -37,7 +35,6 @@ namespace Zelda_Game
             fire = false;
             triForce = false;
             rupees = 10;
-            items = new List<IItem>();
         }
 
         public void LoseLife()
@@ -49,47 +46,24 @@ namespace Zelda_Game
             }
         }
 
-        public void EarnLife()
-        {
-            numLives++;
-            if (numLives >= maxLives)
-            {
-                numLives = maxLives;
-            }
-        }
-
         public int NumLives()
         {
             return numLives;
         }
 
-        public void SetLives(int lives)
-        {
-            numLives = lives;
-        }
-
         public int Keys
         {
             get => numKeys;
-            set => numKeys = value;
-        }
-
-        public int MaxLives
-        {
-            get => maxLives;
-            set => maxLives = value;
         }
 
         public int Rupees
         {
             get => rupees;
-            set => rupees = value;
         }
 
         public int Bombs
         {
             get => bombs;
-            set => bombs = value;
         }
 
         public bool TriForce
@@ -98,87 +72,61 @@ namespace Zelda_Game
             set => triForce = value;
         }
 
-        public bool SetBombState
-        {
-            get => bomb;
-            set => bomb = value;
-        }
-
         public void AddItem(IItem item)
         {
-            if(item is BowItem)
+            if (item is KeyItem) numKeys++;
+            
+            else if (item is MapItem) maps = true;
+            
+            else if (item is CompassItem) compass = true;
+            
+            else if (item is RupeeItem) rupees++;
+            
+            else if (item is BombItem)
             {
-                bow = true;
+                bomb = true;
+                bombs++;
             }
-            if (item is ArrowItem)
-            {
-                greenArrow = true;
-            }
-            if (item is ArrowItem2)
-            {
-                blueArrow = true;
-            }
-            if (item is GreenBoomerang)
-            {
-                yellowBoomerang = true;
-            }
-            if (item is BlueBoomerang)
-            {
-                blueBoomerang = true;
-            }
-            if (item is FireItem)
-            {
-                fire = true;
-            }
-            if (item is TriforcePieceItem)
-            {
-                triForce = true;
-            }
-            items.Add(item);
+            else if (item is FairyItem) numLives = maxLives;
+            
+            else if (item is HeartContainerItem) maxLives++;
+            
+            else if (item is HeartItem)
+                numLives++;
+                if (numLives >= maxLives) numLives = maxLives;
+                
+            if (item is BowItem) bow = true;
+            
+            if (item is ArrowItem) greenArrow = true;
+            
+            if (item is ArrowItem2) blueArrow = true;
+            
+            if (item is GreenBoomerang) yellowBoomerang = true;
+            
+            if (item is BlueBoomerang) blueBoomerang = true;
+            
+            if (item is FireItem) fire = true;
+            
+            if (item is TriforcePieceItem) triForce = true;
+            
         }
-
-        public void CollectMap() => maps = true;
 
         public bool MapState() => maps;
 
-        public void CollectCompass() => compass = true;
-
         public bool CompassState() => compass;
 
+        public bool BombState() => bomb;
 
-        public bool BombState()
-        {
-            return bomb;
-        }
+        public bool FireState() => fire;
 
-        public bool FireState()
-        {
-            return fire;
-        }
+        public bool YellowBoomerangState() => yellowBoomerang;
 
-        public bool YellowBoomerangState()
-        {
-            return yellowBoomerang;
-        }
+        public bool BlueBoomerangState() => blueBoomerang;
 
-        public bool BlueBoomerangState()
-        {
-            return blueBoomerang;
-        }
+        public bool BowState() => bow;
 
-        public bool BowState()
-        {
-            return bow;
-        }
+        public bool GreenArrowState() => greenArrow;
 
-        public bool GreenArrowState()
-        {
-            return greenArrow;
-        }
-
-        public bool BlueArrowState()
-        {
-            return blueArrow;
-        }
+        public bool BlueArrowState() => blueArrow;
     }
 }
