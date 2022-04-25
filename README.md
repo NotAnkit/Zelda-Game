@@ -2,7 +2,7 @@
 
 This Repository is for Team Alpha Won in CSE 3902 recreating the first dungen from the orginal Legend of Zelda Game. This project will take four sprints to complete to add all the functionallity. 
 
-## V1
+## V4
 
 #### Controls
 
