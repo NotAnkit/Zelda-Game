@@ -6,16 +6,41 @@ This Repository is for Team Alpha Won in CSE 3902 recreating the first dungen fr
 
 #### Controls
 
+##Keyboard
+
 Controls | Function
 | :--- | :---:
 Arrow Keys  | to move Link around the screen.
   A | to for Link to use the sword. 
-  B | to use Items
+  B | to use Items, Once paused used to select item
   Q | to quit
   R | to Reset
+  P | to Pause
+  H | to Randomize RoomData
+
+##GamePad
+ 
+Controls | Function
+| :--- | :---:
+Left Thumbstick  | to move Link around the screen.
+  A | to for Link to use the sword. 
+  X | to use Items, Once paused used to select item
+  Y | to quit
+  B | to Reset
+  Start | to Pause
+  Right Stick | to Randomize RoomData
   
 #### Bugs
-  The project has a few bugs right now. One bug is in room 15 you can force move the pushable block from faraway. Honestly might even be a feature. Next bug is with enemies taking damage the sword weapons are not supposed to one hit kill but it does for some reason. The Sound plays multiple times which can crash the game. Link can get hit through doors, which is a result of it not freezing fast enough. Another bug with room 15 is the stairs and how you can ascess them but not steping ont he right block, something with they way the collision is analyzed. Another bug currently is that the selector does not select the new items and it is not lined up fully.
+  The project is 95% Complete based on the functionality of the orginal game, but currently has 3 addtional features implemented. Based game functionality currently has some bugs. The first bug being you can use multiple items at the same time ex. shoot 3 arrows in succession. Another bug is that when the enemies die, they despawn to quickly and as a result the death cloud can not be been. The Clock item currenlty only freezes the enemies and does not unfreeze them. The damage sound is played to many times when the player takes damage and can cause the game to crash in trapped in a cornor. The pushable block moves many spaces if you want instead of just one space at a time. While it is possible to move left and right on the ladder, there is no where to go. The boomerang and the hand master cause you give/take damage instead of stunning. The spike trap does not have the intended functionality. There is currently a bug with the down doors where the transition does not let them enter the next room, so the transition has been turned off for it.
+  
+#### Bug Fixes
+  Links damage state got overhauled. Now there are four damage states in four directions. This fixes the bug where link is always looking right after taking damage instead he is looking the intended direction. Link can also not in the damage state deal damage to enemies via his sword or items. The player takes a little knock back to try and make sure link does not get trapped. Background music was turned back on. Compass not shows where the triforce pieces is with or without the map. The block in the compass room was moved back to original location. Link now has a function health system, including getting hearts, taking damage and displaying the hearts. Throwing items nolonger linger when passing room to room. The block edges seem to have been fixed for the most part, still some areas with certain movements can cause link to get caught on cornors. 
+
+#### Additonal Features
+  Our team currently has three addtional features. The first feature is the introduction of the gamepad class which allows for the user to also use a controller for the gameplay, right not the keys are mapped for a xbox controller so the compatibility is very small. We also added a new boss that has two stages, and this 15 health. The boss is the one that drops the triforce piece now to win/beat the game. The last feature implemented currently is the randomization of the blocks and enemies in rooms. With a click of a button the rooms become chaotic, but the game is still playable as the items remain the same and thus allow you to still get the triforce piece.  
+  
+#### Code refactoring
+  Ankit ended up doing most of the code style and refactoring for the sprint to bring the code up to code quality standards. The first issue addresed was first found in sprint two where the textures of many classes were public, and they have since been chnanged to private readonly to prevent accidential changes. The next fix was with the item collection and to reduce the coupling all the logic on what the player has collected is not in the inventory class. This reduced the readibilty of the inventory class, but the inventory class was refactored to as many proprties and methods became useless. The playerdoorloop class was very complex and had high cyclomtic complexity. This was fixed by creating static classes in seperate files to handle the actual logic. The readability of the playerdooploop class increased drasticly and the coupling went down as well. The static classes since handling only one function have high cohesion and thus also have high readility has they do the same thing. Game1 class coupling and cohesion was improved this sprint. Many of the coupling issues to game1 have been delegated to diffrent managers. This includes the RoomManager that handles which room is present, the switching and the logic of updating and drawing them. The GameStateManager deals with the four different states of the game and how to draw each part. This reduces game1s requirment to know where the game is at. The SoundManager deals sound including loading and playing the sounds as requested. The keyboard controller was the most coupled class as it deals with many different aspects and thus needs to access many things. To fix the coupling issues and fix the readibility of the code a commad pattern was set up to deal with the actual logic. The required creating a command interface called ICommand and then adding the commands to a list with the certain key mappings. This pattern elimated most of the coupling in btoh controller classes and reduced the duplication of code as the controllers now share the same commands. 
 
 #### Code Metrics
 
