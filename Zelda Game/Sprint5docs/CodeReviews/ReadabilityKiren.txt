@@ -1,0 +1,17 @@
+﻿Author of Review: Ankit Kumar
+
+Date: 4/25/2022
+
+Sprint 5
+
+File being reviewed: Boss.cs
+
+Author of file being reviewed: Kiren Manoharon
+
+Time: 15 minutes
+
+Comments about code: The overall code is quite long as it does breach the 150
+lines we set as a limit, but each method has a descriptive name an the body does
+exactly what the function name says, which makes the overall file quite easy to
+read. The names of all the fields/proporties are descriptive enough for the class
+as they names indicate what is being stored.

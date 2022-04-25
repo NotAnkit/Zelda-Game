@@ -1,0 +1,21 @@
+﻿Author of Review: Ankit Kumar
+
+Date: 4/25/2022
+
+Sprint 5
+
+File being reviewed: AddRandomRoomBlocks.cs
+
+Author of file being reviewed: Anish Chitti
+
+Time: 15 minutes
+
+Comments about code: The overall code is quite short and easy to read. I would
+recommend adding more blocks that are maybe randomly picked from a list to make
+it even more random. But overal the code is super easy to manipulate and quickly
+change to add more random blocks.
+
+Hypothetical change: A change to the class I would make is chnaging how the
+random works. I would make the blocks random aswell and not the predefined 6. I
+would also work to add some logic on how to make sure that the blocks are
+not overlapping as this could cause the game to crash with two items with the same key.

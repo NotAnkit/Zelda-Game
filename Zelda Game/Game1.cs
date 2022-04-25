@@ -64,8 +64,8 @@ namespace Zelda_Game
             controllerList.Add(new GamePadController(this));
             inventoryDisplay = new InventoryDisplay(this, link.inventory);
             song = Content.Load<Song>("04 - Dungeon");
-            //MediaPlayer.Play(song);
-            //MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
             itemSelectionState = new ItemSelectionState(this, inventoryDisplay);
             gameManager = new GameStateManager(this, manager, link, inventoryDisplay, itemSelectionState, soundManager);
 
