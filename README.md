@@ -6,7 +6,7 @@ This Repository is for Team Alpha Won in CSE 3902 recreating the first dungen fr
 
 #### Controls
 
-##Keyboard
+## Keyboard
 
 Controls | Function
 | :--- | :---:
@@ -18,7 +18,7 @@ Arrow Keys  | to move Link around the screen.
   P | to Pause
   H | to Randomize RoomData
 
-##GamePad
+## GamePad
  
 Controls | Function
 | :--- | :---:
@@ -44,9 +44,8 @@ Left Thumbstick  | to move Link around the screen.
 
 #### Code Metrics
 
-   - Week 1: 251 Stylistic Recomendations
-   - Week 2: 53 Stylistic Recomendations
-   - Week 3: 22 Stylistic Recomendations
+   - Week 1: 253 Stylistic Recomendations
+   - Week 2: 30 Stylistic Recomendations
    
   IDE0045: Convert to conditional expression
   dotnet_style_prefer_conditional_expression_over_assignment = false
@@ -100,3 +99,4 @@ Left Thumbstick  | to move Link around the screen.
   csharp_style_pattern_matching_over_is_with_cast_check = false
   - Pattern matching is not allowed for current version C#
 
+The 30 or so check styles remaning have no way to supress their flags. This is a bug noted in my microsoft and there is no fix as of yet. 25 of these are the style for not hvaing simplied if statments which means not doing any math in them or accesing a array. If we were to simplify the ifs the code could lose readbility as there would be many extranious lines of code just store a value to be used once. 
