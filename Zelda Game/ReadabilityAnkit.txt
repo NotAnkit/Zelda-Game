@@ -1,0 +1,17 @@
+﻿Author of Review: Anish Chitti
+
+Date: 4/25/2022
+
+Sprint 5
+
+File being reviewed: SpikeEnemy.cs
+
+Author of file being reviewed: Ankit Kumar
+
+Time: 15 minutes
+
+Comments about code: The main body of this class is really well done and has a
+very readable implementation of spike enemy also know as the trap.
+The spikes movement is special compared to other enemies and it is easy to see
+that movement in the update method. It is also to read in the draw function
+under what circumstances where the trap should be drawn.

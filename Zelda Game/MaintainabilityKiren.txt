@@ -1,0 +1,21 @@
+﻿Author of Review: Anish Chitti
+
+Date: 4/25/2022
+
+Sprint 5
+
+File being reviewed: Boss.cs
+
+Author of file being reviewed: Kiren Manoharan
+
+Time: 15 minutes
+
+Comments about code: The code is very simple and can easily be read as it
+creates the extra boss in the game. The sprite gets drawn and then chnages it's
+appearnace based on the damage that it has taken.
+
+Hypothetical change: A change that could be handled pretty easily is if the boss
+sprite was different or we wanted to the boss to change color at a different
+health. This could be easily added as a different sprite would just need to be
+selected from the sprite sheet. The health value can also be adjusted to
+accomodate for the color change.
