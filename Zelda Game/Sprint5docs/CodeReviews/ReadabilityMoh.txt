@@ -1,0 +1,19 @@
+﻿Author of code review: Rama Naboulsi
+
+Date of the code review: 04/25/2022
+
+Sprint number: 5
+
+Name of the .cs file being reviewed: WeaponSelection.cs
+
+Author of the .cs file being reviewed: Moh
+
+Number of minutes: 15 minutes
+
+Comments on Code Quality:
+The code is very well written and easy to follow and uses as few lines as possible.
+The names of the variables are also descriptive and well formatted.
+The if statements are easy to follow in general.
+However, some of the lines within the if statements could have been placed into a reusable function because they are repeated.
+This would also hide the implementation and increase cohesion.
+Overall, though, the code is easily readable. 

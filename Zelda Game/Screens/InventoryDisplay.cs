@@ -123,13 +123,47 @@ namespace Zelda_Game
                 else if (item.Equals("fire"))
                 {
                     texture = Texture2;
-                    sourceRectangle = new Rectangle(191, 181, 16, 32); ;
+                    sourceRectangle = new Rectangle(191, 181, 16, 32);
                 }
                 else
                     sourceRectangle = new Rectangle(604, 134, 8, 20);
                 spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.Pink);
             }
             
+        }
+
+        public void DrawMap(SpriteBatch spriteBatch, Texture2D texture)
+        {
+            Rectangle sourceRectangle1 = new Rectangle(663, 108, 8, 8);
+            Rectangle sourceRectangle2 = new Rectangle(672, 108, 8, 8);
+            Rectangle sourceRectangle3 = new Rectangle(681, 108, 8, 8);
+
+            Rectangle destinationRectangle2 = new Rectangle(46, 384, 16, 16);
+            Rectangle destinationRectangle3 = new Rectangle(62, 384, 16, 16);
+            Rectangle destinationRectangle5 = new Rectangle(94, 384, 16, 16);
+            Rectangle destinationRectangle6 = new Rectangle(110, 384, 16, 16);
+            Rectangle destinationRectangle7 = new Rectangle(30, 400, 16, 16);
+            Rectangle destinationRectangle8 = new Rectangle(46, 400, 16, 16);
+            Rectangle destinationRectangle9 = new Rectangle(62, 400, 16, 16);
+            Rectangle destinationRectangle10 = new Rectangle(78, 400, 16,16);
+            Rectangle destinationRectangle11 = new Rectangle(94, 400, 16, 16);
+            Rectangle destinationRectangle14 = new Rectangle(46, 416, 16, 16);
+            Rectangle destinationRectangle15 = new Rectangle(62, 416, 16, 16);
+            Rectangle destinationRectangle16 = new Rectangle(78, 416, 16, 16);
+            spriteBatch.Draw(texture, destinationRectangle2, sourceRectangle1, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle3, sourceRectangle3, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle5, sourceRectangle1, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle5, sourceRectangle2, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle6, sourceRectangle2, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle7, sourceRectangle1, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle8, sourceRectangle3, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle9, sourceRectangle3, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle10, sourceRectangle3, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle11, sourceRectangle1, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle14, sourceRectangle2, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle15, sourceRectangle3, Color.Pink);
+            spriteBatch.Draw(texture, destinationRectangle16, sourceRectangle2, Color.Pink);
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -145,6 +179,7 @@ namespace Zelda_Game
             DrawSelectionA(spriteBatch, Texture);
             DrawSelectionB(spriteBatch, Texture, itemB);
             DrawLevel(spriteBatch, 1, Font);
+            DrawMap(spriteBatch, Texture);
         }
     }
 }

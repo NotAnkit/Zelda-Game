@@ -1,0 +1,20 @@
+﻿Author of code review: Rama Naboulsi
+
+Date of the code review: 04/25/2022
+
+Sprint number: 5
+
+Name of the .cs file being reviewed: GamePadController.cs
+
+Author of the .cs file being reviewed: Ankit
+
+Number of minutes: 15 minutes
+
+Comments on Code Quality:
+Overall the code is very maintainable.
+It uses as few lines of code as possible and is easily readable.
+It also has very few dependencies which makes it easy to update.
+
+Hypothetical Change:
+One change that could possibly be made is adding another button functionallity.
+This can be done easily by adding another RegisterCommand statement with the button and corresponding command. 
