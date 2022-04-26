@@ -16,11 +16,10 @@ namespace Zelda_Game
                 manager.TransitionState = true;
                 FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                 game1.link.ClearItems();
-                if (manager.TransitionStateFinished)
-                {
+
                     manager.ChangeRoom(roomLocation, position);
                     FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
-                }
+                
             }
             else if (door is RightDoor || door is RightCave)
             {
@@ -29,11 +28,10 @@ namespace Zelda_Game
                 manager.TransitionState = true;
                 FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                 game1.link.ClearItems();
-                if (manager.TransitionStateFinished)
-                {
-                    manager.ChangeRoom(roomLocation, position);
-                    FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
-                }
+
+                manager.ChangeRoom(roomLocation, position);
+                FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                
             }
             else if (door is TopDoor || door is TopCave)
             {
@@ -42,11 +40,9 @@ namespace Zelda_Game
                 manager.TransitionState = true;
                 FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                 game1.link.ClearItems();
-                if (manager.TransitionStateFinished)
-                {
-                    manager.ChangeRoom(roomLocation, position);
-                    FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
-                }
+                manager.ChangeRoom(roomLocation, position);
+                FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+                
             }
             else if (door is BottomDoor || door is BottomCave)
             {
@@ -55,13 +51,10 @@ namespace Zelda_Game
                 manager.TransitionState = true;
                 FreezeMovement.FreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
                 game1.link.ClearItems();
+                FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
+
                 manager.ChangeRoom(roomLocation, position);
                 FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
-                /*if (manager.TransitionStateFinished)
-                {
-                    manager.ChangeRoom(roomLocation, position);
-                    FreezeMovement.UnFreezeObjects(room.enemyList, game1.link, manager.roomList[roomLocation].enemyList);
-                }*/
             }
         }
     }

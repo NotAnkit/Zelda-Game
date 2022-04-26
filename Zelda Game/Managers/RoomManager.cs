@@ -18,6 +18,9 @@ namespace Zelda_Game
         private bool tansitionStateFinished;
         public bool random;
 
+        public KeyValuePair<int, int> roomLocationtemp;
+        public Vector2 positiontemp;
+
         public bool TransitionState
         {
             get => tansitionState;
@@ -30,7 +33,7 @@ namespace Zelda_Game
         {
             this.game1 = game1;
             collision = new Collisions(this, game1.link, game1);
-            roomLocation = new KeyValuePair<int, int>(2, 5);
+            roomLocation = new KeyValuePair<int, int>(2, 4);
             border = new BorderBlock(game1);
             fader = new ScreenFade(game1);
             tansitionState = false;
@@ -62,15 +65,14 @@ namespace Zelda_Game
             roomList.Add(new KeyValuePair<int, int>(1, 2), new Room(Game.Content.Load<Level>("Room1"), Game, random));
             roomList.Add(new KeyValuePair<int, int>(1, 1), new Room(Game.Content.Load<Level>("basement"), Game, false));
 
-            room = game1.Content.Load<Level>("Room10");
+            room = game1.Content.Load<Level>("Room8");
             roomData = new Room(room, game1, random);
         }
 
         public void ChangeRoom(KeyValuePair<int, int> roomLocation, Vector2 position)
         {
-            this.roomLocation = roomLocation;
-            game1.link.position = position;
-            roomData = roomList[this.roomLocation];
+            roomLocationtemp = roomLocation;
+            positiontemp = position;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -105,6 +107,12 @@ namespace Zelda_Game
         public void TransitionUpdate()
         {
             tansitionStateFinished = fader.Update();
+            if (tansitionStateFinished)
+            {
+                this.roomLocation = roomLocationtemp;
+                game1.link.position = positiontemp;
+                roomData = roomList[this.roomLocation];
+            }
         }
     }
 }
