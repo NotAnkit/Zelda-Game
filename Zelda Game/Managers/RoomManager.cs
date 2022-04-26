@@ -71,6 +71,7 @@ namespace Zelda_Game
 
         public void ChangeRoom(KeyValuePair<int, int> roomLocation, Vector2 position)
         {
+            FreezeMovement.FreezeObjects(roomData.enemyList, game1.link, roomList[roomLocation].enemyList);
             roomLocationtemp = roomLocation;
             positiontemp = position;
         }
@@ -112,6 +113,7 @@ namespace Zelda_Game
                 this.roomLocation = roomLocationtemp;
                 game1.link.position = positiontemp;
                 roomData = roomList[this.roomLocation];
+                FreezeMovement.UnFreezeObjects(roomData.enemyList, game1.link, roomList[roomLocation].enemyList);
             }
         }
     }
