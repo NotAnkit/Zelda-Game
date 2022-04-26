@@ -1,0 +1,20 @@
+﻿Author of Review: Mohamed Elzubeir
+
+Date: 4/25/2022
+
+Sprint 5
+
+File being reviewed: InventoryDisplay.cs
+
+Author of file being reviewed: Rama Naboulsi
+
+Time: 17 minutes
+
+Comments about code: The overall code is easily maintaible, however it would
+help to shorten it since it barely passes the 150 code. The code calls the
+draw slections once they are picked up.  
+
+
+Hypothetical change: A change to the class I would make is shortening the
+code by possibly making a file for drawing the DrawSelections and calling them
+in the inventory display file.

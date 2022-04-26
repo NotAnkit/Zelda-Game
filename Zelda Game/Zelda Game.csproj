@@ -60,6 +60,7 @@
     <None Remove="Controllers\Commands\" />
     <None Remove="Sprint5docs\" />
     <None Remove="Sprint5docs\Code Reviews\" />
+    <None Remove="PrincessZelda\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -124,6 +125,7 @@
     <Folder Include="Controllers\Commands\" />
     <Folder Include="Sprint5docs\" />
     <Folder Include="Sprint5docs\CodeReviews\" />
+    <Folder Include="PrincessZelda\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BlueArrowAnimation.cs" />
