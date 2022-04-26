@@ -1,0 +1,16 @@
+﻿Author of Review: Mohamed Elzubeir
+
+Date: 4/25/2022
+
+Sprint 5
+
+File being reviewed: AddRandomRoomItems.cs
+
+Author of file being reviewed: Anish Chitti
+
+Time: 15 minutes
+
+Comments about code: There is a lot of thought put into the design of this
+file, and the implementation of random elements is clear. The code is very short
+and clean being under 52 lines making it very readable. The properties have
+descriptive names.
