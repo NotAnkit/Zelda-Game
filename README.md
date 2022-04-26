@@ -12,7 +12,7 @@ Controls | Function
 | :--- | :---:
 Arrow Keys  | to move Link around the screen.
   A | to for Link to use the sword. 
-  B | to use Items, Once paused used to select item
+  B | to use Items, Once paused used to select item. Keep clicking until the desired weapon is reached.
   Q | to quit
   R | to Reset
   P | to Pause
@@ -31,7 +31,7 @@ Left Thumbstick  | to move Link around the screen.
   Right Stick | to Randomize RoomData
   
 #### Bugs
-  The project is 95% Complete based on the functionality of the original game, but currently has 3 additional features implemented. Based game functionality currently has some bugs. The first bug being you can use multiple items at the same time ex. shoot 3 arrows in succession. Another bug is that when the enemies die, they despawn to quickly and as a result the death cloud can not be been. The Clock item currently only freezes the enemies and does not unfreeze them. The damage sound is played to many times when the player takes damage and can cause the game to crash in trapped in a corner. The pushable block moves many spaces if you want instead of just one space at a time. While it is possible to move left and right on the ladder, there is no where to go. The boomerang and the hand master cause you give/take damage instead of stunning. The spike trap does not have the intended functionality. There is currently a bug with the down doors where the transition does not let them enter the next room, so the transition has been turned off for it.
+  The project is 95% Complete based on the functionality of the original game, but currently has 3 additional features implemented. Based game functionality currently has some bugs. The first bug being you can use multiple items at the same time ex. shoot 3 arrows in succession. Another bug is that when the enemies die, they despawn to quickly and as a result the death cloud can not be been. The Clock item currently only freezes the enemies and does not unfreeze them. The damage sound is played to many times when the player takes damage and can cause the game to crash in trapped in a corner. The pushable block moves many spaces if you want instead of just one space at a time. While it is possible to move left and right on the ladder, there is no where to go. The boomerang and the hand master cause you give/take damage instead of stunning. The spike trap does not have the intended functionality. One bug/feature is the sword is one hit kill. This is because the animation is long and thus does damage the whole durations, while it makes killing things easy it is nice as the bosses are actaully hard so it gives a way to actually beat it.
   
 #### Bug Fixes
   Links damage state got overhauled. Now there are four damage states in four directions. This fixes the bug where link is always looking right after taking damage instead he is looking the intended direction. Link can also not in the damage state deal damage to enemies via his sword or items. The player takes a little knock back to try and make sure link does not get trapped. Background music was turned back on. Compass not shows where the triforce pieces is with or without the map. The block in the compass room was moved back to original location. Link now has a function health system, including getting hearts, taking damage and displaying the hearts. Throwing items no-longer linger when passing room to room. The block edges seem to have been fixed for the most part, still some areas with certain movements can cause link to get caught on corners. 
