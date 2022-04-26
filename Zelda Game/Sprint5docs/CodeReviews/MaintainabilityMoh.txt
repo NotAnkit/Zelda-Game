@@ -1,1 +1,21 @@
-﻿
+﻿Author of code review: Kiren Manoharan
+
+Date of the code review: 04/25/2022
+
+Sprint number: 5
+
+Name of the .cs file being reviewed: WeaponSelection
+
+Author of the .cs file being reviewed: Moh Elzubeir
+
+Number of minutes: 12 minutes
+
+Comments on Code Quality:
+The quality of this code was very neat and organized.
+The code performs the weapon selection well.
+Using the source rectangles and destination rectangles of the sprites was done very well.
+Overall, the file has very high standards in code quality and simplicity.
+
+Hypothetical change:
+I would say this file was done was neatly. I believe this file represents
+high standards in software design and software development.

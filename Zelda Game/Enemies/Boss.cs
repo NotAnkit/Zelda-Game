@@ -37,7 +37,7 @@ namespace Zelda_Game
             currentFrame = 0;
             totalFrames = 60;
             spriteSpeed = 0f;
-            health = 15;
+            health = 10;
             windowHeight = game.WindowSizeHeight - 195;
             windowWidth = game.WindowSizeWidth - 81;
             position = location;

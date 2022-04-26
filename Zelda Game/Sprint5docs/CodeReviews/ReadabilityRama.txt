@@ -1,1 +1,17 @@
-﻿
+﻿Author of code review: Kiren Manoharan
+
+Date of the code review: 04/25/2022
+
+Sprint number: 5
+
+Name of the .cs file being reviewed: InventoryDisplay
+
+Author of the .cs file being reviewed: Rama
+
+Number of minutes: 12 minutes
+
+Comments on Readability:
+This file was very easy to read and understand.
+For the purposes of this file, the code was pretty long but just reached the limit of 150 lines of code.
+The draw function was well constructed and very efficient in performing the task.
+Overall, the file was very readable and simple for the tasks it outputted to the screen.
