@@ -21,8 +21,8 @@
         public LinkInventory()
         {
             maxLives = 4;
-            numLives = 3;
-            numKeys = 1;
+            numLives = 4;
+            numKeys = 5;
             bombs = 0;
             maps = false;
             compass = false;
